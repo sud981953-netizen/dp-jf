@@ -4,10 +4,10 @@
   "repo": "sud981953-netizen/dp-jf",
   "branch": "master",
   "raw_base": "https://raw.githubusercontent.com/sud981953-netizen/dp-jf/master/",
-  "generated_at": "2026-09-30T16:03:35+08:00",
-  "fingerprint": "83cf2502ca55d1c6555daeefa4cbc8b28823827d50d777a842108e7724b6b414",
+  "generated_at": "2026-09-30T16:06:01+08:00",
+  "fingerprint": "599626987466b12e9fe704f7195028359590ef9a37535a4714ee4bad74ce2204",
   "file_count": 116,
-  "total_bytes": 28700627,
+  "total_bytes": 28701264,
   "preserve": [
     "config/设置.md",
     "学员/**"
@@ -207,8 +207,8 @@
     {
       "path": "更新说明.md",
       "url_path": "%E6%9B%B4%E6%96%B0%E8%AF%B4%E6%98%8E.md",
-      "size": 11292,
-      "sha256": "28762014727dafa701618484027e276f91f8c29644cf393006cc3e0801af4133"
+      "size": 11929,
+      "sha256": "448e249bc1d25c87f83673dedddcd0f0e2c6c9cef919f06d9d14865454418c34"
     },
     {
       "path": "架构说明.md",
