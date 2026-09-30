@@ -1,13 +1,13 @@
 {
   "skill": "dp-jf",
-  "version": "1.12.0",
+  "version": "1.13.0",
   "repo": "sud981953-netizen/dp-jf",
   "branch": "master",
   "raw_base": "https://raw.githubusercontent.com/sud981953-netizen/dp-jf/master/",
-  "generated_at": "2026-09-30T16:06:01+08:00",
-  "fingerprint": "599626987466b12e9fe704f7195028359590ef9a37535a4714ee4bad74ce2204",
-  "file_count": 116,
-  "total_bytes": 28701264,
+  "generated_at": "2026-09-30T16:27:44+08:00",
+  "fingerprint": "f31d165a5693beee761afc9d6cbe637afd59f785cdc47f41030ea33b9d710795",
+  "file_count": 117,
+  "total_bytes": 28715966,
   "preserve": [
     "config/设置.md",
     "学员/**"
@@ -39,20 +39,20 @@
     {
       "path": "CHANGELOG.md",
       "url_path": "CHANGELOG.md",
-      "size": 68602,
-      "sha256": "6fb6c6f6cc54779bc23f6e357683b52d7fb09899f7aad0c92b9a66709109103f"
+      "size": 71226,
+      "sha256": "bba017a9bf8767e758c465ae5e187121f6b02944028c53e0b379c4a074a665ee"
     },
     {
       "path": "README.md",
       "url_path": "README.md",
-      "size": 7250,
-      "sha256": "982e2d7bfff03343ff0be5357511e732d63ef57984b690bfa36c30dadc7e2b4c"
+      "size": 9201,
+      "sha256": "7c707f1857920c397e6815495c74e654f071feb4ee59f5a7d28b0556cc23edf1"
     },
     {
       "path": "SKILL.md",
       "url_path": "SKILL.md",
-      "size": 22447,
-      "sha256": "269db562af1cd401b2ab29813580ed85ab2832d8252cf41fbd0675951ac32da1"
+      "size": 22825,
+      "sha256": "7ca23c36ebb2bab3e638088acc2dda9a374288e6aaec79389a7f02823a27aba6"
     },
     {
       "path": "scripts/check_prose.py",
@@ -159,8 +159,8 @@
     {
       "path": "version.md",
       "url_path": "version.md",
-      "size": 5999,
-      "sha256": "740c67ea72778829d8628548adc0d8ac6525476f2574cbb2496c49fdfc49d474"
+      "size": 6396,
+      "sha256": "7f62ef851e4e904f95416980c69e13566dc2eda1031b5a418d1cf5e7ef59210b"
     },
     {
       "path": "workflow/phase00_每日晨间巡检.md",
@@ -207,8 +207,8 @@
     {
       "path": "更新说明.md",
       "url_path": "%E6%9B%B4%E6%96%B0%E8%AF%B4%E6%98%8E.md",
-      "size": 11929,
-      "sha256": "448e249bc1d25c87f83673dedddcd0f0e2c6c9cef919f06d9d14865454418c34"
+      "size": 14334,
+      "sha256": "4dcfab4a090f130297f921b0c0cbb9f8f1f307c4641de4546e6af0d68166297f"
     },
     {
       "path": "架构说明.md",
@@ -713,6 +713,12 @@
       "url_path": "%E9%94%80%E8%BD%AC%E8%AF%BE/%E7%AC%AC%E4%BA%8C%E8%8A%82_%E5%85%AC%E5%8F%B8%E5%8F%82%E8%A7%82%E4%B8%8E%E8%B5%B7%E5%8F%B7%E5%BF%85%E7%88%86%E6%96%B9%E6%B3%95%E8%AE%BA_%E8%AF%A6%E7%BB%86%E7%89%88.md",
       "size": 10359,
       "sha256": "e778878c2302909267400380742e957f358898a380269d3f66356b905b3456c1"
+    },
+    {
+      "path": "首次更新指令.md",
+      "url_path": "%E9%A6%96%E6%AC%A1%E6%9B%B4%E6%96%B0%E6%8C%87%E4%BB%A4.md",
+      "size": 6947,
+      "sha256": "d4ae66396bc3ab8b72dbbe7163fb8beb245390f844bc5013d138147804d9b640"
     }
   ]
 }
