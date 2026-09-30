@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>投流 · 知识卡片</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}:root{--green:#00cc55;--green2:#00e060;--purple:#9b59b6;--bg:#0b1120;--card:rgba(255,255,255,0.05);--text:#fff;--text2:#c8d6e5;--text3:#7f8c9b;--border:rgba(255,255,255,0.08)}
+  body{font-family:'Microsoft YaHei','PingFang SC',sans-serif;background:#000;color:var(--text);-webkit-text-size-adjust:100%}
+  .page{max-width:440px;margin:0 auto;background:linear-gradient(170deg,#0b1120 0%,#0f1829 30%,#0b1120 100%);position:relative;overflow:hidden;padding-bottom:40px}
+  .page::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:40px 40px;pointer-events:none;z-index:0}
+  .page::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse 300px 400px at 50% 15%,rgba(0,204,85,.12) 0%,transparent 60%),radial-gradient(ellipse 200px 300px at 85% 40%,rgba(0,204,85,.08) 0%,transparent 60%),radial-gradient(ellipse 200px 250px at 15% 70%,rgba(155,89,182,.08) 0%,transparent 60%);pointer-events:none;z-index:0}
+  .container{position:relative;z-index:2;padding:0 16px}
+  .particles-wrap{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+  .dot-p{position:absolute;width:3px;height:3px;border-radius:50%;background:var(--green);opacity:.25;animation:twinkle 5s ease-in-out infinite}
+  .dot-p:nth-child(2n){background:var(--purple);opacity:.2;animation-delay:-2s}.dot-p:nth-child(3n){background:#fff;width:2px;height:2px;opacity:.15;animation-delay:-3.5s}
+  .dot-p:nth-child(1){top:6%;left:8%}.dot-p:nth-child(2){top:18%;left:85%}.dot-p:nth-child(3){top:32%;left:12%}.dot-p:nth-child(4){top:45%;left:90%}.dot-p:nth-child(5){top:55%;left:6%}.dot-p:nth-child(6){top:68%;left:82%}.dot-p:nth-child(7){top:78%;left:15%}.dot-p:nth-child(8){top:88%;left:88%}
+  @keyframes twinkle{0%,100%{opacity:.15;transform:scale(1)}50%{opacity:.45;transform:scale(1.8)}}
+  .glow-line{position:absolute;height:1px;border-radius:1px;z-index:1;pointer-events:none}.glow-line.g1{width:160px;background:linear-gradient(90deg,transparent,rgba(0,204,85,.12),transparent);top:12%;left:3%}.glow-line.g2{width:120px;background:linear-gradient(90deg,transparent,rgba(155,89,182,.10),transparent);top:58%;right:4%}
+  .glow-ring{position:absolute;border-radius:50%;border:1px solid;z-index:1;pointer-events:none}.glow-ring.r1{width:200px;height:200px;border-color:rgba(0,204,85,.04);top:8%;right:-60px}.glow-ring.r2{width:140px;height:140px;border-color:rgba(155,89,182,.04);top:65%;left:-40px}
+  .header{text-align:center;padding:36px 20px 24px;border-bottom:1px solid rgba(0,204,85,.15);margin-bottom:24px}
+  .header .logo-row{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:16px}.header .logo-img{width:44px;height:44px;border-radius:10px}.header .brand{font-size:17px;font-weight:700;color:var(--text)}
+  .header h1{font-size:26px;font-weight:900;line-height:1.3;color:var(--green)}.header .tag{display:inline-block;margin-top:10px;padding:4px 14px;border-radius:20px;font-size:12px;color:var(--green);border:1px solid rgba(0,204,85,.25);background:rgba(0,204,85,.06)}
+  .section-title{display:flex;align-items:center;gap:10px;margin:32px 0 16px;padding-bottom:10px;border-bottom:1px solid rgba(0,204,85,.2)}.section-title .num{font-size:36px;font-weight:900;color:var(--green);font-family:'Inter','PingFang SC',sans-serif;opacity:.3;line-height:1}.section-title h2{font-size:20px;font-weight:700;color:var(--text);line-height:1.3}
+  .sub-title{font-size:16px;font-weight:700;color:var(--green);margin:20px 0 10px;padding-left:12px;border-left:3px solid var(--green);line-height:1.4}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px}.card.green-border{border-color:rgba(0,204,85,.2);background:rgba(0,204,85,.04)}
+  .tree{list-style:none;padding:0;font-size:14px;line-height:1.8}.tree li{padding:2px 0 2px 20px;position:relative;color:var(--text2)}.tree li::before{content:'';position:absolute;left:6px;top:11px;width:6px;height:6px;border-radius:50%;background:var(--green);opacity:.5}.tree li.level1{font-weight:700;color:var(--text);padding-left:0}.tree li.level1::before{display:none}.tree li.level2{padding-left:20px}
+  .compare{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0}.compare .col{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px}.compare .col h4{font-size:14px;font-weight:700;margin-bottom:8px;text-align:center;color:var(--green)}.compare .col li{font-size:13px;color:var(--text2);line-height:1.7;list-style:none;padding-left:0;text-align:center}
+  .quote-item{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px 16px;margin-bottom:10px;display:flex;gap:12px;align-items:flex-start}.quote-item .q-num{width:28px;height:28px;border-radius:50%;background:rgba(0,204,85,.15);color:var(--green);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;flex-shrink:0}.quote-item .q-text{font-size:14px;line-height:1.6;color:var(--text);font-weight:600}
+  .formula{background:rgba(0,204,85,.08);border:1px solid rgba(0,204,85,.25);border-radius:10px;padding:12px 16px;margin:10px 0;text-align:center;font-size:15px;font-weight:700;color:var(--green);line-height:1.6}
+  .highlight-box{background:rgba(0,204,85,.06);border:1px solid rgba(0,204,85,.18);border-radius:8px;padding:10px 14px;margin:10px 0;font-size:13px;color:var(--green);line-height:1.6}
+  .divider{height:1px;background:linear-gradient(90deg,transparent,rgba(0,204,85,.2),transparent);margin:20px 0}
+  .human-talk{background:rgba(155,89,182,.06);border:1px solid rgba(155,89,182,.2);border-radius:12px;padding:16px;margin:16px 0}.human-talk h4{font-size:15px;font-weight:700;color:var(--purple);margin-bottom:10px}.human-talk p{font-size:13px;color:var(--text2);line-height:1.8}
+  /* ===== 字号整体放大 ===== */
+  body{font-size:17px}
+  .header .brand{font-size:18px}
+  .header h1{font-size:30px}
+  .header .tag{font-size:14px}
+  .section-title .num{font-size:40px}
+  .section-title h2{font-size:24px}
+  .sub-title{font-size:18px}
+  .tree{font-size:16px}
+  .flow{font-size:16px}
+  .compare .col h4{font-size:16px}
+  .compare .col li{font-size:15px}
+  .quote-item .q-text{font-size:16px}
+  .formula{font-size:17px}
+  .step-card .step-tag{font-size:13px}
+  .step-card h4{font-size:17px}
+  .step-card .step-content{font-size:15px}
+  .sub-method h5{font-size:16px}
+  .sub-method .step-content{font-size:15px}
+  .highlight-box{font-size:15px}
+  .human-talk h4{font-size:17px}
+  .human-talk p{font-size:15px}
+  .err-table td{font-size:14px}
+  .err-table tr:first-child td{font-size:15px}
+  .type-card .type-num{font-size:13px}
+  .type-card h4{font-size:16px}
+  .type-card .type-desc{font-size:14px}
+  .dim-tag{font-size:14px}
+  .triple .elem .el{font-size:15px}
+  .triple .elem .desc{font-size:12px}
+  .metric-card .m-name{font-size:15px}
+  .metric-card .m-score{font-size:13px}
+  .ifelse-box .if{font-size:15px}
+  .ifelse-box .then{font-size:14px}
+  [style*="font-size:13px"]{font-size:15px !important}
+  [style*="font-size:12px"]{font-size:14px !important}
+  [style*="font-size:11px"]{font-size:14px !important}
+  [style*="font-size:10px"]{font-size:12px !important}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="particles-wrap"><div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div></div>
+  <div class="glow-line g1"></div><div class="glow-line g2"></div><div class="glow-ring r1"></div><div class="glow-ring r2"></div>
+<div class="container">
+
+  <div class="header">
+    <div class="logo-row"><img src="logo.png" alt="创亿商学" class="logo-img"><span class="brand">短视频IP实训陪跑班</span></div>
+    <h1>投流</h1>
+    <span class="tag">📖 DOU+ + 千川 + 薯条 + 微信豆 + 投放策略</span>
+  </div>
+
+  <div class="section-title"><span class="num">01</span><h2>为什么要投流？<span class="green">先搞懂这个</span></h2></div>
+  <div class="card green-border">
+    <p style="font-size:15px;color:var(--text2);line-height:1.9">
+      <strong style="color:var(--text)">投流不是「花钱买流量」，是「花钱买精准的人」。</strong>
+    </p>
+    <p style="font-size:15px;color:var(--text2);line-height:1.9;margin-top:8px">
+      你把视频发出去，抖音先给你推 300-500 个人看。数据好，继续推；数据不好，停。这个叫「自然流量」——但自然流量有天花板。你拍得再好，算法不给你推到对的人面前，你也白拍。
+    </p>
+    <p style="font-size:15px;color:var(--text2);line-height:1.9;margin-top:8px">
+      投流就是<strong style="color:var(--green)">跳过算法慢慢试的过程，直接花钱让平台把你的视频推到你想找的那群人面前</strong>。你做装修的，想找要装修的人；你做美业的，想找要做脸的人。投流帮你找到他们。
+    </p>
+    <p style="font-size:15px;color:var(--text2);line-height:1.9;margin-top:8px">
+      <strong style="color:#e74c3c">但投流不能救烂内容。</strong>如果视频本身没人看（完播低、没互动），投再多钱也白搭。投流是放大器——内容好，放大爆；内容差，放大自己的错误。
+    </p>
+    <div class="formula">先测后放大：100元测方向 → 数据好加投 → ROI>1再追加</div>
+  </div>
+
+  <div class="section-title"><span class="num">02</span><h2>四大平台<span class="green">投流工具速查</span></h2></div>
+
+  <div class="sub-title">🎵 抖音</div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px">
+    <div style="background:rgba(0,204,85,.06);border:1px solid rgba(0,204,85,.15);border-radius:10px;padding:12px">
+      <div style="font-size:14px;font-weight:700;color:var(--green);margin-bottom:6px">💰 DOU+（抖加）</div>
+      <div style="font-size:13px;color:var(--text2);line-height:1.7">
+        <strong>适合：</strong>新号测方向/涨粉/加热视频<br>
+        <strong>目标：</strong>涨粉/点赞评论/主页点击<br>
+        <strong>预算：</strong>100-300元测试<br>
+        <strong>出价：</strong>自动出价<br>
+        <strong>配比：</strong>70%自然+30%DOU+
+      </div>
+    </div>
+    <div style="background:rgba(0,204,85,.06);border:1px solid rgba(0,204,85,.15);border-radius:10px;padding:12px">
+      <div style="font-size:14px;font-weight:700;color:var(--green);margin-bottom:6px">🎯 巨量千川</div>
+      <div style="font-size:13px;color:var(--text2);line-height:1.7">
+        <strong>适合：</strong>带货/直播间引流/商品转化<br>
+        <strong>目标：</strong>直播间成交/商品转化<br>
+        <strong>定向：</strong>地域+兴趣标签<br>
+        <strong>ROI：</strong>>2.5（美业）<br>
+        <strong>开户：</strong>抖店后台→千川
+      </div>
+    </div>
+  </div>
+
+  <div style="background:rgba(0,204,85,.04);border:1px solid rgba(0,204,85,.12);border-radius:8px;padding:10px 12px;margin-bottom:10px">
+    <div style="font-size:13px;font-weight:700;color:var(--green);margin-bottom:4px">📢 抖音 AD（巨量广告/巨量引擎）</div>
+    <div style="font-size:13px;color:var(--text2);line-height:1.7">
+      比千川更专业的品牌广告投放，适合品牌曝光、线索收集。门槛高，预算大，新手不建议碰——先用DOU+和千川跑通再说。
+    </div>
+  </div>
+
+  <div style="background:rgba(0,204,85,.08);border:2px solid rgba(0,204,85,.3);border-radius:10px;padding:14px;margin-bottom:10px">
+    <div style="font-size:15px;font-weight:700;color:var(--green);margin-bottom:6px">📍 巨量本地推 — 实体店专属</div>
+    <div style="font-size:14px;color:var(--text2);line-height:1.9">
+      <strong>专门给实体店用的。</strong>你开火锅店、美发店、口腔诊所、装修公司——想让周边3-5公里的人到你店里来，用本地推比用DOU+更精准。因为它的逻辑是「按地理位置推送」，不是按兴趣推送。<br><br>
+      <strong>跟DOU+的区别：</strong>DOU+推的是喜欢看你这类内容的人（可能是全国各地的），本地推推的是<strong>住在你店附近的人</strong>。开店的优先用本地推，别用DOU+拿全国的流量——外地人不可能来你店里。<br><br>
+      <strong>怎么用：</strong>抖音搜索「巨量本地推」→认领你的门店→设置投放范围（3-5公里）→选投放目标（团购/留资/到店）→日预算100元起测。<br>
+      <strong>适合谁：</strong>餐饮、美业、口腔、教培、家政、装修等一切有实体门店的行业。
+    </div>
+  </div>
+
+  <div class="sub-title">📕 小红书</div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px">
+    <div style="background:rgba(0,204,85,.06);border:1px solid rgba(0,204,85,.15);border-radius:10px;padding:12px">
+      <div style="font-size:14px;font-weight:700;color:var(--green);margin-bottom:6px">🍟 薯条</div>
+      <div style="font-size:13px;color:var(--text2);line-height:1.7">
+        <strong>适合：</strong>个人号/品牌号加热笔记<br>
+        <strong>目标：</strong>笔记曝光/互动/涨粉<br>
+        <strong>预算：</strong>75薯条币起（≈75元）<br>
+        <strong>用法：</strong>笔记发布后→右上角「…」→薯条推广<br>
+        <strong>配比：</strong>70%自然+30%薯条
+      </div>
+    </div>
+    <div style="background:rgba(0,204,85,.06);border:1px solid rgba(0,204,85,.15);border-radius:10px;padding:12px">
+      <div style="font-size:14px;font-weight:700;color:var(--green);margin-bottom:6px">💡 聚光平台</div>
+      <div style="font-size:13px;color:var(--text2);line-height:1.7">
+        <strong>适合：</strong>企业号/品牌/商家<br>
+        <strong>目标：</strong>种草/客资收集/商品推广<br>
+        <strong>门槛：</strong>需企业号认证<br>
+        <strong>开户：</strong>小红书聚光平台官网<br>
+        <strong>预算：</strong>日预算300元起
+      </div>
+    </div>
+  </div>
+
+  <div class="sub-title">📱 视频号</div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px">
+    <div style="background:rgba(0,204,85,.06);border:1px solid rgba(0,204,85,.15);border-radius:10px;padding:12px">
+      <div style="font-size:14px;font-weight:700;color:var(--green);margin-bottom:6px">💎 微信豆加热</div>
+      <div style="font-size:13px;color:var(--text2);line-height:1.7">
+        <strong>适合：</strong>视频号创作者加热内容<br>
+        <strong>目标：</strong>视频播放/直播观众<br>
+        <strong>预算：</strong>微信豆充值（1元=10豆）<br>
+        <strong>用法：</strong>视频/直播→「…」→加热<br>
+        <strong>特点：</strong>操作简单，类似DOU+
+      </div>
+    </div>
+    <div style="background:rgba(0,204,85,.06);border:1px solid rgba(0,204,85,.15);border-radius:10px;padding:12px">
+      <div style="font-size:14px;font-weight:700;color:var(--green);margin-bottom:6px">📢 ADQ（腾讯广告）</div>
+      <div style="font-size:13px;color:var(--text2);line-height:1.7">
+        <strong>适合：</strong>品牌/商家/专业投放<br>
+        <strong>目标：</strong>精准投放/线索收集<br>
+        <strong>门槛：</strong>需开通腾讯广告账户<br>
+        <strong>开户：</strong>腾讯广告官网<br>
+        <strong>特点：</strong>定向精准，专业度高
+      </div>
+    </div>
+  </div>
+
+  <div style="background:rgba(0,204,85,.08);border:2px solid rgba(0,204,85,.3);border-radius:10px;padding:16px;margin-bottom:10px">
+    <div style="font-size:17px;font-weight:700;color:var(--green);margin-bottom:8px">🛒 视频号挂车投流避坑指南（一线实战经验）</div>
+    <div style="font-size:15px;color:var(--text2);line-height:2">
+      <strong style="color:var(--text)">视频号短视频挂车投放 ≠ 直播间投放。</strong>很多培训用直播间的逻辑教短视频投流，完全是两码事——直播间是实时数据+人货场搭着跑的，短视频是素材驱动。以下是实战总结的<strong style="color:var(--green)">四条避坑铁律</strong>：<br><br>
+
+      <strong style="color:#e74c3c">避坑1：新号出价怎么设</strong><br>
+      新号权重低，挂车投成交计划出价会略高。一般是<strong>佣金的1.2倍</strong>左右，个别品需出到客单价的0.7倍。启动后ROI不会很正——<strong>只要有消耗就行</strong>。如果消耗太快→停止计划→重建→出价往下压10个豆→找到消耗速度和ROI的平衡点。<br><br>
+
+      <strong style="color:#e74c3c">避坑2：ROI计划别上来就建</strong><br>
+      很多教直播的人直接让建ROI计划去测素材——跑不动的。ROI计划需要更精准的人群，必须等<strong>成交计划先跑出一定单量、有了人群数据积累</strong>，再建ROI计划才有意义。顺序：先成交→积累数据→再ROI。<br><br>
+
+      <strong style="color:#e74c3c">避坑3：多素材必须同一链接</strong><br>
+      不同链接=不同产品=佣金率不同=人群定向不同。把不同链接的素材加到一个计划里→数据乱七八糟。<strong>只把同一个产品链接下的多个素材放一个计划。</strong><br><br>
+
+      <strong style="color:#e74c3c">避坑4：短视频挂车不需要圈人群</strong><br>
+      直播间需要圈人群，短视频挂车不需要。因为<strong>短视频内容本身就是定向——前三秒已经决定了谁留下、谁划走</strong>。圈了人群反而窄→不消耗→即使消耗了ROI也不正。视频号投放人群和出价每天都是浮动的（有人竞争就高，人群就那么多），不用纠结。<br><br>
+
+      <strong style="color:var(--green)">总结：</strong>视频号挂车投放不难——先跑成交计划积累数据→再建ROI计划→同链接多素材→不圈人群。别被割韭菜的交几千块学这些。
+    </div>
+  </div>
+
+  <div class="highlight-box">
+    💡 <strong>一句话选平台：</strong>做抖音用DOU+测、千川转；做小红书用薯条测、聚光转；做视频号用微信豆测、ADQ转。<strong>不管哪个平台，都是先测后放大。</strong>
+  </div>
+
+  <div class="section-title"><span class="num">03</span><h2>微付费打标签法<span class="green">（花几块钱撬动上万流量）</span></h2></div>
+
+  <div class="card green-border" style="text-align:center">
+    <p style="font-size:16px;color:var(--text2);line-height:1.9">
+      前3条作品<strong style="color:var(--green)">打标签</strong>，第4条起用<strong style="color:var(--green)">隐藏法</strong>省钱投。<br>不是投得越多越好——是投得越<strong style="color:var(--text)">准</strong>越好。
+    </p>
+  </div>
+
+  <!-- ===== 阶段一：打标签 ===== -->
+  <div style="margin-bottom:16px">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+      <span style="width:36px;height:36px;border-radius:50%;background:var(--green);color:#000;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:900;flex-shrink:0;font-family:'Inter',sans-serif">1</span>
+      <span style="font-size:20px;font-weight:700;color:var(--text)">前3条作品 — 打标签</span>
+    </div>
+    <p style="font-size:14px;color:var(--text3);margin-bottom:12px;line-height:1.7">每发一条新作品做一遍，3条做完平台就知道你是干什么的、要什么人了。</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px">
+      <div style="background:rgba(0,204,85,.06);border:1px solid rgba(0,204,85,.15);border-radius:10px;padding:14px">
+        <div style="font-size:24px;margin-bottom:4px">🆕</div>
+        <div style="font-size:15px;font-weight:700;color:var(--text);margin-bottom:4px">选刚发的，立刻投</div>
+        <div style="font-size:13px;color:var(--text3);line-height:1.6">旧视频已经跑不动了。发了立刻投——种树苗种下去就固定，长歪拉不回来</div>
+      </div>
+      <div style="background:rgba(0,204,85,.06);border:1px solid rgba(0,204,85,.15);border-radius:10px;padding:14px">
+        <div style="font-size:24px;margin-bottom:4px">🎯</div>
+        <div style="font-size:15px;font-weight:700;color:var(--text);margin-bottom:4px">内容加热 · 点赞评论</div>
+        <div style="font-size:13px;color:var(--text3);line-height:1.6">不选粉丝经营（老头老太太）<br>不选获取客户（没数据没信任）</div>
+      </div>
+      <div style="background:rgba(0,204,85,.06);border:1px solid rgba(0,204,85,.15);border-radius:10px;padding:14px">
+        <div style="font-size:24px;margin-bottom:4px">📡</div>
+        <div style="font-size:15px;font-weight:700;color:var(--text);margin-bottom:4px">保证播放 · 自定义 · 达人相似</div>
+        <div style="font-size:13px;color:var(--text3);line-height:1.6">不选最大点赞（666大拇指）<br>性别/年龄/地域 — 全不选</div>
+      </div>
+      <div style="background:rgba(0,204,85,.06);border:1px solid rgba(0,204,85,.15);border-radius:10px;padding:14px">
+        <div style="font-size:24px;margin-bottom:4px">👥</div>
+        <div style="font-size:15px;font-weight:700;color:var(--text);margin-bottom:4px">找10个同行 · 填达人相似</div>
+        <div style="font-size:13px;color:var(--text3);line-height:1.6">全国→2万-20万粉<br>同城→2万-10万粉<br>用飞瓜/蝉妈妈/考古家查</div>
+      </div>
+      <div style="background:rgba(0,204,85,.06);border:1px solid rgba(0,204,85,.15);border-radius:10px;padding:14px;grid-column:1/-1">
+        <div style="font-size:24px;margin-bottom:4px">⏱️</div>
+        <div style="font-size:15px;font-weight:700;color:var(--text);margin-bottom:4px">投放时长选 12 小时</div>
+        <div style="font-size:13px;color:var(--text3);line-height:1.6">❌ 2h/6h→太短糊弄你 &nbsp;|&nbsp; ❌ 18h/24h→太长灌水 &nbsp;|&nbsp; ✅ 12h→刚好够平台跑完定向</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 阶段二：隐藏法 ===== -->
+  <div style="margin-bottom:16px">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+      <span style="width:36px;height:36px;border-radius:50%;background:var(--green);color:#000;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:900;flex-shrink:0;font-family:'Inter',sans-serif">2</span>
+      <span style="font-size:20px;font-weight:700;color:var(--text)">第4条起 — 几块钱撬大流量</span>
+    </div>
+
+    <div style="background:rgba(0,204,85,.06);border:2px dashed rgba(0,204,85,.3);border-radius:14px;padding:20px;text-align:center">
+      <div style="display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;font-size:17px;color:var(--text2);font-weight:700;line-height:2.2">
+        <span style="background:rgba(0,204,85,.15);border-radius:8px;padding:6px 14px">💰 投100元</span>
+        <span style="color:var(--green);font-size:22px">→</span>
+        <span style="background:rgba(0,204,85,.15);border-radius:8px;padding:6px 14px">⏱️ 跑1小时</span>
+        <span style="color:var(--green);font-size:22px">→</span>
+        <span style="background:rgba(0,204,85,.15);border-radius:8px;padding:6px 14px">🙈 隐藏</span>
+        <span style="color:var(--green);font-size:22px">→</span>
+        <span style="background:rgba(0,204,85,.15);border-radius:8px;padding:6px 14px">👀 放出来</span>
+        <span style="color:var(--green);font-size:22px">→</span>
+        <span style="background:var(--green);color:#000;border-radius:8px;padding:6px 14px">💸 花3-5块</span>
+      </div>
+      <div style="margin-top:14px;font-size:15px;color:var(--text2);line-height:1.8">
+        系统通知：消耗1-5块 → 剩下<strong style="color:var(--green)">95块退回</strong>你的账户<br>
+        下次再投，补3-5块就够了。不是一次性砸大钱——是每次花几块钱，<strong style="color:var(--green)">持续撬</strong>。
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 阶段三：回评论 ===== -->
+  <div style="margin-bottom:16px">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px">
+      <span style="width:36px;height:36px;border-radius:50%;background:var(--green);color:#000;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:900;flex-shrink:0;font-family:'Inter',sans-serif">3</span>
+      <span style="font-size:20px;font-weight:700;color:var(--text)">别忘了：每条评论都要回</span>
+    </div>
+    <p style="font-size:15px;color:var(--text2);line-height:1.8;margin-left:46px">你回一条 → 评论数变2条 → 用户回来看 → 视频还在放 → 播放量+完播率一起涨。<strong style="color:var(--green)">回评论 = 免费二次加热。</strong></p>
+  </div>
+
+  <div class="highlight-box purple" style="text-align:center">
+    ⚠️ 每条作品消耗金额不同（1-5块），因为内容不同。花3块就补3块，花5块就补5块——<strong>别多充，只补消耗掉的。</strong>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section-title"><span class="num">04</span><h2>投流<span class="green">翻车</span>实录（避坑指南）</h2></div>
+
+  <div class="card">
+    <div style="margin-bottom:14px">
+      <div style="font-size:16px;font-weight:700;color:#e74c3c;margin-bottom:4px">翻车1：「投了好几百，一个咨询都没有」</div>
+      <div style="font-size:15px;color:var(--text2);line-height:1.8"><strong>原因：</strong>你投的是「涨粉」或「点赞」，不是「主页访问」或「获取客户」。涨粉来的都是看热闹的，不是想买东西的。<strong>如果你要的是客户咨询→投的时候选「主页访问」或「获取客户」，不选涨粉。</strong>前提是你的账号主页简介和作品能让人看完想咨询。</div>
+    </div>
+    <div style="margin-bottom:14px">
+      <div style="font-size:16px;font-weight:700;color:#e74c3c;margin-bottom:4px">翻车2：「投了100块，半个小时就用完了，什么都没得到」</div>
+      <div style="font-size:15px;color:var(--text2);line-height:1.8"><strong>原因：</strong>投放时长选太短。2小时、6小时平台来不及找精准用户，只能给你灌水充数。<strong>改：时长选12小时。</strong>让平台有足够时间找到对的人。</div>
+    </div>
+    <div style="margin-bottom:14px">
+      <div style="font-size:16px;font-weight:700;color:#e74c3c;margin-bottom:4px">翻车3：「投流来的全是老头老太太，根本不是我的客户」</div>
+      <div style="font-size:15px;color:var(--text2);line-height:1.8"><strong>原因：</strong>你选了「智能推荐」或「粉丝经营」。平台为了完成任务，推给最容易停留的人——老年人和机器号。<strong>改：用「自定义人群」→「达人相似」→填10个同行账号。</strong>把人群主动权拿回来。</div>
+    </div>
+    <div style="margin-bottom:14px">
+      <div style="font-size:16px;font-weight:700;color:#e74c3c;margin-bottom:4px">翻车4：「我选达人相似，结果选的头部大号，根本洗不动」</div>
+      <div style="font-size:15px;color:var(--text2);line-height:1.8"><strong>原因：</strong>你找了粉丝几百万的头部大号。他们的粉丝粘性极强，看到你的视频也不会关注你——你不是那个大V。<strong>改：找2万-20万粉的中腰部账号，粉丝活跃、粘性没那么强、更容易转化。</strong></div>
+    </div>
+    <div style="margin-bottom:14px">
+      <div style="font-size:16px;font-weight:700;color:#e74c3c;margin-bottom:4px">翻车5：「投了本地推，结果全是外地人打电话问能不能发货」</div>
+      <div style="font-size:15px;color:var(--text2);line-height:1.8"><strong>原因：</strong>投放范围没设好，选了全市甚至全省。<strong>改：范围设3-5公里。</strong>开店的客户就在你周边，远了人家也不可能来。做同城的尤其是餐饮美业，别贪大——圈越小越精准。</div>
+    </div>
+    <div>
+      <div style="font-size:16px;font-weight:700;color:#e74c3c;margin-bottom:4px">翻车6：「投了5条视频，4条亏了，心态崩了不投了」</div>
+      <div style="font-size:15px;color:var(--text2);line-height:1.8"><strong>原因：</strong>你把投流当成赌博——期望每条都爆。实际上投流是数据测试，10条里有1-2条好的就不错了。<strong>改心态：投流的目的是用100块测出那条好方向，不是每条都赚钱。</strong>测出来之后，把坏的停了，好的放大。亏小钱找方向，赚大钱靠放大。</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="human-talk"><h4>💬 投流说到底是个什么事？</h4>
+    <p>
+      <strong style="color:var(--text)">把投流想象成请人帮你发传单。</strong>DOU+/薯条/微信豆 = 请街上的人帮你发（简单、便宜、谁都能干）。千川/聚光/ADQ = 请专业派单公司帮你发（精准，但贵，门槛高）。
+    </p>
+    <p style="margin-top:12px">
+      <strong style="color:var(--text)">小白最常犯的错：把投流当救命稻草。</strong>视频播放不高 → 投100块 → 还是不爆 → 再投200块 → 还是不行。钱越投越多，心态越来越崩。其实问题根本不在投流，在内容本身——你内容不行，就像给一个不好吃的菜打广告，广告打得越多，知道不好吃的人越多。
+    </p>
+    <p style="margin-top:12px">
+      <strong style="color:var(--green)">正确姿势：</strong>先跑通自然流量，再用投流放大。你哪天有一条视频自然播放破了1万，完播和互动都达标——这时候投100块推一把，看能不能冲到10万。这叫「放大爆款」，不叫「拿钱买命」。
+    </p>
+    <p style="margin-top:12px">
+      <strong style="color:var(--text)">多平台怎么做？</strong>不需要每个平台都投。你主做哪个平台，就先在那个平台用最便宜的工具（DOU+/薯条/微信豆）测。测通了再考虑跨平台。记住：<strong style="color:var(--green)">投流是放大镜，不是魔法棒。好内容放大10倍，烂内容放大自己的错误。</strong>
+    </p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section-title"><span class="num">05</span><h2>核心金句</h2></div>
+  <div class="quote-item"><span class="q-num">1</span><span class="q-text">微付费打标签法：前3条打标签 → 第4条起隐藏法省钱投 → 花3-5块撬动近万流量，剩下95块退回。</span></div>
+  <div class="quote-item"><span class="q-num">2</span><span class="q-text">投流是放大镜，不是魔法棒。好内容放大10倍，烂内容放大自己的错误。</span></div>
+  <div class="quote-item"><span class="q-num">3</span><span class="q-text">视频发出去先跑24小时自然流量，再决定投不投。别一上来就投钱。</span></div>
+  <div class="quote-item"><span class="q-num">4</span><span class="q-text">ROI>1继续投，ROI<1立刻停。投流的目标不是涨粉，是变现。</span></div>
+  <div class="quote-item"><span class="q-num">5</span><span class="q-text">抖音DOU+、小红书薯条、视频号微信豆——不管哪个平台，都是先测后放大。</span></div>
+
+</div></div></body></html>

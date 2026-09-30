@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>借东风 · 知识卡片</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}:root{--green:#00cc55;--green2:#00e060;--purple:#9b59b6;--bg:#0b1120;--card:rgba(255,255,255,0.05);--text:#fff;--text2:#c8d6e5;--text3:#7f8c9b;--border:rgba(255,255,255,0.08)}
+  body{font-family:'Microsoft YaHei','PingFang SC',sans-serif;background:#000;color:var(--text);-webkit-text-size-adjust:100%}
+  .page{max-width:440px;margin:0 auto;background:linear-gradient(170deg,#0b1120 0%,#0f1829 30%,#0b1120 100%);position:relative;overflow:hidden;padding-bottom:40px}
+  .page::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:40px 40px;pointer-events:none;z-index:0}
+  .page::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse 300px 400px at 50% 15%,rgba(0,204,85,.12) 0%,transparent 60%),radial-gradient(ellipse 200px 300px at 85% 40%,rgba(0,204,85,.08) 0%,transparent 60%),radial-gradient(ellipse 200px 250px at 15% 70%,rgba(155,89,182,.08) 0%,transparent 60%);pointer-events:none;z-index:0}
+  .container{position:relative;z-index:2;padding:0 16px}
+  .particles-wrap{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+  .dot-p{position:absolute;width:3px;height:3px;border-radius:50%;background:var(--green);opacity:.25;animation:twinkle 5s ease-in-out infinite}
+  .dot-p:nth-child(2n){background:var(--purple);opacity:.2;animation-delay:-2s}.dot-p:nth-child(3n){background:#fff;width:2px;height:2px;opacity:.15;animation-delay:-3.5s}
+  .dot-p:nth-child(1){top:6%;left:8%}.dot-p:nth-child(2){top:18%;left:85%}.dot-p:nth-child(3){top:32%;left:12%}.dot-p:nth-child(4){top:45%;left:90%}.dot-p:nth-child(5){top:55%;left:6%}.dot-p:nth-child(6){top:68%;left:82%}.dot-p:nth-child(7){top:78%;left:15%}.dot-p:nth-child(8){top:88%;left:88%}
+  @keyframes twinkle{0%,100%{opacity:.15;transform:scale(1)}50%{opacity:.45;transform:scale(1.8)}}
+  .glow-line{position:absolute;height:1px;border-radius:1px;z-index:1;pointer-events:none}.glow-line.g1{width:160px;background:linear-gradient(90deg,transparent,rgba(0,204,85,.12),transparent);top:12%;left:3%}.glow-line.g2{width:120px;background:linear-gradient(90deg,transparent,rgba(155,89,182,.10),transparent);top:58%;right:4%}
+  .glow-ring{position:absolute;border-radius:50%;border:1px solid;z-index:1;pointer-events:none}.glow-ring.r1{width:200px;height:200px;border-color:rgba(0,204,85,.04);top:8%;right:-60px}.glow-ring.r2{width:140px;height:140px;border-color:rgba(155,89,182,.04);top:65%;left:-40px}
+  .header{text-align:center;padding:36px 20px 24px;border-bottom:1px solid rgba(0,204,85,.15);margin-bottom:24px}
+  .header .logo-row{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:16px}.header .logo-img{width:44px;height:44px;border-radius:10px}.header .brand{font-size:17px;font-weight:700;color:var(--text)}
+  .header h1{font-size:26px;font-weight:900;line-height:1.3;color:var(--green)}.header .tag{display:inline-block;margin-top:10px;padding:4px 14px;border-radius:20px;font-size:12px;color:var(--green);border:1px solid rgba(0,204,85,.25);background:rgba(0,204,85,.06)}
+  .section-title{display:flex;align-items:center;gap:10px;margin:32px 0 16px;padding-bottom:10px;border-bottom:1px solid rgba(0,204,85,.2)}.section-title .num{font-size:36px;font-weight:900;color:var(--green);font-family:'Inter','PingFang SC',sans-serif;opacity:.3;line-height:1}.section-title h2{font-size:20px;font-weight:700;color:var(--text);line-height:1.3}
+  .sub-title{font-size:16px;font-weight:700;color:var(--green);margin:20px 0 10px;padding-left:12px;border-left:3px solid var(--green);line-height:1.4}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px}.card.green-border{border-color:rgba(0,204,85,.2);background:rgba(0,204,85,.04)}
+  .tree{list-style:none;padding:0;font-size:14px;line-height:1.8}.tree li{padding:2px 0 2px 20px;position:relative;color:var(--text2)}.tree li::before{content:'';position:absolute;left:6px;top:11px;width:6px;height:6px;border-radius:50%;background:var(--green);opacity:.5}.tree li.level1{font-weight:700;color:var(--text);padding-left:0}.tree li.level1::before{display:none}.tree li.level2{padding-left:20px}
+  .quote-item{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px 16px;margin-bottom:10px;display:flex;gap:12px;align-items:flex-start}.quote-item .q-num{width:28px;height:28px;border-radius:50%;background:rgba(0,204,85,.15);color:var(--green);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;flex-shrink:0}.quote-item .q-text{font-size:14px;line-height:1.6;color:var(--text);font-weight:600}
+  .formula{background:rgba(0,204,85,.08);border:1px solid rgba(0,204,85,.25);border-radius:10px;padding:12px 16px;margin:10px 0;text-align:center;font-size:15px;font-weight:700;color:var(--green);line-height:1.6}
+  .highlight-box{background:rgba(0,204,85,.06);border:1px solid rgba(0,204,85,.18);border-radius:8px;padding:10px 14px;margin:10px 0;font-size:13px;color:var(--green);line-height:1.6}
+  .divider{height:1px;background:linear-gradient(90deg,transparent,rgba(0,204,85,.2),transparent);margin:20px 0}
+  .human-talk{background:rgba(155,89,182,.06);border:1px solid rgba(155,89,182,.2);border-radius:12px;padding:16px;margin:16px 0}.human-talk h4{font-size:15px;font-weight:700;color:var(--purple);margin-bottom:10px}.human-talk p{font-size:13px;color:var(--text2);line-height:1.8}
+  .flow{display:flex;flex-direction:column;align-items:center;gap:4px;padding:12px 0;font-size:14px;color:var(--text2)}.flow .step{background:rgba(0,204,85,.08);border:1px solid rgba(0,204,85,.15);border-radius:8px;padding:8px 16px;text-align:center;width:100%;font-weight:600}.flow .arrow{color:var(--green);font-size:18px}
+  /* ===== 字号整体放大 ===== */
+  body{font-size:17px}
+  .header .brand{font-size:18px}
+  .header h1{font-size:30px}
+  .header .tag{font-size:14px}
+  .section-title .num{font-size:40px}
+  .section-title h2{font-size:24px}
+  .sub-title{font-size:18px}
+  .tree{font-size:16px}
+  .flow{font-size:16px}
+  .quote-item .q-text{font-size:16px}
+  .formula{font-size:17px}
+  .highlight-box{font-size:15px}
+  .human-talk h4{font-size:17px}
+  .human-talk p{font-size:15px}
+  [style*="font-size:13px"]{font-size:15px !important}
+  [style*="font-size:12px"]{font-size:14px !important}
+  [style*="font-size:11px"]{font-size:14px !important}
+  [style*="font-size:10px"]{font-size:12px !important}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="particles-wrap"><div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div></div>
+  <div class="glow-line g1"></div><div class="glow-line g2"></div><div class="glow-ring r1"></div><div class="glow-ring r2"></div>
+<div class="container">
+
+  <div class="header">
+    <div class="logo-row"><img src="logo.png" alt="创亿商学" class="logo-img"><span class="brand">短视频IP实训陪跑班</span></div>
+    <h1>借东风 · 零成本引流</h1>
+    <span class="tag">📖 不花一分钱 · 跟同行爆款借精准流量</span>
+  </div>
+
+  <div class="section-title"><span class="num">01</span><h2>什么是<span class="green">借东风</span></h2></div>
+  <div class="card green-border">
+    <p style="font-size:13px;color:var(--text2);line-height:1.7">
+      <strong>借东风 = 不花钱的自然流打法。</strong>三国时周瑜限诸葛亮三天造出 10 万支箭，诸葛亮没有硬造，而是草船借箭——借来的箭一样能打仗。<br><br>
+      做账号同理：靠自己在短时间内做出 10 万流量的作品很难，但流量可以借——<strong>同行的爆款作品已经聚集了大量精准客户，直接从那里借。</strong>
+    </p>
+  </div>
+  <div class="formula">万物均不为我们所有，万物皆可为我们所用</div>
+  <div class="card">
+    <ul class="tree">
+      <li class="level1">⛵ 借船出海 · 🕸️ 借网打鱼 · 🐔 借鸡生蛋</li>
+      <li class="level2">流量同样可以借。精准客户从哪里借？从同行那里借——爆款作品的评论区，正是精准客户最集中的地方。</li>
+      <li class="level1">🎯 同行的粉丝 = 你的客户</li>
+      <li class="level2">同行账号做得好，是因为他人群标签精准。他的粉丝、他的客户，本来就是你的精准人群。</li>
+    </ul>
+  </div>
+
+  <div class="section-title"><span class="num">02</span><h2>实操<span class="green">五步法</span></h2></div>
+  <div class="flow">
+    <div class="step"><strong>① 搜行业</strong><br><span style="font-size:12px;font-weight:400;color:var(--text3)">打开抖音 → 右上角放大镜 → 输入你的行业关键词：水果搜水果、幼儿园搜幼儿园、茶叶搜茶叶……你是什么行业就搜什么。</span></div>
+    <div class="arrow">↓</div>
+    <div class="step"><strong>② 筛爆款</strong><br><span style="font-size:12px;font-weight:400;color:var(--text3)">点右上角小漏斗 → 选「一周内」→ 找到同行刚发一两天、数据就很炸的作品（几万点赞的那种）。</span></div>
+    <div class="arrow">↓</div>
+    <div class="step"><strong>③ 小号评论区埋钩子</strong><br><span style="font-size:12px;font-weight:400;color:var(--text3)">点开这条爆款的评论区，用<strong>小号</strong>评论，话术默念两个字——「感觉」：把你自己的账号名种进对比里（见下方话术模板）。</span></div>
+    <div class="arrow">↓</div>
+    <div class="step"><strong>④ 做搜索行为</strong><br><span style="font-size:12px;font-weight:400;color:var(--text3)">评论完 → 长按自己这条评论 → 点「搜索」→ 搜自己的账号 → 进主页把自己的作品<strong>点赞、评论、收藏，重点看完（完播）</strong>。</span></div>
+    <div class="arrow">↓</div>
+    <div class="step" style="border-color:rgba(0,204,85,.4);background:rgba(0,204,85,.14)"><strong>⑤ 重复 3~5 次，触发小蓝条</strong><br><span style="font-size:12px;font-weight:400;color:var(--green)">再回到同行评论区，上方「大家都在搜」的蓝色词条（小蓝条）就会变成你的账号名——一点就进你的账号。</span></div>
+  </div>
+
+  <div class="sub-title">「感觉」话术模板（各行业示范）</div>
+  <div class="card">
+    <ul class="tree">
+      <li class="level2">感觉你们家的水果没有人家 XX 水果家的好吃。</li>
+      <li class="level2">感觉你们家的幼儿园没有人家 XX 幼儿园的服务好，老师更专业。</li>
+      <li class="level2">感觉你们家的英语没有人家 XX 教得更专业。</li>
+      <li class="level2">感觉你们家的家电没有人家 XX 家的品类多。</li>
+      <li class="level2">感觉你家的保险没有 XX 做保险的服务好，性价比更高。</li>
+      <li class="level2">感觉你家的精酿啤酒没有 XX 家的好喝。</li>
+    </ul>
+    <div class="highlight-box">核心结构：感觉 + 同行的产品 + 没有 + 你的账号名 + 更好。表面是替用户"货比三家"，实际是把自己的账号名种进精准人群的眼前。</div>
+  </div>
+
+  <div class="section-title"><span class="num">03</span><h2>小蓝条的<span class="green">引流原理</span></h2></div>
+  <div class="card green-border">
+    <p style="font-size:13px;color:var(--text2);line-height:1.7">
+      同行一条爆款，点赞 7.6 万，播放量少说 500 万 → 刷短视频的用户大多会看评论区，几百万人会点进评论区 → 评论区上方「大家都在搜」的小蓝条是你的账号名 → 哪怕只有几十万人点击，也会直接跳转进入你的账号。<br><br>
+      <strong>这就是借东风带来的精准流量增量。</strong>
+    </p>
+  </div>
+  <div class="flow">
+    <div class="step">同行爆款 500 万播放</div>
+    <div class="arrow">↓</div>
+    <div class="step">几百万人看评论区</div>
+    <div class="arrow">↓</div>
+    <div class="step">小蓝条显示你的账号名</div>
+    <div class="arrow">↓</div>
+    <div class="step" style="border-color:rgba(0,204,85,.4);background:rgba(0,204,85,.14)"><strong>精准流量直接灌进你的账号</strong></div>
+  </div>
+
+  <div class="section-title"><span class="num">04</span><h2>关键<span class="green">注意点</span></h2></div>
+  <div class="card">
+    <ul class="tree">
+      <li class="level1">🎭 必须用小号评论</li>
+      <li class="level2">没有小号可以用新手机号注册一个，评论无需实名认证。</li>
+      <li class="level1">🛡️ 评论被删不影响效果</li>
+      <li class="level2">同行可以删除你的评论，但<strong>小蓝条是平台生成的，任何人都删不掉</strong>。</li>
+      <li class="level1">⏱️ 找「一周内」的新爆款</li>
+      <li class="level2">同行刚发一两天、数据正猛的作品，评论区流量最活跃，借流效果最好。</li>
+      <li class="level1">🔁 重复 3~5 次才触发</li>
+      <li class="level2">评论 → 长按搜索 → 进自己账号做数据，这套动作要重复几遍，小蓝条才会变成你的名字。</li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="human-talk"><h4>💡 方法本质：借东风借的是什么？</h4>
+    <p>
+      很多人做账号，习惯把希望寄托在运气上，等平台某一天给自己爆一个大流量。借东风恰恰相反——<strong>不等运气，主动借力</strong>。<br><br>
+      同行经过长期养号、投流和内容打磨，已经把一批精准客户聚集在自己的评论区里。这批人对你的产品有真实需求、正处于活跃状态、正在消费相关内容——是最有价值的一群目标用户。<br><br>
+      你不需要从头再把这群人聚集一遍。<strong>同行已经聚好了，你直接去借。</strong>一条评论、一个账号名、一个小蓝条，就能把同行几百万播放的势能，承接到自己的账号上。<br><br>
+      起号的关键不在于从零开始，而在于懂得借势。
+    </p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section-title"><span class="num">05</span><h2>核心金句</h2></div>
+  <div class="quote-item"><span class="q-num">1</span><span class="q-text">万物均不为我们所有，万物皆可为我们所用——流量也能借。</span></div>
+  <div class="quote-item"><span class="q-num">2</span><span class="q-text">同行的粉丝、同行的客户，就是你的精准客户——跟同行借。</span></div>
+  <div class="quote-item"><span class="q-num">3</span><span class="q-text">小号评论埋钩子，「感觉」两个字开头，把自己的账号名种进爆款评论区。</span></div>
+  <div class="quote-item"><span class="q-num">4</span><span class="q-text">评论删得掉，小蓝条删不掉——那是平台的。</span></div>
+  <div class="quote-item"><span class="q-num">5</span><span class="q-text">不等运气等爆款，主动出击借爆款。</span></div>
+
+</div></div></body></html>

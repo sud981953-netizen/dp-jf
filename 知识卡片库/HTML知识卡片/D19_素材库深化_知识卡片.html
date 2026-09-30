@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>素材库深化 · 知识卡片</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}:root{--green:#00cc55;--green2:#00e060;--purple:#9b59b6;--bg:#0b1120;--card:rgba(255,255,255,0.05);--text:#fff;--text2:#c8d6e5;--text3:#7f8c9b;--border:rgba(255,255,255,0.08)}
+  body{font-family:'Microsoft YaHei','PingFang SC',sans-serif;background:#000;color:var(--text);-webkit-text-size-adjust:100%}
+  .page{max-width:440px;margin:0 auto;background:linear-gradient(170deg,#0b1120 0%,#0f1829 30%,#0b1120 100%);position:relative;overflow:hidden;padding-bottom:40px}
+  .page::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:40px 40px;pointer-events:none;z-index:0}
+  .page::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse 300px 400px at 50% 15%,rgba(0,204,85,.12) 0%,transparent 60%),radial-gradient(ellipse 200px 300px at 85% 40%,rgba(0,204,85,.08) 0%,transparent 60%),radial-gradient(ellipse 200px 250px at 15% 70%,rgba(155,89,182,.08) 0%,transparent 60%);pointer-events:none;z-index:0}
+  .container{position:relative;z-index:2;padding:0 16px}
+  .particles-wrap{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+  .dot-p{position:absolute;width:3px;height:3px;border-radius:50%;background:var(--green);opacity:.25;animation:twinkle 5s ease-in-out infinite}
+  .dot-p:nth-child(2n){background:var(--purple);opacity:.2;animation-delay:-2s}.dot-p:nth-child(3n){background:#fff;width:2px;height:2px;opacity:.15;animation-delay:-3.5s}
+  .dot-p:nth-child(1){top:6%;left:8%}.dot-p:nth-child(2){top:18%;left:85%}.dot-p:nth-child(3){top:32%;left:12%}.dot-p:nth-child(4){top:45%;left:90%}.dot-p:nth-child(5){top:55%;left:6%}.dot-p:nth-child(6){top:68%;left:82%}.dot-p:nth-child(7){top:78%;left:15%}.dot-p:nth-child(8){top:88%;left:88%}
+  @keyframes twinkle{0%,100%{opacity:.15;transform:scale(1)}50%{opacity:.45;transform:scale(1.8)}}
+  .glow-line{position:absolute;height:1px;border-radius:1px;z-index:1;pointer-events:none}.glow-line.g1{width:160px;background:linear-gradient(90deg,transparent,rgba(0,204,85,.12),transparent);top:12%;left:3%}.glow-line.g2{width:120px;background:linear-gradient(90deg,transparent,rgba(155,89,182,.10),transparent);top:58%;right:4%}
+  .glow-ring{position:absolute;border-radius:50%;border:1px solid;z-index:1;pointer-events:none}.glow-ring.r1{width:200px;height:200px;border-color:rgba(0,204,85,.04);top:8%;right:-60px}.glow-ring.r2{width:140px;height:140px;border-color:rgba(155,89,182,.04);top:65%;left:-40px}
+  .header{text-align:center;padding:36px 20px 24px;border-bottom:1px solid rgba(0,204,85,.15);margin-bottom:24px}
+  .header .logo-row{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:16px}.header .logo-img{width:44px;height:44px;border-radius:10px}.header .brand{font-size:17px;font-weight:700;color:var(--text)}
+  .header h1{font-size:26px;font-weight:900;line-height:1.3;color:var(--green)}.header .tag{display:inline-block;margin-top:10px;padding:4px 14px;border-radius:20px;font-size:12px;color:var(--green);border:1px solid rgba(0,204,85,.25);background:rgba(0,204,85,.06)}
+  .section-title{display:flex;align-items:center;gap:10px;margin:32px 0 16px;padding-bottom:10px;border-bottom:1px solid rgba(0,204,85,.2)}.section-title .num{font-size:36px;font-weight:900;color:var(--green);font-family:'Inter','PingFang SC',sans-serif;opacity:.3;line-height:1}.section-title h2{font-size:20px;font-weight:700;color:var(--text);line-height:1.3}
+  .sub-title{font-size:16px;font-weight:700;color:var(--green);margin:20px 0 10px;padding-left:12px;border-left:3px solid var(--green);line-height:1.4}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px}.card.green-border{border-color:rgba(0,204,85,.2);background:rgba(0,204,85,.04)}
+  .tree{list-style:none;padding:0;font-size:16px;line-height:1.8}.tree li{padding:2px 0 2px 20px;position:relative;color:var(--text2)}.tree li::before{content:'';position:absolute;left:6px;top:11px;width:6px;height:6px;border-radius:50%;background:var(--green);opacity:.5}.tree li.level1{font-weight:700;color:var(--text);padding-left:0}.tree li.level1::before{display:none}.tree li.level2{padding-left:20px}
+  .quote-item{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px 16px;margin-bottom:10px;display:flex;gap:12px;align-items:flex-start}.quote-item .q-num{width:28px;height:28px;border-radius:50%;background:rgba(0,204,85,.15);color:var(--green);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:900;flex-shrink:0}.quote-item .q-text{font-size:16px;line-height:1.6;color:var(--text);font-weight:600}
+  .formula{background:rgba(0,204,85,.08);border:1px solid rgba(0,204,85,.25);border-radius:10px;padding:12px 16px;margin:10px 0;text-align:center;font-size:15px;font-weight:700;color:var(--green);line-height:1.6}
+  .highlight-box{background:rgba(0,204,85,.06);border:1px solid rgba(0,204,85,.18);border-radius:8px;padding:10px 14px;margin:10px 0;font-size:16px;color:var(--green);line-height:1.6}
+  .divider{height:1px;background:linear-gradient(90deg,transparent,rgba(0,204,85,.2),transparent);margin:20px 0}
+  .human-talk{background:rgba(155,89,182,.06);border:1px solid rgba(155,89,182,.2);border-radius:12px;padding:16px;margin:16px 0}.human-talk h4{font-size:15px;font-weight:700;color:var(--purple);margin-bottom:10px}.human-talk p{font-size:16px;color:var(--text2);line-height:1.8}
+  .dim-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:8px 0}
+  .dim-tag{background:rgba(0,204,85,.04);border:1px solid rgba(0,204,85,.1);border-radius:8px;padding:8px;text-align:center;font-size:12px;color:var(--green);font-weight:600}
+  /* ===== 字号整体放大 ===== */
+  body{font-size:17px}
+  .header .brand{font-size:18px}
+  .header h1{font-size:30px}
+  .header .tag{font-size:16px}
+  .section-title .num{font-size:40px}
+  .section-title h2{font-size:24px}
+  .sub-title{font-size:18px}
+  .tree{font-size:16px}
+  .flow{font-size:16px}
+  .compare .col h4{font-size:16px}
+  .compare .col li{font-size:15px}
+  .quote-item .q-text{font-size:16px}
+  .formula{font-size:17px}
+  .step-card .step-tag{font-size:16px}
+  .step-card h4{font-size:17px}
+  .step-card .step-content{font-size:15px}
+  .sub-method h5{font-size:16px}
+  .sub-method .step-content{font-size:15px}
+  .highlight-box{font-size:15px}
+  .human-talk h4{font-size:17px}
+  .human-talk p{font-size:15px}
+  .err-table td{font-size:16px}
+  .err-table tr:first-child td{font-size:15px}
+  .type-card .type-num{font-size:16px}
+  .type-card h4{font-size:16px}
+  .type-card .type-desc{font-size:16px}
+  .dim-tag{font-size:16px}
+  .triple .elem .el{font-size:15px}
+  .triple .elem .desc{font-size:12px}
+  .metric-card .m-name{font-size:15px}
+  .metric-card .m-score{font-size:16px}
+  .ifelse-box .if{font-size:15px}
+  .ifelse-box .then{font-size:16px}
+  [style*="font-size:16px"]{font-size:15px !important}
+  [style*="font-size:12px"]{font-size:16px !important}
+  [style*="font-size:11px"]{font-size:16px !important}
+  [style*="font-size:10px"]{font-size:12px !important}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="particles-wrap"><div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div></div>
+  <div class="glow-line g1"></div><div class="glow-line g2"></div><div class="glow-ring r1"></div><div class="glow-ring r2"></div>
+<div class="container">
+
+  <div class="header">
+    <div class="logo-row"><img src="logo.png" alt="创亿商学" class="logo-img"><span class="brand">短视频IP实训陪跑班</span></div>
+    <h1>素材库深化+迭代校准</h1>
+    <span class="tag">📖 9类素材库 + 3类迭代校准 + 三周数据总复盘</span>
+  </div>
+
+  <div class="section-title"><span class="num">01</span><h2>素材库是什么：<span class="green">你的内容弹药库</span></h2></div>
+  <div class="card green-border">
+    <p style="font-size:16px;color:var(--text2);line-height:2">
+      <strong style="color:var(--text)">99% 的人做不起来，是因为没有素材库。</strong>每次创作都从零开始→看到好的内容转瞬即忘→选题枯竭时一筹莫展→效率极低。<br><br>
+      素材库就是把你平时看到的好开头、好结构、好文案、好BGM——<strong style="color:var(--green)">全部拆成最小单位存下来</strong>。下次拍视频的时候，不用想「我要拍什么」，到对应库里拿一个元素、套一个选题，直接拍。创作效率翻10倍。
+    </p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section-title"><span class="num">02</span><h2>9类素材库<span class="green">速览</span></h2></div>
+
+  <div class="dim-grid">
+    <div class="dim-tag">🎣 开篇钩子库</div><div class="dim-tag">🏗️ 脚本结构库</div>
+    <div class="dim-tag">🎬 呈现形式库</div><div class="dim-tag">📖 故事素材库</div>
+    <div class="dim-tag">💡 观点素材库</div><div class="dim-tag">🔥 爆款文案库</div>
+    <div class="dim-tag">🎵 背景音乐库</div><div class="dim-tag">🤖 AI高赞视频库</div>
+    <div class="dim-tag" style="grid-column:1/-1">👀 同行高赞视频库</div>
+  </div>
+
+  <div class="sub-title">每个库怎么存、存什么——逐一详解</div>
+
+  <div style="margin-bottom:14px">
+    <div style="font-size:17px;font-weight:700;color:var(--green);margin-bottom:6px">🎣 1. 开篇钩子库</div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px">
+      <div style="font-size:15px;color:var(--text2);line-height:1.9">
+        <strong>存什么：</strong>所有你见过的、你用过的、你拆过的<strong>爆款开头句式</strong>。不要存整个开头，存<strong>句式模板</strong>。<br><br>
+        <strong>举例：</strong><br>
+        · 「做了X年XX，我发现X%的人……」（火锅店老板用了爆了）<br>
+        · 「今天约了个客户做XX，你看他进来的时候……」（美业现场原声型）<br>
+        · 「XX个月赚了XX万，然后我发现……」（反差经历型）<br><br>
+        <strong>怎么收集：</strong>每天刷抖音时，遇到让你停下来的开头→收藏→每周统一拆解句式→存入钩子库。<strong>目标：库里至少存 20 个可复用开头句式。</strong>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-bottom:14px">
+    <div style="font-size:17px;font-weight:700;color:var(--green);margin-bottom:6px">🏗️ 2. 脚本结构库</div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px">
+      <div style="font-size:15px;color:var(--text2);line-height:1.9">
+        <strong>存什么：</strong>验证过的<strong>内容框架</strong>。不是整篇文案，是骨架——开头怎么说→中间怎么论证→结尾怎么收。<br><br>
+        <strong>举例：</strong><br>
+        · 框架A：痛点→数字方法（3招）→证据（自己店里真实数据）→行动（评论区互动）<br>
+        · 框架B：反常识结论→为什么（底层逻辑）→反面后果→案例→金句收尾<br>
+        · 框架C：现场事件开头→过程展示→高潮（结果对比）→总结感悟<br><br>
+        <strong>每个框架标注：</strong>这个框架适合什么类型的内容（干货/展示/观点）、最长不超过多少秒、需要什么拍摄条件。
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-bottom:14px">
+    <div style="font-size:17px;font-weight:700;color:var(--green);margin-bottom:6px">🎬 3. 呈现形式库</div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px">
+      <div style="font-size:15px;color:var(--text2);line-height:1.9">
+        <strong>存什么：</strong>你看到的有趣的<strong>拍摄方式和画面呈现手法</strong>。口播坐哪、vlog怎么拍、镜头怎么切。<br><br>
+        <strong>举例：</strong><br>
+        · 口播：坐拍（正面机位+白色背景）｜边走边拍（街景+字幕大字）｜对镜自拍（卧室镜子+生活感）<br>
+        · VLOG：第一视角手持（观众=你的眼睛）｜第三视角跟拍（观众=旁观者）<br>
+        · 特殊：分屏对比（前后对比）｜画中画（大画面+小窗口表情）｜快剪（多个短镜头拼一个节奏）<br><br>
+        <strong>每个呈现形式标注：</strong>需要什么设备、适合室内还是室外、拍摄难度（1-5星）、适合什么行业。
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-bottom:14px">
+    <div style="font-size:17px;font-weight:700;color:var(--green);margin-bottom:6px">📖 4. 故事素材库</div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px">
+      <div style="font-size:15px;color:var(--text2);line-height:1.9">
+        <strong>存什么：</strong>你自己的<strong>真实经历、客户故事、行业见闻</strong>。这是你跟别人最大的差异化——你的经历别人没有。<br><br>
+        <strong>怎么收集：</strong>每天店里发生的事、跟客户聊的天、遇到的奇葩问题、踩过的坑——随手记在手机备忘录里。哪怕一句话也行，每周整理一次。<br><br>
+        <strong>举例：</strong><br>
+        · 「上次一个客人点了10个菜，我让他退了6个，后来他带了全家来。」<br>
+        · 「一个客户祛斑做了3家店没效果，来我这做了一次就淡了。不是我的技术有多牛，是前面两家给她用错了方案。」<br>
+        · 「装修完3个月墙裂了，我打电话给工长，他说过了保修期。后来我发现问题根本不在墙。」
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-bottom:14px">
+    <div style="font-size:17px;font-weight:700;color:var(--green);margin-bottom:6px">💡 5. 观点素材库</div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px">
+      <div style="font-size:15px;color:var(--text2);line-height:1.9">
+        <strong>存什么：</strong>你对这个行业的<strong>独特看法、反常识结论、犀利观点</strong>。观点=你的个人IP价值。<br><br>
+        <strong>怎么积累：</strong>跟客户聊天的时候、跟同行讨论的时候、看书看文章有感悟的时候——立刻记下来。好观点不记，下一秒就忘了。<br><br>
+        <strong>举例：</strong><br>
+        · 「火锅好不好吃看锅底，但能不能赚钱看菜单结构。90%的火锅店菜单设计都有问题。」<br>
+        · 「祛斑最怕的不是没效果，是有效果了又反弹。为什么？因为你只解决了表面的斑。」<br>
+        · 「装修公司报价低的那家，最后花的钱一定是最多的。」
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-bottom:14px">
+    <div style="font-size:17px;font-weight:700;color:var(--green);margin-bottom:6px">🔥 6. 爆款文案库</div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px">
+      <div style="font-size:15px;color:var(--text2);line-height:1.9">
+        <strong>存什么：</strong>你拆过的同行爆款 + 你自己跑出来的爆款<strong>完整文案</strong>。每一条都要标注：为什么这条爆了（拆解笔记）。<br><br>
+        <strong>格式：</strong>视频链接 + 完整文案文字 + 爆款原因标注（开头类型/选题角度/情绪触发点/互动引爆点）+ 我的行业怎么套用<br><br>
+        <strong>目标：</strong>库里至少存 30 条已拆解爆款文案。数量够了之后你会发现——爆款的规律开始自动浮现。
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-bottom:14px">
+    <div style="font-size:17px;font-weight:700;color:var(--green);margin-bottom:6px">🎵 7. 背景音乐库</div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px">
+      <div style="font-size:15px;color:var(--text2);line-height:1.9">
+        <strong>存什么：</strong>按<strong>情绪类型</strong>分类收集BGM：轻快/感人/紧张/大气/伤感/温馨/搞笑/节奏感。<br><br>
+        <strong>怎么收集：</strong>刷到视频觉得BGM好听→点右下角音乐图标→收藏到对应分类。抖音收藏的BGM在剪映里可以直接用。<br><br>
+        <strong>常见坑：</strong>不要每一条都用热门的BGM——热门BGM用户听腻了。积累20-30首不重样的，轮换着用。
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-bottom:14px">
+    <div style="font-size:17px;font-weight:700;color:var(--green);margin-bottom:6px">🤖 8. AI高赞视频库</div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px">
+      <div style="font-size:15px;color:var(--text2);line-height:1.9">
+        <strong>存什么：</strong>你用AI工具做出来的<strong>效果好、数据好的视频</strong>。按变法类型分类（这条用的哪一变、数据如何）。<br><br>
+        <strong>作用：</strong>当你不知道今天AI号拍什么的时候，翻这个库→找到自己之前数据好的那条→换个选题拍同款变法。自己验证过的东西比抄别人的靠谱。
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-bottom:14px">
+    <div style="font-size:17px;font-weight:700;color:var(--green);margin-bottom:6px">👀 9. 同行高赞视频库</div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px">
+      <div style="font-size:15px;color:var(--text2);line-height:1.9">
+        <strong>存什么：</strong>所有你<strong>拆解过的同行爆款视频</strong>。每条标注：粉丝量、点赞量、发布时间、爆款原因、哪些元素能复用。<br><br>
+        <strong>工具：</strong>抖音收藏夹建文件夹（可以建100个）+ 飞书/石墨文档记录文字拆解。每周固定时间统一拆解5-10条。<br><br>
+        <strong>分类建议：</strong>按行业细分→「美业同行」「餐饮同行」「教培同行」；或按变法细分→「吐槽类同行」「对比类同行」「教程类同行」。
+      </div>
+    </div>
+  </div>
+
+  <div class="highlight-box" style="text-align:center;font-size:16px">
+    💡 <strong>素材库的核心原则：不是收藏链接，是拆成原子单位存。</strong>一条视频拆完存入4个库（开头进钩子库，结构进脚本库，BGM进音乐库，文案进文案库）。将来你要拍新视频的时候，从4个库里各取一个元素，组合=下一条视频。
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section-title"><span class="num">03</span><h2>三类<span class="green">迭代校准</span>（用数据做决策）</h2></div>
+
+  <p style="font-size:15px;color:var(--text3);margin-bottom:12px;line-height:1.8">三周拍了50+条视频，数据摆在那——别再凭感觉了。用数据告诉你下一步该做什么。</p>
+
+  <!-- 校准1 -->
+  <div style="margin-bottom:16px">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+      <span style="font-size:32px;font-weight:900;color:var(--green);opacity:.3;flex-shrink:0;font-family:'Inter',sans-serif;line-height:1">1</span>
+      <span style="font-size:17px;font-weight:700;color:var(--text)">配比校准：流量型 vs 人设型 vs 转化型</span>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px;margin-left:40px">
+      <p style="font-size:16px;color:var(--text2);line-height:2">
+        <strong style="color:var(--green)">怎么校准：</strong><br>
+        把你三周所有视频按三类内容分开——流量型（吸引新人的）、人设型（建信任的）、转化型（直接卖货/获客的）→每类算出平均完播率、互动率、涨粉数。<br><br>
+        <strong>举例：</strong><br>
+        流量型平均完播45%，涨粉稳定 → 下周保持 50% 比例<br>
+        人设型数据一般但评论质量高 → 下周减到 20%，精选做<br>
+        转化型平均完播才28%，没人咨询 → 下周减到 10%，先不主推变现，继续拉流量<br><br>
+        <strong style="color:#e74c3c">调整铁律：数据好的加比例，数据差的减比例。不要舍不得砍——差的内容多发一条，就浪费一次曝光机会。</strong>
+      </p>
+    </div>
+  </div>
+
+  <!-- 校准2 -->
+  <div style="margin-bottom:16px">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+      <span style="font-size:32px;font-weight:900;color:var(--green);opacity:.3;flex-shrink:0;font-family:'Inter',sans-serif;line-height:1">2</span>
+      <span style="font-size:17px;font-weight:700;color:var(--text)">选题方向校准：哪些方向跑出来了？</span>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px;margin-left:40px">
+      <p style="font-size:16px;color:var(--text2);line-height:2">
+        <strong style="color:var(--green)">怎么校准：</strong><br>
+        用五级星图的框架把你三周的选题全部归类——哪些方向的数据好？哪些方向一直在亏？<br><br>
+        <strong>举例：</strong><br>
+        火锅店老板发现自己「省钱技巧」方向的选题平均播放1.5万，「火锅文化/故事」方向只有2000→下周专注做「省钱技巧」系列化：省钱点锅底/省钱点菜/省钱聚餐攻略。<br><br>
+        <strong style="color:#e74c3c">调整铁律：数据好的方向加大投入做系列，数据差的方向直接淘汰。别在同一棵树上吊死——用户已经用数据告诉你他们想看什么了。</strong>
+      </p>
+    </div>
+  </div>
+
+  <!-- 校准3 -->
+  <div style="margin-bottom:16px">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+      <span style="font-size:32px;font-weight:900;color:var(--green);opacity:.3;flex-shrink:0;font-family:'Inter',sans-serif;line-height:1">3</span>
+      <span style="font-size:17px;font-weight:700;color:var(--text)">变法校准：72变里哪些变法是你的王牌？</span>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px;margin-left:40px">
+      <p style="font-size:16px;color:var(--text2);line-height:2">
+        <strong style="color:var(--green)">怎么校准：</strong><br>
+        把你三周视频按72变变法分类，算每条变法类型的平均数据。找出数据最好的 5 个变法，和最差的 5 个变法。<br><br>
+        <strong>举例：</strong><br>
+        · 圈定人群起号法（第2变）：9条视频，平均互动率15% → ✅ Top1，下周加大<br>
+        · 吐槽起号法（第6变）：6条视频，3条数据好，3条一般 → ⚠️ 保留但优化<br>
+        · 偷窥起号法（第X变）：试了3条，全部数据垫底 → ❌ 淘汰<br><br>
+        <strong style="color:#e74c3c">调整铁律：连续3条数据差的变法，暂时淘汰。别想着「万一第四条好了呢」——同样时间用王牌变法拍，产出高10倍。</strong>
+      </p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section-title"><span class="num">04</span><h2>三周数据<span class="green">总复盘</span>（做一个表）</h2></div>
+
+  <p style="font-size:15px;color:var(--text3);margin-bottom:10px;line-height:1.8">打开飞书/Excel，拉一个表格，填入以下数据。填完之后，下周做什么一目了然。</p>
+
+  <div class="card green-border">
+    <div style="font-size:16px;color:var(--text2);line-height:2.2">
+      <strong style="color:var(--green)">📊 第一栏：按号看数据</strong><br>
+      号1 AI数字人号：总播放___ / 平均完播___% / 互动率___% / 涨粉___<br>
+      号2 实拍号：总播放___ / 平均完播___% / 互动率___% / 涨粉___<br>
+      → <strong>哪号跑得好就多加视频，哪号差就少发。</strong><br><br>
+
+      <strong style="color:var(--green)">🏆 第二栏：按内容类型看数据</strong><br>
+      流量型：___条 / 平均完播___% / 平均互动___%<br>
+      人设型：___条 / 平均完播___% / 平均互动___%<br>
+      转化型：___条 / 平均完播___% / 平均互动___%<br>
+      → <strong>类型数据决定下周配比。配比不是固定的，是数据决定的。</strong><br><br>
+
+      <strong style="color:var(--green)">🔧 第三栏：按变法看数据</strong><br>
+      数据最好的5个变法：1.___（播放___互动___）2.___（播放___互动___）3.___…<br>
+      数据最差的5个变法：哪些变法连续试了都没跑出来→下周淘汰<br>
+      → <strong>下周主打数据好的，淘汰数据差的。</strong><br><br>
+
+      <strong style="color:var(--green)">📈 第四栏：下周方向决策</strong><br>
+      基于上面三栏数据，写清楚：下周主做什么选题方向（比如「省钱技巧」系列）、主要用什么变法（比如吐槽+圈定人群）、三类配比调到多少（比如5:3:2→6:2:2）。
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="human-talk"><h4>💬 素材库深化到底在干什么？</h4>
+    <p>
+      「素材库搭建」的时候你搭了一个空架子。「素材库深化」是把三周的经验<strong style="color:var(--text)">变成可以反复用的资产</strong>。<br><br>
+      不是「收藏链接」——是把每条爆款拆成原子单位，分别存进对应的库。将来拍视频就是：从钩子库拿一个开头 + 从结构库拿一个框架 + 从故事库拿一个真实经历 + 从BGM库拿一个配乐 = 一条视频。不再是每次从零开始想。<br><br>
+      迭代校准就是<strong style="color:var(--green)">用数据替感觉做决定</strong>。三周数据拉出来一看，哪个变法好、哪个选题好、哪个号好——数据不会骗你。下周就按数据做。<br><br>
+      从第四周开始，你的创作不是「我不知道拍什么」——而是<strong style="color:var(--text)">「数据告诉我做什么最有效，我就做什么」。</strong>
+    </p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section-title"><span class="num">05</span><h2>核心金句</h2></div>
+  <div class="quote-item"><span class="q-num">1</span><span class="q-text">99%的人做不起来，是因为没有素材库。有素材库，创作从不从零开始。</span></div>
+  <div class="quote-item"><span class="q-num">2</span><span class="q-text">素材库不是收藏链接，是把有效元素拆成"原子单位"存进去，随时调用。</span></div>
+  <div class="quote-item"><span class="q-num">3</span><span class="q-text">迭代校准的核心：用数据做决策，而不是凭感觉。淘汰无效，放大有效。</span></div>
+  <div class="quote-item"><span class="q-num">4</span><span class="q-text">从第四周开始：数据告诉你做什么最有效，你就做什么。</span></div>
+
+</div></div></body></html>

@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>文案创作 · 知识卡片</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  :root{
+    --green:#00cc55;--green2:#00e060;--purple:#9b59b6;
+    --bg:#0b1120;--card:rgba(255,255,255,0.05);
+    --text:#fff;--text2:#c8d6e5;--text3:#7f8c9b;
+    --border:rgba(255,255,255,0.08);
+  }
+  body{font-family:'Microsoft YaHei','PingFang SC',sans-serif;background:#000;color:var(--text);font-size:16px;-webkit-text-size-adjust:100%}
+  .page{max-width:440px;margin:0 auto;background:linear-gradient(170deg,#0b1120 0%,#0f1829 30%,#0b1120 100%);position:relative;overflow:hidden;padding-bottom:40px}
+  .page::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:40px 40px;pointer-events:none;z-index:0}
+  .page::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse 300px 400px at 50% 15%,rgba(0,204,85,.12) 0%,transparent 60%),radial-gradient(ellipse 200px 300px at 85% 40%,rgba(0,204,85,.08) 0%,transparent 60%),radial-gradient(ellipse 200px 250px at 15% 70%,rgba(155,89,182,.08) 0%,transparent 60%);pointer-events:none;z-index:0}
+  .container{position:relative;z-index:2;padding:0 16px}
+  .particles-wrap{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+  .dot-p{position:absolute;width:3px;height:3px;border-radius:50%;background:var(--green);opacity:.25;animation:twinkle 5s ease-in-out infinite}
+  .dot-p:nth-child(2n){background:var(--purple);opacity:.2;animation-delay:-2s}
+  .dot-p:nth-child(3n){background:#fff;width:2px;height:2px;opacity:.15;animation-delay:-3.5s}
+  .dot-p:nth-child(1){top:6%;left:8%}.dot-p:nth-child(2){top:18%;left:85%}.dot-p:nth-child(3){top:32%;left:12%}.dot-p:nth-child(4){top:45%;left:90%}.dot-p:nth-child(5){top:55%;left:6%}.dot-p:nth-child(6){top:68%;left:82%}.dot-p:nth-child(7){top:78%;left:15%}.dot-p:nth-child(8){top:88%;left:88%}.dot-p:nth-child(9){top:24%;left:50%;width:2px;height:2px}.dot-p:nth-child(10){top:60%;left:45%;width:2px;height:2px}.dot-p:nth-child(11){top:15%;left:22%}.dot-p:nth-child(12){top:72%;left:55%}
+  @keyframes twinkle{0%,100%{opacity:.15;transform:scale(1)}50%{opacity:.45;transform:scale(1.8)}}
+  .glow-line{position:absolute;height:1px;border-radius:1px;z-index:1;pointer-events:none}
+  .glow-line.g1{width:160px;background:linear-gradient(90deg,transparent,rgba(0,204,85,.12),transparent);top:12%;left:3%}
+  .glow-line.g2{width:120px;background:linear-gradient(90deg,transparent,rgba(155,89,182,.10),transparent);top:58%;right:4%}
+  .glow-ring{position:absolute;border-radius:50%;border:1px solid;z-index:1;pointer-events:none}
+  .glow-ring.r1{width:200px;height:200px;border-color:rgba(0,204,85,.04);top:8%;right:-60px}
+  .glow-ring.r2{width:140px;height:140px;border-color:rgba(155,89,182,.04);top:65%;left:-40px}
+  .header{text-align:center;padding:36px 20px 24px;border-bottom:1px solid rgba(0,204,85,.15);margin-bottom:24px}
+  .header .logo-row{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:16px}
+  .header .logo-img{width:44px;height:44px;border-radius:10px}
+  .header .brand{font-size:19px;font-weight:700;color:var(--text);letter-spacing:1px}
+  .header .brand-sub{font-size:14px;color:var(--text3);margin-left:8px}
+  .header h1{font-size:28px;font-weight:900;line-height:1.3;color:var(--green)}
+  .header .tag{display:inline-block;margin-top:10px;padding:5px 16px;border-radius:20px;font-size:14px;color:var(--green);border:1px solid rgba(0,204,85,.25);background:rgba(0,204,85,.06)}
+  .section-title{display:flex;align-items:center;gap:10px;margin:32px 0 16px;padding-bottom:10px;border-bottom:1px solid rgba(0,204,85,.2)}
+  .section-title .num{font-size:38px;font-weight:900;color:var(--green);font-family:'Inter','PingFang SC',sans-serif;opacity:.3;line-height:1}
+  .section-title h2{font-size:22px;font-weight:700;color:var(--text);line-height:1.3}
+  .section-title .green{color:var(--green)}
+  .sub-title{font-size:18px;font-weight:700;color:var(--green);margin:20px 0 10px;padding-left:12px;border-left:3px solid var(--green);line-height:1.4}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px}
+  .card.green-border{border-color:rgba(0,204,85,.2);background:rgba(0,204,85,.04)}
+  .flow{display:flex;flex-direction:column;align-items:center;gap:6px;padding:12px 0;font-size:16px;color:var(--text2)}
+  .flow .step{background:rgba(0,204,85,.08);border:1px solid rgba(0,204,85,.15);border-radius:8px;padding:10px 16px;text-align:center;width:100%;font-weight:600;font-size:15px}
+  .flow .arrow{color:var(--green);font-size:20px}
+  .formula{background:rgba(0,204,85,.08);border:1px solid rgba(0,204,85,.25);border-radius:10px;padding:14px 16px;margin:10px 0;text-align:center;font-size:17px;font-weight:700;color:var(--green);line-height:1.6}
+  .highlight-box{background:rgba(0,204,85,.06);border:1px solid rgba(0,204,85,.18);border-radius:8px;padding:12px 14px;margin:12px 0;font-size:15px;color:var(--green);line-height:1.7}
+  .highlight-box.purple{background:rgba(155,89,182,.06);border-color:rgba(155,89,182,.18);color:var(--purple)}
+  .divider{height:1px;background:linear-gradient(90deg,transparent,rgba(0,204,85,.2),transparent);margin:24px 0}
+  .step-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;position:relative;overflow:hidden}
+  .step-card .step-tag{display:inline-block;padding:3px 12px;border-radius:10px;font-size:12px;font-weight:700;color:#000;background:var(--green);margin-bottom:8px}
+  .step-card h4{font-size:17px;font-weight:700;margin-bottom:8px;color:var(--text)}
+  .step-card .step-content{font-size:15px;color:var(--text2);line-height:1.8}
+  .quote-item{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px;margin-bottom:10px;display:flex;gap:12px;align-items:flex-start}
+  .quote-item .q-num{width:32px;height:32px;border-radius:50%;background:rgba(0,204,85,.15);color:var(--green);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:900;flex-shrink:0}
+  .quote-item .q-text{font-size:16px;line-height:1.7;color:var(--text);font-weight:600}
+  .err-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px}
+  .err-row .err-bad{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:8px;padding:10px;text-align:center}
+  .err-row .err-good{background:rgba(0,204,85,.06);border:1px solid rgba(0,204,85,.2);border-radius:8px;padding:10px;text-align:center}
+  .err-row .err-label{font-size:12px;font-weight:700;margin-bottom:4px}
+  .err-row .err-text{font-size:14px;line-height:1.5}
+  .human-talk{background:rgba(155,89,182,.06);border:1px solid rgba(155,89,182,.2);border-radius:12px;padding:18px;margin:16px 0}
+  .human-talk h4{font-size:17px;font-weight:700;color:var(--purple);margin-bottom:10px}
+  .human-talk p{font-size:15px;color:var(--text2);line-height:2}
+  .demo-card{background:rgba(0,204,85,.04);border:1px dashed rgba(0,204,85,.25);border-radius:10px;padding:14px;margin:10px 0}
+  .demo-card .demo-label{font-size:13px;font-weight:700;color:var(--green);margin-bottom:6px}
+  .demo-card .demo-text{font-size:14px;color:var(--text2);line-height:1.9}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="particles-wrap">
+    <div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div>
+  </div>
+  <div class="glow-line g1"></div><div class="glow-line g2"></div><div class="glow-ring r1"></div><div class="glow-ring r2"></div>
+<div class="container">
+
+  <div class="header">
+    <div class="logo-row">
+      <img src="logo.png" alt="创亿商学" class="logo-img">
+      <span class="brand">短视频IP实训陪跑班</span>
+    </div>
+    <h1>文案创作</h1>
+    <span class="tag">5步写文案 + 怎么让人信你 + 4个写作习惯</span>
+  </div>
+
+  <!-- ========== 01 本质 ========== -->
+  <div class="section-title">
+    <span class="num">01</span>
+    <h2>文案是<span class="green">你在跟一个正在刷手机的人说话</span></h2>
+  </div>
+
+  <div class="card green-border">
+    <p style="font-size:15px;color:var(--text2);line-height:1.9">
+      他不是来上课的，不是来看广告的，他的手指放在屏幕上随时准备划走。<br><br>
+      你的文案只有一件事要做：<strong style="color:var(--text)">让他觉得「这人懂我」，然后一直听到最后</strong>。<br><br>
+      不是让你秀文采，不是让你堆专业名词。是让你用大白话，把你踩过的坑、试过的办法、验证过的结果，讲给一个跟你经历过同样事情的人听。
+    </p>
+  </div>
+
+  <!-- ========== 02 5步写文案 ========== -->
+  <div class="section-title">
+    <span class="num">02</span>
+    <h2>一条视频文案的<span class="green">5个步骤</span></h2>
+  </div>
+
+  <div class="flow">
+    <div class="step"><strong>第1步：钩子</strong>（开头3秒）<br><span style="font-size:13px;font-weight:400;color:var(--text3)">一句话让人停下来</span></div>
+    <div class="arrow">↓</div>
+    <div class="step"><strong>第2步：痛点</strong>（10-20秒）<br><span style="font-size:13px;font-weight:400;color:var(--text3)">说出用户正在烦的事</span></div>
+    <div class="arrow">↓</div>
+    <div class="step"><strong>第3步：方法</strong>（20-40秒）<br><span style="font-size:13px;font-weight:400;color:var(--text3)">你怎么解决这个问题的</span></div>
+    <div class="arrow">↓</div>
+    <div class="step"><strong>第4步：证据</strong>（40-50秒）<br><span style="font-size:13px;font-weight:400;color:var(--text3)">你自己的真实经历/结果</span></div>
+    <div class="arrow">↓</div>
+    <div class="step" style="border-color:rgba(0,204,85,.4);background:rgba(0,204,85,.14)"><strong>第5步：行动</strong>（结尾）<br><span style="font-size:13px;font-weight:400;color:var(--green)">告诉用户现在该做什么</span></div>
+  </div>
+
+  <div class="sub-title">完整演示：装修行业</div>
+
+  <div class="demo-card">
+    <div class="demo-label">第1步 · 钩子</div>
+    <div class="demo-text">「装修花了40万，入住3个月墙就裂了。」</div>
+  </div>
+  <div class="demo-card">
+    <div class="demo-label">第2步 · 痛点</div>
+    <div class="demo-text">「找装修公司，人家说过了保修期。那一刻真的想骂人。你是不是也遇到过——装完就没人管了，出问题全是你的？」</div>
+  </div>
+  <div class="demo-card">
+    <div class="demo-label">第3步 · 方法</div>
+    <div class="demo-text">「后来我学聪明了。签合同之前在报价单上加了三条，工人一看就知道这业主不好糊弄。第一条：所有隐蔽工程拍视频留底。第二条：质保期从竣工验收日开始算，不是从签合同开始。第三条：增项超过总价5%的部分，我不认。」</div>
+  </div>
+  <div class="demo-card">
+    <div class="demo-label">第4步 · 证据</div>
+    <div class="demo-text">「这是我第二套房子装修用的合同。工长看了之后跟我说：你这合同是我见过最细的。最后装完，零增项。不是因为我懂装修，是因为我把丑话说在前面了。」</div>
+  </div>
+  <div class="demo-card">
+    <div class="demo-label">第5步 · 行动</div>
+    <div class="demo-text">「总结一下：装修前第一件事不是看风格，是把你最怕出现的坑写下来，一条一条写进合同。怕什么就写什么。觉得有用，截图保存，评论区告诉我你最怕装修出什么问题。」</div>
+  </div>
+
+  <div class="sub-title">换个行业套用：烘焙</div>
+
+  <div class="demo-card">
+    <div class="demo-label">第1步 · 钩子</div>
+    <div class="demo-text">「我的私房烘焙差点不干了，因为一个月被退了7个蛋糕。」</div>
+  </div>
+  <div class="demo-card">
+    <div class="demo-label">第2步 · 痛点</div>
+    <div class="demo-text">「每个都说"跟图片不一样"。做私房的是不是都怕这个？你明明做得一模一样，客人就是说不一样。」</div>
+  </div>
+  <div class="demo-card">
+    <div class="demo-label">第3步 · 方法</div>
+    <div class="demo-text">「后来我改了三个地方，退单率直接降到零。第一，下单前让客人发一张他想要的图，我告诉他"这个效果做出来大概是这样的"，发一张我自己的实拍对比图。第二，配送前拍一个30秒视频发给客人确认。第三，送一个成本不到2块钱的小甜品，客人收到就觉得赚了。」</div>
+  </div>
+  <div class="demo-card">
+    <div class="demo-label">第4步 · 证据</div>
+    <div class="demo-text">「改了之后，上个月做了40多个蛋糕，一个退单都没有。而且多了好几个回头客，说"你家做出来跟图片确实一样"。其实蛋糕没变，变的是我提前管好了客人的预期。」</div>
+  </div>
+  <div class="demo-card">
+    <div class="demo-label">第5步 · 行动</div>
+    <div class="demo-text">「做私房的姐妹，今天开始，接单之前多发一张实拍对比图，多说一句话。这两件事花不了你一分钟，但能省掉你后面所有的麻烦。转发给你身边做烘焙的朋友。」</div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ========== 03 怎么让人信你 ========== -->
+  <div class="section-title">
+    <span class="num">03</span>
+    <h2>怎么<span class="green">让人信你</span>（三个层次）</h2>
+  </div>
+
+  <p style="font-size:15px;color:var(--text3);margin-bottom:12px;line-height:1.7">
+    你说了不算，用户信了才算。看下面三个层次，你现在在哪一层？
+  </p>
+
+  <div class="step-card">
+    <span class="step-tag" style="background:#e74c3c">不合格</span>
+    <h4>只说了一个观点，什么都没解释</h4>
+    <div class="step-content">「开实体店一定要做抖音。」<br>→ 用户心里：凭什么？你是谁？你说了算？<br><br><em style="color:var(--text3)">就像路人跟你说"这个好吃"，你不会信。因为你不知道他是谁，也不知道他为什么这么说。</em></div>
+  </div>
+
+  <div class="step-card">
+    <span class="step-tag" style="background:#f39c12">合格</span>
+    <h4>说了观点 + 解释了为什么</h4>
+    <div class="step-content">「开实体店一定要做抖音。因为现在的人不是逛街的时候发现你的店，是在抖音上刷到你的店，然后专门去找的。你不做抖音，你的店在手机上是不存在的——你隔壁那家做了，客人就全去他那了。」<br>→ 用户心里：有道理，但你说的跟我有什么关系？<br><br><em style="color:var(--text3)">像朋友推荐一家店，但你没吃过，无从判断。</em></div>
+  </div>
+
+  <div class="step-card" style="border-color:rgba(0,204,85,.4);background:rgba(0,204,85,.08)">
+    <span class="step-tag">优秀</span>
+    <h4>说了观点 + 解释了为什么 + 讲了自己的真实经历</h4>
+    <div class="step-content">「开实体店一定要做抖音。我开水果店的前两年，全靠门口路过的人，好的时候一天卖2000，差的时候800。第三年我开始拍抖音，发了一条"水果店老板教你挑西瓜"，播放量20万，第二天店门口排了20多个人。从那以后，我每天拍一条，现在店里60%的客人都是抖音来的。我不做抖音，现在可能已经关门了。」<br>→ 用户心里：这人真做过，说的是真的。<br><br><em style="color:var(--text3)">像朋友告诉你"这家店我吃过，是真的好吃"——你信了，因为他说了具体的经历。</em></div>
+  </div>
+
+  <div class="highlight-box purple">
+    💡 <strong>记住：</strong>你的目标是每次讲到 <strong style="color:var(--purple)">「观点+原因+亲身经历」</strong> 这一层。没有亲身经历的观点，用户不买账。
+  </div>
+
+  <div class="sub-title">各行业「亲身经历」怎么找</div>
+  <p style="font-size:14px;color:var(--text3);margin-bottom:10px;line-height:1.7">记住：你是<strong style="color:var(--text)">卖家</strong>，你的视频是拍给<strong style="color:var(--green)">买家</strong>看的。你的专业是用来帮客户避坑的，不是用来跟同行交流的。</p>
+  <div class="card">
+    <p style="font-size:15px;color:var(--text2);line-height:2.2">
+      · <strong style="color:var(--green)">律师：</strong>你经手过多少案子？普通人最常踩的坑是什么？签合同前最该看哪一条？<br>
+      · <strong style="color:var(--green)">装修：</strong>你做了多少家工地？业主最常被坑的是哪一步？验收时最该盯什么？<br>
+      · <strong style="color:var(--green)">烘焙：</strong>你做了多少蛋糕？客人最常问的问题是啥？怎么判断一个蛋糕用的是好奶油？<br>
+      · <strong style="color:var(--green)">家政：</strong>你服务过多少家庭？第一次请阿姨的人最怕什么？怎么选到靠谱的阿姨？<br>
+      · <strong style="color:var(--green)">汽修：</strong>你修过多少车？车主最容易被忽悠的保养项目是什么？什么毛病其实不用修？<br>
+      · <strong style="color:var(--green)">宠物店：</strong>你接触过多少宠物？新手养猫最常犯的错是什么？驱虫疫苗到底怎么选？<br>
+      · <strong style="color:var(--green)">疗愈/咨询：</strong>你见过多少来访者？普通人怎么判断自己需要心理咨询？第一步做什么？<br>
+      · <strong style="color:var(--green)">健身教练：</strong>你带过多少学员？新手健身最容易放弃的是第几周？怎么选私教不被坑？<br>
+      · <strong style="color:var(--green)">花店：</strong>你包过多少束花？买花的人怎么挑到新鲜的花？情人节最容易被坑的3个套路。<br>
+      · <strong style="color:var(--green)">服装店：</strong>你见过多少客人？微胖女生买裤子最常踩的坑是什么？怎么判断一件衣服的版型好不好？
+    </p>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ========== 04 4个写作习惯 ========== -->
+  <div class="section-title">
+    <span class="num">04</span>
+    <h2>4个<span class="green">写作习惯</span>（每次写文案照着做）</h2>
+  </div>
+
+  <div class="step-card">
+    <span class="step-tag">习惯1</span>
+    <h4>短句，一句一个意思</h4>
+    <div class="step-content">不要写长句。用户是在刷手机，不是在看书。一句话超过20个字，用户就懒得读。<br><br>
+      <span style="color:#e74c3c">❌ 「在当前这个竞争激烈的市场环境下，实体店经营者面临着流量获取困难的问题。」</span><br>
+      <span style="color:var(--green)">✅ 「现在开店最难的不是货，是没人来。我隔壁那家上个月关门了，他家东西比我还便宜。」</span></div>
+  </div>
+
+  <div class="step-card">
+    <span class="step-tag">习惯2</span>
+    <h4>用具体数字，不用模糊词</h4>
+    <div class="step-content">「很多」「一些」「大概」——这些词用户感觉不到。<br><br>
+      <span style="color:#e74c3c">❌ 「做了很多年，赚了一些钱」</span><br>
+      <span style="color:var(--green)">✅ 「干了8年，最高一个月流水做到过28万」</span><br><br>
+      <span style="color:#e74c3c">❌ 「店里生意最近不太好」</span><br>
+      <span style="color:var(--green)">✅ 「上个月一共卖了1万2，扣掉房租人工，剩了不到2000」</span></div>
+  </div>
+
+  <div class="step-card">
+    <span class="step-tag">习惯3</span>
+    <h4>讲你自己的真事，不编、不装</h4>
+    <div class="step-content">你的失败、踩坑、亏钱、想放弃的时刻——这些才是最好的素材。用户不傻，编的故事一眼就看穿。<br><br>
+      <span style="color:#e74c3c">❌ 「有个人通过这个方法赚了100万」</span>（用户：谁？在哪？怎么赚的？）<br>
+      <span style="color:var(--green)">✅ 「我去年用这个方法，第一个月赚了3000，第三个月赚了2万。不是一夜暴富，但确实能持续。」</span></div>
+  </div>
+
+  <div class="step-card">
+    <span class="step-tag">习惯4</span>
+    <h4>口语化，像在跟朋友聊天</h4>
+    <div class="step-content">用「你」不用「大家」，用「我跟你说」不用「综上所述」。<br><br>
+      <span style="color:#e74c3c">❌ 「因此，建议广大实体店经营者积极拥抱新媒体」</span><br>
+      <span style="color:var(--green)">✅ 「所以，你开店的，每天拍一条发抖音，先别管拍得好不好，拍了再说。」</span><br><br>写完文案大声读一遍，读不顺的地方就是写得不对。</div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ========== 05 常见错误 ========== -->
+  <div class="section-title">
+    <span class="num">05</span>
+    <h2>常见错误<span class="green">对照</span></h2>
+  </div>
+
+  <div style="margin-bottom:8px">
+    <div class="err-row">
+      <div class="err-bad">
+        <div class="err-label" style="color:#e74c3c">❌</div>
+        <div class="err-text" style="color:var(--text3)">只抛观点：「做餐饮一定要拍抖音」</div>
+      </div>
+      <div class="err-good">
+        <div class="err-label" style="color:var(--green)">✅</div>
+        <div class="err-text" style="color:var(--green)">观点+原因+亲身经历：<br>「我开快餐店前两年全靠路过客，第三年开始拍抖音，第一条爆了之后第二天店里坐满了。现在60%的客人都是抖音来的。」</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-bottom:8px">
+    <div class="err-row">
+      <div class="err-bad">
+        <div class="err-label" style="color:#e3c3c">❌</div>
+        <div class="err-text" style="color:var(--text3)">编假案例：<br>「有人靠这个方法一个月赚了100万」</div>
+      </div>
+      <div class="err-good">
+        <div class="err-label" style="color:var(--green)">✅</div>
+        <div class="err-text" style="color:var(--green)">讲自己真事：<br>「我第一个月赚了3000，第三个月2万。不是暴富，但确实能持续。」</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-bottom:8px">
+    <div class="err-row">
+      <div class="err-bad">
+        <div class="err-label" style="color:#e74c3c">❌</div>
+        <div class="err-text" style="color:var(--text3)">书面语：「因此，综上所述，由此可见」</div>
+      </div>
+      <div class="err-good">
+        <div class="err-label" style="color:var(--green)">✅</div>
+        <div class="err-text" style="color:var(--green)">口语：「所以」「说白了」「你想想看」</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-bottom:8px">
+    <div class="err-row">
+      <div class="err-bad">
+        <div class="err-label" style="color:#e74c3c">❌</div>
+        <div class="err-text" style="color:var(--text3)">结尾没用：「家人们双击点赞」「建议收藏」</div>
+      </div>
+      <div class="err-good">
+        <div class="err-label" style="color:var(--green)">✅</div>
+        <div class="err-text" style="color:var(--green)">给行动指令：「从今天开始，第一…第二…第三…。评论区告诉我你试了哪个。」</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="human-talk">
+    <h4>💬 一句话总结</h4>
+    <p>
+      文案不是让你当作家，是让你当<strong>一个懂行的朋友</strong>。<br><br>
+      你行业里那些客人最常问的问题、最烦的事、最怕的坑——你每天都在面对，你比谁都清楚答案。<br><br>
+      把这些答案拍成视频，用你自己的话讲出来，就是最好的文案。<br><br>
+      记住：<strong>你讲真事，吸引真客户。你装专家，只吸引杠精。</strong>
+    </p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section-title">
+    <span class="num">06</span>
+    <h2>核心金句<span class="green">（记住这几句）</span></h2>
+  </div>
+
+  <div class="quote-item">
+    <span class="q-num">1</span>
+    <span class="q-text">文案是你在跟一个正在刷手机的人说话，不是在写说明书。</span>
+  </div>
+  <div class="quote-item">
+    <span class="q-num">2</span>
+    <span class="q-text">只说观点不解释 = 正确的废话。观点 + 原因 + 亲身经历，用户才信。</span>
+  </div>
+  <div class="quote-item">
+    <span class="q-num">3</span>
+    <span class="q-text">讲你自己的真事，不编、不装。你讲真事，吸引真客户；你装专家，只吸引杠精。</span>
+  </div>
+  <div class="quote-item">
+    <span class="q-num">4</span>
+    <span class="q-text">写完文案大声读一遍，读不顺的地方就是写得不对。</span>
+  </div>
+  <div class="quote-item">
+    <span class="q-num">5</span>
+    <span class="q-text">5步写文案：钩子 → 痛点 → 方法 → 证据 → 行动。缺一步就不完整。</span>
+  </div>
+
+</div></div></body></html>

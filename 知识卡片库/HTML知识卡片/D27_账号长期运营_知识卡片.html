@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>账号长期运营 · 知识卡片</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}:root{--green:#00cc55;--purple:#9b59b6;--bg:#0b1120;--card:rgba(255,255,255,0.05);--text:#fff;--text2:#c8d6e5;--text3:#7f8c9b;--border:rgba(255,255,255,0.08);--red:#e74c3c;--orange:#f39c12}
+  body{font-family:'Microsoft YaHei','PingFang SC',sans-serif;background:#000;color:var(--text);-webkit-text-size-adjust:100%;font-size:16px}
+  .page{max-width:440px;margin:0 auto;background:linear-gradient(170deg,#0b1120 0%,#0f1829 30%,#0b1120 100%);position:relative;overflow:hidden;padding-bottom:40px}
+  .page::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:40px 40px;pointer-events:none;z-index:0}
+  .page::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse 300px 400px at 50% 15%,rgba(0,204,85,.12) 0%,transparent 60%),radial-gradient(ellipse 200px 300px at 85% 40%,rgba(0,204,85,.08) 0%,transparent 60%),radial-gradient(ellipse 200px 250px at 15% 70%,rgba(155,89,182,.08) 0%,transparent 60%);pointer-events:none;z-index:0}
+  .container{position:relative;z-index:2;padding:0 16px}
+  .particles-wrap{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+  .dot-p{position:absolute;width:3px;height:3px;border-radius:50%;background:var(--green);opacity:.25;animation:twinkle 5s ease-in-out infinite}
+  .dot-p:nth-child(2n){background:var(--purple);opacity:.2;animation-delay:-2s}.dot-p:nth-child(3n){background:#fff;width:2px;height:2px;opacity:.15;animation-delay:-3.5s}
+  .dot-p:nth-child(1){top:6%;left:8%}.dot-p:nth-child(2){top:18%;left:85%}.dot-p:nth-child(3){top:32%;left:12%}.dot-p:nth-child(4){top:45%;left:90%}.dot-p:nth-child(5){top:55%;left:6%}.dot-p:nth-child(6){top:68%;left:82%}.dot-p:nth-child(7){top:78%;left:15%}.dot-p:nth-child(8){top:88%;left:88%}
+  @keyframes twinkle{0%,100%{opacity:.15;transform:scale(1)}50%{opacity:.45;transform:scale(1.8)}}
+  .glow-line{position:absolute;height:1px;border-radius:1px;z-index:1;pointer-events:none}.glow-line.g1{width:160px;background:linear-gradient(90deg,transparent,rgba(0,204,85,.12),transparent);top:12%;left:3%}.glow-line.g2{width:120px;background:linear-gradient(90deg,transparent,rgba(155,89,182,.10),transparent);top:58%;right:4%}
+  .glow-ring{position:absolute;border-radius:50%;border:1px solid;z-index:1;pointer-events:none}.glow-ring.r1{width:200px;height:200px;border-color:rgba(0,204,85,.04);top:8%;right:-60px}.glow-ring.r2{width:140px;height:140px;border-color:rgba(155,89,182,.04);top:65%;left:-40px}
+  .header{text-align:center;padding:36px 20px 24px;border-bottom:1px solid rgba(0,204,85,.15);margin-bottom:24px}
+  .header .logo-row{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:16px}.header .logo-img{width:44px;height:44px;border-radius:10px}.header .brand{font-size:17px;font-weight:700;color:var(--text)}
+  .header h1{font-size:28px;font-weight:900;line-height:1.3;color:var(--green)}.header .tag{display:inline-block;margin-top:10px;padding:4px 14px;border-radius:20px;font-size:13px;color:var(--green);border:1px solid rgba(0,204,85,.25);background:rgba(0,204,85,.06)}
+  .section-title{display:flex;align-items:center;gap:10px;margin:32px 0 16px;padding-bottom:10px;border-bottom:1px solid rgba(0,204,85,.2)}.section-title .num{font-size:40px;font-weight:900;color:var(--green);font-family:'Inter','PingFang SC',sans-serif;opacity:.3;line-height:1}.section-title h2{font-size:22px;font-weight:700;color:var(--text);line-height:1.3}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px}.card.green-border{border-color:rgba(0,204,85,.2);background:rgba(0,204,85,.04)}
+  .highlight-box{background:rgba(0,204,85,.06);border:1px solid rgba(0,204,85,.18);border-radius:8px;padding:12px 14px;margin:12px 0;font-size:15px;color:var(--green);line-height:1.7}.highlight-box.purple{background:rgba(155,89,182,.06);border-color:rgba(155,89,182,.18);color:var(--purple)}
+  .divider{height:1px;background:linear-gradient(90deg,transparent,rgba(0,204,85,.2),transparent);margin:24px 0}
+  .quote-item{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px 16px;margin-bottom:10px;display:flex;gap:12px;align-items:flex-start}.quote-item .q-num{width:28px;height:28px;border-radius:50%;background:rgba(0,204,85,.15);color:var(--green);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;flex-shrink:0}.quote-item .q-text{font-size:15px;line-height:1.7;color:var(--text);font-weight:600}
+  .data-row{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:12px 14px;margin-bottom:8px}
+  .data-row .icon{font-size:22px;flex-shrink:0}.data-row .info{flex:1}.data-row .info .name{font-size:15px;font-weight:700;color:var(--text)}.data-row .info .detail{font-size:14px;color:var(--text2);line-height:1.6;margin-top:2px}
+  .warn-card{background:rgba(231,76,60,.05);border:1px solid rgba(231,76,60,.15);border-radius:10px;padding:14px;margin-bottom:10px}
+  .warn-card .warn-title{font-size:15px;font-weight:700;color:var(--red);margin-bottom:6px}.warn-card .warn-desc{font-size:14px;color:var(--text2);line-height:1.7}
+  .step-item{display:flex;gap:12px;margin-bottom:14px;align-items:flex-start}
+  .step-item .step-num{width:28px;height:28px;border-radius:50%;background:rgba(0,204,85,.15);color:var(--green);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;flex-shrink:0;margin-top:2px}
+  .step-item .step-content{flex:1}.step-item .step-content .step-title{font-size:15px;font-weight:700;color:var(--text);margin-bottom:4px}.step-item .step-content .step-desc{font-size:14px;color:var(--text2);line-height:1.7}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="particles-wrap"><div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div></div>
+  <div class="glow-line g1"></div><div class="glow-line g2"></div><div class="glow-ring r1"></div><div class="glow-ring r2"></div>
+<div class="container">
+  <div class="header">
+    <div class="logo-row"><img src="logo.png" alt="创亿商学" class="logo-img"><span class="brand">短视频IP实训陪跑班</span></div>
+    <h1>账号长期运营</h1>
+    <span class="tag">结构稳定性 + 数据防滑 + 素材库复用 + 学员互助圈</span>
+  </div>
+
+  <!-- ========== 01 核心认知 ========== -->
+  <div class="section-title"><span class="num">01</span><h2>核心认知：<span class="green">爆款决定速度，结构决定上限</span></h2></div>
+  <div class="card green-border">
+    <p style="font-size:15px;color:var(--text2);line-height:2.1">
+      30天陪跑结束后很多人账号开始掉——因为只学会了一招半式，没有建立<strong style="color:var(--green)">「稳定产出系统」</strong>。<br><br>
+      <strong style="color:var(--text)">算法不是流量分发机器——算法是信任系统。</strong>它在判断三件事：<br>
+      ① 这个账号能稳定产出吗？（会不会突然断更）<br>
+      ② 用户能持续停留吗？（内容质量稳不稳定）<br>
+      ③ 内容可预测吗？（是不是同一个赛道、同一批人群）<br><br>
+      如果今天讲流量、明天讲商业、后天卖课——算法无法归类→不会长期放量。<strong style="color:var(--green)">让算法信任你，比追爆款更重要。</strong>
+    </p>
+  </div>
+
+  <div class="highlight-box" style="text-align:center;font-size:15px">💡 追爆款像买彩票，造结构像建房子。爆款能让你快，结构能让你稳。30天之后拼的是结构。</div>
+
+  <div class="divider"></div>
+
+  <!-- ========== 02 三大支柱 ========== -->
+  <div class="section-title"><span class="num">02</span><h2>长期运营<span class="green">三大支柱</span></h2></div>
+
+  <div style="margin-bottom:18px">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+      <span style="font-size:32px;font-weight:900;color:var(--green);opacity:.3;flex-shrink:0;font-family:'Inter',sans-serif;line-height:1">1</span>
+      <span style="font-size:17px;font-weight:700;color:var(--text)">内容垂直度——让算法一眼认出你</span>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px;margin-left:40px">
+      <p style="font-size:15px;color:var(--text2);line-height:2.1">
+        不要今天拍火锅、明天拍旅游、后天拍娃。你的内容必须围绕<strong style="color:var(--green)">一个核心方向</strong>持续产出。<br><br>
+        <strong>举例：</strong>火锅店老板就讲火锅——省钱技巧、食材科普、开店故事——全围着火锅转。算法看到你每天都在讲火锅相关→自动打上「火锅赛道」标签→给你推喜欢看火锅的人。<br><br>
+        <strong style="color:var(--red)">一旦开始拍别的，标签就乱了→流量暴跌。</strong>可以换选题、换变法、换角度——但不能换赛道。
+      </p>
+    </div>
+  </div>
+
+  <div style="margin-bottom:18px">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+      <span style="font-size:32px;font-weight:900;color:var(--green);opacity:.3;flex-shrink:0;font-family:'Inter',sans-serif;line-height:1">2</span>
+      <span style="font-size:17px;font-weight:700;color:var(--text)">持续产出节奏——让算法信任你不会断</span>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px;margin-left:40px">
+      <p style="font-size:15px;color:var(--text2);line-height:2.1">
+        算法喜欢<strong style="color:var(--green)">有规律</strong>的账号。每天1条比一周7条（然后断更两周）好得多。<br><br>
+        <strong>发布频率参考：</strong><br>
+        · 冷启动期（0-1万粉）：每天1条，让算法认识你<br>
+        · 成长期（1-10万粉）：每周3-5条，保持活跃度<br>
+        · 成熟期（10万+粉）：每周2-3条，质量优先<br><br>
+        <strong>30天后节奏：</strong>号1 AI数字人号每天2条，号2 实拍号每天1条。素材库用起来——从钩子库拿开头+结构库拿框架+故事库拿案例=快速出片。<br><br>
+        <strong style="color:var(--red)">断更超过一周=之前的数据白积累了。</strong>算法会认为你不活跃→减少推荐。
+      </p>
+    </div>
+  </div>
+
+  <div style="margin-bottom:18px">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+      <span style="font-size:32px;font-weight:900;color:var(--green);opacity:.3;flex-shrink:0;font-family:'Inter',sans-serif;line-height:1">3</span>
+      <span style="font-size:17px;font-weight:700;color:var(--text)">用户画像稳定——别换目标人群</span>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px;margin-left:40px">
+      <p style="font-size:15px;color:var(--text2);line-height:2.1">
+        你前三周吸引的是爱吃火锅的本地人→第四周突然开始拍美妆教程→算法懵了→流量暴跌。<br><br>
+        <strong>一旦确定了目标人群，就不要换。</strong>可以换选题、换变法、换角度——但不能换人群。<br><br>
+        <strong>怎么保持人群稳定：</strong><br>
+        · 话题标签始终带你的行业+城市<br>
+        · 内容解决的始终是同一批人的问题<br>
+        · 人设定位不频繁变（今天老板明天打工人后天老师=混乱）
+      </p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ========== 03 数据下滑应对 ========== -->
+  <div class="section-title"><span class="num">03</span><h2>数据下滑<span class="green">怎么办</span>（3类问题+应对）</h2></div>
+  <p style="font-size:15px;color:var(--text3);margin-bottom:14px;line-height:1.8">账号做了一段时间数据开始掉——别慌，先找到原因。数据下滑90%是这3个问题：</p>
+
+  <div class="warn-card">
+    <div class="warn-title">📉 问题1：叙事框架重复（用户审美疲劳）</div>
+    <div class="warn-desc">
+      <strong>症状：</strong>完播率从50%掉到30%，评论变少，用户说「又是一样的」。<br>
+      <strong>原因：</strong>你一直在用同一种叙事结构拍视频，用户看腻了。<br>
+      <strong>怎么办：</strong>换变法！用72变里没用过的变法重新拍。比如之前一直用「数字起号法」→换成「吐槽起号法」「借物喻人起号法」。框架换了=内容新鲜感回来了。
+    </div>
+  </div>
+
+  <div class="warn-card">
+    <div class="warn-title">📉 问题2：选题同质化（和同类账号太像）</div>
+    <div class="warn-desc">
+      <strong>症状：</strong>播放量稳定但涨粉停滞，互动率下降。<br>
+      <strong>原因：</strong>你的选题和同行一模一样，用户觉得「看谁都差不多」。<br>
+      <strong>怎么办：</strong>回到差异化定位，找独特切入角度。同样的「火锅」话题→别人讲味道，你讲成本；别人讲菜品，你讲开店踩坑。角度不同=内容不同。
+    </div>
+  </div>
+
+  <div class="warn-card">
+    <div class="warn-title">📉 问题3：人设模糊（用户不知道你是谁）</div>
+    <div class="warn-desc">
+      <strong>症状：</strong>粉丝不互动、不关注、不记得你。转粉率低。<br>
+      <strong>原因：</strong>你今天讲干货、明天讲段子、后天讲情感——用户不知道你到底是干什么的。<br>
+      <strong>怎么办：</strong>发布核心人设内容，重新锚定。用固定开场白、固定金句、固定内容类型让用户记住你。人设=用户想到某个话题就想到你。
+    </div>
+  </div>
+
+  <div class="highlight-box" style="font-size:14px">
+    🔍 <strong>数据下滑自检清单：</strong><br>
+    ① 完播率掉了→叙事框架疲劳→换变法<br>
+    ② 涨粉停滞→选题同质化→找差异化角度<br>
+    ③ 互动率掉了→人设模糊→强化人设记忆点<br>
+    ④ 全部都掉了→可能是赛道问题→考虑换人群/换方向
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ========== 04 素材库复用 ========== -->
+  <div class="section-title"><span class="num">04</span><h2>素材库<span class="green">复用系统</span></h2></div>
+  <p style="font-size:15px;color:var(--text3);margin-bottom:14px;line-height:1.8">30天陪跑积累了大量素材——不要丢，要系统化复用。素材库是你最值钱的内容资产。</p>
+
+  <span style="font-size:13px;color:var(--text3);margin-bottom:8px;display:block">📚 9类素材库（持续更新）</span>
+  <div class="data-row">
+    <span class="icon">🪝</span>
+    <div class="info">
+      <div class="name">开篇钩子库</div>
+      <div class="detail">有效的开头句式。完播率>50%的视频开头存进来。下次拍视频直接从里面选一个用。</div>
+    </div>
+  </div>
+  <div class="data-row">
+    <span class="icon">🏗️</span>
+    <div class="info">
+      <div class="name">脚本结构库</div>
+      <div class="detail">爆过的文案结构。哪条视频爆了→拆解它的结构（开头→中间→结尾）→存进来→下次用相同结构拍新选题。</div>
+    </div>
+  </div>
+  <div class="data-row">
+    <span class="icon">🎬</span>
+    <div class="info">
+      <div class="name">呈现形式库</div>
+      <div class="detail">好的呈现方式（口播/VLOG/反差/访谈）。哪种形式数据好→多用。数据差的→淘汰。</div>
+    </div>
+  </div>
+  <div class="data-row">
+    <span class="icon">📖</span>
+    <div class="info">
+      <div class="name">故事素材库</div>
+      <div class="detail">可复用的真实故事。你自己的经历、客户的故事、行业案例。有故事的视频比纯干货更吸引人。</div>
+    </div>
+  </div>
+  <div class="data-row">
+    <span class="icon">💡</span>
+    <div class="info">
+      <div class="name">观点素材库</div>
+      <div class="detail">你的核心观点/金句。有争议的观点、扎心的总结。用户截图转发的=好观点，存进来。</div>
+    </div>
+  </div>
+  <div class="data-row">
+    <span class="icon">🔥</span>
+    <div class="info">
+      <div class="name">爆款文案库</div>
+      <div class="detail">爆过的完整文案。播放>平时10倍的视频→整条文案存进来→下次用相同结构+新选题再做一条。</div>
+    </div>
+  </div>
+  <div class="data-row">
+    <span class="icon">🎵</span>
+    <div class="info">
+      <div class="name">背景音乐库</div>
+      <div class="detail">好用的BGM。哪条视频用了某个BGM数据好→存进来→下次同类内容继续用。</div>
+    </div>
+  </div>
+  <div class="data-row">
+    <span class="icon">🤖</span>
+    <div class="info">
+      <div class="name">AI高赞视频库</div>
+      <div class="detail">号1 AI做同款的高赞视频。找爆款时存下来的参考视频。下次做同款直接从里面选。</div>
+    </div>
+  </div>
+  <div class="data-row">
+    <span class="icon">👤</span>
+    <div class="info">
+      <div class="name">同行高赞视频库</div>
+      <div class="detail">同行爆款参考。刷到同行好视频→存进来→拆解学习。不是抄，是学结构和角度。</div>
+    </div>
+  </div>
+
+  <div style="height:8px"></div>
+  <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px;margin-bottom:14px">
+    <div style="font-size:15px;font-weight:700;color:var(--green);margin-bottom:8px">🔧 素材库怎么用（快速出片公式）</div>
+    <div style="font-size:14px;color:var(--text2);line-height:1.9">
+      <strong>从钩子库</strong>选一个开头句式<br>
+      ＋<strong>从结构库</strong>选一个爆过的文案框架<br>
+      ＋<strong>从故事库</strong>选一个真实案例<br>
+      ＋<strong>新选题</strong>（从五级星图里选一个没拍过的）<br>
+      ＝ 下一条视频。10分钟就能出一条脚本。<br><br>
+      <strong style="color:var(--orange)">关键：</strong>不是照抄旧内容——是复用结构、换新选题。结构不变，内容是新的。
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ========== 05 爆款复盘机制 ========== -->
+  <div class="section-title"><span class="num">05</span><h2>爆款<span class="green">复盘机制</span>（持续复制爆款）</h2></div>
+
+  <span style="font-size:13px;color:var(--text3);margin-bottom:8px;display-block">🎯 什么是爆款</span>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px">
+    <div style="background:rgba(0,204,85,.06);border:1px solid rgba(0,204,85,.15);border-radius:10px;padding:14px;text-align:center">
+      <div style="font-size:15px;font-weight:700;color:var(--green);margin-bottom:4px">小爆（3条达标）</div>
+      <div style="font-size:14px;color:var(--text3);line-height:1.6">播放>平时10倍<br>涨粉>平时5倍<br>评论有大量长评</div>
+    </div>
+    <div style="background:rgba(0,204,85,.06);border:1px solid rgba(0,204,85,.15);border-radius:10px;padding:14px;text-align:center">
+      <div style="font-size:15px;font-weight:700;color:var(--green);margin-bottom:4px">大爆（4条全达）</div>
+      <div style="font-size:14px;color:var(--text3);line-height:1.6">播放>平时10倍<br>涨粉>平时5倍<br>有长评+有转发</div>
+    </div>
+  </div>
+
+  <span style="font-size:13px;color:var(--text3);margin-bottom:8px;display-block">🔄 爆款复盘四步</span>
+  <div class="step-item">
+    <span class="step-num">1</span>
+    <div class="step-content">
+      <div class="step-title">拆解结构</div>
+      <div class="step-desc">这条为什么爆？哪个环节起了关键作用？是开头钩子好？选题精准？情绪到位？案例真实？BGM加分？逐项拆解。</div>
+    </div>
+  </div>
+  <div class="step-item">
+    <span class="step-num">2</span>
+    <div class="step-content">
+      <div class="step-title">提取规律</div>
+      <div class="step-desc">哪些元素是可复制的？开头句式、选题角度、呈现形式、变法——提取出来存进素材库。</div>
+    </div>
+  </div>
+  <div class="step-item">
+    <span class="step-num">3</span>
+    <div class="step-content">
+      <div class="step-title">更新素材库</div>
+      <div class="step-desc">把有效元素存入对应素材库（钩子库/结构库/故事库/爆款文案库）。不存=白爆了。</div>
+    </div>
+  </div>
+  <div class="step-item">
+    <span class="step-num">4</span>
+    <div class="step-content">
+      <div class="step-title">复制结构做新视频</div>
+      <div class="step-desc">用相同结构+新选题再做一条。不是照抄内容，是复用结构。比如爆了一条「3个XX的坑」→下一条拍「5个XX的坑」。</div>
+    </div>
+  </div>
+
+  <div class="highlight-box purple" style="font-size:14px">⚠️ <strong>没爆的视频也要复盘：</strong>完播<38%=开头有问题→优化钩子。互动<12%=无共鸣→换选题/换变法。完播高不涨粉=结尾无引导→加关注引导。对比爆的和没爆的，找差异。</div>
+
+  <div class="divider"></div>
+
+  <!-- ========== 06 学员互助圈 ========== -->
+  <div class="section-title"><span class="num">06</span><h2>学员<span class="green">互助圈</span>（结业后持续陪跑）</h2></div>
+  <p style="font-size:15px;color:var(--text3);margin-bottom:14px;line-height:1.8">30天陪跑结束了，但你的账号还要继续做。一个人走容易放弃，一群人走才能走得远。</p>
+
+  <span style="font-size:13px;color:var(--text3);margin-bottom:8px;display-block">🤝 互助圈做什么</span>
+  <div class="data-row">
+    <span class="icon">👍</span>
+    <div class="info">
+      <div class="name">每天互相点赞评论</div>
+      <div class="detail">同期学员互相点赞+评论。互动率提升→算法判定内容有价值→推更多流量。你帮我、我帮你=双赢。</div>
+    </div>
+  </div>
+  <div class="data-row">
+    <span class="icon">💬</span>
+    <div class="info">
+      <div class="name">互相提建议（外部视角）</div>
+      <div class="detail">你自己看自己的视频看不出问题。让同学看→「你这个开头太慢了」「你这个封面不醒目」→外部视角比自己看靠谱。</div>
+    </div>
+  </div>
+  <div class="data-row">
+    <span class="icon">📅</span>
+    <div class="info">
+      <div class="name">持续打卡（保持输出节奏）</div>
+      <div class="detail">每天在群里发今天的视频链接。有人监督=不容易断更。看到别人在发=自己也有动力。</div>
+    </div>
+  </div>
+  <div class="data-row">
+    <span class="icon">🎓</span>
+    <div class="info">
+      <div class="name">老师定期答疑（30天答疑期）</div>
+      <div class="detail">结业后30天内，陪跑老师在群里定期答疑。有问题随时问。30天后互助圈继续运营，老师不定期回访。</div>
+    </div>
+  </div>
+
+  <div class="highlight-box" style="font-size:14px;text-align:center">💡 <strong>互助圈核心：</strong>不是加了群就完了——是每天真的在互动、在打卡、在互相帮助。坚持30天=习惯养成，以后自己也能持续做。</div>
+
+  <div class="divider"></div>
+
+  <!-- ========== 07 长期运营节奏 ========== -->
+  <div class="section-title"><span class="num">07</span><h2>长期运营<span class="green">每日/每周节奏</span></h2></div>
+
+  <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px;margin-bottom:14px">
+    <div style="font-size:15px;font-weight:700;color:var(--green);margin-bottom:8px">📅 每天做什么</div>
+    <div style="font-size:14px;color:var(--text2);line-height:2">
+      ① <strong>发视频</strong>——按节奏发布（每天1-2条）<br>
+      ② <strong>刷同行</strong>——花15分钟刷同赛道爆款，存进素材库<br>
+      ③ <strong>回评论</strong>——回复用户评论，提升互动率<br>
+      ④ <strong>看数据</strong>——下播/发布后看数据，标记需要优化的
+    </div>
+  </div>
+
+  <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px;margin-bottom:14px">
+    <div style="font-size:15px;font-weight:700;color:var(--green);margin-bottom:8px">📅 每周做什么</div>
+    <div style="font-size:14px;color:var(--text2);line-height:2">
+      ① <strong>周复盘</strong>——本周数据汇总，哪类内容好/差，下周调整方向<br>
+      ② <strong>素材库更新</strong>——本周有效元素存进9类素材库<br>
+      ③ <strong>爆款复盘</strong>——有爆的就四步复制，没爆的分析为什么<br>
+      ④ <strong>选题补充</strong>——用五级星图+六角度补充下周选题池
+    </div>
+  </div>
+
+  <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px;margin-bottom:14px">
+    <div style="font-size:15px;font-weight:700;color:var(--green);margin-bottom:8px">📅 每月做什么</div>
+    <div style="font-size:14px;color:var(--text2);line-height:2">
+      ① <strong>月度总复盘</strong>——30天数据总盘点，哪类内容最有效<br>
+      ② <strong>配比校准</strong>——数据好的类型加比例，差的减比例<br>
+      ③ <strong>变法校准</strong>——淘汰无效变法，加大有效变法<br>
+      ④ <strong>下月目标</strong>——内容端（拍多少条）、数据端（涨粉多少）、变现端（赚多少）
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ========== 08 说人话 ========== -->
+  <div style="background:rgba(155,89,182,.06);border:1px solid rgba(155,89,182,.2);border-radius:12px;padding:16px;margin:16px 0">
+    <h4 style="font-size:16px;font-weight:700;color:var(--purple);margin-bottom:10px">💬 长期运营到底在干什么？</h4>
+    <p style="font-size:14px;color:var(--text2);line-height:2">
+      30天陪跑教你的是<strong>怎么从0到1</strong>——起号、做内容、搞流量、变现。<br><br>
+      长期运营教你的是<strong>怎么从1到100</strong>——持续做、不掉队、越做越好。<br><br>
+      核心就三件事：<br>
+      <strong style="color:var(--text)">① 不断更</strong>——固定频率发布，让算法信任你<br>
+      <strong style="color:var(--text)">② 不跑偏</strong>——内容垂直、人群稳定，让算法认识你<br>
+      <strong style="color:var(--text)">③ 不重复</strong>——素材库复用+爆款复制+变法轮换，让内容保鲜<br><br>
+      你不需要每天想「今天拍什么」——素材库里选一个钩子、选一个结构、选一个故事，10分钟出一条脚本。这就是系统的威力。<br><br>
+      <strong style="color:var(--text)">30天之后，拼的不是谁更努力，是谁有系统。</strong>
+    </p>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ========== 09 核心金句 ========== -->
+  <div class="section-title"><span class="num">09</span><h2>核心金句</h2></div>
+  <div class="quote-item"><span class="q-num">1</span><span class="q-text">算法是信任系统——它在判断你能不能稳定产出、用户能不能持续停留、内容可不可预测。</span></div>
+  <div class="quote-item"><span class="q-num">2</span><span class="q-text">爆款决定速度，结构决定上限。30天之后拼的是结构，不是运气。</span></div>
+  <div class="quote-item"><span class="q-num">3</span><span class="q-text">素材库用起来——从钩子库+结构库+故事库各取一个元素=10分钟出一条脚本。</span></div>
+  <div class="quote-item"><span class="q-num">4</span><span class="q-text">数据下滑90%是3个问题：叙事疲劳→换变法，选题同质→找差异，人设模糊→强记忆。</span></div>
+  <div class="quote-item"><span class="q-num">5</span><span class="q-text">爆了要四步复盘：拆结构→提规律→存素材库→复制结构做新视频。不存=白爆了。</span></div>
+  <div class="quote-item"><span class="q-num">6</span><span class="q-text">断更超过一周=数据白积累。每天1条比一周7条然后断更两周好100倍。</span></div>
+  <div class="quote-item"><span class="q-num">7</span><span class="q-text">30天之后，拼的不是谁更努力，是谁有系统。</span></div>
+</div></div></body></html>

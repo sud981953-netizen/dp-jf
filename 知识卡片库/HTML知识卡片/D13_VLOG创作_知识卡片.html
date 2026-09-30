@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VLOG创作 · 知识卡片</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  :root{--green:#00cc55;--green2:#00e060;--purple:#9b59b6;--bg:#0b1120;--card:rgba(255,255,255,0.05);--text:#fff;--text2:#c8d6e5;--text3:#7f8c9b;--border:rgba(255,255,255,0.08)}
+  body{font-family:'Microsoft YaHei','PingFang SC',sans-serif;background:#000;color:var(--text);-webkit-text-size-adjust:100%}
+  .page{max-width:440px;margin:0 auto;background:linear-gradient(170deg,#0b1120 0%,#0f1829 30%,#0b1120 100%);position:relative;overflow:hidden;padding-bottom:40px}
+  .page::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:40px 40px;pointer-events:none;z-index:0}
+  .page::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse 300px 400px at 50% 15%,rgba(0,204,85,.12) 0%,transparent 60%),radial-gradient(ellipse 200px 300px at 85% 40%,rgba(0,204,85,.08) 0%,transparent 60%),radial-gradient(ellipse 200px 250px at 15% 70%,rgba(155,89,182,.08) 0%,transparent 60%);pointer-events:none;z-index:0}
+  .container{position:relative;z-index:2;padding:0 16px}
+  .particles-wrap{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+  .dot-p{position:absolute;width:3px;height:3px;border-radius:50%;background:var(--green);opacity:.25;animation:twinkle 5s ease-in-out infinite}
+  .dot-p:nth-child(2n){background:var(--purple);opacity:.2;animation-delay:-2s}
+  .dot-p:nth-child(3n){background:#fff;width:2px;height:2px;opacity:.15;animation-delay:-3.5s}
+  .dot-p:nth-child(1){top:6%;left:8%}.dot-p:nth-child(2){top:18%;left:85%}.dot-p:nth-child(3){top:32%;left:12%}.dot-p:nth-child(4){top:45%;left:90%}.dot-p:nth-child(5){top:55%;left:6%}.dot-p:nth-child(6){top:68%;left:82%}.dot-p:nth-child(7){top:78%;left:15%}.dot-p:nth-child(8){top:88%;left:88%}
+  @keyframes twinkle{0%,100%{opacity:.15;transform:scale(1)}50%{opacity:.45;transform:scale(1.8)}}
+  .glow-line{position:absolute;height:1px;border-radius:1px;z-index:1;pointer-events:none}
+  .glow-line.g1{width:160px;background:linear-gradient(90deg,transparent,rgba(0,204,85,.12),transparent);top:12%;left:3%}
+  .glow-line.g2{width:120px;background:linear-gradient(90deg,transparent,rgba(155,89,182,.10),transparent);top:58%;right:4%}
+  .glow-ring{position:absolute;border-radius:50%;border:1px solid;z-index:1;pointer-events:none}
+  .glow-ring.r1{width:200px;height:200px;border-color:rgba(0,204,85,.04);top:8%;right:-60px}
+  .glow-ring.r2{width:140px;height:140px;border-color:rgba(155,89,182,.04);top:65%;left:-40px}
+  .header{text-align:center;padding:36px 20px 24px;border-bottom:1px solid rgba(0,204,85,.15);margin-bottom:24px}
+  .header .logo-row{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:16px}
+  .header .logo-img{width:44px;height:44px;border-radius:10px}
+  .header .brand{font-size:17px;font-weight:700;color:var(--text);letter-spacing:1px}
+  .header h1{font-size:26px;font-weight:900;line-height:1.3;color:var(--green)}
+  .header .tag{display:inline-block;margin-top:10px;padding:4px 14px;border-radius:20px;font-size:12px;color:var(--green);border:1px solid rgba(0,204,85,.25);background:rgba(0,204,85,.06)}
+  .section-title{display:flex;align-items:center;gap:10px;margin:32px 0 16px;padding-bottom:10px;border-bottom:1px solid rgba(0,204,85,.2)}
+  .section-title .num{font-size:36px;font-weight:900;color:var(--green);font-family:'Inter','PingFang SC',sans-serif;opacity:.3;line-height:1}
+  .section-title h2{font-size:20px;font-weight:700;color:var(--text);line-height:1.3}
+  .sub-title{font-size:16px;font-weight:700;color:var(--green);margin:20px 0 10px;padding-left:12px;border-left:3px solid var(--green);line-height:1.4}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px}
+  .card.green-border{border-color:rgba(0,204,85,.2);background:rgba(0,204,85,.04)}
+  .tree{list-style:none;padding:0;font-size:14px;line-height:1.8}
+  .tree li{padding:2px 0 2px 20px;position:relative;color:var(--text2)}
+  .tree li::before{content:'';position:absolute;left:6px;top:11px;width:6px;height:6px;border-radius:50%;background:var(--green);opacity:.5}
+  .tree li.level1{font-weight:700;color:var(--text);padding-left:0}.tree li.level1::before{display:none}
+  .tree li.level2{padding-left:20px}.tree li.level3{padding-left:40px}
+  .flow{display:flex;flex-direction:column;align-items:center;gap:4px;padding:12px 0;font-size:14px;color:var(--text2)}
+  .flow .step{background:rgba(0,204,85,.08);border:1px solid rgba(0,204,85,.15);border-radius:8px;padding:8px 16px;text-align:center;width:100%;font-weight:600}
+  .flow .arrow{color:var(--green);font-size:18px}
+  .compare{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0}
+  .compare .col{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px}
+  .compare .col h4{font-size:14px;font-weight:700;margin-bottom:8px;text-align:center}
+  .compare .col.wrong h4{color:#e74c3c}.compare .col.right h4{color:var(--green)}
+  .compare .col li{font-size:13px;color:var(--text2);line-height:1.7;list-style:none;padding-left:0;text-align:center}
+  .quote-item{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px 16px;margin-bottom:10px;display:flex;gap:12px;align-items:flex-start}
+  .quote-item .q-num{width:28px;height:28px;border-radius:50%;background:rgba(0,204,85,.15);color:var(--green);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;flex-shrink:0}
+  .quote-item .q-text{font-size:14px;line-height:1.6;color:var(--text);font-weight:600}
+  .formula{background:rgba(0,204,85,.08);border:1px solid rgba(0,204,85,.25);border-radius:10px;padding:12px 16px;margin:10px 0;text-align:center;font-size:15px;font-weight:700;color:var(--green);line-height:1.6}
+  .step-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;position:relative;overflow:hidden}
+  .step-card .step-tag{display:inline-block;padding:2px 10px;border-radius:10px;font-size:11px;font-weight:700;color:#000;background:var(--green);margin-bottom:8px}
+  .step-card h4{font-size:15px;font-weight:700;margin-bottom:8px;color:var(--text)}
+  .step-card .step-content{font-size:13px;color:var(--text2);line-height:1.7}
+  .sub-method{background:rgba(0,204,85,.04);border:1px dashed rgba(0,204,85,.2);border-radius:10px;padding:14px;margin:10px 0}
+  .sub-method h5{font-size:14px;font-weight:700;color:var(--green);margin-bottom:6px}
+  .highlight-box{background:rgba(0,204,85,.06);border:1px solid rgba(0,204,85,.18);border-radius:8px;padding:10px 14px;margin:10px 0;font-size:13px;color:var(--green);line-height:1.6}
+  .divider{height:1px;background:linear-gradient(90deg,transparent,rgba(0,204,85,.2),transparent);margin:20px 0}
+  .human-talk{background:rgba(155,89,182,.06);border:1px solid rgba(155,89,182,.2);border-radius:12px;padding:16px;margin:16px 0}
+  .human-talk h4{font-size:15px;font-weight:700;color:var(--purple);margin-bottom:10px}
+  .human-talk p{font-size:13px;color:var(--text2);line-height:1.8}
+  .err-table{width:100%;font-size:12px;border-collapse:collapse;margin:10px 0}
+  .err-table td{padding:8px 10px;border-bottom:1px solid var(--border);color:var(--text2);line-height:1.5;vertical-align:top}
+  .err-table td:first-child{color:#e74c3c;width:40%}.err-table td:last-child{color:var(--green);width:60%}
+  .err-table tr:first-child td{font-weight:700;color:var(--text);font-size:13px}
+  .type-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px;margin-bottom:10px}
+  .type-card .type-num{display:inline-block;padding:2px 8px;border-radius:8px;font-size:11px;font-weight:700;color:#000;background:var(--green);margin-bottom:6px}
+  .type-card h4{font-size:14px;font-weight:700;color:var(--text);margin-bottom:4px}
+  .type-card .type-desc{font-size:12px;color:var(--text2);line-height:1.7}
+  /* ===== 字号整体放大 ===== */
+  body{font-size:17px}
+  .header .brand{font-size:18px}
+  .header h1{font-size:30px}
+  .header .tag{font-size:14px}
+  .section-title .num{font-size:40px}
+  .section-title h2{font-size:24px}
+  .sub-title{font-size:18px}
+  .tree{font-size:16px}
+  .flow{font-size:16px}
+  .compare .col h4{font-size:16px}
+  .compare .col li{font-size:15px}
+  .quote-item .q-text{font-size:16px}
+  .formula{font-size:17px}
+  .step-card .step-tag{font-size:13px}
+  .step-card h4{font-size:17px}
+  .step-card .step-content{font-size:15px}
+  .sub-method h5{font-size:16px}
+  .sub-method .step-content{font-size:15px}
+  .highlight-box{font-size:15px}
+  .human-talk h4{font-size:17px}
+  .human-talk p{font-size:15px}
+  .err-table td{font-size:14px}
+  .err-table tr:first-child td{font-size:15px}
+  .type-card .type-num{font-size:13px}
+  .type-card h4{font-size:16px}
+  .type-card .type-desc{font-size:14px}
+  .dim-tag{font-size:14px}
+  .triple .elem .el{font-size:15px}
+  .triple .elem .desc{font-size:12px}
+  .metric-card .m-name{font-size:15px}
+  .metric-card .m-score{font-size:13px}
+  .ifelse-box .if{font-size:15px}
+  .ifelse-box .then{font-size:14px}
+  [style*="font-size:13px"]{font-size:15px !important}
+  [style*="font-size:12px"]{font-size:14px !important}
+  [style*="font-size:11px"]{font-size:14px !important}
+  [style*="font-size:10px"]{font-size:12px !important}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="particles-wrap"><div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div></div>
+  <div class="glow-line g1"></div><div class="glow-line g2"></div><div class="glow-ring r1"></div><div class="glow-ring r2"></div>
+<div class="container">
+
+  <div class="header">
+    <div class="logo-row"><img src="logo.png" alt="创亿商学" class="logo-img"><span class="brand">短视频IP实训陪跑班</span></div>
+    <h1>VLOG创作指南</h1>
+    <span class="tag">📖 3大VLOG类型 + 内容框架 + 拍摄要点 + 选型建议</span>
+  </div>
+
+  <div class="section-title"><span class="num">01</span><h2>VLOG vs 口播：<span class="green">本质区别</span></h2></div>
+  <div class="card green-border">
+    <p style="font-size:15px;color:var(--text2);line-height:1.9;margin-bottom:8px">
+      <strong style="color:var(--text)">口播</strong> = 面对镜头说（固定位置，镜头是「听众」）
+    </p>
+    <p style="font-size:15px;color:var(--text2);line-height:1.9;margin-bottom:12px">
+      <strong style="color:var(--text)">VLOG</strong> = 边走边拍边说（移动场景，镜头是「眼睛」）
+    </p>
+    <p style="font-size:15px;color:var(--text2);line-height:1.9">
+      VLOG不是随便拍日常，而是<strong>用画面+声音讲一个有代入感的故事</strong>。用户看VLOG的时候，感觉自己在「经历」你做的事，不是「听」你讲。这种「第一人称代入感」是VLOG胜过口播的地方——但也更难拍好。
+    </p>
+  </div>
+
+  <div class="section-title"><span class="num">02</span><h2>3大VLOG类型<span class="green">详解</span></h2></div>
+
+  <div class="type-card">
+    <span class="type-num">类型1</span>
+    <h4>🎙️ 现场原声型 — 真实感MAX</h4>
+    <div class="type-desc">
+      <strong style="color:var(--text)">是什么：</strong><br>
+      全程使用现场收音，不做后期配音。观众听到环境音、对话声、操作声——所见即所听。<br><br>
+      <strong style="color:var(--text)">为什么有效：</strong><br>
+      人的大脑对「真实声音」有天然的信任感。后期配音再流畅，潜意识里也会觉得「这是加工过的」；而现场嘈杂的对话、操作的声响，反而让人感觉「这是真的在发生」。<br><br>
+      <strong style="color:var(--text)">怎么用：</strong><br>
+      必须用外接麦克风（领夹麦几十块就够），现场收音核心是「对话要清晰」。环境音可以有（这是真实感），但核心对话不能被淹没。<br><br>
+      <strong style="color:var(--text)">多行业范例：</strong><br>
+      <span style="color:var(--green)">· 美业：</span>「今天约了个客户做祛斑，你看她进来的时候脸是红的…（跟客户对话）你之前自己用过什么产品？」<br>
+      <span style="color:var(--green)">· 餐饮：</span>「早上5点的菜市场什么样？带上麦克风跟我走…（和菜贩砍价）多少钱一斤？便宜点！」<br>
+      <span style="color:var(--green)">· 服装：</span>「这批新货刚到了，还没拆，带你们第一时间看…（拆箱的声音）这个面料好舒服…」<br>
+      <span style="color:var(--green)">· 教培：</span>上课前学生进教室的真实场景+闲聊——「今天准备讲一个你们最怕的题型」
+    </div>
+  </div>
+
+  <div class="type-card">
+    <span class="type-num">类型2</span>
+    <h4>🎬 后期配音型 — 叙事流畅度MAX</h4>
+    <div class="type-desc">
+      <strong style="color:var(--text)">是什么：</strong><br>
+      画面拍摄完成后，通过后期录制旁白来叙述。画面和声音分开制作，可以反复打磨配音质量。<br><br>
+      <strong style="color:var(--text)">为什么有效：</strong><br>
+      后期配音让你可以「先确定说什么，再匹配画面」——叙事逻辑不会被现场干扰打断。适合需要深度讲解但现场太吵、或者自己不善即兴表达的创作者。<br><br>
+      <strong style="color:var(--text)">怎么用：</strong><br>
+      先写文案→录配音→剪辑画面同步。注意：配音不要有「念稿感」——录的时候站起来、用手势，想象在跟朋友说话。保留环境音作为底噪，不要让「绝对安静」的配音破坏真实感。<br><br>
+      <strong style="color:var(--text)">多行业范例：</strong><br>
+      <span style="color:var(--green)">· 美业：</span>拍操作过程+后期配音讲解每步在做什么和为什么——「现在涂的是修复精华，为什么最后一步才用？因为…」<br>
+      <span style="color:var(--green)">· 餐饮：</span>拍切菜/炒菜画面+后期配音讲这道菜的核心技巧——「很多人炒肉丝直接下锅，大错特错。这一步才是关键」<br>
+      <span style="color:var(--green)">· 教培：</span>拍教学场景+后期配音提炼核心观点——「刚才那个学生犯的错，90%的考生都会犯」
+    </div>
+  </div>
+
+  <div class="type-card">
+    <span class="type-num">类型3</span>
+    <h4>🔄 交替型 — 专业感MAX</h4>
+    <div class="type-desc">
+      <strong style="color:var(--text)">是什么：</strong><br>
+      混合使用现场原声和后期配音。关键时刻用现场原声（情绪爆发/重要对话），过渡段落用后期配音（背景交代/内心独白/总结升华）。<br><br>
+      <strong style="color:var(--text)">为什么有效：</strong><br>
+      交替型最像纪录片的质感——用现场原声制造「在场感」，用后期配音保证叙事清晰。观众既感到身临其境，又不会迷失在嘈杂的信息里。<br><br>
+      <strong style="color:var(--text)">怎么用：</strong><br>
+      关键原则：现场原声用于「高光时刻」（对话/冲突/有趣的反应），后期配音用于「过渡时刻」（说背景/做总结/表达内心）。切换点要自然——比如从现场嘈杂声→音量渐低→配音淡入。<br><br>
+      <strong style="color:var(--text)">多行业范例：</strong><br>
+      <span style="color:var(--green)">· 美业：</span>客户进来时现场对话（原声）→ 操作过程配音讲解（后期）→ 客户做完后惊叹「真的淡了好多！」（原声）→ 最后总结感悟（后期）<br>
+      <span style="color:var(--green)">· 餐饮：</span>后厨出菜混乱现场（原声）→ 「这就是高峰期后厨的真实状态」（后期）→ 厨师喊「出菜！」（原声）→ 结尾讲餐饮人的不易（后期）
+    </div>
+  </div>
+
+  <div class="highlight-box">💡 <strong>选型建议：</strong>不善即兴表达但文案能力强 → 后期配音型 / 现场互动多表达自然 → 现场原声型 / 想做出质感 → 交替型。新手建议从后期配音开始，门槛最低。</div>
+
+  <div class="divider"></div>
+
+  <div class="section-title"><span class="num">03</span><h2>VLOG<span class="green">内容框架</span>（4段法）</h2></div>
+
+  <div class="flow">
+    <div class="step"><strong>开头</strong><br><span style="font-size:12px;font-weight:400;color:var(--text3)">交代今天要做/去哪里/发生了什么（3-5秒）</span></div>
+    <div class="arrow">↓</div>
+    <div class="step"><strong>过程</strong><br><span style="font-size:12px;font-weight:400;color:var(--text3)">展示真实过程，有起伏和细节（20-40秒）</span></div>
+    <div class="arrow">↓</div>
+    <div class="step"><strong>高潮</strong><br><span style="font-size:12px;font-weight:400;color:var(--text3)">最精彩/最有冲击力的部分（5-10秒）</span></div>
+    <div class="arrow">↓</div>
+    <div class="step" style="border-color:rgba(0,204,85,.4);background:rgba(0,204,85,.14)"><strong>结尾</strong><br><span style="font-size:12px;font-weight:400;color:var(--green)">总结感悟/留悬念（5-10秒）</span></div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section-title"><span class="num">04</span><h2>VLOG拍摄<span class="green">5大实操要点</span></h2></div>
+  <div class="card">
+    <div style="margin-bottom:14px">
+      <div style="font-size:16px;font-weight:700;color:var(--text);margin-bottom:4px">📷 第一视角拍摄</div>
+      <div style="font-size:15px;color:var(--text2);line-height:1.7">镜头就是观众的眼睛。你看到什么，镜头就拍什么。让观众有「我在经历这件事」的代入感。</div>
+    </div>
+    <div style="margin-bottom:14px">
+      <div style="font-size:16px;font-weight:700;color:var(--text);margin-bottom:4px">🎥 画面稳定</div>
+      <div style="font-size:15px;color:var(--text2);line-height:1.7">用稳定器或双手持机。晃动的画面3秒就会让人头晕。手机自带防抖够用，前提是双手持机。</div>
+    </div>
+    <div style="margin-bottom:14px">
+      <div style="font-size:16px;font-weight:700;color:var(--text);margin-bottom:4px">🎤 现场原声要清晰</div>
+      <div style="font-size:15px;color:var(--text2);line-height:1.7">领夹麦几十块，效果比手机自带好10倍。拍之前试录10秒检查收音。</div>
+    </div>
+    <div style="margin-bottom:14px">
+      <div style="font-size:16px;font-weight:700;color:var(--text);margin-bottom:4px">📖 有故事线或主题</div>
+      <div style="font-size:15px;color:var(--text2);line-height:1.7">VLOG不是「今天干了啥」的流水账。必须有一个明确的故事线——「我今天要解决一个问题」「我今天要揭示一个真相」。</div>
+    </div>
+    <div>
+      <div style="font-size:16px;font-weight:700;color:var(--text);margin-bottom:4px">⏱️ 时长30-60秒</div>
+      <div style="font-size:15px;color:var(--text2);line-height:1.7">VLOG的信息密度比口播低（因为需要画面叙事），所以时长太长用户会失去耐心。</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section-title"><span class="num">05</span><h2>常见错误对照</h2></div>
+  <div class="card"><table class="err-table">
+    <tr><td>❌ 错误做法</td><td>✅ 正确做法</td></tr>
+    <tr><td>VLOG当流水账拍：<br>"今天起床→刷牙→上班→下班"</td><td>VLOG有故事线：<br>"今天店里来了一个客户，她的问题90%的人都有"→围绕这个展开</td></tr>
+    <tr><td>现场原声型不用麦克风：<br>手机自带收音，环境噪音盖过人声</td><td>外接领夹麦：<br>几十块一个，核心对话必须清晰。环境和人声的比例=3:7</td></tr>
+    <tr><td>后期配音像念稿：<br>语调平板、书面语堆砌</td><td>站起来录音，用手势，像跟朋友说话：<br>口语化、停顿、语气词都保留</td></tr>
+    <tr><td>画面不稳：<br>单手拿手机边走边拍，画面抖动严重</td><td>双手持机+稳定器：<br>或者用手机稳定器（大疆OM等），便宜的好几百也能买</td></tr>
+    <tr><td>全程后期配音，画面和声音脱节：<br>嘴里说的和画面展示的对不上</td><td>先写文案→再拍画面→最后剪辑同步：<br>说到什么，画面就展示什么</td></tr>
+  </table></div>
+
+  <div class="divider"></div>
+
+  <div class="human-talk"><h4>💬 VLOG 和口播，怎么选？</h4>
+    <p>
+      <strong style="color:var(--text)">口播</strong> = 你坐在那讲道理。适合干货、观点、方法论——用户需要「听」的内容。<br><br>
+      <strong style="color:var(--text)">VLOG</strong> = 你带用户去「经历」一件事。适合展示、记录、体验——用户需要「看」的内容。
+    </p>
+    <p style="margin-top:12px">
+      <strong style="color:var(--green)">举个例子：</strong><br>
+      讲「怎么判断敏感肌」→ 口播就够了，坐下来3分钟讲清楚。<br>
+      展示「今天给客户做了一次祛斑全过程」→ VLOG，边走边拍，让用户看到真实的过程和结果。
+    </p>
+    <p style="margin-top:12px">
+      新手最容易犯的错：用VLOG的形式拍口播的内容——边走边说一大堆干货，用户脑袋跟不上。<br><br>
+      记住：<strong>VLOG的画面是第一语言，文字是辅助。口播的文字是第一语言，画面是辅助。</strong>
+    </p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section-title"><span class="num">06</span><h2>核心金句</h2></div>
+  <div class="quote-item"><span class="q-num">1</span><span class="q-text">VLOG不是随便拍日常，是用画面+声音讲一个有代入感的故事。</span></div>
+  <div class="quote-item"><span class="q-num">2</span><span class="q-text">现场原声用于高光时刻，后期配音用于过渡和解说。交替型最接近纪录片的质感。</span></div>
+  <div class="quote-item"><span class="q-num">3</span><span class="q-text">VLOG的第一语言是画面，口播的第一语言是文字。不要用VLOG的形式拍口播的内容。</span></div>
+  <div class="quote-item"><span class="q-num">4</span><span class="q-text">外接麦克风几十块，效果比手机自带好10倍。收音>画质。</span></div>
+  <div class="quote-item"><span class="q-num">5</span><span class="q-text">VLOG要有故事线，不是流水账——"我今天要解决一个问题"比"我今天干了啥"有吸引力100倍。</span></div>
+
+</div></div></body></html>

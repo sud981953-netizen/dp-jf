@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>开播流程 · 知识卡片</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}:root{--green:#00cc55;--purple:#9b59b6;--bg:#0b1120;--card:rgba(255,255,255,0.05);--text:#fff;--text2:#c8d6e5;--text3:#7f8c9b;--border:rgba(255,255,255,0.08);--red:#e74c3c;--orange:#f39c12}
+  body{font-family:'Microsoft YaHei','PingFang SC',sans-serif;background:#000;color:var(--text);-webkit-text-size-adjust:100%;font-size:16px}
+  .page{max-width:440px;margin:0 auto;background:linear-gradient(170deg,#0b1120 0%,#0f1829 30%,#0b1120 100%);position:relative;overflow:hidden;padding-bottom:40px}
+  .page::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:40px 40px;pointer-events:none;z-index:0}
+  .page::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse 300px 400px at 50% 15%,rgba(0,204,85,.12) 0%,transparent 60%),radial-gradient(ellipse 200px 300px at 85% 40%,rgba(0,204,85,.08) 0%,transparent 60%),radial-gradient(ellipse 200px 250px at 15% 70%,rgba(155,89,182,.08) 0%,transparent 60%);pointer-events:none;z-index:0}
+  .container{position:relative;z-index:2;padding:0 16px}
+  .particles-wrap{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+  .dot-p{position:absolute;width:3px;height:3px;border-radius:50%;background:var(--green);opacity:.25;animation:twinkle 5s ease-in-out infinite}
+  .dot-p:nth-child(2n){background:var(--purple);opacity:.2;animation-delay:-2s}.dot-p:nth-child(3n){background:#fff;width:2px;height:2px;opacity:.15;animation-delay:-3.5s}
+  .dot-p:nth-child(1){top:6%;left:8%}.dot-p:nth-child(2){top:18%;left:85%}.dot-p:nth-child(3){top:32%;left:12%}.dot-p:nth-child(4){top:45%;left:90%}.dot-p:nth-child(5){top:55%;left:6%}.dot-p:nth-child(6){top:68%;left:82%}.dot-p:nth-child(7){top:78%;left:15%}.dot-p:nth-child(8){top:88%;left:88%}
+  @keyframes twinkle{0%,100%{opacity:.15;transform:scale(1)}50%{opacity:.45;transform:scale(1.8)}}
+  .glow-line{position:absolute;height:1px;border-radius:1px;z-index:1;pointer-events:none}.glow-line.g1{width:160px;background:linear-gradient(90deg,transparent,rgba(0,204,85,.12),transparent);top:12%;left:3%}.glow-line.g2{width:120px;background:linear-gradient(90deg,transparent,rgba(155,89,182,.10),transparent);top:58%;right:4%}
+  .glow-ring{position:absolute;border-radius:50%;border:1px solid;z-index:1;pointer-events:none}.glow-ring.r1{width:200px;height:200px;border-color:rgba(0,204,85,.04);top:8%;right:-60px}.glow-ring.r2{width:140px;height:140px;border-color:rgba(155,89,182,.04);top:65%;left:-40px}
+  .header{text-align:center;padding:36px 20px 24px;border-bottom:1px solid rgba(0,204,85,.15);margin-bottom:24px}
+  .header .logo-row{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:16px}.header .logo-img{width:44px;height:44px;border-radius:10px}.header .brand{font-size:17px;font-weight:700;color:var(--text)}
+  .header h1{font-size:28px;font-weight:900;line-height:1.3;color:var(--green)}.header .tag{display:inline-block;margin-top:10px;padding:4px 14px;border-radius:20px;font-size:13px;color:var(--green);border:1px solid rgba(0,204,85,.25);background:rgba(0,204,85,.06)}
+  .section-title{display:flex;align-items:center;gap:10px;margin:32px 0 16px;padding-bottom:10px;border-bottom:1px solid rgba(0,204,85,.2)}.section-title .num{font-size:40px;font-weight:900;color:var(--green);font-family:'Inter','PingFang SC',sans-serif;opacity:.3;line-height:1}.section-title h2{font-size:22px;font-weight:700;color:var(--text);line-height:1.3}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px}.card.green-border{border-color:rgba(0,204,85,.2);background:rgba(0,204,85,.04)}
+  .highlight-box{background:rgba(0,204,85,.06);border:1px solid rgba(0,204,85,.18);border-radius:8px;padding:12px 14px;margin:12px 0;font-size:15px;color:var(--green);line-height:1.7}.highlight-box.purple{background:rgba(155,89,182,.06);border-color:rgba(155,89,182,.18);color:var(--purple)}
+  .divider{height:1px;background:linear-gradient(90deg,transparent,rgba(0,204,85,.2),transparent);margin:24px 0}
+  .quote-item{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px 16px;margin-bottom:10px;display:flex;gap:12px;align-items:flex-start}.quote-item .q-num{width:28px;height:28px;border-radius:50%;background:rgba(0,204,85,.15);color:var(--green);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;flex-shrink:0}.quote-item .q-text{font-size:15px;line-height:1.7;color:var(--text);font-weight:600}
+  .data-row{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:12px 14px;margin-bottom:8px}
+  .data-row .icon{font-size:22px;flex-shrink:0}.data-row .info{flex:1}.data-row .info .name{font-size:15px;font-weight:700;color:var(--text)}.data-row .info .detail{font-size:14px;color:var(--text2);line-height:1.6;margin-top:2px}
+  .data-row .badge{font-size:12px;padding:3px 8px;border-radius:12px;flex-shrink:0;font-weight:700}
+  .badge-green{background:rgba(0,204,85,.15);color:var(--green)}.badge-orange{background:rgba(243,156,18,.15);color:var(--orange)}.badge-red{background:rgba(231,76,60,.15);color:var(--red)}
+  .step-item{display:flex;gap:12px;margin-bottom:14px;align-items:flex-start}
+  .step-item .step-num{width:28px;height:28px;border-radius:50%;background:rgba(0,204,85,.15);color:var(--green);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;flex-shrink:0;margin-top:2px}
+  .step-item .step-content{flex:1}.step-item .step-content .step-title{font-size:15px;font-weight:700;color:var(--text);margin-bottom:4px}.step-item .step-content .step-desc{font-size:14px;color:var(--text2);line-height:1.7}
+  .warn-card{background:rgba(231,76,60,.05);border:1px solid rgba(231,76,60,.15);border-radius:10px;padding:14px;margin-bottom:10px}
+  .warn-card .warn-title{font-size:15px;font-weight:700;color:var(--red);margin-bottom:6px}.warn-card .warn-desc{font-size:14px;color:var(--text2);line-height:1.7}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="particles-wrap"><div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div></div>
+  <div class="glow-line g1"></div><div class="glow-line g2"></div><div class="glow-ring r1"></div><div class="glow-ring r2"></div>
+<div class="container">
+  <div class="header">
+    <div class="logo-row"><img src="logo.png" alt="创亿商学" class="logo-img"><span class="brand">短视频IP实训陪跑班</span></div>
+    <h1>开播流程</h1>
+    <span class="tag">设备准备 + 开播前检查 + 直播中执行 + 突发处理 + 直播后复盘</span>
+  </div>
+
+  <!-- ========== 01 首播心态 ========== -->
+  <div class="section-title"><span class="num">01</span><h2>首播<span class="green">心态</span>：目标不是赚钱</h2></div>
+  <div class="card green-border">
+    <p style="font-size:15px;color:var(--text2);line-height:2.1">
+      第一场直播的目标不是卖货、不是涨粉——<strong style="color:var(--text)">是跑通流程</strong>。<br><br>
+      设备调好、话术读顺、操作不慌、流程走完=成功。<br>
+      能卖出东西是惊喜，卖不出也正常。别给自己压力。<br><br>
+      <strong style="color:var(--green)">连播3场数据会明显提升</strong>——算法需要3场来认识你的直播间。第一场别急，第三场再看数据。
+    </p>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ========== 02 设备准备 ========== -->
+  <div class="section-title"><span class="num">02</span><h2>设备<span class="green">准备</span>（开播前1天搞定）</h2></div>
+
+  <span style="font-size:13px;color:var(--text3);margin-bottom:8px;display:block">📱 基础设备</span>
+  <div class="data-row">
+    <span class="icon">📱</span>
+    <div class="info">
+      <div class="name">手机</div>
+      <div class="detail">iPhone 12以上或安卓旗舰。前置摄像头清晰、处理器不卡。直播时关闭所有后台APP（微信/QQ都关掉），只留抖音。调飞行模式再开WiFi（防来电打断）。</div>
+    </div>
+  </div>
+  <div class="data-row">
+    <span class="icon">🔦</span>
+    <div class="info">
+      <div class="name">补光灯</div>
+      <div class="detail">环形补光灯放在手机正后方，打亮你的脸。灯光暗→画面糊→用户不想进。100-200元的就够用。色温调到4000-5000K（自然白）。</div>
+    </div>
+  </div>
+  <div class="data-row">
+    <span class="icon">🎙️</span>
+    <div class="info">
+      <div class="name">麦克风</div>
+      <div class="detail">外接麦克风（领夹式/桌面式）收音清晰。手机自带麦也能用，但环境噪音大。直播前测试收音——说话声音清楚、没有回音、没有杂音。</div>
+    </div>
+  </div>
+  <div class="data-row">
+    <span class="icon">📐</span>
+    <div class="info">
+      <div class="name">手机支架</div>
+      <div class="detail">桌面支架或落地支架，固定手机不晃。镜头高度=眼睛平视或略高（俯拍显脸小）。不要手持——手抖画面晃=用户头晕走人。</div>
+    </div>
+  </div>
+  <div class="data-row">
+    <span class="icon">🌐</span>
+    <div class="info">
+      <div class="name">网络</div>
+      <div class="detail">优先用WiFi——但必须确保这台WiFi设备是<strong>独立、稳定</strong>的（不是多人共用的路由器）。直播前测速：上行速度>5Mbps才安全。WiFi不稳定的话，5G网络作为备选。备一个充电宝——直播耗电很快。</div>
+    </div>
+  </div>
+
+  <div style="height:8px"></div>
+  <span style="font-size:13px;color:var(--text3);margin-bottom:8px;display:block">📋 场景布置（带货类）</span>
+  <div class="data-row">
+    <span class="icon">🪧</span>
+    <div class="info">
+      <div class="name">KT板/价格牌</div>
+      <div class="detail">放在身后或手边，写上今日主推品和价格。用户一眼看到「9.9元」「限时特价」→停留变长。用大字、高对比色。</div>
+    </div>
+  </div>
+  <div class="data-row">
+    <span class="icon">📦</span>
+    <div class="info">
+      <div class="name">产品陈列</div>
+      <div class="detail">主推品放在镜头能看到的地方。实体产品要展示——拿起来让用户看到实物。提前摆好，不要直播时翻箱倒柜。</div>
+    </div>
+  </div>
+  <div class="data-row">
+    <span class="icon">🧹</span>
+    <div class="info">
+      <div class="name">背景整理</div>
+      <div class="detail">背景干净整洁。不要有杂物、垃圾桶、乱七八糟的东西。实体店拍店内环境，家里播就收拾一面干净的墙。</div>
+    </div>
+  </div>
+
+  <div class="highlight-box purple" style="font-size:14px">⚠️ <strong>网络断了怎么办：</strong>提前备好充电宝+备用手机。主手机断网→立刻用备用手机开播（提前登录好抖音）。断播超过3分钟=流量全丢，要秒切。</div>
+
+  <div class="divider"></div>
+
+  <!-- ========== 03 开播前1小时 ========== -->
+  <div class="section-title"><span class="num">03</span><h2>开播前<span class="green">1小时</span>（黄金准备期）</h2></div>
+
+  <div class="step-item">
+    <span class="step-num">1</span>
+    <div class="step-content">
+      <div class="step-title">发1条预热短视频</div>
+      <div class="step-desc">开播前1小时发1条短视频预告：「今天X点直播，准备了XX福利，关注我开播有提醒」。视频会给直播间导初始流量——有人等着你开播=不至于对着空气讲话。</div>
+    </div>
+  </div>
+  <div class="step-item">
+    <span class="step-num">2</span>
+    <div class="step-content">
+      <div class="step-title">设置直播封面+标题</div>
+      <div class="step-desc">封面要大字+高饱和+人物表情有吸引力。标题要有利益点——不是「今天直播」→是「火锅店老板第一次直播，9.9吃火锅」。封面决定用户进不进来。</div>
+    </div>
+  </div>
+  <div class="step-item">
+    <span class="step-num">3</span>
+    <div class="step-content">
+      <div class="step-title">商品上架+排序</div>
+      <div class="step-desc">确认商品已上架小黄车。前3个=默认优先展示。把最好卖/最想推的品放前3。库存确认充足（别开播了发现没货）。</div>
+    </div>
+  </div>
+  <div class="step-item">
+    <span class="step-num">4</span>
+    <div class="step-content">
+      <div class="step-title">话术便利贴贴手机边框</div>
+      <div class="step-desc">把开场话术、主推品卖点、逼单话术、互动话术写在便利贴上，贴手机边框旁边。直播时瞟一眼就能接着说——比背下来靠谱。</div>
+    </div>
+  </div>
+  <div class="step-item">
+    <span class="step-num">5</span>
+    <div class="step-content">
+      <div class="step-title">设备最终检查</div>
+      <div class="step-desc">手机充电100%（或接充电宝）→补光灯打开→麦克风测试→网络测速→关闭所有后台APP→调飞行模式再开WiFi→准备抖币（发福袋用）。</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ========== 04 直播中执行 ========== -->
+  <div class="section-title"><span class="num">04</span><h2>直播中<span class="green">执行</span>（按节奏走）</h2></div>
+
+  <p style="font-size:15px;color:var(--text3);margin-bottom:14px;line-height:1.8">一场2小时的直播，按时间轴分成5个阶段。<strong style="color:var(--text)">每个阶段有明确目标和动作</strong>，不要临场发挥。</p>
+
+  <!-- 阶段1 -->
+  <div style="background:rgba(0,204,85,.06);border:1px solid rgba(0,204,85,.15);border-radius:10px;padding:14px;margin-bottom:12px">
+    <div style="font-size:16px;font-weight:700;color:var(--green);margin-bottom:8px">🔰 阶段1：开场聚人（0-10分钟）</div>
+    <div style="font-size:15px;color:var(--text2);line-height:2">
+      <strong>目标：</strong>让新进来的人知道「你是谁、今天干什么、留下来能得到什么」<br><br>
+      <strong>动作：</strong><br>
+      ① 点名欢迎（念用户ID）——「欢迎XX来到直播间！」<br>
+      ② 介绍自己+今天干什么——「我是XX，做了X年XX，今天准备了XX福利」<br>
+      ③ 引导互动——「想吃的扣1，人多了我上链接！」<br>
+      ④ 每进来一批新人就重复一遍（新用户不知道前面说了什么）<br><br>
+      <strong>带货类：</strong>开场直接上引流品（9.9秒杀），用价格钩住人<br>
+      <strong>聊天类：</strong>开场直接抛争议话题，用话题钩住人
+    </div>
+  </div>
+
+  <!-- 阶段2 -->
+  <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px;margin-bottom:12px">
+    <div style="font-size:16px;font-weight:700;color:var(--green);margin-bottom:8px">📦 阶段2：内容主体（10-80分钟）</div>
+    <div style="font-size:15px;color:var(--text2);line-height:2">
+      <strong>带货类——讲品循环：</strong><br>
+      每个品讲3-5轮，每轮5-8分钟：<br>
+      ① 产品介绍（1-2分钟）——叫什么、是什么、适合谁<br>
+      ② 价值塑造（2-3分钟）——对比市场价、展示使用场景、讲客户反馈<br>
+      ③ 逼单（1分钟）——限时限量、制造紧迫感<br>
+      讲完2-3个品→互动5分钟→继续讲品→循环<br><br>
+      <strong>聊天类——话题循环：</strong><br>
+      每个话题聊5-8分钟：<br>
+      ① 抛话题+提问——「你们觉得XX怎么样？」<br>
+      ② 念评论+输出观点——点名念+说你的看法<br>
+      ③ 引导更多人参与——「还有不同意见吗？」<br>
+      感觉评论变少→立刻换话题→循环
+    </div>
+  </div>
+
+  <!-- 阶段3 -->
+  <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px;margin-bottom:12px">
+    <div style="font-size:16px;font-weight:700;color:var(--green);margin-bottom:8px">💬 阶段3：互动暖场（每20分钟穿插）</div>
+    <div style="font-size:15px;color:var(--text2);line-height:2">
+      <strong>不管带货还是聊天，每20分钟必须互动一次：</strong><br><br>
+      · <strong>福袋</strong>——「关注+评论才能参与福袋抽奖」→拉互动+拉关注<br>
+      · <strong>念评论</strong>——点名念用户评论+回复→用户有存在感<br>
+      · <strong>扣数字</strong>——「想要A扣1，想要B扣2」→评论刷屏<br>
+      · <strong>提问</strong>——「你们觉得XX怎么样？打在公屏上」→引讨论<br>
+      · <strong>连麦</strong>（聊天类）——「想连麦的扣1」→用户参与感暴涨<br><br>
+      <strong style="color:var(--orange)">节奏：</strong>讲内容→互动→讲内容→互动→循环。不要一口气讲40分钟不互动=用户走光。
+    </div>
+  </div>
+
+  <!-- 阶段4 -->
+  <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px;margin-bottom:12px">
+    <div style="font-size:16px;font-weight:700;color:var(--green);margin-bottom:8px">🔥 阶段4：逼单收尾（最后10-15分钟）</div>
+    <div style="font-size:15px;color:var(--text2);line-height:2">
+      <strong>带货类：</strong><br>
+      「还有最后X分钟下播！刚才那个XX套餐还剩最后X份，拍完就没了。今天不拍明天来就是原价。拍了的到店说是抖音来的，我送你一份XX！」<br><br>
+      <strong>聊天类：</strong><br>
+      「今天先聊到这！明天同一时间继续聊——明天的话题更劲爆，关注我开播有提醒，不关注你就刷不到我了。」<br><br>
+      <strong>通用动作：</strong><br>
+      ① 最后一波福袋（拉最后一波互动数据）<br>
+      ② 预告下次直播时间→给用户「明天还来」的理由<br>
+      ③ 引导关注——「点关注不迷路，下次开播有提醒」
+    </div>
+  </div>
+
+  <!-- 阶段5 -->
+  <div style="background:rgba(243,156,18,.05);border:1px solid rgba(243,156,18,.15);border-radius:10px;padding:14px;margin-bottom:12px">
+    <div style="font-size:16px;font-weight:700;color:var(--orange);margin-bottom:8px">⚡ 流量高峰应对（随时准备）</div>
+    <div style="font-size:15px;color:var(--text2);line-height:2">
+      <strong>什么时候来流量：</strong>互动数据突然涨、有爆款视频在跑、DOU+投流生效。<br><br>
+      <strong>立刻做四件事：</strong><br>
+      ① 带货类→立刻切到主推爆品（别继续讲冷门产品）<br>
+      ② 聊天类→切到最火的话题（评论最多那个）<br>
+      ③ 快速逼单/引导关注（流量高峰用户停留短，要快）<br>
+      ④ 引导互动——「刚进来的点关注！想要XX扣1！」<br><br>
+      <strong style="color:var(--red)">算法推流只有几分钟窗口——没准备=浪费流量。</strong>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ========== 05 直播中避坑 ========== -->
+  <div class="section-title"><span class="num">05</span><h2>直播中<span class="green">避坑</span>（这些错不要犯）</h2></div>
+
+  <div class="warn-card">
+    <div class="warn-title">❌ 冷场</div>
+    <div class="warn-desc">没人说话也要说！重复卖点/重复话题/自言自语都行。冷场超过30秒=用户走光。实在没话说→发福袋拉停留。</div>
+  </div>
+  <div class="warn-card">
+    <div class="warn-title">❌ 用违规词</div>
+    <div class="warn-desc">不能说「最便宜」「全网最低」「第一」「绝对」。用「抖音专享价」「今天这个价格很难得」替代。不能展示收益截图、说「一个月赚了XX」。</div>
+  </div>
+  <div class="warn-card">
+    <div class="warn-title">❌ 利益诱导</div>
+    <div class="warn-desc">不能说「前10名有优惠」「下单送XX」「点赞到XX万送XX」。可以说「今天给大家展示了」「想了解的扣1」。</div>
+  </div>
+  <div class="warn-card">
+    <div class="warn-title">❌ 来电/消息打断</div>
+    <div class="warn-desc">直播前调飞行模式再开WiFi。关掉微信/QQ通知。被打断→用户等不了→走人。来电=直播暂停=流量断。</div>
+  </div>
+  <div class="warn-card">
+    <div class="warn-title">❌ 画面/声音问题</div>
+    <div class="warn-desc">画面太暗→补光灯没开。声音有回音→换个安静的地方。画面晃→用支架固定。这些问题直播前就要解决，不要等开播了才发现。</div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ========== 06 直播中看什么数据 ========== -->
+  <div class="section-title"><span class="num">06</span><h2>直播中<span class="green">看什么数据</span></h2></div>
+  <p style="font-size:15px;color:var(--text3);margin-bottom:14px;line-height:1.8">直播过程中要实时关注几个数据，<strong style="color:var(--text)">边播边调</strong>：</p>
+
+  <div class="data-row">
+    <span class="icon">👥</span>
+    <div class="info">
+      <div class="name">实时在线人数</div>
+      <div class="detail">人数涨了→当前内容有效，继续。人数跌了→赶紧换话题/换品/发福袋。人数突然暴涨→流量高峰来了，切主推品/爆话题。</div>
+    </div>
+  </div>
+  <div class="data-row">
+    <span class="icon">💬</span>
+    <div class="info">
+      <div class="name">评论速度</div>
+      <div class="detail">评论多=话题有讨论度，继续聊。评论少了=话题冷了，换一个。没人评论超过2分钟→发福袋救场。</div>
+    </div>
+  </div>
+  <div class="data-row">
+    <span class="icon">⏱️</span>
+    <div class="info">
+      <div class="name">平均停留时长</div>
+      <div class.="detail">如果能看到这个数据，低于30秒=开场话术有问题，下场要改。高于45秒=内容有效。</div>
+    </div>
+  </div>
+  <div class="data-row">
+    <span class="icon">🛒</span>
+    <div class="info">
+      <div class="name">商品点击数（带货类）</div>
+      <div class="detail">有人点但没人买=价格或信任问题。没人点=商品讲解不到位或链接没强调。实时调整话术。</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ========== 07 三场实战 ========== -->
+  <div class="section-title"><span class="num">07</span><h2>三场<span class="green">实战</span>节奏</h2></div>
+
+  <div style="background:rgba(0,204,85,.06);border:1px solid rgba(0,204,85,.15);border-radius:10px;padding:14px;margin-bottom:12px">
+    <div style="font-size:16px;font-weight:700;color:var(--green);margin-bottom:6px">🔰 第一场（1-2小时）——跑通流程</div>
+    <div style="font-size:15px;color:var(--text2);line-height:2">
+      <strong>目标：</strong>不是卖货！是把流程跑通。<br>
+      <strong>做什么：</strong>设备调好→话术读顺→操作不慌→播满时间。<br>
+      <strong>心态：</strong>能卖出是惊喜，卖不出也正常。对着空气讲话也要说——前30分钟可能没人，坚持住。<br>
+      <strong>数据：</strong>不看数据，只看流程顺不顺。
+    </div>
+  </div>
+
+  <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px;margin-bottom:12px">
+    <div style="font-size:16px;font-weight:700;color:var(--green);margin-bottom:6px">🔰 第二场（2-3小时）——憋单拉人气</div>
+    <div style="font-size:15px;color:var(--text2);line-height:2">
+      <strong>目标：</strong>拉停留+拉互动。<br>
+      <strong>做什么：</strong>引流款9.9拉人→主推款尝试成交→福袋定时发→互动话术拉评论。<br>
+      <strong>技巧：</strong>单品憋单——先说产品价值，吊足胃口，人气最高时才上链接。<br>
+      <strong>数据：</strong>看停留时长和互动率。
+    </div>
+  </div>
+
+  <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px;margin-bottom:12px">
+    <div style="font-size:16px;font-weight:700;color:var(--green);margin-bottom:6px">🔰 第三场（1-2小时）——冲数据打标签</div>
+    <div style="font-size:15px;color:var(--text2);line-height:2">
+      <strong>目标：</strong>提升转化+给直播间打精准标签。<br>
+      <strong>做什么：</strong>微憋单冲销量→优化逼单话术→数据好的品多推→数据差的品换掉。<br>
+      <strong>结果：</strong>算法开始认识你的直播间，知道该推什么人给你。<br>
+      <strong>数据：</strong>看转化率、UV价值、自然流量占比。
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ========== 08 直播后 ========== -->
+  <div class="section-title"><span class="num">08</span><h2>直播后<span class="green">必须做</span></h2></div>
+
+  <div class="step-item">
+    <span class="step-num">1</span>
+    <div class="step-content">
+      <div class="step-title">截图保存数据</div>
+      <div class="step-desc">下播后立刻截图：曝光进入率、停留时长、互动率、转粉率、商品点击率、转化率。不截图=数据没了找不到。</div>
+    </div>
+  </div>
+  <div class="step-item">
+    <span class="step-num">2</span>
+    <div class="step-content">
+      <div class="step-title">复盘（参考D26直播复盘卡片）</div>
+      <div class="step-desc">对照数据速查表，哪个数据低→对应优化哪个环节。写优化清单，下场执行。</div>
+    </div>
+  </div>
+  <div class="step-item">
+    <span class="step-num">3</span>
+    <div class="step-content">
+      <div class="step-title">发1条直播切片短视频</div>
+      <div class="step-desc">把直播中最精彩/最有争议的片段剪出来发短视频。既能引流下次直播，又能涨粉。直播+短视频双引擎。</div>
+    </div>
+  </div>
+  <div class="step-item">
+    <span class="step-num">4</span>
+    <div class="step-content">
+      <div class="step-title">隔天再播</div>
+      <div class="step-desc">不要隔太久。隔天再播1场，连播3场数据会明显提升。间隔超过一周=之前的数据白积累了。</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ========== 09 核心金句 ========== -->
+  <div class="section-title"><span class="num">09</span><h2>核心金句</h2></div>
+  <div class="quote-item"><span class="q-num">1</span><span class="q-text">第一场目标不是赚钱，是跑通流程。设备调好、话术顺了、流程走完=成功。</span></div>
+  <div class="quote-item"><span class="q-num">2</span><span class="q-text">开播前1小时发预热短视频→有基础观众→不至于对着空气讲话。</span></div>
+  <div class="quote-item"><span class="q-num">3</span><span class="q-text">话术便利贴贴手机边框——比背下来靠谱100倍。瞟一眼就能接着说。</span></div>
+  <div class="quote-item"><span class="q-num">4</span><span class="q-text">优先用WiFi，但必须独立稳定。WiFi不稳就切5G备选。断播超过3分钟=流量全丢。</span></div>
+  <div class="quote-item"><span class="q-num">5</span><span class="q-text">每20分钟互动一次。不互动=用户走光。福袋/念评论/扣数字——选一个用。</span></div>
+  <div class="quote-item"><span class="q-num">6</span><span class="q-text">冷场超过30秒=用户走光。没人说话也要说——重复卖点/发福袋/自言自语都行。</span></div>
+  <div class="quote-item"><span class="q-num">7</span><span class="q-text">连播3场数据会明显提升。算法需要3场来认识你的直播间，第一场别急。</span></div>
+</div></div></body></html>

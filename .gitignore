@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# 本机私有运行设置（存件地址、巡检日期，不随仓库分发）
+config/设置.md
+
+# 备份与临时文件
+*.bak
+*.tmp
+~$*
+
+# 打包产物
+*_安装包.zip
+dp-jf_backup_*/
+
+# 编辑器与系统
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

@@ -1,0 +1,531 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>D7 · 标题设计 · 知识卡片</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  :root{
+    --green:#00cc55;--green2:#00e060;--purple:#9b59b6;
+    --bg:#0b1120;--card:rgba(255,255,255,0.05);
+    --text:#fff;--text2:#c8d6e5;--text3:#7f8c9b;
+    --border:rgba(255,255,255,0.08);
+  }
+  body{
+    font-family:'Microsoft YaHei','PingFang SC',sans-serif;
+    background:#000;color:var(--text);
+    -webkit-text-size-adjust:100%;
+  }
+  .page{
+    max-width:440px;margin:0 auto;
+    background:linear-gradient(170deg,#0b1120 0%,#0f1829 30%,#0b1120 100%);
+    position:relative;overflow:hidden;padding-bottom:40px;
+  }
+  .page::before{
+    content:'';position:absolute;top:0;left:0;right:0;bottom:0;
+    background-image:
+      linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);
+    background-size:40px 40px;pointer-events:none;z-index:0;
+  }
+  .page::after{
+    content:'';position:absolute;top:0;left:0;right:0;bottom:0;
+    background:
+      radial-gradient(ellipse 300px 400px at 50% 15%,rgba(0,204,85,.12) 0%,transparent 60%),
+      radial-gradient(ellipse 200px 300px at 85% 40%,rgba(0,204,85,.08) 0%,transparent 60%),
+      radial-gradient(ellipse 200px 250px at 15% 70%,rgba(155,89,182,.08) 0%,transparent 60%);
+    pointer-events:none;z-index:0;
+  }
+  .container{position:relative;z-index:2;padding:0 16px}
+
+  .particles-wrap{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+  .dot-p{
+    position:absolute;width:3px;height:3px;border-radius:50%;
+    background:var(--green);opacity:.25;
+    animation:twinkle 5s ease-in-out infinite;
+  }
+  .dot-p:nth-child(2n){background:var(--purple);opacity:.2;animation-delay:-2s}
+  .dot-p:nth-child(3n){background:#fff;width:2px;height:2px;opacity:.15;animation-delay:-3.5s}
+  .dot-p:nth-child(1){top:6%;left:8%}
+  .dot-p:nth-child(2){top:18%;left:85%}
+  .dot-p:nth-child(3){top:32%;left:12%}
+  .dot-p:nth-child(4){top:45%;left:90%}
+  .dot-p:nth-child(5){top:55%;left:6%}
+  .dot-p:nth-child(6){top:68%;left:82%}
+  .dot-p:nth-child(7){top:78%;left:15%}
+  .dot-p:nth-child(8){top:88%;left:88%}
+  .dot-p:nth-child(9){top:24%;left:50%;width:2px;height:2px}
+  .dot-p:nth-child(10){top:60%;left:45%;width:2px;height:2px}
+  .dot-p:nth-child(11){top:15%;left:22%}
+  .dot-p:nth-child(12){top:72%;left:55%}
+  @keyframes twinkle{0%,100%{opacity:.15;transform:scale(1)}50%{opacity:.45;transform:scale(1.8)}}
+
+  .glow-line{
+    position:absolute;height:1px;border-radius:1px;z-index:1;pointer-events:none;
+  }
+  .glow-line.g1{
+    width:160px;background:linear-gradient(90deg,transparent,rgba(0,204,85,.12),transparent);
+    top:12%;left:3%;
+  }
+  .glow-line.g2{
+    width:120px;background:linear-gradient(90deg,transparent,rgba(155,89,182,.10),transparent);
+    top:58%;right:4%;
+  }
+  .glow-ring{
+    position:absolute;border-radius:50%;border:1px solid;z-index:1;pointer-events:none;
+  }
+  .glow-ring.r1{
+    width:200px;height:200px;border-color:rgba(0,204,85,.04);
+    top:8%;right:-60px;
+  }
+  .glow-ring.r2{
+    width:140px;height:140px;border-color:rgba(155,89,182,.04);
+    top:65%;left:-40px;
+  }
+
+  .header{
+    text-align:center;padding:36px 20px 24px;
+    border-bottom:1px solid rgba(0,204,85,.15);margin-bottom:24px;
+  }
+  .header .logo-row{
+    display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:16px;
+  }
+  .header .logo-img{width:44px;height:44px;border-radius:10px}
+  .header .brand{font-size:17px;font-weight:700;color:var(--text);letter-spacing:1px}
+  .header .brand-sub{font-size:12px;color:var(--text3);margin-left:8px}
+  .header h1{font-size:26px;font-weight:900;line-height:1.3;color:var(--green)}
+  .header .tag{
+    display:inline-block;margin-top:10px;padding:4px 14px;
+    border-radius:20px;font-size:12px;color:var(--green);
+    border:1px solid rgba(0,204,85,.25);background:rgba(0,204,85,.06);
+  }
+
+  .section-title{
+    display:flex;align-items:center;gap:10px;
+    margin:32px 0 16px;padding-bottom:10px;
+    border-bottom:1px solid rgba(0,204,85,.2);
+  }
+  .section-title .num{
+    font-size:36px;font-weight:900;color:var(--green);
+    font-family:'Inter','PingFang SC',sans-serif;opacity:.3;line-height:1;
+  }
+  .section-title h2{font-size:20px;font-weight:700;color:var(--text);line-height:1.3}
+  .section-title .green{color:var(--green)}
+
+  .card{
+    background:var(--card);border:1px solid var(--border);
+    border-radius:12px;padding:16px;margin-bottom:12px;
+  }
+  .card.green-border{border-color:rgba(0,204,85,.2);background:rgba(0,204,85,.04)}
+
+  .highlight-box{
+    background:rgba(0,204,85,.06);border:1px solid rgba(0,204,85,.18);
+    border-radius:8px;padding:10px 14px;margin:10px 0;
+    font-size:13px;color:var(--green);line-height:1.6;
+  }
+  .highlight-box.purple{
+    background:rgba(155,89,182,.06);border-color:rgba(155,89,182,.18);color:var(--purple);
+  }
+
+  .divider{
+    height:1px;background:linear-gradient(90deg,transparent,rgba(0,204,85,.2),transparent);
+    margin:20px 0;
+  }
+
+  .footer-note{
+    text-align:center;padding:20px;margin-top:20px;
+    border-top:1px solid rgba(0,204,85,.12);
+    font-size:12px;color:var(--text3);line-height:1.6;
+  }
+
+  .formula-card{
+    background:var(--card);border:1px solid var(--border);
+    border-radius:12px;padding:16px;margin-bottom:10px;
+  }
+  .formula-card .fc-header{
+    display:flex;align-items:center;gap:10px;margin-bottom:10px;
+  }
+  .formula-card .fc-num{
+    width:36px;height:36px;border-radius:10px;
+    background:var(--green);color:#000;
+    display:flex;align-items:center;justify-content:center;
+    font-size:18px;font-weight:900;flex-shrink:0;
+  }
+  .formula-card .fc-name{font-size:16px;font-weight:700;color:var(--text)}
+  .formula-card .fc-why{
+    display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px;
+  }
+  .formula-card .fc-why-item{
+    background:rgba(255,255,255,.03);border-radius:8px;padding:10px;text-align:center;
+  }
+  .formula-card .fc-why-item .label{font-size:12px;font-weight:700;color:var(--green);margin-bottom:3px}
+  .formula-card .fc-why-item .desc{font-size:11px;color:var(--text3);line-height:1.5}
+  .formula-card .fc-examples{margin-bottom:6px}
+  .formula-card .fc-examples .industry{font-size:10px;color:var(--text3);margin-bottom:3px}
+  .formula-card .fc-examples .example{
+    font-size:12px;color:var(--text2);line-height:1.7;padding-left:8px;
+    border-left:2px solid rgba(0,204,85,.3);
+  }
+  .formula-card .fc-pitfall{
+    font-size:11px;color:var(--purple);line-height:1.5;
+    background:rgba(155,89,182,.06);border-radius:6px;padding:8px 10px;
+  }
+
+  .human-talk{background:rgba(155,89,182,.06);border:1px solid rgba(155,89,182,.2);border-radius:12px;padding:18px;margin:16px 0}
+  .human-talk h4{font-size:17px;font-weight:700;color:var(--purple);margin-bottom:10px}
+  .human-talk p{font-size:15px;color:var(--text2);line-height:2}
+  .quote-item{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px;margin-bottom:10px;display:flex;gap:12px;align-items:flex-start}
+  .quote-item .q-num{width:32px;height:32px;border-radius:50%;background:rgba(0,204,85,.15);color:var(--green);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:900;flex-shrink:0}
+  .quote-item .q-text{font-size:16px;line-height:1.7;color:var(--text);font-weight:600}
+  .checklist{list-style:none;padding:0;margin:10px 0}
+  .checklist li{padding:8px 0 8px 28px;position:relative;font-size:15px;color:var(--text2);line-height:1.6;border-bottom:1px solid rgba(255,255,255,.04)}
+  .checklist li:last-child{border-bottom:none}
+  .checklist li::before{content:'□';position:absolute;left:0;top:8px;font-size:16px;color:var(--green);opacity:.6}
+  .checklist li.done::before{content:'☑';color:var(--green);opacity:1}
+  .err-row{
+    display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px;
+  }
+  .err-row .err-bad{
+    background:rgba(255,255,255,.03);border:1px solid var(--border);
+    border-radius:8px;padding:10px;text-align:center;
+  }
+  .err-row .err-good{
+    background:rgba(0,204,85,.06);border:1px solid rgba(0,204,85,.2);
+    border-radius:8px;padding:10px;text-align:center;
+  }
+  .err-row .err-label{font-size:10px;font-weight:700;margin-bottom:4px}
+  .err-row .err-text{font-size:12px;line-height:1.5}
+  body{font-size:16px}
+  [style*="font-size:13px"]{font-size:15px !important}
+  [style*="font-size:12px"]{font-size:14px !important}
+  [style*="font-size:11px"]{font-size:14px !important}
+  [style*="font-size:10px"]{font-size:12px !important}
+  .header .tag{font-size:14px!important}
+  .err-row .err-label{font-size:12px!important}
+  .err-row .err-text{font-size:14px!important}
+  .formula-card .fc-why-item .label{font-size:14px!important}
+  .formula-card .fc-why-item .desc{font-size:13px!important}
+  .formula-card .fc-examples .industry{font-size:12px!important}
+  .formula-card .fc-examples .example{font-size:14px!important}
+  .formula-card .fc-pitfall{font-size:13px!important}
+  .p-interpretation{font-size:14px!important}
+  .fc-why-item{font-size:14px!important}
+  .err-label{font-size:12px!important}
+  .err-text{font-size:14px!important}
+  .highlight-box{font-size:15px!important}
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <div class="particles-wrap">
+    <div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div>
+    <div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div>
+    <div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div>
+    <div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div>
+  </div>
+  <div class="glow-line g1"></div>
+  <div class="glow-line g2"></div>
+  <div class="glow-ring r1"></div>
+  <div class="glow-ring r2"></div>
+
+<div class="container">
+
+  <div class="header">
+    <div class="logo-row">
+      <img src="logo.png" alt="创亿商学" class="logo-img">
+      <span class="brand">短视频IP实训陪跑班</span>
+    </div>
+    <h1>标题设计</h1>
+    <span class="tag">📖 D7 · 知识卡片</span>
+  </div>
+
+  <!-- ========== 一、标题本质 ========== -->
+  <div class="section-title">
+    <span class="num">01</span>
+    <h2>标题是<span class="green">广告</span>，不是说明书</h2>
+  </div>
+
+  <p style="font-size:13px;color:var(--text3);margin-bottom:14px;line-height:1.6">
+    说明书告诉用户「这个视频讲了什么」，广告让用户<strong style="color:var(--text)">「想点开看」</strong>。用户刷到你的视频只有 <strong style="color:var(--green)">1 秒</strong>——标题决定了点不点。
+  </p>
+
+  <div class="err-row">
+    <div class="err-bad">
+      <div class="err-label" style="color:var(--purple)">❌ 说明书式</div>
+      <div class="err-text" style="color:var(--text3)">今天给大家分享一下祛斑的注意事项</div>
+    </div>
+    <div class="err-good">
+      <div class="err-label" style="color:var(--green)">✅ 广告式</div>
+      <div class="err-text" style="color:var(--green)">祛斑三大误区，你踩了几个？</div>
+    </div>
+  </div>
+  <p style="font-size:11px;color:var(--text3);text-align:center;margin-bottom:4px">👆 左边：用户划走。右边：用户想进去看你说得对不对。</p>
+
+  <!-- ========== 二、三个公式 ========== -->
+  <div class="section-title">
+    <span class="num">02</span>
+    <h2>三个有效<span class="green">标题公式</span></h2>
+  </div>
+
+  <!-- 公式1 -->
+  <div class="formula-card">
+    <div class="fc-header">
+      <span class="fc-num">1</span>
+      <span class="fc-name">数字 + 反常识</span>
+    </div>
+    <div class="fc-why">
+      <div class="fc-why-item">
+        <div class="label">数字</div>
+        <div class="desc">大脑对数字敏感，「3个」「90%」一眼看到，比「几个」具体得多</div>
+      </div>
+      <div class="fc-why-item">
+        <div class="label">反常识</div>
+        <div class="desc">和预期相反，打断自动划走——「越练越胖？怎么可能」</div>
+      </div>
+    </div>
+    <div class="fc-examples">
+      <div class="industry">💆 美业</div>
+      <div class="example">祛斑我只用了3步，第2步90%的人做错了</div>
+      <div class="example">5个越护肤越烂脸的习惯，第1个你天天在做</div>
+      <div class="example">皮肤管理做了3年，我劝你别做的4个项目</div>
+    </div>
+    <div class="fc-examples">
+      <div class="industry">🍔 餐饮</div>
+      <div class="example">3个让顾客觉得你家贵的细节，跟价格没关系</div>
+      <div class="example">开餐馆5年踩了7个坑，第3个最常见</div>
+    </div>
+  </div>
+
+  <!-- 公式2 -->
+  <div class="formula-card">
+    <div class="fc-header">
+      <span class="fc-num">2</span>
+      <span class="fc-name">身份 + 结果</span>
+    </div>
+    <div class="fc-why">
+      <div class="fc-why-item">
+        <div class="label">身份</div>
+        <div class="desc">用户看到自己的身份标签自动代入，「这视频就是拍给我看的」</div>
+      </div>
+      <div class="fc-why-item">
+        <div class="label">结果</div>
+        <div class="desc">越具体越可信。「引流50人」比「客户多了」可信10倍</div>
+      </div>
+    </div>
+    <div class="fc-examples">
+      <div class="industry">💆 美业</div>
+      <div class="example">美容院老板靠1条AI视频，到店体验翻了3倍</div>
+      <div class="example">宝妈做皮肤管理账号，第2周就有人私信约项目</div>
+      <div class="example">纹绣师用这个方法拍视频，一个月收了20个定金</div>
+    </div>
+    <div class="fc-examples">
+      <div class="industry">🍔 餐饮</div>
+      <div class="example">快餐店老板拍了一条视频，当天中午坐满了</div>
+      <div class="example">奶茶店老板娘不露脸拍视频，团购卖了300单</div>
+    </div>
+  </div>
+
+  <!-- 公式3 -->
+  <div class="formula-card">
+    <div class="fc-header">
+      <span class="fc-num">3</span>
+      <span class="fc-name">情绪 + 悬念</span>
+    </div>
+    <div class="fc-why">
+      <div class="fc-why-item">
+        <div class="label">情绪</div>
+        <div class="desc">共鸣→点击。「怕」「烦」「累」——你也这样？想听</div>
+      </div>
+      <div class="fc-why-item">
+        <div class="label">悬念</div>
+        <div class="desc">信息缺口，不说完整——用户为了填缺口必须点进去</div>
+      </div>
+    </div>
+    <p style="font-size:11px;color:var(--text3);margin-bottom:8px">5种情绪类型，选一种扣在标题上：</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:10px">
+      <div style="background:rgba(255,255,255,.03);border-radius:6px;padding:8px;font-size:12px;color:var(--text2);line-height:1.5">
+        😰 <strong style="color:var(--text)">恐惧/担忧</strong><br>
+        「做了8年美业，我最怕客户问这个问题」
+      </div>
+      <div style="background:rgba(255,255,255,.03);border-radius:6px;padding:8px;font-size:12px;color:var(--text2);line-height:1.5">
+        😤 <strong style="color:var(--text)">愤怒/吐槽</strong><br>
+        「干了5年餐饮，最受不了的一种客人」
+      </div>
+      <div style="background:rgba(255,255,255,.03);border-radius:6px;padding:8px;font-size:12px;color:var(--text2);line-height:1.5">
+        😭 <strong style="color:var(--text)">后悔/踩坑</strong><br>
+        「我最后悔做的一个护肤项目，做完直接烂脸」
+      </div>
+      <div style="background:rgba(255,255,255,.03);border-radius:6px;padding:8px;font-size:12px;color:var(--text2);line-height:1.5">
+        🤔 <strong style="color:var(--text)">好奇/揭秘</strong><br>
+        「皮肤管理培训不教你的一个真相」
+      </div>
+      <div style="background:rgba(255,255,255,.03);border-radius:6px;padding:8px;font-size:12px;color:var(--text2);line-height:1.5;grid-column:1/-1">
+        💪 <strong style="color:var(--text)">骄傲/逆袭</strong><br>
+        「所有人都说我做不起来，结果第3天就爆了」
+      </div>
+    </div>
+    <div class="fc-pitfall">
+      ⚠️ 常见错误：悬念太假（「看完我哭了」——假大空）、情绪不真实（跟你人设对不上）
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ========== 三、公式混用 ========== -->
+  <div class="section-title">
+    <span class="num">03</span>
+    <h2>三个公式<span class="green">可以混着用</span></h2>
+  </div>
+
+  <div class="card green-border" style="text-align:center">
+    <div style="font-size:13px;color:var(--text2);line-height:2.2">
+      <strong style="color:var(--green)">身份 + 数字 + 反常识</strong><br>
+      「实体店老板用了1个笨办法，复购率80%」<br><br>
+      <strong style="color:var(--green)">情绪 + 数字 + 悬念</strong><br>
+      「做了8年美业，有3句话我一直不敢说」<br><br>
+      <strong style="color:var(--green)">身份 + 情绪 + 结果</strong><br>
+      「餐饮小白干了一年，月流水从3万做到了30万」
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ========== 四、错误对照 ========== -->
+  <div class="section-title">
+    <span class="num">04</span>
+    <h2>常见错误<span class="green">对照表</span></h2>
+  </div>
+
+  <div style="margin-bottom:6px">
+    <div class="err-row">
+      <div class="err-bad">
+        <div class="err-label" style="color:var(--purple)">❌</div>
+        <div class="err-text" style="color:var(--text3)">今天给大家分享护肤小知识</div>
+      </div>
+      <div class="err-good">
+        <div class="err-label" style="color:var(--green)">✅</div>
+        <div class="err-text" style="color:var(--green)">5个越护肤越烂脸的习惯，第1个你天天在做</div>
+      </div>
+    </div>
+    <p style="font-size:12px;color:var(--text3);text-align:center;margin-bottom:8px">改了：数字+反常识</p>
+  </div>
+
+  <div style="margin-bottom:6px">
+    <div class="err-row">
+      <div class="err-bad">
+        <div class="err-label" style="color:var(--purple)">❌</div>
+        <div class="err-text" style="color:var(--text3)">我是做餐饮的，教你怎么开店</div>
+      </div>
+      <div class="err-good">
+        <div class="err-label" style="color:var(--green)">✅</div>
+        <div class="err-text" style="color:var(--green)">开餐馆5年踩了7个坑，第3个最常见</div>
+      </div>
+    </div>
+    <p style="font-size:12px;color:var(--text3);text-align:center;margin-bottom:8px">改了：身份+数字+悬念</p>
+  </div>
+
+  <div style="margin-bottom:6px">
+    <div class="err-row">
+      <div class="err-bad">
+        <div class="err-label" style="color:var(--purple)">❌</div>
+        <div class="err-text" style="color:var(--text3)">祛斑产品推荐</div>
+      </div>
+      <div class="err-good">
+        <div class="err-label" style="color:var(--green)">✅</div>
+        <div class="err-text" style="color:var(--green)">祛斑花了3万才明白，最有效的不是最贵的</div>
+      </div>
+    </div>
+    <p style="font-size:12px;color:var(--text3);text-align:center;margin-bottom:8px">改了：情绪+反常识</p>
+  </div>
+
+  <div style="margin-bottom:6px">
+    <div class="err-row">
+      <div class="err-bad">
+        <div class="err-label" style="color:var(--purple)">❌</div>
+        <div class="err-text" style="color:var(--text3)">大家好我是XX，今天聊聊美业</div>
+      </div>
+      <div class="err-good">
+        <div class="err-label" style="color:var(--green)">✅</div>
+        <div class="err-text" style="color:var(--green)">做了8年美业，我最怕客户问这个问题</div>
+      </div>
+    </div>
+    <p style="font-size:12px;color:var(--text3);text-align:center;margin-bottom:8px">改了：身份+情绪+悬念</p>
+  </div>
+
+  <div class="highlight-box purple" style="text-align:center">
+    💡 <strong>一句话记住</strong>：写标题的时候问自己——<br>如果我的标题和 10 个同行放在一起，用户会点我的吗？<br>不会就换个公式再写一遍。
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ========== 05 检查清单 ========== -->
+  <div class="section-title">
+    <span class="num">05</span>
+    <h2>标题检查清单<span class="green">（每次发视频前自检）</span></h2>
+  </div>
+
+  <div class="card green-border">
+    <ul class="checklist">
+      <li>我的标题是"广告式"不是"说明书式"？（用户想点开看，还是只是知道了视频内容？）</li>
+      <li>用了哪个公式？（数字+反常识 / 身份+结果 / 情绪+悬念 / 混合）</li>
+      <li>有具体数字吗？（数字让大脑觉得可信、具体）</li>
+      <li>有反常识/悬念吗？（让用户产生兴趣缺口）</li>
+      <li>标题跟视频内容一致吗？（标题党会消耗信任）</li>
+      <li>如果和 10 个同行标题放一起，用户会先点我的吗？</li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ========== 06 说人话 ========== -->
+  <div class="human-talk">
+    <h4>💬 标题到底是个什么东西？</h4>
+    <p>
+      想象你在抖音刷到两条内容一样的视频——一条标题是「今天教大家怎么护肤」，另一条是「3 个越护肤越烂脸的习惯，第 1 个你天天在做」。你点哪个？<br><br>
+      第一条是"说明书"——它告诉你"我这条视频讲了什么"。第二条是"广告"——它让你「想点开看看我说得对不对」。<br><br>
+      标题不需要概括整条视频，只需要做一件事：<strong>让用户 1 秒内决定点开</strong>。好的标题=给你装了一个"好奇心钩子"——用户不点开来看完，心里不舒服。就这么简单。<br><br>
+      三个公式就是三种钩子。数字+反常识="真的有 3 个误区？" 身份+结果="这个身份的人真的做成了？" 情绪+悬念="到底怎么了？" 你每次写标题，选一个公式往里套就行。<br><br>
+      <strong>不需要天赋，不需要文采。套公式，写完过一遍检查清单就能发。</strong>
+    </p>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ========== 07 核心金句 ========== -->
+  <div class="section-title">
+    <span class="num">07</span>
+    <h2>核心金句<span class="green">（记住这几句）</span></h2>
+  </div>
+
+  <div class="quote-item">
+    <span class="q-num">1</span>
+    <span class="q-text">标题是广告，不是说明书。好的标题让用户想点进去看，不是告诉用户"视频讲了什么"。</span>
+  </div>
+  <div class="quote-item">
+    <span class="q-num">2</span>
+    <span class="q-text">三个公式轮流用：数字+反常识 / 身份+结果 / 情绪+悬念。还可以混着用。</span>
+  </div>
+  <div class="quote-item">
+    <span class="q-num">3</span>
+    <span class="q-text">数字让大脑觉得具体可信，反常识打断自动划走。数字+反常识是最强的标题公式。</span>
+  </div>
+  <div class="quote-item">
+    <span class="q-num">4</span>
+    <span class="q-text">标题跟视频内容必须一致。标题党只会消耗用户的信任，一次够了。</span>
+  </div>
+  <div class="quote-item">
+    <span class="q-num">5</span>
+    <span class="q-text">写标题不需要天赋——套公式，过检查清单，能发。</span>
+  </div>
+
+</div>
+</div>
+
+</body>
+</html>
+
+
+

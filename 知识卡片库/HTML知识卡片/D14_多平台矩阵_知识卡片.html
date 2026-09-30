@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>多平台矩阵 · 知识卡片</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}:root{--green:#00cc55;--green2:#00e060;--purple:#9b59b6;--bg:#0b1120;--card:rgba(255,255,255,0.05);--text:#fff;--text2:#c8d6e5;--text3:#7f8c9b;--border:rgba(255,255,255,0.08)}
+  body{font-family:'Microsoft YaHei','PingFang SC',sans-serif;background:#000;color:var(--text);-webkit-text-size-adjust:100%}
+  .page{max-width:440px;margin:0 auto;background:linear-gradient(170deg,#0b1120 0%,#0f1829 30%,#0b1120 100%);position:relative;overflow:hidden;padding-bottom:40px}
+  .page::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:40px 40px;pointer-events:none;z-index:0}
+  .page::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse 300px 400px at 50% 15%,rgba(0,204,85,.12) 0%,transparent 60%),radial-gradient(ellipse 200px 300px at 85% 40%,rgba(0,204,85,.08) 0%,transparent 60%),radial-gradient(ellipse 200px 250px at 15% 70%,rgba(155,89,182,.08) 0%,transparent 60%);pointer-events:none;z-index:0}
+  .container{position:relative;z-index:2;padding:0 16px}
+  .particles-wrap{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+  .dot-p{position:absolute;width:3px;height:3px;border-radius:50%;background:var(--green);opacity:.25;animation:twinkle 5s ease-in-out infinite}
+  .dot-p:nth-child(2n){background:var(--purple);opacity:.2;animation-delay:-2s}.dot-p:nth-child(3n){background:#fff;width:2px;height:2px;opacity:.15;animation-delay:-3.5s}
+  .dot-p:nth-child(1){top:6%;left:8%}.dot-p:nth-child(2){top:18%;left:85%}.dot-p:nth-child(3){top:32%;left:12%}.dot-p:nth-child(4){top:45%;left:90%}.dot-p:nth-child(5){top:55%;left:6%}.dot-p:nth-child(6){top:68%;left:82%}.dot-p:nth-child(7){top:78%;left:15%}.dot-p:nth-child(8){top:88%;left:88%}
+  @keyframes twinkle{0%,100%{opacity:.15;transform:scale(1)}50%{opacity:.45;transform:scale(1.8)}}
+  .glow-line{position:absolute;height:1px;border-radius:1px;z-index:1;pointer-events:none}.glow-line.g1{width:160px;background:linear-gradient(90deg,transparent,rgba(0,204,85,.12),transparent);top:12%;left:3%}.glow-line.g2{width:120px;background:linear-gradient(90deg,transparent,rgba(155,89,182,.10),transparent);top:58%;right:4%}
+  .glow-ring{position:absolute;border-radius:50%;border:1px solid;z-index:1;pointer-events:none}.glow-ring.r1{width:200px;height:200px;border-color:rgba(0,204,85,.04);top:8%;right:-60px}.glow-ring.r2{width:140px;height:140px;border-color:rgba(155,89,182,.04);top:65%;left:-40px}
+  .header{text-align:center;padding:36px 20px 24px;border-bottom:1px solid rgba(0,204,85,.15);margin-bottom:24px}
+  .header .logo-row{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:16px}.header .logo-img{width:44px;height:44px;border-radius:10px}.header .brand{font-size:17px;font-weight:700;color:var(--text);letter-spacing:1px}
+  .header h1{font-size:26px;font-weight:900;line-height:1.3;color:var(--green)}.header .tag{display:inline-block;margin-top:10px;padding:4px 14px;border-radius:20px;font-size:12px;color:var(--green);border:1px solid rgba(0,204,85,.25);background:rgba(0,204,85,.06)}
+  .section-title{display:flex;align-items:center;gap:10px;margin:32px 0 16px;padding-bottom:10px;border-bottom:1px solid rgba(0,204,85,.2)}.section-title .num{font-size:36px;font-weight:900;color:var(--green);font-family:'Inter','PingFang SC',sans-serif;opacity:.3;line-height:1}.section-title h2{font-size:20px;font-weight:700;color:var(--text);line-height:1.3}
+  .sub-title{font-size:16px;font-weight:700;color:var(--green);margin:20px 0 10px;padding-left:12px;border-left:3px solid var(--green);line-height:1.4}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px}.card.green-border{border-color:rgba(0,204,85,.2);background:rgba(0,204,85,.04)}
+  .tree{list-style:none;padding:0;font-size:14px;line-height:1.8}.tree li{padding:2px 0 2px 20px;position:relative;color:var(--text2)}.tree li::before{content:'';position:absolute;left:6px;top:11px;width:6px;height:6px;border-radius:50%;background:var(--green);opacity:.5}.tree li.level1{font-weight:700;color:var(--text);padding-left:0}.tree li.level1::before{display:none}.tree li.level2{padding-left:20px}
+  .compare{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0}.compare .col{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px}.compare .col h4{font-size:14px;font-weight:700;margin-bottom:8px;text-align:center;color:var(--green)}.compare .col li{font-size:13px;color:var(--text2);line-height:1.7;list-style:none;padding-left:0;text-align:center}
+  .quote-item{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px 16px;margin-bottom:10px;display:flex;gap:12px;align-items:flex-start}.quote-item .q-num{width:28px;height:28px;border-radius:50%;background:rgba(0,204,85,.15);color:var(--green);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;flex-shrink:0}.quote-item .q-text{font-size:14px;line-height:1.6;color:var(--text);font-weight:600}
+  .formula{background:rgba(0,204,85,.08);border:1px solid rgba(0,204,85,.25);border-radius:10px;padding:12px 16px;margin:10px 0;text-align:center;font-size:15px;font-weight:700;color:var(--green);line-height:1.6}
+  .highlight-box{background:rgba(0,204,85,.06);border:1px solid rgba(0,204,85,.18);border-radius:8px;padding:10px 14px;margin:10px 0;font-size:13px;color:var(--green);line-height:1.6}
+  .divider{height:1px;background:linear-gradient(90deg,transparent,rgba(0,204,85,.2),transparent);margin:20px 0}
+  .human-talk{background:rgba(155,89,182,.06);border:1px solid rgba(155,89,182,.2);border-radius:12px;padding:16px;margin:16px 0}.human-talk h4{font-size:15px;font-weight:700;color:var(--purple);margin-bottom:10px}.human-talk p{font-size:13px;color:var(--text2);line-height:1.8}
+  .err-table{width:100%;font-size:12px;border-collapse:collapse;margin:10px 0}.err-table td{padding:8px 10px;border-bottom:1px solid var(--border);color:var(--text2);line-height:1.5;vertical-align:top}.err-table td:first-child{color:#e74c3c;width:40%}.err-table td:last-child{color:var(--green);width:60%}.err-table tr:first-child td{font-weight:700;color:var(--text);font-size:13px}
+  .plat-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}
+  .plat-card{background:rgba(0,204,85,.04);border:1px solid rgba(0,204,85,.12);border-radius:10px;padding:12px}.plat-card .plat-name{font-size:15px;font-weight:700;color:var(--green);margin-bottom:4px}.plat-card .plat-detail{font-size:11px;color:var(--text2);line-height:1.5}
+  /* ===== 字号整体放大 ===== */
+  body{font-size:17px}
+  .header .brand{font-size:18px}
+  .header h1{font-size:30px}
+  .header .tag{font-size:14px}
+  .section-title .num{font-size:40px}
+  .section-title h2{font-size:24px}
+  .sub-title{font-size:18px}
+  .tree{font-size:16px}
+  .flow{font-size:16px}
+  .compare .col h4{font-size:16px}
+  .compare .col li{font-size:15px}
+  .quote-item .q-text{font-size:16px}
+  .formula{font-size:17px}
+  .step-card .step-tag{font-size:13px}
+  .step-card h4{font-size:17px}
+  .step-card .step-content{font-size:15px}
+  .sub-method h5{font-size:16px}
+  .sub-method .step-content{font-size:15px}
+  .highlight-box{font-size:15px}
+  .human-talk h4{font-size:17px}
+  .human-talk p{font-size:15px}
+  .err-table td{font-size:14px}
+  .err-table tr:first-child td{font-size:15px}
+  .type-card .type-num{font-size:13px}
+  .type-card h4{font-size:16px}
+  .type-card .type-desc{font-size:14px}
+  .dim-tag{font-size:14px}
+  .triple .elem .el{font-size:15px}
+  .triple .elem .desc{font-size:12px}
+  .metric-card .m-name{font-size:15px}
+  .metric-card .m-score{font-size:13px}
+  .ifelse-box .if{font-size:15px}
+  .ifelse-box .then{font-size:14px}
+  [style*="font-size:13px"]{font-size:15px !important}
+  [style*="font-size:12px"]{font-size:14px !important}
+  [style*="font-size:11px"]{font-size:14px !important}
+  [style*="font-size:10px"]{font-size:12px !important}
+  .plat-card .plat-name{font-size:15px}
+  .plat-card .plat-detail{font-size:13px}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="particles-wrap"><div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div></div>
+  <div class="glow-line g1"></div><div class="glow-line g2"></div><div class="glow-ring r1"></div><div class="glow-ring r2"></div>
+<div class="container">
+
+  <div class="header">
+    <div class="logo-row"><img src="logo.png" alt="创亿商学" class="logo-img"><span class="brand">短视频IP实训陪跑班</span></div>
+    <h1>多平台矩阵</h1>
+    <span class="tag">📖 4大平台差异 + 分发策略 + 一鱼多吃</span>
+  </div>
+
+  <div class="section-title"><span class="num">01</span><h2>为什么必须<span class="green">多平台？</span></h2></div>
+  <div class="card green-border">
+    <p style="font-size:13px;color:var(--text2);line-height:1.7">
+      <strong>核心逻辑：多一条分发渠道 = 多一个流量入口 = 降低单一平台风险。</strong><br><br>
+      抖音流量大但竞争惨烈；视频号信任感强但流量小；快手接地气但调性低；小红书种草但偏女性。每个平台都有自己的用户画像和流量逻辑，你的内容在抖音不爆，不一定在视频号也不爆。<br><br>
+      <strong>关键认知：</strong>不要问"哪个平台最好"，要问"我的目标用户在哪个平台"。不同行业/产品在不同平台的效果天差地别。高客单价+需要信任 → 视频号。快消+走量 → 抖音。种草+女性消费 → 小红书。
+    </p>
+  </div>
+
+  <div class="section-title"><span class="num">02</span><h2>4大平台<span class="green">核心差异</span></h2></div>
+
+  <div class="plat-grid">
+    <div class="plat-card"><div class="plat-name">🎵 抖音</div><div class="plat-detail"><strong>逻辑：</strong>兴趣推荐<br><strong>用户：</strong>18-45岁全年龄<br><strong>格式：</strong>竖版9:16<br><strong>风格：</strong>大字幕高饱和，节奏快<br><strong>适合：</strong>泛流量/带货/娱乐<br><strong>比喻：</strong>夜店——人多热闹但难以深聊</div></div>
+    <div class="plat-card"><div class="plat-name">💬 视频号</div><div class="plat-detail"><strong>逻辑：</strong>社交推荐+兴趣推荐<br><strong>用户：</strong>30-60岁中产<br><strong>格式：</strong>横版16:9为主<br><strong>风格：</strong>信任感，社群裂变<br><strong>适合：</strong>高客单/知识付费/私域<br><strong>比喻：</strong>私人会所——人少但天然有信任</div></div>
+    <div class="plat-card"><div class="plat-name">📱 快手</div><div class="plat-detail"><strong>逻辑：</strong>社区+推荐<br><strong>用户：</strong>下沉市场为主<br><strong>格式：</strong>竖版9:16<br><strong>风格：</strong>接地气，真实生活<br><strong>适合：</strong>农产品/地摊/老铁经济<br><strong>比喻：</strong>菜市场——热闹接地气</div></div>
+    <div class="plat-card"><div class="plat-name">📕 小红书</div><div class="plat-detail"><strong>逻辑：</strong>搜索+推荐<br><strong>用户：</strong>18-35岁女性<br><strong>格式：</strong>图文+视频<br><strong>风格：</strong>种草，精致审美<br><strong>适合：</strong>美业/服装/生活方式<br><strong>比喻：</strong>商场——带着购物目的来的</div></div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section-title"><span class="num">03</span><h2><span class="green">分发策略</span>（实操指南）</h2></div>
+
+  <div class="card">
+    <ul class="tree">
+      <li class="level1">📋 策略1：同一条视频微调适配</li>
+      <li class="level2">核心内容不变，微调三要素：字幕（抖音加大加醒目，视频号正常即可）/ 封面（各平台尺寸不同，需更改比例）/ BGM（可选差异，但非必须）</li>
+      <li class="level2"><strong>为什么微调：</strong>各平台用户习惯不同——抖音用户刷得快需要大字冲击；视频号用户有耐心看小字；小红书需要精致封面</li>
+      <li class="level1">⏰ 策略2：发布时间错开</li>
+      <li class="level2">抖音：晚上 7-9点（用户刷视频高峰）</li>
+      <li class="level2">小红书：中午 12-14点（午休刷）</li>
+      <li class="level2">视频号：早上 7-9点/晚上 8-10点（微信打开高峰）</li>
+      <li class="level2">快手：晚上 6-9点</li>
+      <li class="level1">🎯 策略3：主推1-2个平台</li>
+      <li class="level2">不要平均用力。选1-2个你最看重的平台重点运营，其他同步分发即可。主推平台每天发，分发平台可降频。</li>
+      <li class="level1">🏷️ 策略4：话题标签差异化</li>
+      <li class="level2">抖音：泛标签+#行业+#城市+#同城推荐</li>
+      <li class="level2">小红书：#话题关键词+精准长尾标签（用户搜索用）</li>
+      <li class="level2">视频号：#行业标签+社群标签</li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section-title"><span class="num">04</span><h2>各平台<span class="green">内容适配指南</span></h2></div>
+  <div class="card"><table class="err-table">
+    <tr><td>平台</td><td>✅ 适合的内容类型</td></tr>
+    <tr><td>抖音</td><td>干货口播、新闻体、剧情反转、挑战类——需要"第一秒抓住眼球"的高冲击力内容</td></tr>
+    <tr><td>视频号</td><td>深度知识、真人真事、情感共鸣、行业洞察——需要"让人想转发给朋友"的信任型内容</td></tr>
+    <tr><td>快手</td><td>真实生活记录、接地气教学、手艺人展示、乡村/地摊场景——需要"老铁文化"的真诚内容</td></tr>
+    <tr><td>小红书</td><td>教程/测评/清单/好物推荐/前后对比——需要"收藏价值高"的种草型内容</td></tr>
+  </table></div>
+
+  <div class="divider"></div>
+
+  <div class="human-talk"><h4>💬 讲点实在的：多平台到底怎么玩？</h4>
+    <p>
+      多平台矩阵说白了就一句话：<strong>一条视频拍出来，改个头换面发到四个地方。</strong><br><br>
+      不是让你在每个平台都重新做一套内容——那会累死。而是拍好一条视频后，花10分钟做"本地化"适配：<br>
+      · 发抖音：字幕加粗加大，封面用大字高饱和<br>
+      · 发视频号：封面改横版，标题加社群引导<br>
+      · 发小红书：封面做精致排版图，描述加关键词<br>
+      · 发快手：内容不变，或许标题更接地气一点<br><br>
+      然后错开时间发。为什么错开？因为同一条视频在不同平台算法里是独立的，不需要担心"重复"。反而错开发可以帮助你覆盖不同时间段的用户。
+    </p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section-title"><span class="num">05</span><h2>核心金句</h2></div>
+  <div class="quote-item"><span class="q-num">1</span><span class="q-text">多平台=多流量入口=降低单一平台风险。不要把所有鸡蛋放在一个篮子里。</span></div>
+  <div class="quote-item"><span class="q-num">2</span><span class="q-text">视频号不是主要流量来源，而是你的人设说明书。每个加你微信的人都会看你的视频号。</span></div>
+  <div class="quote-item"><span class="q-num">3</span><span class="q-text">一条内容，四个平台，微调适配，错开发——花10分钟多覆盖3个流量入口。</span></div>
+  <div class="quote-item"><span class="q-num">4</span><span class="q-text">不要平均用力，主推1-2个平台，其他同步分发。你的精力是有限的。</span></div>
+
+</div></div></body></html>

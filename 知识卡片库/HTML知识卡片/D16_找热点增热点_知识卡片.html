@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>找热点 · 知识卡片</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}:root{--green:#00cc55;--green2:#00e060;--purple:#9b59b6;--bg:#0b1120;--card:rgba(255,255,255,0.05);--text:#fff;--text2:#c8d6e5;--text3:#7f8c9b;--border:rgba(255,255,255,0.08)}
+  body{font-family:'Microsoft YaHei','PingFang SC',sans-serif;background:#000;color:var(--text);-webkit-text-size-adjust:100%}
+  .page{max-width:440px;margin:0 auto;background:linear-gradient(170deg,#0b1120 0%,#0f1829 30%,#0b1120 100%);position:relative;overflow:hidden;padding-bottom:40px}
+  .page::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:40px 40px;pointer-events:none;z-index:0}
+  .page::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse 300px 400px at 50% 15%,rgba(0,204,85,.12) 0%,transparent 60%),radial-gradient(ellipse 200px 300px at 85% 40%,rgba(0,204,85,.08) 0%,transparent 60%),radial-gradient(ellipse 200px 250px at 15% 70%,rgba(155,89,182,.08) 0%,transparent 60%);pointer-events:none;z-index:0}
+  .container{position:relative;z-index:2;padding:0 16px}
+  .particles-wrap{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+  .dot-p{position:absolute;width:3px;height:3px;border-radius:50%;background:var(--green);opacity:.25;animation:twinkle 5s ease-in-out infinite}
+  .dot-p:nth-child(2n){background:var(--purple);opacity:.2;animation-delay:-2s}.dot-p:nth-child(3n){background:#fff;width:2px;height:2px;opacity:.15;animation-delay:-3.5s}
+  .dot-p:nth-child(1){top:6%;left:8%}.dot-p:nth-child(2){top:18%;left:85%}.dot-p:nth-child(3){top:32%;left:12%}.dot-p:nth-child(4){top:45%;left:90%}.dot-p:nth-child(5){top:55%;left:6%}.dot-p:nth-child(6){top:68%;left:82%}.dot-p:nth-child(7){top:78%;left:15%}.dot-p:nth-child(8){top:88%;left:88%}
+  @keyframes twinkle{0%,100%{opacity:.15;transform:scale(1)}50%{opacity:.45;transform:scale(1.8)}}
+  .glow-line{position:absolute;height:1px;border-radius:1px;z-index:1;pointer-events:none}.glow-line.g1{width:160px;background:linear-gradient(90deg,transparent,rgba(0,204,85,.12),transparent);top:12%;left:3%}.glow-line.g2{width:120px;background:linear-gradient(90deg,transparent,rgba(155,89,182,.10),transparent);top:58%;right:4%}
+  .glow-ring{position:absolute;border-radius:50%;border:1px solid;z-index:1;pointer-events:none}.glow-ring.r1{width:200px;height:200px;border-color:rgba(0,204,85,.04);top:8%;right:-60px}.glow-ring.r2{width:140px;height:140px;border-color:rgba(155,89,182,.04);top:65%;left:-40px}
+  .header{text-align:center;padding:36px 20px 24px;border-bottom:1px solid rgba(0,204,85,.15);margin-bottom:24px}
+  .header .logo-row{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:16px}.header .logo-img{width:44px;height:44px;border-radius:10px}.header .brand{font-size:17px;font-weight:700;color:var(--text)}
+  .header h1{font-size:26px;font-weight:900;line-height:1.3;color:var(--green)}.header .tag{display:inline-block;margin-top:10px;padding:4px 14px;border-radius:20px;font-size:12px;color:var(--green);border:1px solid rgba(0,204,85,.25);background:rgba(0,204,85,.06)}
+  .section-title{display:flex;align-items:center;gap:10px;margin:32px 0 16px;padding-bottom:10px;border-bottom:1px solid rgba(0,204,85,.2)}.section-title .num{font-size:36px;font-weight:900;color:var(--green);font-family:'Inter','PingFang SC',sans-serif;opacity:.3;line-height:1}.section-title h2{font-size:20px;font-weight:700;color:var(--text);line-height:1.3}
+  .sub-title{font-size:16px;font-weight:700;color:var(--green);margin:20px 0 10px;padding-left:12px;border-left:3px solid var(--green);line-height:1.4}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px}.card.green-border{border-color:rgba(0,204,85,.2);background:rgba(0,204,85,.04)}
+  .tree{list-style:none;padding:0;font-size:14px;line-height:1.8}.tree li{padding:2px 0 2px 20px;position:relative;color:var(--text2)}.tree li::before{content:'';position:absolute;left:6px;top:11px;width:6px;height:6px;border-radius:50%;background:var(--green);opacity:.5}.tree li.level1{font-weight:700;color:var(--text);padding-left:0}.tree li.level1::before{display:none}.tree li.level2{padding-left:20px}
+  .quote-item{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px 16px;margin-bottom:10px;display:flex;gap:12px;align-items:flex-start}.quote-item .q-num{width:28px;height:28px;border-radius:50%;background:rgba(0,204,85,.15);color:var(--green);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;flex-shrink:0}.quote-item .q-text{font-size:14px;line-height:1.6;color:var(--text);font-weight:600}
+  .formula{background:rgba(0,204,85,.08);border:1px solid rgba(0,204,85,.25);border-radius:10px;padding:12px 16px;margin:10px 0;text-align:center;font-size:15px;font-weight:700;color:var(--green);line-height:1.6}
+  .highlight-box{background:rgba(0,204,85,.06);border:1px solid rgba(0,204,85,.18);border-radius:8px;padding:10px 14px;margin:10px 0;font-size:13px;color:var(--green);line-height:1.6}
+  .divider{height:1px;background:linear-gradient(90deg,transparent,rgba(0,204,85,.2),transparent);margin:20px 0}
+  .human-talk{background:rgba(155,89,182,.06);border:1px solid rgba(155,89,182,.2);border-radius:12px;padding:16px;margin:16px 0}.human-talk h4{font-size:15px;font-weight:700;color:var(--purple);margin-bottom:10px}.human-talk p{font-size:13px;color:var(--text2);line-height:1.8}
+  .flow{display:flex;flex-direction:column;align-items:center;gap:4px;padding:12px 0;font-size:14px;color:var(--text2)}.flow .step{background:rgba(0,204,85,.08);border:1px solid rgba(0,204,85,.15);border-radius:8px;padding:8px 16px;text-align:center;width:100%;font-weight:600}.flow .arrow{color:var(--green);font-size:18px}
+  /* ===== 字号整体放大 ===== */
+  body{font-size:17px}
+  .header .brand{font-size:18px}
+  .header h1{font-size:30px}
+  .header .tag{font-size:14px}
+  .section-title .num{font-size:40px}
+  .section-title h2{font-size:24px}
+  .sub-title{font-size:18px}
+  .tree{font-size:16px}
+  .flow{font-size:16px}
+  .compare .col h4{font-size:16px}
+  .compare .col li{font-size:15px}
+  .quote-item .q-text{font-size:16px}
+  .formula{font-size:17px}
+  .step-card .step-tag{font-size:13px}
+  .step-card h4{font-size:17px}
+  .step-card .step-content{font-size:15px}
+  .sub-method h5{font-size:16px}
+  .sub-method .step-content{font-size:15px}
+  .highlight-box{font-size:15px}
+  .human-talk h4{font-size:17px}
+  .human-talk p{font-size:15px}
+  .err-table td{font-size:14px}
+  .err-table tr:first-child td{font-size:15px}
+  .type-card .type-num{font-size:13px}
+  .type-card h4{font-size:16px}
+  .type-card .type-desc{font-size:14px}
+  .dim-tag{font-size:14px}
+  .triple .elem .el{font-size:15px}
+  .triple .elem .desc{font-size:12px}
+  .metric-card .m-name{font-size:15px}
+  .metric-card .m-score{font-size:13px}
+  .ifelse-box .if{font-size:15px}
+  .ifelse-box .then{font-size:14px}
+  [style*="font-size:13px"]{font-size:15px !important}
+  [style*="font-size:12px"]{font-size:14px !important}
+  [style*="font-size:11px"]{font-size:14px !important}
+  [style*="font-size:10px"]{font-size:12px !important}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="particles-wrap"><div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div></div>
+  <div class="glow-line g1"></div><div class="glow-line g2"></div><div class="glow-ring r1"></div><div class="glow-ring r2"></div>
+<div class="container">
+
+  <div class="header">
+    <div class="logo-row"><img src="logo.png" alt="创亿商学" class="logo-img"><span class="brand">短视频IP实训陪跑班</span></div>
+    <h1>找热点+增热点</h1>
+    <span class="tag">📖 3个找热点渠道 + 3大蹭热点原则 + 自造热点法</span>
+  </div>
+
+  <div class="section-title"><span class="num">01</span><h2>热点的本质：<span class="green">免费流量放大器</span></h2></div>
+  <div class="card green-border">
+    <p style="font-size:13px;color:var(--text2);line-height:1.7">
+      <strong>热点 = 平台正在主动推送给大量用户的流量池。</strong>当一个话题/事件/BGM成为热点，抖音算法会主动给相关内容更大的曝光权重。你蹭热点 = 你搭上了平台流量分发的高峰列车。热点本身不花钱，但它能让你的内容触达平时10倍的曝光量。<br><br>
+      但蹭热点不是见什么蹭什么——硬蹭跟行业无关的热点不仅没流量，还会让算法搞不清你的定位。
+    </p>
+  </div>
+
+  <div class="section-title"><span class="num">02</span><h2>4个<span class="green">找热点渠道</span></h2></div>
+  <div class="card">
+    <ul class="tree">
+      <li class="level1">🔥 抖音热榜（最直接）</li>
+      <li class="level2">打开抖音→左上角搜索→热榜。每天看前10，找和你的行业有结合点的。</li>
+      <li class="level1">📊 巨量算数（看趋势）</li>
+      <li class="level2">巨量算数官网（trendinsight.oceanengine.com），输入关键词看搜索趋势，预判下一个热点。</li>
+      <li class="level1">📅 节日/事件日历</li>
+      <li class="level2">双11、618、春节、情人节、毕业季、开学季——这些都是可预见的热点，提前1-2周准备内容。</li>
+      <li class="level1">👀 刷同领域24小时内爆款</li>
+      <li class="level2">关注你的对标账号，看到他们24小时内发的新内容爆了→第一时间跟进同结构内容。</li>
+    </ul>
+  </div>
+
+  <div class="section-title"><span class="num">03</span><h2>蹭热点的<span class="green">3大原则</span></h2></div>
+  <div class="flow">
+    <div class="step"><strong>⏰ 原则1：快（24小时内）</strong><br><span style="font-size:12px;font-weight:400;color:var(--text3)">热点有生命周期——12小时爆，24小时走到峰值，48小时后凉。24小时内跟进才有流量红利。</span></div>
+    <div class="arrow">↓</div>
+    <div class="step"><strong>🔗 原则2：相关（跟行业/人设强相关）</strong><br><span style="font-size:12px;font-weight:400;color:var(--text3)">蹭热点必须跟你的人设/行业有结合点。一个做美业的去讲NBA总决赛，算法会懵逼，用户会划走。</span></div>
+    <div class="arrow">↓</div>
+    <div class="step" style="border-color:rgba(0,204,85,.4);background:rgba(0,204,85,.14)"><strong>🎨 原则3：加特色（不全照搬）</strong><br><span style="font-size:12px;font-weight:400;color:var(--green)">热点跟拍+你的行业特色=差异化。所有人拍同一个热点，你加了行业元素才能脱颖而出。</span></div>
+  </div>
+
+  <div class="sub-title">3种蹭热点形式 + 各行业示范</div>
+  <div style="margin-bottom:12px">
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px;margin-bottom:8px">
+      <div style="font-size:16px;font-weight:700;color:var(--green);margin-bottom:6px">🎬 跟拍热点：同款BGM+同款动作+你的场景</div>
+      <div style="font-size:15px;color:var(--text2);line-height:1.9">适合快速出片。BGM/动作是热点本身，场景换成你自己的。<br><strong>示例：</strong>科目三火了→餐饮老板在后厨跳科目三+招牌菜入镜。健身教练在健身房跳+学员一起。</div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px;margin-bottom:8px">
+      <div style="font-size:16px;font-weight:700;color:var(--green);margin-bottom:6px">💬 借势点评：从你的行业角度解读热点</div>
+      <div style="font-size:15px;color:var(--text2);line-height:1.9">热点只是引子，核心是你的观点。<br><strong>示例：</strong>某明星官宣→装修账号「明星豪宅装修花了多少钱？我给你们拆解一下」。律师「明星离婚案里的财产分割，普通人能学到什么」。会计「明星被查税，个体户怎么自查」。</div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px">
+      <div style="font-size:16px;font-weight:700;color:var(--green);margin-bottom:6px">🛍️ 热点+产品：热点提供场景，产品提供方案</div>
+      <div style="font-size:15px;color:var(--text2);line-height:1.9">热点制造了一个「大家都在关注」的场景→你给出你的行业解决方案。<br><strong>示例：</strong>高温预警→美业「暴晒后的急救护肤三步」。水果店「天热别只知道吃西瓜，这三种水果更解暑」。汽修「高温天最容易出问题的三个零件，提前检查」。</div>
+    </div>
+  </div>
+
+  <div class="section-title"><span class="num">04</span><h2>自己<span class="green">造热点</span></h2></div>
+  <div class="card">
+    <ul class="tree">
+      <li class="level1">🏗️ 行业节点法</li>
+      <li class="level2">换季/节日前1-2周，提前布局行业热点。如"秋冬护肤大换季"、"春节前美业冲刺"。</li>
+      <li class="level1">⚔️ 争议话题法</li>
+      <li class="level2">抛出一个行业内"A还是B"的争议话题，引用户站队讨论。如"做美业技术重要还是服务重要？"</li>
+      <li class="level1">🗳️ 投票/对比法</li>
+      <li class="level2">"你们觉得哪个效果好？A vs B，评论区告诉我"——引导投票型互动，互动量越大流量越大。</li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="human-talk"><h4>💬 讲点实在的：蹭热点到底怎么蹭？</h4>
+    <p>
+      蹭热点就像搭顺风车——热点是那辆已经装满人的大巴，你要做的是在路边招手、上车、然后找个自己舒服的位置坐下。<br><br>
+      但大部分人犯两个错：<br>
+      ① <strong>上错了车：</strong>热点跟你的行业没关系，硬上。结果你一个美业号在讲NBA，球迷不看你，你的粉丝也不看你。<br>
+      ② <strong>上车不说话：</strong>跟拍了热点的BGM，但内容没有任何自己的东西。用户在10个一模一样的视频里凭什么看你？<br><br>
+      正确做法：<strong>搭热点车、讲你自己的事。</strong>比如科目三火了→你是餐饮老板→你在后厨跳科目三同时露出你的招牌菜→这就是"热点+行业特色"。用户既看到了热点的熟悉感，又看到了你的差异化。
+    </p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section-title"><span class="num">05</span><h2>核心金句</h2></div>
+  <div class="quote-item"><span class="q-num">1</span><span class="q-text">热点是免费流量放大器——搭上高峰列车，曝光量翻10倍。</span></div>
+  <div class="quote-item"><span class="q-num">2</span><span class="q-text">蹭热点三原则：快（24小时内）、相关（和人设强关联）、加特色（不照搬）。</span></div>
+  <div class="quote-item"><span class="q-num">3</span><span class="q-text">搭热点车、讲你自己的事——用户既看到熟悉感，又看到差异化。</span></div>
+  <div class="quote-item"><span class="q-num">4</span><span class="q-text">硬蹭跟行业无关的热点，算法会懵逼，用户会划走。</span></div>
+
+</div></div></body></html>

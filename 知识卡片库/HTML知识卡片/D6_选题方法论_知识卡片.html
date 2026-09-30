@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>选题方法论 · 知识卡片</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}:root{--green:#00cc55;--purple:#9b59b6;--bg:#0b1120;--card:rgba(255,255,255,0.05);--text:#fff;--text2:#c8d6e5;--text3:#7f8c9b;--border:rgba(255,255,255,0.08)}
+  body{font-family:'Microsoft YaHei','PingFang SC',sans-serif;background:#000;color:var(--text);-webkit-text-size-adjust:100%}
+  .page{max-width:440px;margin:0 auto;background:linear-gradient(170deg,#0b1120 0%,#0f1829 30%,#0b1120 100%);position:relative;overflow:hidden;padding-bottom:40px}
+  .page::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:40px 40px;pointer-events:none;z-index:0}
+  .page::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse 300px 400px at 50% 15%,rgba(0,204,85,.12) 0%,transparent 60%),radial-gradient(ellipse 200px 300px at 85% 40%,rgba(0,204,85,.08) 0%,transparent 60%),radial-gradient(ellipse 200px 250px at 15% 70%,rgba(155,89,182,.08) 0%,transparent 60%);pointer-events:none;z-index:0}
+  .container{position:relative;z-index:2;padding:0 16px}
+  .particles-wrap{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+  .dot-p{position:absolute;width:3px;height:3px;border-radius:50%;background:var(--green);opacity:.25;animation:twinkle 5s ease-in-out infinite}
+  .dot-p:nth-child(2n){background:var(--purple);opacity:.2;animation-delay:-2s}.dot-p:nth-child(3n){background:#fff;width:2px;height:2px;opacity:.15;animation-delay:-3.5s}
+  .dot-p:nth-child(1){top:6%;left:8%}.dot-p:nth-child(2){top:18%;left:85%}.dot-p:nth-child(3){top:32%;left:12%}.dot-p:nth-child(4){top:45%;left:90%}.dot-p:nth-child(5){top:55%;left:6%}.dot-p:nth-child(6){top:68%;left:82%}.dot-p:nth-child(7){top:78%;left:15%}.dot-p:nth-child(8){top:88%;left:88%}
+  @keyframes twinkle{0%,100%{opacity:.15;transform:scale(1)}50%{opacity:.45;transform:scale(1.8)}}
+  .glow-line{position:absolute;height:1px;border-radius:1px;z-index:1;pointer-events:none}.glow-line.g1{width:160px;background:linear-gradient(90deg,transparent,rgba(0,204,85,.12),transparent);top:12%;left:3%}.glow-line.g2{width:120px;background:linear-gradient(90deg,transparent,rgba(155,89,182,.10),transparent);top:58%;right:4%}
+  .glow-ring{position:absolute;border-radius:50%;border:1px solid;z-index:1;pointer-events:none}.glow-ring.r1{width:200px;height:200px;border-color:rgba(0,204,85,.04);top:8%;right:-60px}.glow-ring.r2{width:140px;height:140px;border-color:rgba(155,89,182,.04);top:65%;left:-40px}
+  .header{text-align:center;padding:36px 20px 24px;border-bottom:1px solid rgba(0,204,85,.15);margin-bottom:24px}.header .logo-row{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:16px}.header .logo-img{width:44px;height:44px;border-radius:10px}.header .brand{font-size:19px;font-weight:700;color:var(--text)}.header h1{font-size:30px;font-weight:900;line-height:1.3;color:var(--green)}.header .tag{display:inline-block;margin-top:10px;padding:5px 16px;border-radius:20px;font-size:14px;color:var(--green);border:1px solid rgba(0,204,85,.25);background:rgba(0,204,85,.06)}
+  .section-title{display:flex;align-items:center;gap:10px;margin:32px 0 16px;padding-bottom:10px;border-bottom:1px solid rgba(0,204,85,.2)}.section-title .num{font-size:40px;font-weight:900;color:var(--green);font-family:'Inter','PingFang SC',sans-serif;opacity:.3;line-height:1}.section-title h2{font-size:24px;font-weight:700;color:var(--text);line-height:1.3}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px}.card.green-border{border-color:rgba(0,204,85,.2);background:rgba(0,204,85,.04)}
+  .highlight-box{background:rgba(0,204,85,.06);border:1px solid rgba(0,204,85,.18);border-radius:8px;padding:12px 14px;margin:12px 0;font-size:16px;color:var(--green);line-height:1.7}.highlight-box.purple{background:rgba(155,89,182,.06);border-color:rgba(155,89,182,.18);color:var(--purple)}
+  .divider{height:1px;background:linear-gradient(90deg,transparent,rgba(0,204,85,.2),transparent);margin:24px 0}
+  .quote-item{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px;margin-bottom:10px;display:flex;gap:14px;align-items:center}
+  .quote-item .q-num{width:36px;height:36px;border-radius:50%;background:rgba(0,204,85,.15);color:var(--green);display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900;flex-shrink:0}
+  .quote-item .q-text{font-size:16px;line-height:1.7;color:var(--text);font-weight:600}
+  .human-talk{background:rgba(155,89,182,.06);border:1px solid rgba(155,89,182,.2);border-radius:12px;padding:18px;margin:16px 0}.human-talk h4{font-size:17px;font-weight:700;color:var(--purple);margin-bottom:10px}.human-talk p{font-size:16px;color:var(--text2);line-height:2}
+  .err-table{width:100%;font-size:15px;border-collapse:collapse;margin:10px 0}.err-table td{padding:10px 12px;border-bottom:1px solid var(--border);color:var(--text2);line-height:1.7;vertical-align:top}.err-table td:first-child{color:#e74c3c;width:40%}.err-table td:last-child{color:var(--green);width:60%}.err-table tr:first-child td{font-weight:700;color:var(--text);font-size:16px}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="particles-wrap"><div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div></div>
+  <div class="glow-line g1"></div><div class="glow-line g2"></div><div class="glow-ring r1"></div><div class="glow-ring r2"></div>
+<div class="container">
+
+  <div class="header">
+    <div class="logo-row"><img src="logo.png" alt="创亿商学" class="logo-img"><span class="brand">短视频IP实训陪跑班</span></div>
+    <h1>选题方法论</h1>
+    <span class="tag">五级星图 + 六个角度 + 选题四条件</span>
+  </div>
+
+  <div class="section-title"><span class="num">01</span><h2>工具一：五级星图<span class="green">（关键词拆解）</span></h2></div>
+  <p style="font-size:16px;color:var(--text3);margin-bottom:18px;line-height:1.9">别想「我要拍什么」——把行业从大到小拆成关键词，选题自然出来。每一级都能拆出好几个分支，<strong style="color:var(--text)">分支 × 分支 = 取之不尽的选题池</strong>。</p>
+
+  <div style="margin-bottom:14px">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
+      <span style="font-size:32px;font-weight:900;color:var(--green);opacity:.3;flex-shrink:0;font-family:'Inter',sans-serif;line-height:1">1</span>
+      <span style="font-size:17px;font-weight:700;color:var(--text)">行业大类 → 你是什么行业的？</span>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-left:40px">
+      <div class="card" style="padding:10px 12px;margin:0;text-align:center;font-size:15px;color:var(--text2)">🏗️ 装修</div>
+      <div class="card" style="padding:10px 12px;margin:0;text-align:center;font-size:15px;color:var(--text2)">💆 美业</div>
+    </div>
+  </div>
+  <div style="text-align:center;color:var(--green);font-size:20px;margin:-6px 0 -2px">↓</div>
+
+  <div style="margin-bottom:14px">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
+      <span style="font-size:32px;font-weight:900;color:var(--green);opacity:.3;flex-shrink:0;font-family:'Inter',sans-serif;line-height:1">2</span>
+      <span style="font-size:17px;font-weight:700;color:var(--text)">细分领域 → 具体做哪一块？一个行业能拆出好多个</span>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-left:40px">
+      <div class="card" style="padding:12px;margin:0"><div style="font-size:14px;color:var(--green);font-weight:700;margin-bottom:4px">🏗️ 装修</div><div style="font-size:15px;color:var(--text2);line-height:1.8"><span style="border:1px dashed rgba(0,204,85,.5);border-radius:4px;padding:1px 5px;color:var(--green)">硬装主材</span> · 软装搭配 · 设计风格 · 施工工艺</div></div>
+      <div class="card" style="padding:12px;margin:0"><div style="font-size:14px;color:var(--green);font-weight:700;margin-bottom:4px">💆 美业</div><div style="font-size:15px;color:var(--text2);line-height:1.8"><span style="border:1px dashed rgba(0,204,85,.5);border-radius:4px;padding:1px 5px;color:var(--green)">皮肤管理</span> · 美发造型 · 美甲美睫 · 医美抗衰 · 纹绣 · 美体塑形</div></div>
+    </div>
+  </div>
+  <div style="text-align:center;color:var(--green);font-size:20px;margin:-6px 0 -2px">↓</div>
+
+  <div style="margin-bottom:14px">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
+      <span style="font-size:32px;font-weight:900;color:var(--green);opacity:.3;flex-shrink:0;font-family:'Inter',sans-serif;line-height:1">3</span>
+      <span style="font-size:17px;font-weight:700;color:var(--text)">品类 → 选一个细分领域往下挖，下面又有一堆</span>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-left:40px">
+      <div class="card" style="padding:12px;margin:0"><div style="font-size:14px;color:var(--green);font-weight:700;margin-bottom:4px">🏗️ 硬装主材</div><div style="font-size:15px;color:var(--text2);line-height:1.8"><span style="border:1px dashed rgba(0,204,85,.5);border-radius:4px;padding:1px 5px;color:var(--green)">瓷砖</span> · 木门 · 墙面材料 · 水电</div></div>
+      <div class="card" style="padding:12px;margin:0"><div style="font-size:14px;color:var(--green);font-weight:700;margin-bottom:4px">💆 皮肤管理</div><div style="font-size:15px;color:var(--text2);line-height:1.8"><span style="border:1px dashed rgba(0,204,85,.5);border-radius:4px;padding:1px 5px;color:var(--green)">祛斑</span> · 祛痘 · 敏感肌 · 美白 · 补水 · 抗衰</div></div>
+    </div>
+  </div>
+  <div style="text-align:center;color:var(--green);font-size:20px;margin:-6px 0 -2px">↓</div>
+
+  <div style="margin-bottom:14px">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
+      <span style="font-size:32px;font-weight:900;color:var(--green);opacity:.3;flex-shrink:0;font-family:'Inter',sans-serif;line-height:1">4</span>
+      <span style="font-size:17px;font-weight:700;color:var(--text)">属性 / 场景 → 选一个品类继续拆，不同场景 = 不同选题</span>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-left:40px">
+      <div class="card" style="padding:12px;margin:0"><div style="font-size:14px;color:var(--green);font-weight:700;margin-bottom:4px">🏗️ 瓷砖</div><div style="font-size:15px;color:var(--text2);line-height:1.8"><span style="border:1px dashed rgba(0,204,85,.5);border-radius:4px;padding:1px 5px;color:var(--green)">客厅瓷砖</span> · 卫生间瓷砖 · 阳台瓷砖 · 厨房瓷砖</div></div>
+      <div class="card" style="padding:12px;margin:0"><div style="font-size:14px;color:var(--green);font-weight:700;margin-bottom:4px">💆 祛斑</div><div style="font-size:15px;color:var(--text2);line-height:1.8"><span style="border:1px dashed rgba(0,204,85,.5);border-radius:4px;padding:1px 5px;color:var(--green)">误区</span> · 省钱 · 对比 · 避坑 · 教程 · 趋势</div></div>
+    </div>
+  </div>
+  <div style="text-align:center;color:var(--green);font-size:20px;margin:-6px 0 -2px">↓</div>
+
+  <div style="margin-bottom:14px">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
+      <span style="font-size:32px;font-weight:900;color:var(--green);opacity:.3;flex-shrink:0;font-family:'Inter',sans-serif;line-height:1">5</span>
+      <span style="font-size:17px;font-weight:700;color:var(--green)">具体选题 → 变成一条视频标题 🎯</span>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-left:40px">
+      <div class="card green-border" style="padding:12px;margin:0;font-size:15px;font-weight:700;color:var(--green);line-height:1.6">「800×800 和 750×1500 瓷砖怎么选？」</div>
+      <div class="card green-border" style="padding:12px;margin:0;font-size:15px;font-weight:700;color:var(--green);line-height:1.6">「祛斑三大误区，90% 的宝妈第一个就中了」</div>
+    </div>
+  </div>
+
+  <div style="background:rgba(0,204,85,.04);border:1px dashed rgba(0,204,85,.3);border-radius:12px;padding:18px;margin-top:14px">
+    <div style="font-size:16px;font-weight:700;color:var(--green);margin-bottom:12px;text-align:center">✏️ 你来做一遍</div>
+    <div style="font-size:16px;color:var(--text2);line-height:2.4">
+      ① 我是什么行业的？<span style="display:inline-block;margin-left:8px;color:var(--text3);border-bottom:1px dashed rgba(255,255,255,.15);min-width:200px">&nbsp;</span><br>
+      ② 我有哪些细分领域？<span style="display:inline-block;margin-left:8px;color:var(--text3);border-bottom:1px dashed rgba(255,255,255,.15);min-width:200px">&nbsp;</span><br>
+      ③ 每个领域下有哪些品类？<span style="display:inline-block;margin-left:8px;color:var(--text3);border-bottom:1px dashed rgba(255,255,255,.15);min-width:200px">&nbsp;</span><br>
+      ④ 选一个品类，有哪些属性/场景？<span style="display:inline-block;margin-left:8px;color:var(--text3);border-bottom:1px dashed rgba(255,255,255,.15);min-width:200px">&nbsp;</span><br>
+      ⑤ 变成一条视频标题：<span style="display:inline-block;margin-left:8px;color:var(--green);border-bottom:1px dashed rgba(0,204,85,.3);min-width:240px">&nbsp;</span>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section-title"><span class="num">02</span><h2>工具二：六个选题角度<span class="green">（关键词转化）</span></h2></div>
+  <p style="font-size:16px;color:var(--text3);margin-bottom:14px;line-height:1.9">五级星图拆出来的是「素材池」，需要 6 个固定角度把关键词<strong style="color:var(--text)">转化成有流量的内容</strong>。</p>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:14px">
+    <div style="background:rgba(0,204,85,.06);border:1px solid rgba(0,204,85,.15);border-radius:10px;padding:14px 8px;text-align:center"><div style="font-size:26px;margin-bottom:4px">🕳️</div><div style="font-size:14px;font-weight:700;color:var(--text)">避坑</div><div style="font-size:13px;color:var(--text3);margin-top:2px">打破信息差</div></div>
+    <div style="background:rgba(0,204,85,.06);border:1px solid rgba(0,204,85,.15);border-radius:10px;padding:14px 8px;text-align:center"><div style="font-size:26px;margin-bottom:4px">⚖️</div><div style="font-size:14px;font-weight:700;color:var(--text)">对比</div><div style="font-size:13px;color:var(--text3);margin-top:2px">帮人做选择</div></div>
+    <div style="background:rgba(0,204,85,.06);border:1px solid rgba(0,204,85,.15);border-radius:10px;padding:14px 8px;text-align:center"><div style="font-size:26px;margin-bottom:4px">📖</div><div style="font-size:14px;font-weight:700;color:var(--text)">教程</div><div style="font-size:13px;color:var(--text3);margin-top:2px">手把手教</div></div>
+    <div style="background:rgba(0,204,85,.06);border:1px solid rgba(0,204,85,.15);border-radius:10px;padding:14px 8px;text-align:center"><div style="font-size:26px;margin-bottom:4px">📋</div><div style="font-size:14px;font-weight:700;color:var(--text)">案例</div><div style="font-size:13px;color:var(--text3);margin-top:2px">真实经历</div></div>
+    <div style="background:rgba(0,204,85,.06);border:1px solid rgba(0,204,85,.15);border-radius:10px;padding:14px 8px;text-align:center"><div style="font-size:26px;margin-bottom:4px">💡</div><div style="font-size:14px;font-weight:700;color:var(--text)">观点</div><div style="font-size:13px;color:var(--text3);margin-top:2px">输出见解</div></div>
+    <div style="background:rgba(0,204,85,.06);border:1px solid rgba(0,204,85,.15);border-radius:10px;padding:14px 8px;text-align:center"><div style="font-size:26px;margin-bottom:4px">📈</div><div style="font-size:14px;font-weight:700;color:var(--text)">趋势</div><div style="font-size:13px;color:var(--text3);margin-top:2px">蹭流量红利</div></div>
+  </div>
+
+  <div style="font-size:15px;color:var(--text3);margin-bottom:10px;text-align:center">↓ 以「<strong style="color:var(--green)">祛斑</strong>」为例，6 个角度各拍一条 ↓</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px">
+    <div class="card" style="padding:12px;margin:0"><div style="font-size:14px;color:var(--green);font-weight:700;margin-bottom:4px">🕳️ 避坑</div><div style="font-size:14px;color:var(--text2);line-height:1.6">祛斑三大误区，90%的宝妈第一个就中了</div></div>
+    <div class="card" style="padding:12px;margin:0"><div style="font-size:14px;color:var(--green);font-weight:700;margin-bottom:4px">⚖️ 对比</div><div style="font-size:14px;color:var(--text2);line-height:1.6">花3万和花300祛斑，效果到底差在哪</div></div>
+    <div class="card" style="padding:12px;margin:0"><div style="font-size:14px;color:var(--green);font-weight:700;margin-bottom:4px">📖 教程</div><div style="font-size:14px;color:var(--text2);line-height:1.6">在家就能做的祛斑三步，每天10分钟</div></div>
+    <div class="card" style="padding:12px;margin:0"><div style="font-size:14px;color:var(--green);font-weight:700;margin-bottom:4px">📋 案例</div><div style="font-size:14px;color:var(--text2);line-height:1.6">她长了10年斑，用这个方法终于淡了</div></div>
+    <div class="card" style="padding:12px;margin:0"><div style="font-size:14px;color:var(--green);font-weight:700;margin-bottom:4px">💡 观点</div><div style="font-size:14px;color:var(--text2);line-height:1.6">祛斑不一定要去美容院，我说句得罪人的话</div></div>
+    <div class="card" style="padding:12px;margin:0"><div style="font-size:14px;color:var(--green);font-weight:700;margin-bottom:4px">📈 趋势</div><div style="font-size:14px;color:var(--text2);line-height:1.6">2026最安全的祛斑方式，不破皮不反黑</div></div>
+  </div>
+
+  <div class="highlight-box purple">💡 <strong>两个工具配合</strong>：五级星图拆出几百个关键词 × 六个角度每个 ×6 = 上千条选题，够你拍一两年。</div>
+
+  <div class="divider"></div>
+
+  <div class="section-title"><span class="num">03</span><h2>选题四条件：<span class="green">筛掉没流量的</span></h2></div>
+  <p style="font-size:16px;color:var(--text3);margin-bottom:14px">选题想好了别急着拍，拿这 4 条筛一遍。<strong style="color:var(--green)">缺一条就不做。</strong></p>
+
+  <div style="margin-bottom:14px">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
+      <span style="font-size:32px;font-weight:900;color:var(--green);opacity:.3;flex-shrink:0;font-family:'Inter',sans-serif;line-height:1">1</span>
+      <span style="font-size:16px;font-weight:700;color:var(--text)">和人设 / 账号强相关</span>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:12px;margin-left:40px;font-size:15px;color:var(--text3);line-height:1.8">你做美业的去讲「怎么选股票」，粉丝凭啥听你的？选题必须跟你账号定位一致，用户刷到才觉得「这人讲这个靠谱」。</div>
+  </div>
+  <div style="margin-bottom:14px">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
+      <span style="font-size:32px;font-weight:900;color:var(--green);opacity:.3;flex-shrink:0;font-family:'Inter',sans-serif;line-height:1">2</span>
+      <span style="font-size:16px;font-weight:700;color:var(--text)">目标用户关心</span>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:12px;margin-left:40px;font-size:15px;color:var(--text3);line-height:1.8">你关心进货价，用户关心「有没有用」。选题得站在用户那边想。问自己：目标用户刷到这个标题，会停下来吗？</div>
+  </div>
+  <div style="margin-bottom:14px">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
+      <span style="font-size:32px;font-weight:900;color:var(--green);opacity:.3;flex-shrink:0;font-family:'Inter',sans-serif;line-height:1">3</span>
+      <span style="font-size:16px;font-weight:700;color:var(--text)">有真实经历或独特见解</span>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:12px;margin-left:40px;font-size:15px;color:var(--text3);line-height:1.8">全网都在说「祛斑要做皮秒」，你如果自己做过、踩过坑、知道哪些人不适合做，你就比别人有话说。人云亦云的内容，抖音不给流量。</div>
+  </div>
+  <div style="margin-bottom:14px">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
+      <span style="font-size:32px;font-weight:900;color:var(--green);opacity:.3;flex-shrink:0;font-family:'Inter',sans-serif;line-height:1">4</span>
+      <span style="font-size:16px;font-weight:700;color:var(--text)">有具体数字或反常识结论</span>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:12px;margin-left:40px;font-size:15px;color:var(--text3);line-height:1.8">「祛斑小技巧」太笼统 → 换成「祛斑我只用了 3 步，第 2 步 90% 的人做错了」。有数字 + 反常识，用户就想点进去看你说得对不对。</div>
+  </div>
+
+  <div class="highlight-box purple">⚠️ 四条件缺一条，选题就不合格。今天交作业之前，拿这 4 条先自检一遍。</div>
+
+  <div class="divider"></div>
+
+  <div class="section-title"><span class="num">04</span><h2>常见错误<span class="green">对照表</span></h2></div>
+  <div class="card"><table class="err-table">
+    <tr><td>❌ 错误做法</td><td>✅ 正确做法</td></tr>
+    <tr><td>选题太「大」：<br>「做美业怎么赚钱」— 范围太大</td><td>选题先缩小：<br>「祛斑的 3 个误区」— 具体到品类×场景×角度</td></tr>
+    <tr><td>不分层级直接拍：<br>想到什么拍什么，选题靠感觉</td><td>按五级星图拆到第 5 级再拍：<br>行业→细分→品类→场景→具体选题</td></tr>
+    <tr><td>6 个角度只用 1 个：<br>永远只拍教程，从不拍避坑/对比</td><td>6 个角度轮换用：<br>同一关键词→6个角度各拍一条</td></tr>
+    <tr><td>选题没过四条件：<br>跟人设不相关/用户不关心/没独特见解</td><td>每条选题过四条件自检：<br>缺一条就不做</td></tr>
+    <tr><td>抽象描述：<br>「今天分享护肤小技巧」</td><td>具体数字+反常识：<br>「3 个用了反而伤脸的坏习惯」</td></tr>
+    <tr><td>选题和人设脱节：<br>做餐饮的去讲选股票</td><td>选题在行业能力圈内：<br>做美食就讲食材/做法/开店经验</td></tr>
+  </table></div>
+
+  <div class="divider"></div>
+
+  <div class="section-title"><span class="num">05</span><h2>每次开拍前<span class="green">自检清单</span></h2></div>
+  <div class="card green-border" style="font-size:16px;color:var(--text2);line-height:2.2">
+    ✅ 用五级星图拆到了第 5 级（具体选题），不是凭感觉瞎拍<br>
+    ✅ 选了一个具体角度（避坑/对比/教程/案例/观点/趋势 6 选 1）<br>
+    ✅ 通过了选题四条件：和人设相关？用户关心？有独特见解？有数字/反常识？<br>
+    ✅ 选题缩小到「用户能立刻对号入座」的程度<br>
+    ✅ 不是说明书式标题，是广告式标题<br>
+    ✅ 这个选题在抖音搜过吗？同行拍过类似的吗？你能拍得比他好吗？
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="human-talk">
+    <h4>💬 选题方法论到底在干什么？</h4>
+    <p>
+      想象你去食堂打饭。几百个菜，但窗口只开了一个。你不知道点什么，犹豫了 30 秒，后面的人开始催你。最后你随便指了一个——大概率不好吃。<br><br>
+      选题也是这个道理。没有方法，你就是那个站在窗口前的人——脑子里一堆想法，但不知道拍哪个。你随便选了一个，发出去没人看。<br><br>
+      五级星图就是给你一个「点菜指南」——先把菜按种类排好，然后从容地选：今天吃祛斑类的避坑方向，明天吃装修类的对比方向。<br><br>
+      六个选题角度就是「六种口味」——同一个菜，红烧、清蒸、爆炒、慢炖、凉拌、油炸。换一个口味，又是一条新视频。<br><br>
+      <strong>两个工具加起来 = 你永远不会缺选题。别人还在想「今天拍什么」，你已经把下周的选题排好了。</strong>
+    </p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section-title"><span class="num">06</span><h2>核心金句<span class="green">（记住这几句）</span></h2></div>
+  <div class="quote-item"><span class="q-num">1</span><span class="q-text">五级星图拆出几百个关键词 × 六个角度每个 ×6 = 上千条选题，够你拍一两年。</span></div>
+  <div class="quote-item"><span class="q-num">2</span><span class="q-text">选题做好了，视频已经成功了 50%。选题决定流量天花板。</span></div>
+  <div class="quote-item"><span class="q-num">3</span><span class="q-text">六种角度轮换用：避坑/对比/教程/案例/观点/趋势。同一关键词，换角度又是一条新视频。</span></div>
+  <div class="quote-item"><span class="q-num">4</span><span class="q-text">每一条选题过四条件自检：和人设相关？用户关心？有独特见解？有数字/反常识？缺一条就不做。</span></div>
+  <div class="quote-item"><span class="q-num">5</span><span class="q-text">别人还在想「今天拍什么」，你已经把下周的选题排好了。这就是有方法和没方法的区别。</span></div>
+
+</div></div></body></html>

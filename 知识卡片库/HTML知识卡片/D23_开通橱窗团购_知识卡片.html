@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>开通橱窗 · 知识卡片</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}:root{--green:#00cc55;--purple:#9b59b6;--bg:#0b1120;--card:rgba(255,255,255,0.05);--text:#fff;--text2:#c8d6e5;--text3:#7f8c9b;--border:rgba(255,255,255,0.08);--red:#e74c3c;--orange:#f39c12}
+  body{font-family:'Microsoft YaHei','PingFang SC',sans-serif;background:#000;color:var(--text);-webkit-text-size-adjust:100%;font-size:16px}
+  .page{max-width:440px;margin:0 auto;background:linear-gradient(170deg,#0b1120 0%,#0f1829 30%,#0b1120 100%);position:relative;overflow:hidden;padding-bottom:40px}
+  .page::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:40px 40px;pointer-events:none;z-index:0}
+  .page::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse 300px 400px at 50% 15%,rgba(0,204,85,.12) 0%,transparent 60%),radial-gradient(ellipse 200px 300px at 85% 40%,rgba(0,204,85,.08) 0%,transparent 60%),radial-gradient(ellipse 200px 250px at 15% 70%,rgba(155,89,182,.08) 0%,transparent 60%);pointer-events:none;z-index:0}
+  .container{position:relative;z-index:2;padding:0 16px}
+  .particles-wrap{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+  .dot-p{position:absolute;width:3px;height:3px;border-radius:50%;background:var(--green);opacity:.25;animation:twinkle 5s ease-in-out infinite}
+  .dot-p:nth-child(2n){background:var(--purple);opacity:.2;animation-delay:-2s}.dot-p:nth-child(3n){background:#fff;width:2px;height:2px;opacity:.15;animation-delay:-3.5s}
+  .dot-p:nth-child(1){top:6%;left:8%}.dot-p:nth-child(2){top:18%;left:85%}.dot-p:nth-child(3){top:32%;left:12%}.dot-p:nth-child(4){top:45%;left:90%}.dot-p:nth-child(5){top:55%;left:6%}.dot-p:nth-child(6){top:68%;left:82%}.dot-p:nth-child(7){top:78%;left:15%}.dot-p:nth-child(8){top:88%;left:88%}
+  @keyframes twinkle{0%,100%{opacity:.15;transform:scale(1)}50%{opacity:.45;transform:scale(1.8)}}
+  .glow-line{position:absolute;height:1px;border-radius:1px;z-index:1;pointer-events:none}.glow-line.g1{width:160px;background:linear-gradient(90deg,transparent,rgba(0,204,85,.12),transparent);top:12%;left:3%}.glow-line.g2{width:120px;background:linear-gradient(90deg,transparent,rgba(155,89,182,.10),transparent);top:58%;right:4%}
+  .glow-ring{position:absolute;border-radius:50%;border:1px solid;z-index:1;pointer-events:none}.glow-ring.r1{width:200px;height:200px;border-color:rgba(0,204,85,.04);top:8%;right:-60px}.glow-ring.r2{width:140px;height:140px;border-color:rgba(155,89,182,.04);top:65%;left:-40px}
+  .header{text-align:center;padding:36px 20px 24px;border-bottom:1px solid rgba(0,204,85,.15);margin-bottom:24px}
+  .header .logo-row{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:16px}.header .logo-img{width:44px;height:44px;border-radius:10px}.header .brand{font-size:17px;font-weight:700;color:var(--text)}
+  .header h1{font-size:28px;font-weight:900;line-height:1.3;color:var(--green)}.header .tag{display:inline-block;margin-top:10px;padding:4px 14px;border-radius:20px;font-size:13px;color:var(--green);border:1px solid rgba(0,204,85,.25);background:rgba(0,204,85,.06)}
+  .section-title{display:flex;align-items:center;gap:10px;margin:32px 0 16px;padding-bottom:10px;border-bottom:1px solid rgba(0,204,85,.2)}.section-title .num{font-size:40px;font-weight:900;color:var(--green);font-family:'Inter','PingFang SC',sans-serif;opacity:.3;line-height:1}.section-title h2{font-size:22px;font-weight:700;color:var(--text);line-height:1.3}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px}.card.green-border{border-color:rgba(0,204,85,.2);background:rgba(0,204,85,.04)}
+  .highlight-box{background:rgba(0,204,85,.06);border:1px solid rgba(0,204,85,.18);border-radius:8px;padding:12px 14px;margin:12px 0;font-size:15px;color:var(--green);line-height:1.7}.highlight-box.purple{background:rgba(155,89,182,.06);border-color:rgba(155,89,182,.18);color:var(--purple)}
+  .divider{height:1px;background:linear-gradient(90deg,transparent,rgba(0,204,85,.2),transparent);margin:24px 0}
+  .quote-item{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px 16px;margin-bottom:10px;display:flex;gap:12px;align-items:flex-start}.quote-item .q-num{width:28px;height:28px;border-radius:50%;background:rgba(0,204,85,.15);color:var(--green);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;flex-shrink:0}.quote-item .q-text{font-size:15px;line-height:1.7;color:var(--text);font-weight:600}
+  .data-row{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:12px 14px;margin-bottom:8px}
+  .data-row .icon{font-size:22px;flex-shrink:0}.data-row .info{flex:1}.data-row .info .name{font-size:15px;font-weight:700;color:var(--text)}.data-row .info .detail{font-size:14px;color:var(--text2);line-height:1.6;margin-top:2px}
+  .data-row .badge{font-size:12px;padding:3px 8px;border-radius:12px;flex-shrink:0;font-weight:700}
+  .badge-green{background:rgba(0,204,85,.15);color:var(--green)}.badge-orange{background:rgba(243,156,18,.15);color:var(--orange)}.badge-red{background:rgba(231,76,60,.15);color:var(--red)}
+  .step-item{display:flex;gap:12px;margin-bottom:14px;align-items:flex-start}
+  .step-item .step-num{width:28px;height:28px;border-radius:50%;background:rgba(0,204,85,.15);color:var(--green);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;flex-shrink:0;margin-top:2px}
+  .step-item .step-content{flex:1}.step-item .step-content .step-title{font-size:15px;font-weight:700;color:var(--text);margin-bottom:4px}.step-item .step-content .step-desc{font-size:14px;color:var(--text2);line-height:1.7}
+  .warn-card{background:rgba(231,76,60,.05);border:1px solid rgba(231,76,60,.15);border-radius:10px;padding:14px;margin-bottom:10px}
+  .warn-card .warn-title{font-size:15px;font-weight:700;color:var(--red);margin-bottom:6px}.warn-card .warn-desc{font-size:14px;color:var(--text2);line-height:1.7}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="particles-wrap"><div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div><div class="dot-p"></div></div>
+  <div class="glow-line g1"></div><div class="glow-line g2"></div><div class="glow-ring r1"></div><div class="glow-ring r2"></div>
+<div class="container">
+
+  <div class="header">
+    <div class="logo-row"><img src="logo.png" alt="创亿商学" class="logo-img"><span class="brand">短视频IP实训陪跑班</span></div>
+    <h1>开通橱窗/团购</h1>
+    <span class="tag">商品橱窗 + 抖音来客团购 + 选品策略 + 套餐设计 + 避坑指南</span>
+  </div>
+
+  <!-- ========== 01 为什么要开 ========== -->
+  <div class="section-title"><span class="num">01</span><h2>为什么要开橱窗/团购：<span class="green">给流量一个变现入口</span></h2></div>
+  <div class="card green-border">
+    <p style="font-size:15px;color:var(--text2);line-height:2.1">
+      前三周你做内容、攒粉丝、建信任。现在用户看完视频想买你的东西、想到你店里来——<strong style="color:var(--text)">你得给他们一个入口</strong>。<br><br>
+      <strong style="color:var(--green)">橱窗</strong> = 线上卖货（视频/直播间挂小黄车，用户线上下单，你赚佣金或卖自己的货）<br>
+      <strong style="color:var(--green)">团购</strong> = 线下到店（视频/直播间挂套餐链接，用户线上付款、到你店里核销）<br><br>
+      不管你是有产品还是有门店，这一步必须做。<strong style="color:var(--red)">不做=流量来了没地方变现=白忙。</strong>
+    </p>
+  </div>
+
+  <!-- 先搞懂这些词 -->
+  <div style="background:rgba(155,89,182,.05);border:1px solid rgba(155,89,182,.15);border-radius:10px;padding:14px;margin-bottom:12px">
+    <div style="font-size:15px;font-weight:700;color:var(--purple);margin-bottom:8px">📖 先搞懂这些词</div>
+    <div style="font-size:14px;color:var(--text2);line-height:2">
+      <strong style="color:var(--text)">小黄车</strong> = 直播间/视频里的商品购物车图标，用户点了就能下单<br>
+      <strong style="color:var(--text)">精选联盟</strong> = 抖音的「货源超市」，你不用自己囤货，从里面选品挂车，卖出去赚佣金<br>
+      <strong style="color:var(--text)">佣金</strong> = 你帮别人卖货，每卖一单你赚的钱。比如商品100元、佣金20%=你赚20元<br>
+      <strong style="color:var(--text)">保证金</strong> = 开通橱窗时交的押金（500元），不做了可以退。防止你卖假货/违规<br>
+      <strong style="color:var(--text)">POI</strong> = 你门店的抖音定位地址，用户点了能看到你的店在哪、评分多少<br>
+      <strong style="color:var(--text)">核销</strong> = 用户买了团购券，到你店里出示券码，你确认消费完成——这一步叫核销<br>
+      <strong style="color:var(--text)">抖音来客</strong> = 实体店入驻抖音的官方平台（以前叫「抖音团购」），专门给实体店用
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ========== 02 商品橱窗 ========== -->
+  <div class="section-title"><span class="num">02</span><h2>商品<span class="green">橱窗</span>（带货用）</h2></div>
+
+  <!-- 开通条件 -->
+  <span style="font-size:13px;color:var(--text3);margin-bottom:8px;display:block">📋 开通条件</span>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px">
+    <div style="background:rgba(0,204,85,.06);border:1px solid rgba(0,204,85,.15);border-radius:10px;padding:14px;text-align:center">
+      <div style="font-size:16px;font-weight:700;color:var(--text);margin-bottom:6px">个人号</div>
+      <div style="font-size:15px;color:var(--green);font-weight:700">橱窗 0 粉可开</div>
+      <div style="font-size:14px;color:var(--text3);margin-top:4px;line-height:1.6">直播带货需1000粉<br>视频带货需500粉<br>实名认证+无违规</div>
+    </div>
+    <div style="background:rgba(0,204,85,.06);border:1px solid rgba(0,204,85,.15);border-radius:10px;padding:14px;text-align:center">
+      <div style="font-size:16px;font-weight:700;color:var(--text);margin-bottom:6px">企业号</div>
+      <div style="font-size:15px;color:var(--green);font-weight:700">0粉全开</div>
+      <div style="font-size:14px;color:var(--text3);margin-top:4px;line-height:1.6">需营业执照认证<br>门槛比个人号低<br>可对公结算</div>
+    </div>
+  </div>
+
+  <!-- 开通步骤 -->
+  <span style="font-size:13px;color:var(--text3);margin-bottom:8px;display:block">🔧 开通步骤（最快30秒）</span>
+  <div class="step-item">
+    <span class="step-num">1</span>
+    <div class="step-content">
+      <div class="step-title">打开抖音→搜索「电商带货」</div>
+      <div class="step-desc">在抖音顶部搜索框输入「电商带货」，点「去查看」→「立即加入抖音电商」</div>
+    </div>
+  </div>
+  <div class="step-item">
+    <span class="step-num">2</span>
+    <div class="step-content">
+      <div class="step-title">选资质类型</div>
+      <div class="step-desc">个人=身份证+银行卡（必须和抖音实名一致）；个体户=营业执照+身份证；企业=营业执照+对公账户</div>
+    </div>
+  </div>
+  <div class="step-item">
+    <span class="step-num">3</span>
+    <div class="step-content">
+      <div class="step-title">上传证件+缴保证金</div>
+      <div class="step-desc">上传身份证正反面+绑定银行卡。缴500元保证金（可退！不做了申请退就行）。保证金是押金，不是费用。</div>
+    </div>
+  </div>
+  <div class="step-item">
+    <span class="step-num">4</span>
+    <div class="step-content">
+      <div class="step-title">等审核（1-3个工作日）</div>
+      <div class="step-desc">通过后粉丝数达标次日自动解锁对应权限。不通过会告诉你原因，改了重新提交就行。</div>
+    </div>
+  </div>
+
+  <!-- 保证金说明 -->
+  <div style="background:rgba(243,156,18,.05);border:1px solid rgba(243,156,18,.15);border-radius:10px;padding:14px;margin-bottom:14px">
+    <div style="font-size:15px;font-weight:700;color:var(--orange);margin-bottom:6px">💰 保证金常见问题</div>
+    <div style="font-size:14px;color:var(--text2);line-height:1.9">
+      <strong>Q：500块能退吗？</strong>→ 能。不做了在「商品橱窗→账户保证金→申请退回」，15个工作日内到账。<br>
+      <strong>Q：不交行不行？</strong>→ 不行。不交保证金=没法挂商品链接=没法带货。<br>
+      <strong>Q：会不会被扣？</strong>→ 正常卖货不会。卖假货/严重违规才会扣。<br>
+      <strong>Q：以后会涨吗？</strong>→ 部分类目保证金更高（如珠宝1万），普通类目500够了。
+    </div>
+  </div>
+
+  <!-- 选品策略 -->
+  <span style="font-size:13px;color:var(--text3);margin-bottom:8px;display:block">🎯 选品三原则</span>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:14px">
+    <div style="background:rgba(0,204,85,.04);border-radius:8px;padding:12px;text-align:center"><div style="font-size:15px;font-weight:700;color:var(--green)">跟你相关</div><div style="font-size:13px;color:var(--text3);margin-top:4px;line-height:1.5">美业号卖护肤品<br>不卖零食</div></div>
+    <div style="background:rgba(0,204,85,.04);border-radius:8px;padding:12px;text-align:center"><div style="font-size:15px;font-weight:700;color:var(--green)">佣金>20%</div><div style="font-size:13px;color:var(--text3);margin-top:4px;line-height:1.5">看评价和销量<br>别人卖得动才行</div></div>
+    <div style="background:rgba(0,204,85,.04);border-radius:8px;padding:12px;text-align:center"><div style="font-size:15px;font-weight:700;color:var(--green)">人设匹配</div><div style="font-size:13px;color:var(--text3);margin-top:4px;line-height:1.5">你推荐的东西<br>你自己会用</div></div>
+  </div>
+
+  <!-- 选品进阶 -->
+  <span style="font-size:13px;color:var(--text3);margin-bottom:8px;display:block">🛒 选品进阶：怎么选到好卖的品</span>
+  <div class="data-row">
+    <span class="icon">1️⃣</span>
+    <div class="info">
+      <div class="name">看同行在卖什么</div>
+      <div class="detail">找同赛道对标账号，看他橱窗里卖得最好的品。别人验证过的=大概率好卖。工具：蝉妈妈/飞瓜可查同行销量。</div>
+    </div>
+  </div>
+  <div class="data-row">
+    <span class="icon">2️⃣</span>
+    <div class="info">
+      <div class="name">看精选联盟销量排行</div>
+      <div class="detail">商品橱窗→选品广场→按销量排序→选跟你相关的。销量高=市场需求大。评价4.5以上=质量过关。</div>
+    </div>
+  </div>
+  <div class="data-row">
+    <span class="icon">3️⃣</span>
+    <div class="info">
+      <div class="name">先选3-5个品测试</div>
+      <div class="detail">不要一次上太多。先选3-5个品挂车，发视频测哪个点击率高、哪个好卖。数据好的留，差的换。</div>
+    </div>
+  </div>
+  <div class="data-row">
+    <span class="icon">4️⃣</span>
+    <div class="info">
+      <div class="name">橱窗排序有讲究</div>
+      <div class="detail">前3个品=直播间默认优先展示。把最好卖/最想推的品放前3。定期调整排序。</div>
+    </div>
+  </div>
+
+  <div class="highlight-box" style="text-align:center;font-size:15px">💡 <strong>没货源？</strong>用「精选联盟」一件代发，不囤货、不发货、纯赚佣金。选品路径：商品橱窗→选品广场→搜品类→加橱窗。佣金每月1号和16号结算到银行卡。</div>
+
+  <div class="divider"></div>
+
+  <!-- ========== 03 抖音来客 ========== -->
+  <div class="section-title"><span class="num">03</span><h2>抖音<span class="green">来客</span>（实体店团购用）</h2></div>
+
+  <div class="card green-border">
+    <p style="font-size:15px;color:var(--text2);line-height:2.1">
+      <strong style="color:var(--green)">什么是抖音来客：</strong>实体店入驻抖音的官方平台。用户刷到你视频→点团购链接→在线付款→到店核销。比发传单精准100倍——来的人都是看了你视频、对你有兴趣的。<br><br>
+      <strong style="color:var(--green)">谁必须开：</strong>餐饮、美业、教培、口腔、家政、装修……一切有实体门店的行业。<br><br>
+      <strong style="color:var(--green)">核心逻辑：</strong>线上低价引流→到店体验→现场升单。用户花9.9到店，你用服务让他办198的卡——这才是团购的真正目的。
+    </p>
+  </div>
+
+  <!-- 入驻步骤 -->
+  <span style="font-size:13px;color:var(--text3);margin-bottom:8px;display-block">🔧 入驻步骤</span>
+  <div class="step-item">
+    <span class="step-num">1</span>
+    <div class="step-content">
+      <div class="step-title">抖音搜索「抖音来客」→下载APP</div>
+      <div class="step-desc">或者在电脑端打开 ly.ke.com 注册账号。用你的抖音号登录。</div>
+    </div>
+  </div>
+  <div class="step-item">
+    <span class="step-num">2</span>
+    <div class="step-content">
+      <div class="step-title">上传资质</div>
+      <div class="step-desc">营业执照（必须在有效期内）+ 法人身份证 + 门头照片 + 店内环境照。个体户和企业都需要。</div>
+    </div>
+  </div>
+  <div class="step-item">
+    <span class="step-num">3</span>
+    <div class="step-content">
+      <div class="step-title">认领门店POI</div>
+      <div class="step-desc">在抖音来客后台搜索你的门店名→认领。如果搜不到就新建一个。POI评分≥65能提高本地曝光。</div>
+    </div>
+  </div>
+  <div class="step-item">
+    <span class="step-num">4</span>
+    <div class="step-content">
+      <div class="step-title">创建团购套餐+审核</div>
+      <div class="step-desc">上传套餐图片+设置价格+填写使用规则。审核1-3天。通过后套餐就能在视频/直播间里挂链接了。</div>
+    </div>
+  </div>
+
+  <!-- 套餐设计 -->
+  <span style="font-size:13px;color:var(--text3);margin-bottom:8px;display-block;margin-top:16px">💰 三档套餐设计（必须设三档）</span>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:14px">
+    <div style="background:rgba(0,204,85,.06);border:1px solid rgba(0,204,85,.15);border-radius:10px;padding:14px;text-align:center">
+      <div style="font-size:24px;margin-bottom:4px">🎫</div>
+      <div style="font-size:15px;font-weight:700;color:var(--green)">引流款</div>
+      <div style="font-size:13px;color:var(--text3);margin-top:4px;line-height:1.6">9.9-19.9元<br>不求赚钱<br>把人引进来</div>
+      <div style="font-size:12px;color:var(--text2);margin-top:6px;line-height:1.5;border-top:1px solid rgba(255,255,255,.06);padding-top:6px">如：9.9面部清洁<br>19.9单色美甲</div>
+    </div>
+    <div style="background:rgba(0,204,85,.06);border:1px solid rgba(0,204,85,.15);border-radius:10px;padding:14px;text-align:center">
+      <div style="font-size:24px;margin-bottom:4px">💰</div>
+      <div style="font-size:15px;font-weight:700;color:var(--green)">主推款</div>
+      <div style="font-size:13px;color:var(--text3);margin-top:4px;line-height:1.6">98-298元<br>主力成交品<br>品质要保证</div>
+      <div style="font-size:12px;color:var(--text2);margin-top:6px;line-height:1.5;border-top:1px solid rgba(255,255,255,.06);padding-top:6px">如：198皮肤管理<br>128双人火锅套餐</div>
+    </div>
+    <div style="background:rgba(0,204,85,.06);border:1px solid rgba(0,204,85,.15);border-radius:10px;padding:14px;text-align:center">
+      <div style="font-size:24px;margin-bottom:4px">👑</div>
+      <div style="font-size:15px;font-weight:700;color:var(--green)">利润款</div>
+      <div style="font-size:13px;color:var(--text3);margin-top:4px;line-height:1.6">398-998元<br>真正赚钱的<br>深度服务</div>
+      <div style="font-size:12px;color:var(--text2);margin-top:6px;line-height:1.5;border-top:1px solid rgba(255,255,255,.06);padding-top:6px">如：全套抗衰管理<br>498四人海鲜套餐</div>
+    </div>
+  </div>
+
+  <!-- 定价逻辑 -->
+  <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px;margin-bottom:14px">
+    <div style="font-size:15px;font-weight:700;color:var(--green);margin-bottom:8px">📐 定价逻辑</div>
+    <div style="font-size:14px;color:var(--text2);line-height:1.9">
+      <strong>引流款：</strong>成本价甚至亏一点。目的不是赚钱，是让用户「低门槛体验」→到店→升单。<br>
+      <strong>主推款：</strong>门店价的5-7折。用户觉得「比到店直接买便宜很多」→愿意线上下单。<br>
+      <strong>利润款：</strong>门店价的6-8折。给老客户/高意向用户，你真正赚钱的。<br><br>
+      <strong style="color:var(--orange)">⚠️ 关键：</strong>线上价必须比门店价低！用户对比后觉得「线上买更划算」才会下单。到店后引导升单才是利润来源。
+    </div>
+  </div>
+
+  <!-- 核销流程 -->
+  <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px;margin-bottom:14px">
+    <div style="font-size:15px;font-weight:700;color:var(--green);margin-bottom:8px">🔄 核销流程（用户到店后怎么做）</div>
+    <div style="font-size:14px;color:var(--text2);line-height:1.9">
+      ① 用户到店→出示抖音团购券码（在「抖音→我→订单」里）<br>
+      ② 你打开「抖音来客APP」→扫券码→确认核销<br>
+      ③ 钱T+7天到账（抖音抽佣后打到你绑定的银行卡）<br>
+      ④ 核销后用户可以评价→好评越多POI评分越高→曝光越多<br><br>
+      <strong style="color:var(--orange)">⚠️ 注意：</strong>不核销=钱不到账。一定要当面核销，别让用户走了才想起来。
+    </div>
+  </div>
+
+  <div class="highlight-box purple" style="font-size:15px;text-align:center">
+    💡 <strong>实体店转化秘诀：</strong>在视频里说「到店说看抖音来的，送你一份XX」——给抖音用户专属福利，到店转化率直接翻倍。
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ========== 04 常见审核失败 ========== -->
+  <div class="section-title"><span class="num">04</span><h2>常见<span class="green">审核失败</span>原因</h2></div>
+
+  <div class="warn-card">
+    <div class="warn-title">❌ 橱窗审核不通过</div>
+    <div class="warn-desc">
+      <strong>身份证照片模糊</strong>→ 重新拍，光线好、四角完整、不反光<br>
+      <strong>银行卡和实名不一致</strong>→ 必须是抖音实名认证本人的银行卡<br>
+      <strong>账号有违规记录</strong>→ 先处理违规，等处罚期过了再申请<br>
+      <strong>营业执照过期</strong>→ 上传最新版
+    </div>
+  </div>
+
+  <div class="warn-card">
+    <div class="warn-title">❌ 团购审核不通过</div>
+    <div class="warn-desc">
+      <strong>门头照片看不清店名</strong>→ 重新拍，店名要清晰可见<br>
+      <strong>套餐价格不合理</strong>→ 不能太离谱（如1块钱吃火锅），会被判定虚假宣传<br>
+      <strong>套餐描述含违规词</strong>→ 不用「最便宜」「全网最低」，用「抖音专享价」<br>
+      <strong>营业执照经营范围不匹配</strong>→ 你卖美业套餐但执照是餐饮=不通过
+    </div>
+  </div>
+
+  <div class="warn-card">
+    <div class="warn-title">❌ 视频/直播间挂不上链接</div>
+    <div class="warn-desc">
+      <strong>橱窗展示开关没开</strong>→ 商品橱窗→设置→橱窗展示→打开<br>
+      <strong>抖音版本太低</strong>→ 升级到最新版（v30.0.0以上）<br>
+      <strong>商品不在推广状态</strong>→ 精选联盟里商品下架了=你这边也挂不上<br>
+      <strong>账号权限没解锁</strong>→ 粉丝数不够（直播1000粉/视频500粉）
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ========== 05 检查清单 ========== -->
+  <div class="section-title"><span class="num">05</span><h2>今日<span class="green">检查清单</span></h2></div>
+  <div class="card green-border">
+    <div style="font-size:15px;color:var(--text2);line-height:2.2">
+      ✅ 商品橱窗开通了没？保证金缴了没？<br>
+      ✅ 选品跟账号相关吗？佣金>20%吗？上架了3-5个品吗？<br>
+      ✅ 橱窗前3个品是不是你最想推的？<br>
+      ✅ 橱窗展示开关开了吗？（没开=用户看不到）<br>
+      ✅ 实体店：抖音来客开通了吗？POI认领了吗？<br>
+      ✅ 套餐设了三档吗（引流/主推/利润）？定价比门店低吗？<br>
+      ✅ 套餐图片和描述上传了吗？有违规词吗？<br>
+      ✅ 抖音APP是最新版吗？
+    </div>
+  </div>
+
+  <!-- ========== 06 核心金句 ========== -->
+  <div class="section-title"><span class="num">06</span><h2>核心金句</h2></div>
+  <div class="quote-item"><span class="q-num">1</span><span class="q-text">橱窗=线上卖货入口，团购=线下到店入口。不做=流量来了没地方接=白忙。</span></div>
+  <div class="quote-item"><span class="q-num">2</span><span class="q-text">500块保证金是押金不是费用，不做了能退。不交=没法挂链接=没法变现。</span></div>
+  <div class="quote-item"><span class="q-num">3</span><span class="q-text">没货源用精选联盟，不囤货不发货纯赚佣金。先选3-5个品测试，数据好的留。</span></div>
+  <div class="quote-item"><span class="q-num">4</span><span class="q-text">团购三档套餐：引流款拉人、主推款成交、利润款赚钱。线上价必须比门店低。</span></div>
+  <div class="quote-item"><span class="q-num">5</span><span class="q-text">团购核心不是线上卖多少，是到店后升单。9.9到店→办198的卡=这才是真正赚钱。</span></div>
+</div></div></body></html>
