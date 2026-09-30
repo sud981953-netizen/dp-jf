@@ -4,10 +4,10 @@
   "repo": "sud981953-netizen/dp-jf",
   "branch": "master",
   "raw_base": "https://raw.githubusercontent.com/sud981953-netizen/dp-jf/master/",
-  "generated_at": "2026-09-30T15:55:17+08:00",
-  "fingerprint": "608eaf4fa19f7210000f95ff8b4025b865fd7e2501db38085730dc141f038e2c",
-  "file_count": 115,
-  "total_bytes": 28701912,
+  "generated_at": "2026-09-30T16:03:35+08:00",
+  "fingerprint": "83cf2502ca55d1c6555daeefa4cbc8b28823827d50d777a842108e7724b6b414",
+  "file_count": 116,
+  "total_bytes": 28700627,
   "preserve": [
     "config/设置.md",
     "学员/**"
@@ -18,6 +18,12 @@
     "preserve 里的路径是本机数据/设置，任何时候都不许删。"
   ],
   "files": [
+    {
+      "path": ".gitattributes",
+      "url_path": ".gitattributes",
+      "size": 585,
+      "sha256": "1c096c96697dd29148980bbdf314269ef3c2acabb52b09a8bce351f70dae4a69"
+    },
     {
       "path": ".gitignore",
       "url_path": ".gitignore",
@@ -51,8 +57,8 @@
     {
       "path": "scripts/check_prose.py",
       "url_path": "scripts/check_prose.py",
-      "size": 32412,
-      "sha256": "b90bb38c2b1a146b39f92c035e0e5d49f78fa9cad440787e4f927b2f2d5329e3"
+      "size": 31561,
+      "sha256": "2672583f28c8471376aec92f299e0e9e7c5e0381c4bfa64dbbed0944a448959c"
     },
     {
       "path": "scripts/retrieve_yuliao.py",
@@ -81,20 +87,20 @@
     {
       "path": "templates/SOP里程碑地图.md",
       "url_path": "templates/SOP%E9%87%8C%E7%A8%8B%E7%A2%91%E5%9C%B0%E5%9B%BE.md",
-      "size": 7160,
-      "sha256": "26d412af292e94f326ed9a3ecca590feb38519a87da57beeee48faffd016d727"
+      "size": 7083,
+      "sha256": "c7f7eebd4b2111d0aecf95df7354464b8ccef49fb89a8c7d516a183292c3f3c9"
     },
     {
       "path": "templates/周复盘表.md",
       "url_path": "templates/%E5%91%A8%E5%A4%8D%E7%9B%98%E8%A1%A8.md",
-      "size": 1308,
-      "sha256": "ddfe6bbe05a2578488e30dfd6daf8602a31255119279075f8aac87708d0fe073"
+      "size": 1307,
+      "sha256": "0feba5873a91d7e73f38bc8d2414abe1f04a0dffb8e8a68b23a0b700dc62aa1b"
     },
     {
       "path": "templates/周排期表.md",
       "url_path": "templates/%E5%91%A8%E6%8E%92%E6%9C%9F%E8%A1%A8.md",
-      "size": 1132,
-      "sha256": "e1950ddc61278d64c2f5c3c91bbb75aa56eb949f3473abe054e0d35d01eb24e5"
+      "size": 1104,
+      "sha256": "c5a6b2225431ac7b4e45c87ab0ca734849978116655a3d741425dc5fe66cbcfb"
     },
     {
       "path": "templates/基础信息采集表.md",
@@ -111,38 +117,38 @@
     {
       "path": "templates/每日作业模板.md",
       "url_path": "templates/%E6%AF%8F%E6%97%A5%E4%BD%9C%E4%B8%9A%E6%A8%A1%E6%9D%BF.md",
-      "size": 1192,
-      "sha256": "48c854a4623b5e51bced2fa6ca7495032b1119d7301bb7f53162a0f3b0a9c001"
+      "size": 1191,
+      "sha256": "168fffdebb086960d057ee7365ae0f841c8ce81335a9bc65184514160d954737"
     },
     {
       "path": "templates/结营调查问卷与发送话术.md",
       "url_path": "templates/%E7%BB%93%E8%90%A5%E8%B0%83%E6%9F%A5%E9%97%AE%E5%8D%B7%E4%B8%8E%E5%8F%91%E9%80%81%E8%AF%9D%E6%9C%AF.md",
-      "size": 2698,
-      "sha256": "21e59f345fc0d274a75e1efd02a8a5dde28c14c0a7c27f9ceda08bc445aade71"
+      "size": 2648,
+      "sha256": "59003866d216ca2855f24179b69254c02549898d3854304933c09859774338d9"
     },
     {
       "path": "templates/视频评价表.md",
       "url_path": "templates/%E8%A7%86%E9%A2%91%E8%AF%84%E4%BB%B7%E8%A1%A8.md",
-      "size": 1593,
-      "sha256": "656fcecb78e52b02a0fe78829b5cb37904bedfeb7722cc70d4422a968adaaeff"
+      "size": 1592,
+      "sha256": "851fdd399776567472e4ba15e7c9a883d6f2d5f95317b26ccb40ac8073efa6e3"
     },
     {
       "path": "templates/账号策划方案.md",
       "url_path": "templates/%E8%B4%A6%E5%8F%B7%E7%AD%96%E5%88%92%E6%96%B9%E6%A1%88.md",
-      "size": 4080,
-      "sha256": "5e35cb72183a1a7b4d4ff549aca87ef15dd0b4f4c3ab574cd37a8e00ca8e63f8"
+      "size": 3965,
+      "sha256": "77ae9454346d5649563ccc8fc459c21b8dc5498566ca0e741754958de47fd450"
     },
     {
       "path": "templates/账号策划母版.md",
       "url_path": "templates/%E8%B4%A6%E5%8F%B7%E7%AD%96%E5%88%92%E6%AF%8D%E7%89%88.md",
-      "size": 5714,
-      "sha256": "acdad58c7c1343051b33e03d90e56204fcaf278722af8356cb009d0e441d616f"
+      "size": 5515,
+      "sha256": "34b020b9af7cf8b8312ff9b8b16f69e0358048f512958c156395227c10a7cd22"
     },
     {
       "path": "templates/陪跑SOP.md",
       "url_path": "templates/%E9%99%AA%E8%B7%91SOP.md",
-      "size": 12621,
-      "sha256": "d3ad00ef535445fa09a3aa15eec3769da74f5fccfce7528204e97692da361102"
+      "size": 12421,
+      "sha256": "9f60b186ff0823ec4e52de5f654ecb8408d320c092e6d64f52ca170847f2b72a"
     },
     {
       "path": "tests/路由测试题库.md",
@@ -153,8 +159,8 @@
     {
       "path": "version.md",
       "url_path": "version.md",
-      "size": 5880,
-      "sha256": "f51003456a3bbdb572a69cf3fbdf101c68b49a65037fe7f02779430141b1a691"
+      "size": 5999,
+      "sha256": "740c67ea72778829d8628548adc0d8ac6525476f2574cbb2496c49fdfc49d474"
     },
     {
       "path": "workflow/phase00_每日晨间巡检.md",
@@ -201,8 +207,8 @@
     {
       "path": "更新说明.md",
       "url_path": "%E6%9B%B4%E6%96%B0%E8%AF%B4%E6%98%8E.md",
-      "size": 10174,
-      "sha256": "bee48c03dd3acb50f871f635ad7d83d340ff5881490eaa4c898de01e876c5dc8"
+      "size": 11292,
+      "sha256": "28762014727dafa701618484027e276f91f8c29644cf393006cc3e0801af4133"
     },
     {
       "path": "架构说明.md",
@@ -333,8 +339,8 @@
     {
       "path": "知识卡片库/HTML知识卡片/D7_标题设计_知识卡片.html",
       "url_path": "%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87%E5%BA%93/HTML%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87/D7_%E6%A0%87%E9%A2%98%E8%AE%BE%E8%AE%A1_%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87.html",
-      "size": 23558,
-      "sha256": "039cb25615e23b73b7756ff5803ae2b7f0008bde60772876991118f586fd16ef"
+      "size": 23555,
+      "sha256": "00bd72eb8ae1eb1e210d0221af51881a75463c502f4fb4d821d0fa1f3b7ce1bc"
     },
     {
       "path": "知识卡片库/HTML知识卡片/D8_开头设计_知识卡片.html",
@@ -525,20 +531,20 @@
     {
       "path": "要素定义库/01_账号定位要素.md",
       "url_path": "%E8%A6%81%E7%B4%A0%E5%AE%9A%E4%B9%89%E5%BA%93/01_%E8%B4%A6%E5%8F%B7%E5%AE%9A%E4%BD%8D%E8%A6%81%E7%B4%A0.md",
-      "size": 5826,
-      "sha256": "e3bf9e3259d6ce30ae05820573abf787c1cdebac5a76a323670a1c6102dfa9a9"
+      "size": 5825,
+      "sha256": "d534e1685e31af7eeadeba60f9966253e911d30d4b4d7b89a689fd96d119dca4"
     },
     {
       "path": "要素定义库/02_选题要素.md",
       "url_path": "%E8%A6%81%E7%B4%A0%E5%AE%9A%E4%B9%89%E5%BA%93/02_%E9%80%89%E9%A2%98%E8%A6%81%E7%B4%A0.md",
-      "size": 6201,
-      "sha256": "08716ec67bda61be3990a5f0e9432c8b37337be7262d5b3e8c8d96c77c7b6a91"
+      "size": 6200,
+      "sha256": "12e4418634b8c2bf06c894c1fc94a9e344b4142900ad4e69fdfcbba89a9a9e30"
     },
     {
       "path": "要素定义库/03_开头钩子要素.md",
       "url_path": "%E8%A6%81%E7%B4%A0%E5%AE%9A%E4%B9%89%E5%BA%93/03_%E5%BC%80%E5%A4%B4%E9%92%A9%E5%AD%90%E8%A6%81%E7%B4%A0.md",
-      "size": 5382,
-      "sha256": "522287d0a6765384a7827311b6d927cc1246f5da224b5c3c214029a64e84b988"
+      "size": 5381,
+      "sha256": "938a6a23cac23de451c4f44eb2d4151a9e4f16152a85d3c80d51b08b99afffd7"
     },
     {
       "path": "要素定义库/04_文案要素.md",
@@ -549,14 +555,14 @@
     {
       "path": "要素定义库/05_呈现要素.md",
       "url_path": "%E8%A6%81%E7%B4%A0%E5%AE%9A%E4%B9%89%E5%BA%93/05_%E5%91%88%E7%8E%B0%E8%A6%81%E7%B4%A0.md",
-      "size": 5140,
-      "sha256": "f873f1bf6b5500969b2723a605ae9888058f37a76c6665bfcd2cf0668a4f8bbe"
+      "size": 5139,
+      "sha256": "a9b73795efd5e13fa9afd3bc28f48d91d04cb72d3b79ff560c63922623bca9d1"
     },
     {
       "path": "要素定义库/06_72变要素.md",
       "url_path": "%E8%A6%81%E7%B4%A0%E5%AE%9A%E4%B9%89%E5%BA%93/06_72%E5%8F%98%E8%A6%81%E7%B4%A0.md",
-      "size": 11556,
-      "sha256": "e3e2ad9e161fed10996e0312a234c7e2f7840c9ce58e465b91e5de7d534ae758"
+      "size": 11555,
+      "sha256": "7cab49eb70fc1572dbd0afa347984a1cf9182eb1890bf5e51f356c866c842307"
     },
     {
       "path": "要素定义库/07_创意故事要素.md",
@@ -579,8 +585,8 @@
     {
       "path": "要素定义库/10_教练沟通要素.md",
       "url_path": "%E8%A6%81%E7%B4%A0%E5%AE%9A%E4%B9%89%E5%BA%93/10_%E6%95%99%E7%BB%83%E6%B2%9F%E9%80%9A%E8%A6%81%E7%B4%A0.md",
-      "size": 23354,
-      "sha256": "14f6906703c64b3851760ac3b1057f9574b1908899d827e7b341ba27c8aecb3c"
+      "size": 22923,
+      "sha256": "94f06898e91afec1457b969cf6f8497c5cfec1faf02f1a547e948f04dd4343d9"
     },
     {
       "path": "要素定义库/11_内容漏斗与流量分层要素.md",
@@ -603,26 +609,26 @@
     {
       "path": "要素定义库/14_变现路径要素.md",
       "url_path": "%E8%A6%81%E7%B4%A0%E5%AE%9A%E4%B9%89%E5%BA%93/14_%E5%8F%98%E7%8E%B0%E8%B7%AF%E5%BE%84%E8%A6%81%E7%B4%A0.md",
-      "size": 6657,
-      "sha256": "f2c62dae0ca596ee2438cdc67caa6279df3ccb6a0d00ffd73a135d0676f535e2"
+      "size": 6656,
+      "sha256": "f698279a75b0aeae12606878ca5c04c4a0a52ede1168f93a9b7f6382f29640b0"
     },
     {
       "path": "要素定义库/15_实体店专项策略要素.md",
       "url_path": "%E8%A6%81%E7%B4%A0%E5%AE%9A%E4%B9%89%E5%BA%93/15_%E5%AE%9E%E4%BD%93%E5%BA%97%E4%B8%93%E9%A1%B9%E7%AD%96%E7%95%A5%E8%A6%81%E7%B4%A0.md",
-      "size": 6692,
-      "sha256": "56987aa57ba354c99681e7a864865d281fa0a627bd078e613e53e9850d84420e"
+      "size": 6691,
+      "sha256": "38569e501c1a412ef6cf5a311157dfe7ccb5bdbec10589eeb24b909503fe66b9"
     },
     {
       "path": "要素定义库/16_打量逻辑与敏感行业策略要素.md",
       "url_path": "%E8%A6%81%E7%B4%A0%E5%AE%9A%E4%B9%89%E5%BA%93/16_%E6%89%93%E9%87%8F%E9%80%BB%E8%BE%91%E4%B8%8E%E6%95%8F%E6%84%9F%E8%A1%8C%E4%B8%9A%E7%AD%96%E7%95%A5%E8%A6%81%E7%B4%A0.md",
-      "size": 9408,
-      "sha256": "9255a44398a202734632e8a1bedcaaea3faf2d79ee399ce4e8c7fd078e6f4387"
+      "size": 9407,
+      "sha256": "949bf682a9db60b49f12f074fcf8b78b8abe0a90559bea679001245a21bef3bb"
     },
     {
       "path": "要素定义库/17_产品可视化要素.md",
       "url_path": "%E8%A6%81%E7%B4%A0%E5%AE%9A%E4%B9%89%E5%BA%93/17_%E4%BA%A7%E5%93%81%E5%8F%AF%E8%A7%86%E5%8C%96%E8%A6%81%E7%B4%A0.md",
-      "size": 12769,
-      "sha256": "dcf9410ffbb972d6b2d34efb4cb94d7458553ed94c29d1b718e63414106720ae"
+      "size": 12768,
+      "sha256": "5f45fe345fe112b97a367b48a921886c186f08ec2041662ea8891b351a3b5eb7"
     },
     {
       "path": "要素定义库/18_内容创作底层逻辑要素.md",
@@ -639,8 +645,8 @@
     {
       "path": "要素定义库/20_学员文件维护要素.md",
       "url_path": "%E8%A6%81%E7%B4%A0%E5%AE%9A%E4%B9%89%E5%BA%93/20_%E5%AD%A6%E5%91%98%E6%96%87%E4%BB%B6%E7%BB%B4%E6%8A%A4%E8%A6%81%E7%B4%A0.md",
-      "size": 6942,
-      "sha256": "757c025df7c10b89ac07f4dd2ca24b6e0fa0a7ec561890c8fb576aee321effdd"
+      "size": 6784,
+      "sha256": "827b33a69f089c4b54885663c42850c1823aaf16b939cef9820b88f16cae1a45"
     },
     {
       "path": "要素定义库/21_方法论总览.md",
@@ -663,8 +669,8 @@
     {
       "path": "要素定义库/24_每日动态任务生成要素.md",
       "url_path": "%E8%A6%81%E7%B4%A0%E5%AE%9A%E4%B9%89%E5%BA%93/24_%E6%AF%8F%E6%97%A5%E5%8A%A8%E6%80%81%E4%BB%BB%E5%8A%A1%E7%94%9F%E6%88%90%E8%A6%81%E7%B4%A0.md",
-      "size": 10753,
-      "sha256": "bc345e159b44ba82617b80a61781d281065051d423bcb13dfee99d63d78b8aea"
+      "size": 10577,
+      "sha256": "ad4d1ac1ed8b560e740dad123bb5b99d5acf457a816ad069ce491aa732ad8ee0"
     },
     {
       "path": "要素定义库/25_活人感输出规范要素.md",
@@ -675,8 +681,8 @@
     {
       "path": "要素定义库/26_爆款文案密码与语料要素.md",
       "url_path": "%E8%A6%81%E7%B4%A0%E5%AE%9A%E4%B9%89%E5%BA%93/26_%E7%88%86%E6%AC%BE%E6%96%87%E6%A1%88%E5%AF%86%E7%A0%81%E4%B8%8E%E8%AF%AD%E6%96%99%E8%A6%81%E7%B4%A0.md",
-      "size": 17085,
-      "sha256": "e1a781de128f7cffd1e5480c54850b6aa5f764d8ac8c84aecca7870375f754d2"
+      "size": 16830,
+      "sha256": "523b919885720a86573514f4580bf5fedfc2f0419641822a9be7df917823b54f"
     },
     {
       "path": "要素定义库/27_学员心理画像与留存沟通要素.md",
@@ -687,8 +693,8 @@
     {
       "path": "语料库/爆款文案.jsonl",
       "url_path": "%E8%AF%AD%E6%96%99%E5%BA%93/%E7%88%86%E6%AC%BE%E6%96%87%E6%A1%88.jsonl",
-      "size": 1693704,
-      "sha256": "cef5f1f0e1f862899ac35124d02a9035fd8b47e8cad843daa1c02ea07b0c073a"
+      "size": 1693152,
+      "sha256": "490b86e37797c21d40156047e0185c7444ac7ee07651dbcd98fe416dd7b10f8e"
     },
     {
       "path": "销转课/第一节_直播玩法与抖音本地推投放_详细版.md",

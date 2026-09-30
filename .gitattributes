@@ -1,0 +1,18 @@
+# 换行符统一为 LF：仓库与检出都用 LF
+#
+# 为什么必须这么设：使用者侧的自动更新靠 文件清单.json 里的 sha256 逐文件校验。
+# 如果 Windows 把检出转成 CRLF，使用者算出的 hash 就与仓库版本（LF）永远对不上，
+# 更新回执会一直报「部分完成」。统一 LF 后，本地、仓库、raw 下载三处字节一致。
+* text=auto eol=lf
+
+# 二进制文件不做任何换行符转换
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.gif binary
+*.ico binary
+*.zip binary
+*.xlsx binary
+*.docx binary
+*.pdf binary
