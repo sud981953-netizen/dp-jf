@@ -1,13 +1,13 @@
 {
   "skill": "dp-jf",
-  "version": "1.13.0",
+  "version": "1.13.1",
   "repo": "sud981953-netizen/dp-jf",
   "branch": "master",
   "raw_base": "https://raw.githubusercontent.com/sud981953-netizen/dp-jf/master/",
-  "generated_at": "2026-09-30T16:27:44+08:00",
-  "fingerprint": "f31d165a5693beee761afc9d6cbe637afd59f785cdc47f41030ea33b9d710795",
+  "generated_at": "2026-09-30T16:33:44+08:00",
+  "fingerprint": "20bfafb28f1f785c8982eeb97da1606aa3485de6645a28857b92c49347c21425",
   "file_count": 117,
-  "total_bytes": 28715966,
+  "total_bytes": 28716968,
   "preserve": [
     "config/设置.md",
     "学员/**"
@@ -39,14 +39,14 @@
     {
       "path": "CHANGELOG.md",
       "url_path": "CHANGELOG.md",
-      "size": 71226,
-      "sha256": "bba017a9bf8767e758c465ae5e187121f6b02944028c53e0b379c4a074a665ee"
+      "size": 72000,
+      "sha256": "f94301df7cc05c7eafc23d12cc0553d158dd1c847b10d6723ff8192199bc8e8f"
     },
     {
       "path": "README.md",
       "url_path": "README.md",
-      "size": 9201,
-      "sha256": "7c707f1857920c397e6815495c74e654f071feb4ee59f5a7d28b0556cc23edf1"
+      "size": 9315,
+      "sha256": "1da5076cad005dac2778cb46ed57feec5f148ebe9d9fd181d1c1aa883f288342"
     },
     {
       "path": "SKILL.md",
@@ -160,7 +160,7 @@
       "path": "version.md",
       "url_path": "version.md",
       "size": 6396,
-      "sha256": "7f62ef851e4e904f95416980c69e13566dc2eda1031b5a418d1cf5e7ef59210b"
+      "sha256": "eac2eec8f9b0a2746930ba3ea44e1f49ef5f80d9af936f2a6e1455901ddd0c21"
     },
     {
       "path": "workflow/phase00_每日晨间巡检.md",
@@ -717,8 +717,8 @@
     {
       "path": "首次更新指令.md",
       "url_path": "%E9%A6%96%E6%AC%A1%E6%9B%B4%E6%96%B0%E6%8C%87%E4%BB%A4.md",
-      "size": 6947,
-      "sha256": "d4ae66396bc3ab8b72dbbe7163fb8beb245390f844bc5013d138147804d9b640"
+      "size": 7061,
+      "sha256": "50852b547e7ff9e0a82190beff7a830bb4f59524a4594b6b8eaa5535c79377b9"
     }
   ]
 }
