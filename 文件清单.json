@@ -1,0 +1,712 @@
+{
+  "skill": "dp-jf",
+  "version": "1.12.0",
+  "repo": "sud981953-netizen/dp-jf",
+  "branch": "master",
+  "raw_base": "https://raw.githubusercontent.com/sud981953-netizen/dp-jf/master/",
+  "generated_at": "2026-09-30T15:55:17+08:00",
+  "fingerprint": "608eaf4fa19f7210000f95ff8b4025b865fd7e2501db38085730dc141f038e2c",
+  "file_count": 115,
+  "total_bytes": 28701912,
+  "preserve": [
+    "config/设置.md",
+    "学员/**"
+  ],
+  "notes": [
+    "本清单描述的是仓库 master 分支的完整内容。",
+    "本地存在但不在本清单、也不在 preserve 里的文件 = 旧版残留，更新时应删除。",
+    "preserve 里的路径是本机数据/设置，任何时候都不许删。"
+  ],
+  "files": [
+    {
+      "path": ".gitignore",
+      "url_path": ".gitignore",
+      "size": 284,
+      "sha256": "bd8ed22a1e64bdd58e3e450c5df08287e2d2cbb0ad0567b31ab39e3935c454d9"
+    },
+    {
+      "path": "00_短视频内容创作72变.md",
+      "url_path": "00_%E7%9F%AD%E8%A7%86%E9%A2%91%E5%86%85%E5%AE%B9%E5%88%9B%E4%BD%9C72%E5%8F%98.md",
+      "size": 90088,
+      "sha256": "518a68787643ab6f3ecfefee1737657d586799e0c456993be9bf9f4ed8579509"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "url_path": "CHANGELOG.md",
+      "size": 68602,
+      "sha256": "6fb6c6f6cc54779bc23f6e357683b52d7fb09899f7aad0c92b9a66709109103f"
+    },
+    {
+      "path": "README.md",
+      "url_path": "README.md",
+      "size": 7250,
+      "sha256": "982e2d7bfff03343ff0be5357511e732d63ef57984b690bfa36c30dadc7e2b4c"
+    },
+    {
+      "path": "SKILL.md",
+      "url_path": "SKILL.md",
+      "size": 22447,
+      "sha256": "269db562af1cd401b2ab29813580ed85ab2832d8252cf41fbd0675951ac32da1"
+    },
+    {
+      "path": "scripts/check_prose.py",
+      "url_path": "scripts/check_prose.py",
+      "size": 32412,
+      "sha256": "b90bb38c2b1a146b39f92c035e0e5d49f78fa9cad440787e4f927b2f2d5329e3"
+    },
+    {
+      "path": "scripts/retrieve_yuliao.py",
+      "url_path": "scripts/retrieve_yuliao.py",
+      "size": 7802,
+      "sha256": "71b36c3c916900cec08fcec929d7082a218de8b7a04c66c6abb8717fc7052669"
+    },
+    {
+      "path": "scripts/打包分发包.ps1",
+      "url_path": "scripts/%E6%89%93%E5%8C%85%E5%88%86%E5%8F%91%E5%8C%85.ps1",
+      "size": 3602,
+      "sha256": "c4b366c2e565552b7f7b909ac9bc9bf3b7289f49ff26dc125e541c402decc959"
+    },
+    {
+      "path": "scripts/构建语料库.py",
+      "url_path": "scripts/%E6%9E%84%E5%BB%BA%E8%AF%AD%E6%96%99%E5%BA%93.py",
+      "size": 10841,
+      "sha256": "ee996c62678f8aeb7753f724abc39c99983367be5b103fe2e549fad7c45a75a4"
+    },
+    {
+      "path": "scripts/生成文件清单.py",
+      "url_path": "scripts/%E7%94%9F%E6%88%90%E6%96%87%E4%BB%B6%E6%B8%85%E5%8D%95.py",
+      "size": 6569,
+      "sha256": "bd0d0646a492c090adaae97a3ab2248c2415e410e9875526bd537c7f63a5c183"
+    },
+    {
+      "path": "templates/SOP里程碑地图.md",
+      "url_path": "templates/SOP%E9%87%8C%E7%A8%8B%E7%A2%91%E5%9C%B0%E5%9B%BE.md",
+      "size": 7160,
+      "sha256": "26d412af292e94f326ed9a3ecca590feb38519a87da57beeee48faffd016d727"
+    },
+    {
+      "path": "templates/周复盘表.md",
+      "url_path": "templates/%E5%91%A8%E5%A4%8D%E7%9B%98%E8%A1%A8.md",
+      "size": 1308,
+      "sha256": "ddfe6bbe05a2578488e30dfd6daf8602a31255119279075f8aac87708d0fe073"
+    },
+    {
+      "path": "templates/周排期表.md",
+      "url_path": "templates/%E5%91%A8%E6%8E%92%E6%9C%9F%E8%A1%A8.md",
+      "size": 1132,
+      "sha256": "e1950ddc61278d64c2f5c3c91bbb75aa56eb949f3473abe054e0d35d01eb24e5"
+    },
+    {
+      "path": "templates/基础信息采集表.md",
+      "url_path": "templates/%E5%9F%BA%E7%A1%80%E4%BF%A1%E6%81%AF%E9%87%87%E9%9B%86%E8%A1%A8.md",
+      "size": 2732,
+      "sha256": "498a4e7b41274b0dccfc1ac0d72b454acd620f8442d25a015550a87f57a4e727"
+    },
+    {
+      "path": "templates/月规划表.md",
+      "url_path": "templates/%E6%9C%88%E8%A7%84%E5%88%92%E8%A1%A8.md",
+      "size": 2042,
+      "sha256": "2a083c561ebfb0e68bb52e6dd53f277228b94dbc59d23386e632fe5c1421dc78"
+    },
+    {
+      "path": "templates/每日作业模板.md",
+      "url_path": "templates/%E6%AF%8F%E6%97%A5%E4%BD%9C%E4%B8%9A%E6%A8%A1%E6%9D%BF.md",
+      "size": 1192,
+      "sha256": "48c854a4623b5e51bced2fa6ca7495032b1119d7301bb7f53162a0f3b0a9c001"
+    },
+    {
+      "path": "templates/结营调查问卷与发送话术.md",
+      "url_path": "templates/%E7%BB%93%E8%90%A5%E8%B0%83%E6%9F%A5%E9%97%AE%E5%8D%B7%E4%B8%8E%E5%8F%91%E9%80%81%E8%AF%9D%E6%9C%AF.md",
+      "size": 2698,
+      "sha256": "21e59f345fc0d274a75e1efd02a8a5dde28c14c0a7c27f9ceda08bc445aade71"
+    },
+    {
+      "path": "templates/视频评价表.md",
+      "url_path": "templates/%E8%A7%86%E9%A2%91%E8%AF%84%E4%BB%B7%E8%A1%A8.md",
+      "size": 1593,
+      "sha256": "656fcecb78e52b02a0fe78829b5cb37904bedfeb7722cc70d4422a968adaaeff"
+    },
+    {
+      "path": "templates/账号策划方案.md",
+      "url_path": "templates/%E8%B4%A6%E5%8F%B7%E7%AD%96%E5%88%92%E6%96%B9%E6%A1%88.md",
+      "size": 4080,
+      "sha256": "5e35cb72183a1a7b4d4ff549aca87ef15dd0b4f4c3ab574cd37a8e00ca8e63f8"
+    },
+    {
+      "path": "templates/账号策划母版.md",
+      "url_path": "templates/%E8%B4%A6%E5%8F%B7%E7%AD%96%E5%88%92%E6%AF%8D%E7%89%88.md",
+      "size": 5714,
+      "sha256": "acdad58c7c1343051b33e03d90e56204fcaf278722af8356cb009d0e441d616f"
+    },
+    {
+      "path": "templates/陪跑SOP.md",
+      "url_path": "templates/%E9%99%AA%E8%B7%91SOP.md",
+      "size": 12621,
+      "sha256": "d3ad00ef535445fa09a3aa15eec3769da74f5fccfce7528204e97692da361102"
+    },
+    {
+      "path": "tests/路由测试题库.md",
+      "url_path": "tests/%E8%B7%AF%E7%94%B1%E6%B5%8B%E8%AF%95%E9%A2%98%E5%BA%93.md",
+      "size": 17988,
+      "sha256": "70be5a40cb7330b11f06c5c0ac48e883fdd82460f7bd99be99be85fe1cc7a2b3"
+    },
+    {
+      "path": "version.md",
+      "url_path": "version.md",
+      "size": 5880,
+      "sha256": "f51003456a3bbdb572a69cf3fbdf101c68b49a65037fe7f02779430141b1a691"
+    },
+    {
+      "path": "workflow/phase00_每日晨间巡检.md",
+      "url_path": "workflow/phase00_%E6%AF%8F%E6%97%A5%E6%99%A8%E9%97%B4%E5%B7%A1%E6%A3%80.md",
+      "size": 5930,
+      "sha256": "99a0c718c7099c8426dafbeb17f48841785453875ea20863a9a42e410f26a3a5"
+    },
+    {
+      "path": "workflow/phase0_前置门槛与学员管理.md",
+      "url_path": "workflow/phase0_%E5%89%8D%E7%BD%AE%E9%97%A8%E6%A7%9B%E4%B8%8E%E5%AD%A6%E5%91%98%E7%AE%A1%E7%90%86.md",
+      "size": 7013,
+      "sha256": "ecfe9e69d5840708b08f113f3310f8fc8320b996d374309c067fad04a031b75c"
+    },
+    {
+      "path": "workflow/phase1_账号规划.md",
+      "url_path": "workflow/phase1_%E8%B4%A6%E5%8F%B7%E8%A7%84%E5%88%92.md",
+      "size": 9811,
+      "sha256": "58bfea6e29de3a624472c5e573eafe0d0cf390bd947b4641cbe317885ebb0afd"
+    },
+    {
+      "path": "workflow/phase2_日常教练循环.md",
+      "url_path": "workflow/phase2_%E6%97%A5%E5%B8%B8%E6%95%99%E7%BB%83%E5%BE%AA%E7%8E%AF.md",
+      "size": 13287,
+      "sha256": "8fed69e72394a858cd9c7518bd6481a8e7b09ec023bb01d61b79abefa243f060"
+    },
+    {
+      "path": "workflow/phase3_周复盘.md",
+      "url_path": "workflow/phase3_%E5%91%A8%E5%A4%8D%E7%9B%98.md",
+      "size": 1321,
+      "sha256": "37a1a6d0ddfe780d5982c0410bc89bedee740a67106c1ad92fc28d3780e449f4"
+    },
+    {
+      "path": "workflow/技能更新流程.md",
+      "url_path": "workflow/%E6%8A%80%E8%83%BD%E6%9B%B4%E6%96%B0%E6%B5%81%E7%A8%8B.md",
+      "size": 6826,
+      "sha256": "dc2328b22f662678601983ffa96d27583010aa29383f6fc8980ab9e8b3f69cb4"
+    },
+    {
+      "path": "workflow/特别警告.md",
+      "url_path": "workflow/%E7%89%B9%E5%88%AB%E8%AD%A6%E5%91%8A.md",
+      "size": 2836,
+      "sha256": "c844b7b2a2ce49de40b0e86856041381e8722c262c4c3c0ad0113aabdd909199"
+    },
+    {
+      "path": "更新说明.md",
+      "url_path": "%E6%9B%B4%E6%96%B0%E8%AF%B4%E6%98%8E.md",
+      "size": 10174,
+      "sha256": "bee48c03dd3acb50f871f635ad7d83d340ff5881490eaa4c898de01e876c5dc8"
+    },
+    {
+      "path": "架构说明.md",
+      "url_path": "%E6%9E%B6%E6%9E%84%E8%AF%B4%E6%98%8E.md",
+      "size": 17523,
+      "sha256": "085ff191c632595b4c28d717a44e2ab4d97cc79075ba93314f0e2e894b440153"
+    },
+    {
+      "path": "知识卡片库/HTML知识卡片/D10_对标拆解方法论_知识卡片.html",
+      "url_path": "%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87%E5%BA%93/HTML%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87/D10_%E5%AF%B9%E6%A0%87%E6%8B%86%E8%A7%A3%E6%96%B9%E6%B3%95%E8%AE%BA_%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87.html",
+      "size": 27073,
+      "sha256": "a7e807f5f5e330aeddb44f0e3edb4cd15c2151e9ba509164f74571dab0617b33"
+    },
+    {
+      "path": "知识卡片库/HTML知识卡片/D11_口播实操_知识卡片.html",
+      "url_path": "%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87%E5%BA%93/HTML%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87/D11_%E5%8F%A3%E6%92%AD%E5%AE%9E%E6%93%8D_%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87.html",
+      "size": 24843,
+      "sha256": "2198ae5ef6009d96dab3870940138de5228214a42c41feafe3e78597375cdb6d"
+    },
+    {
+      "path": "知识卡片库/HTML知识卡片/D12_数据诊断与调整_知识卡片.html",
+      "url_path": "%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87%E5%BA%93/HTML%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87/D12_%E6%95%B0%E6%8D%AE%E8%AF%8A%E6%96%AD%E4%B8%8E%E8%B0%83%E6%95%B4_%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87.html",
+      "size": 21422,
+      "sha256": "42a89895b09ff1a651dbae8c1fe382827246bd12e944842ca2b45656fd95d59b"
+    },
+    {
+      "path": "知识卡片库/HTML知识卡片/D13_VLOG创作_知识卡片.html",
+      "url_path": "%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87%E5%BA%93/HTML%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87/D13_VLOG%E5%88%9B%E4%BD%9C_%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87.html",
+      "size": 23083,
+      "sha256": "c113779f6cf5ba3a781802edc4c251736af16cb853f8ea3a0b7b3a27a5af3ad9"
+    },
+    {
+      "path": "知识卡片库/HTML知识卡片/D14_多平台矩阵_知识卡片.html",
+      "url_path": "%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87%E5%BA%93/HTML%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87/D14_%E5%A4%9A%E5%B9%B3%E5%8F%B0%E7%9F%A9%E9%98%B5_%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87.html",
+      "size": 16194,
+      "sha256": "25e64bde22898d160295c77612f5d8d6f79e8c0d73fcafda38f527d8c28b139d"
+    },
+    {
+      "path": "知识卡片库/HTML知识卡片/D15_包装视频_知识卡片.html",
+      "url_path": "%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87%E5%BA%93/HTML%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87/D15_%E5%8C%85%E8%A3%85%E8%A7%86%E9%A2%91_%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87.html",
+      "size": 15311,
+      "sha256": "bbfe2e4f71900fd48d8c3d7ea019db7a0a8cae71449d62d2966ecc5ebbf1a2c2"
+    },
+    {
+      "path": "知识卡片库/HTML知识卡片/D16_找热点增热点_知识卡片.html",
+      "url_path": "%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87%E5%BA%93/HTML%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87/D16_%E6%89%BE%E7%83%AD%E7%82%B9%E5%A2%9E%E7%83%AD%E7%82%B9_%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87.html",
+      "size": 15728,
+      "sha256": "8921eb021b8a6ae5560d4c56c745b85bb514534e6cf13181b6558f3b42693872"
+    },
+    {
+      "path": "知识卡片库/HTML知识卡片/D17_投流_知识卡片.html",
+      "url_path": "%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87%E5%BA%93/HTML%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87/D17_%E6%8A%95%E6%B5%81_%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87.html",
+      "size": 31976,
+      "sha256": "67cb0341dce3fd3c15f76f2a703ba0bb9738fcf5bd22bf02aa9b2824d7d7a6ed"
+    },
+    {
+      "path": "知识卡片库/HTML知识卡片/D18_爆款复盘四步_知识卡片.html",
+      "url_path": "%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87%E5%BA%93/HTML%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87/D18_%E7%88%86%E6%AC%BE%E5%A4%8D%E7%9B%98%E5%9B%9B%E6%AD%A5_%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87.html",
+      "size": 22068,
+      "sha256": "d9c637cada502c758f6eb0454aa90a0eb2424c081b672b4ce86a6ebb1349dc1e"
+    },
+    {
+      "path": "知识卡片库/HTML知识卡片/D19_素材库深化_知识卡片.html",
+      "url_path": "%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87%E5%BA%93/HTML%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87/D19_%E7%B4%A0%E6%9D%90%E5%BA%93%E6%B7%B1%E5%8C%96_%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87.html",
+      "size": 27636,
+      "sha256": "6997052393701b1a849379a49bd9d62300f2e42d213c574c0525118c04664160"
+    },
+    {
+      "path": "知识卡片库/HTML知识卡片/D20_变现四层路径_知识卡片.html",
+      "url_path": "%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87%E5%BA%93/HTML%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87/D20_%E5%8F%98%E7%8E%B0%E5%9B%9B%E5%B1%82%E8%B7%AF%E5%BE%84_%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87.html",
+      "size": 17909,
+      "sha256": "3ccfc1c779211a22d777c623e58e9f4492949eddcf96ed75a83160abc6b68f01"
+    },
+    {
+      "path": "知识卡片库/HTML知识卡片/D21_转化型内容_知识卡片.html",
+      "url_path": "%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87%E5%BA%93/HTML%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87/D21_%E8%BD%AC%E5%8C%96%E5%9E%8B%E5%86%85%E5%AE%B9_%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87.html",
+      "size": 19316,
+      "sha256": "d7e05940940a944bb73f6ce37de0368f9c3bb4f548c9a9209c4ce8b0332f2ebd"
+    },
+    {
+      "path": "知识卡片库/HTML知识卡片/D22_线索转化型视频_知识卡片.html",
+      "url_path": "%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87%E5%BA%93/HTML%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87/D22_%E7%BA%BF%E7%B4%A2%E8%BD%AC%E5%8C%96%E5%9E%8B%E8%A7%86%E9%A2%91_%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87.html",
+      "size": 22163,
+      "sha256": "96dd81a52475f6dcb5a384d0431f5a2e574d2a6237a38e23e60ca36563026ca7"
+    },
+    {
+      "path": "知识卡片库/HTML知识卡片/D23_开通橱窗团购_知识卡片.html",
+      "url_path": "%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87%E5%BA%93/HTML%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87/D23_%E5%BC%80%E9%80%9A%E6%A9%B1%E7%AA%97%E5%9B%A2%E8%B4%AD_%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87.html",
+      "size": 26677,
+      "sha256": "de5249f84c63e90bd2b9baacf98c33c0f9f27eb221797019e739cbc204c9e878"
+    },
+    {
+      "path": "知识卡片库/HTML知识卡片/D24_对标直播间与话术_知识卡片.html",
+      "url_path": "%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87%E5%BA%93/HTML%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87/D24_%E5%AF%B9%E6%A0%87%E7%9B%B4%E6%92%AD%E9%97%B4%E4%B8%8E%E8%AF%9D%E6%9C%AF_%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87.html",
+      "size": 25432,
+      "sha256": "122e6866e31474dc8dc78cd61c17bdd73fd5907137d8f6afdb6ac137f6afa7cc"
+    },
+    {
+      "path": "知识卡片库/HTML知识卡片/D25_开播流程_知识卡片.html",
+      "url_path": "%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87%E5%BA%93/HTML%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87/D25_%E5%BC%80%E6%92%AD%E6%B5%81%E7%A8%8B_%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87.html",
+      "size": 28264,
+      "sha256": "c42026bb3d07b3f5902c23beeb3ebb805e41b738bf07329ccc9ce61a70acc6a4"
+    },
+    {
+      "path": "知识卡片库/HTML知识卡片/D26_直播复盘_知识卡片.html",
+      "url_path": "%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87%E5%BA%93/HTML%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87/D26_%E7%9B%B4%E6%92%AD%E5%A4%8D%E7%9B%98_%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87.html",
+      "size": 34463,
+      "sha256": "4e8153cdfce428ffa1fe25611036cb9948f4758bafe6534d0d705414ed0d1730"
+    },
+    {
+      "path": "知识卡片库/HTML知识卡片/D27_账号长期运营_知识卡片.html",
+      "url_path": "%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87%E5%BA%93/HTML%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87/D27_%E8%B4%A6%E5%8F%B7%E9%95%BF%E6%9C%9F%E8%BF%90%E8%90%A5_%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87.html",
+      "size": 29108,
+      "sha256": "dd9fd7bf1d5cb468e68a765ceee72ddc65e993a9866717ca75e1231835888795"
+    },
+    {
+      "path": "知识卡片库/HTML知识卡片/D28_自媒体认知_知识卡片.html",
+      "url_path": "%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87%E5%BA%93/HTML%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87/D28_%E8%87%AA%E5%AA%92%E4%BD%93%E8%AE%A4%E7%9F%A5_%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87.html",
+      "size": 34854,
+      "sha256": "47680ca7ac97d23f1958ad10716d490eafb47552b012a17adaca95da29c380f3"
+    },
+    {
+      "path": "知识卡片库/HTML知识卡片/D6_选题方法论_知识卡片.html",
+      "url_path": "%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87%E5%BA%93/HTML%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87/D6_%E9%80%89%E9%A2%98%E6%96%B9%E6%B3%95%E8%AE%BA_%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87.html",
+      "size": 26605,
+      "sha256": "fdec841b372c68d3c1e857b5545dfc5590a74713cba5761525143b471d181602"
+    },
+    {
+      "path": "知识卡片库/HTML知识卡片/D7_标题设计_知识卡片.html",
+      "url_path": "%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87%E5%BA%93/HTML%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87/D7_%E6%A0%87%E9%A2%98%E8%AE%BE%E8%AE%A1_%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87.html",
+      "size": 23558,
+      "sha256": "039cb25615e23b73b7756ff5803ae2b7f0008bde60772876991118f586fd16ef"
+    },
+    {
+      "path": "知识卡片库/HTML知识卡片/D8_开头设计_知识卡片.html",
+      "url_path": "%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87%E5%BA%93/HTML%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87/D8_%E5%BC%80%E5%A4%B4%E8%AE%BE%E8%AE%A1_%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87.html",
+      "size": 34908,
+      "sha256": "86a31eae49bd8f0ed1298e5bf705781a16813a4383d8f6a7e385ebb9040950cc"
+    },
+    {
+      "path": "知识卡片库/HTML知识卡片/D9_文案创作_知识卡片.html",
+      "url_path": "%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87%E5%BA%93/HTML%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87/D9_%E6%96%87%E6%A1%88%E5%88%9B%E4%BD%9C_%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87.html",
+      "size": 25570,
+      "sha256": "cc4c40bcfd70f42fa9c24a63ac3cd0fd3b2660dd6604fd6c9589e32517a8b014"
+    },
+    {
+      "path": "知识卡片库/HTML知识卡片/logo.png",
+      "url_path": "%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87%E5%BA%93/HTML%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87/logo.png",
+      "size": 182076,
+      "sha256": "94d7794f9d4492acee6d3a3c22284642e37a26a3b276a0288872258044f0f2f9"
+    },
+    {
+      "path": "知识卡片库/HTML知识卡片/借东风_知识卡片.html",
+      "url_path": "%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87%E5%BA%93/HTML%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87/%E5%80%9F%E4%B8%9C%E9%A3%8E_%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87.html",
+      "size": 15496,
+      "sha256": "5037c88f8d8d9bf4a277721ff3229f9c7f6cd903841d5982850814cd39a4bfc5"
+    },
+    {
+      "path": "知识卡片库/PNG截图/D10_对标拆解方法论_知识卡片.png",
+      "url_path": "%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87%E5%BA%93/PNG%E6%88%AA%E5%9B%BE/D10_%E5%AF%B9%E6%A0%87%E6%8B%86%E8%A7%A3%E6%96%B9%E6%B3%95%E8%AE%BA_%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87.png",
+      "size": 1164956,
+      "sha256": "96567665b5d5e844c01f5a7da5d43ee1b26d6c6819f5ccbf2935dde81c313bcb"
+    },
+    {
+      "path": "知识卡片库/PNG截图/D11_口播实操_知识卡片.png",
+      "url_path": "%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87%E5%BA%93/PNG%E6%88%AA%E5%9B%BE/D11_%E5%8F%A3%E6%92%AD%E5%AE%9E%E6%93%8D_%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87.png",
+      "size": 1042344,
+      "sha256": "6ee4192c13bf3715315aca3f998e00c83f991c4bbdcec2d90f338b25a86bed68"
+    },
+    {
+      "path": "知识卡片库/PNG截图/D12_数据诊断与调整_知识卡片.png",
+      "url_path": "%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87%E5%BA%93/PNG%E6%88%AA%E5%9B%BE/D12_%E6%95%B0%E6%8D%AE%E8%AF%8A%E6%96%AD%E4%B8%8E%E8%B0%83%E6%95%B4_%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87.png",
+      "size": 772021,
+      "sha256": "78d1acddde348c46b95c3e87df362abdc0d36b3adbddefe9e237285255ac2a00"
+    },
+    {
+      "path": "知识卡片库/PNG截图/D13_VLOG创作_知识卡片.png",
+      "url_path": "%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87%E5%BA%93/PNG%E6%88%AA%E5%9B%BE/D13_VLOG%E5%88%9B%E4%BD%9C_%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87.png",
+      "size": 866907,
+      "sha256": "ed2962dbd4a600e67f330ea60ad96398bc10752c769969d7dcb9be9d52e47ee4"
+    },
+    {
+      "path": "知识卡片库/PNG截图/D14_多平台矩阵_知识卡片.png",
+      "url_path": "%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87%E5%BA%93/PNG%E6%88%AA%E5%9B%BE/D14_%E5%A4%9A%E5%B9%B3%E5%8F%B0%E7%9F%A9%E9%98%B5_%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87.png",
+      "size": 617415,
+      "sha256": "ac64685d0b1d91447eec56855591e8346bc1ad6955b5330de0b8775459d1e400"
+    },
+    {
+      "path": "知识卡片库/PNG截图/D15_包装视频_知识卡片.png",
+      "url_path": "%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87%E5%BA%93/PNG%E6%88%AA%E5%9B%BE/D15_%E5%8C%85%E8%A3%85%E8%A7%86%E9%A2%91_%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87.png",
+      "size": 596783,
+      "sha256": "089df7bdf1d543daea35ec832594c4fa518287b237f86a5d90ea68d21af7fa5f"
+    },
+    {
+      "path": "知识卡片库/PNG截图/D16_找热点增热点_知识卡片.png",
+      "url_path": "%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87%E5%BA%93/PNG%E6%88%AA%E5%9B%BE/D16_%E6%89%BE%E7%83%AD%E7%82%B9%E5%A2%9E%E7%83%AD%E7%82%B9_%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87.png",
+      "size": 645232,
+      "sha256": "c639852143f7ad4065ecd58cc8662f7c82eb7ef03172a3356adc4f411e68b3b1"
+    },
+    {
+      "path": "知识卡片库/PNG截图/D17_投流_知识卡片.png",
+      "url_path": "%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87%E5%BA%93/PNG%E6%88%AA%E5%9B%BE/D17_%E6%8A%95%E6%B5%81_%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87.png",
+      "size": 1210607,
+      "sha256": "811dcf23d1b3fd7f93ea16418bb682603bd25f36cc74f86bf244b7443f09e315"
+    },
+    {
+      "path": "知识卡片库/PNG截图/D18_爆款复盘四步_知识卡片.png",
+      "url_path": "%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87%E5%BA%93/PNG%E6%88%AA%E5%9B%BE/D18_%E7%88%86%E6%AC%BE%E5%A4%8D%E7%9B%98%E5%9B%9B%E6%AD%A5_%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87.png",
+      "size": 765336,
+      "sha256": "2ae4eee67e690ec8b9e9ae2e18cd8ba6264644a7ba6666fc8e528f2560a146b5"
+    },
+    {
+      "path": "知识卡片库/PNG截图/D19_素材库深化_知识卡片.png",
+      "url_path": "%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87%E5%BA%93/PNG%E6%88%AA%E5%9B%BE/D19_%E7%B4%A0%E6%9D%90%E5%BA%93%E6%B7%B1%E5%8C%96_%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87.png",
+      "size": 1229323,
+      "sha256": "fa2e286caae834a323d25e05c870943fc998f91912f63fa81e7ca7985220aa90"
+    },
+    {
+      "path": "知识卡片库/PNG截图/D20_变现四层路径_知识卡片.png",
+      "url_path": "%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87%E5%BA%93/PNG%E6%88%AA%E5%9B%BE/D20_%E5%8F%98%E7%8E%B0%E5%9B%9B%E5%B1%82%E8%B7%AF%E5%BE%84_%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87.png",
+      "size": 645049,
+      "sha256": "4d8a296241cb08699ac0fa56181417a0fa3241cf970cf558ee679475f635a0a2"
+    },
+    {
+      "path": "知识卡片库/PNG截图/D21_转化型内容_知识卡片.png",
+      "url_path": "%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87%E5%BA%93/PNG%E6%88%AA%E5%9B%BE/D21_%E8%BD%AC%E5%8C%96%E5%9E%8B%E5%86%85%E5%AE%B9_%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87.png",
+      "size": 831188,
+      "sha256": "b436419c26c77c6351faafcfc83a33da154e187e80c02796139eedbc6e45b2e5"
+    },
+    {
+      "path": "知识卡片库/PNG截图/D22_线索转化型视频_知识卡片.png",
+      "url_path": "%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87%E5%BA%93/PNG%E6%88%AA%E5%9B%BE/D22_%E7%BA%BF%E7%B4%A2%E8%BD%AC%E5%8C%96%E5%9E%8B%E8%A7%86%E9%A2%91_%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87.png",
+      "size": 995240,
+      "sha256": "c6fa85dfa87ca19a5d65a5ed009364be8a9792a85f1f0a4e314cd8104cc23200"
+    },
+    {
+      "path": "知识卡片库/PNG截图/D23_开通橱窗团购_知识卡片.png",
+      "url_path": "%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87%E5%BA%93/PNG%E6%88%AA%E5%9B%BE/D23_%E5%BC%80%E9%80%9A%E6%A9%B1%E7%AA%97%E5%9B%A2%E8%B4%AD_%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87.png",
+      "size": 971802,
+      "sha256": "112cf606ea0c73a0cdc7d755463d69b54c180638375bfed66198454b9aaad235"
+    },
+    {
+      "path": "知识卡片库/PNG截图/D24_对标直播间与话术_知识卡片.png",
+      "url_path": "%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87%E5%BA%93/PNG%E6%88%AA%E5%9B%BE/D24_%E5%AF%B9%E6%A0%87%E7%9B%B4%E6%92%AD%E9%97%B4%E4%B8%8E%E8%AF%9D%E6%9C%AF_%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87.png",
+      "size": 1064813,
+      "sha256": "4b90634a89688e83bcf4081897d144a8f913090dd70a38fffb33af76af4cebd8"
+    },
+    {
+      "path": "知识卡片库/PNG截图/D25_开播流程_知识卡片.png",
+      "url_path": "%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87%E5%BA%93/PNG%E6%88%AA%E5%9B%BE/D25_%E5%BC%80%E6%92%AD%E6%B5%81%E7%A8%8B_%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87.png",
+      "size": 1169677,
+      "sha256": "f977ca843db69d4de28b4491151393540310f2615f716c4f31626c976ec719a1"
+    },
+    {
+      "path": "知识卡片库/PNG截图/D26_直播复盘_知识卡片.png",
+      "url_path": "%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87%E5%BA%93/PNG%E6%88%AA%E5%9B%BE/D26_%E7%9B%B4%E6%92%AD%E5%A4%8D%E7%9B%98_%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87.png",
+      "size": 1369061,
+      "sha256": "c2d61a88c984726d6c84279fc67055fddd6043b8cc6080ea9cb765e22b93bd39"
+    },
+    {
+      "path": "知识卡片库/PNG截图/D27_账号长期运营_知识卡片.png",
+      "url_path": "%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87%E5%BA%93/PNG%E6%88%AA%E5%9B%BE/D27_%E8%B4%A6%E5%8F%B7%E9%95%BF%E6%9C%9F%E8%BF%90%E8%90%A5_%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87.png",
+      "size": 1161159,
+      "sha256": "c2500606d26e245c564adfb785a658961eae7d65bbdea27957d92df342fac57e"
+    },
+    {
+      "path": "知识卡片库/PNG截图/D28_自媒体认知.png",
+      "url_path": "%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87%E5%BA%93/PNG%E6%88%AA%E5%9B%BE/D28_%E8%87%AA%E5%AA%92%E4%BD%93%E8%AE%A4%E7%9F%A5.png",
+      "size": 2515015,
+      "sha256": "cb8ff59dd69f2b2caec7216a46684555f7f4809ed66e7cc9e97825f5432fdc8b"
+    },
+    {
+      "path": "知识卡片库/PNG截图/D6_选题方法论_知识卡片.png",
+      "url_path": "%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87%E5%BA%93/PNG%E6%88%AA%E5%9B%BE/D6_%E9%80%89%E9%A2%98%E6%96%B9%E6%B3%95%E8%AE%BA_%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87.png",
+      "size": 917155,
+      "sha256": "282c9fd6e78b99717d9732b8bbbcc4cf107c66902422ee048783a493ebf6c3d2"
+    },
+    {
+      "path": "知识卡片库/PNG截图/D7_标题设计_知识卡片.png",
+      "url_path": "%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87%E5%BA%93/PNG%E6%88%AA%E5%9B%BE/D7_%E6%A0%87%E9%A2%98%E8%AE%BE%E8%AE%A1_%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87.png",
+      "size": 717541,
+      "sha256": "60dfc956c73f83ad664d2ea36afec0bfbca3115b8996b0c4a433d74d3bc26226"
+    },
+    {
+      "path": "知识卡片库/PNG截图/D8_开头设计_知识卡片.png",
+      "url_path": "%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87%E5%BA%93/PNG%E6%88%AA%E5%9B%BE/D8_%E5%BC%80%E5%A4%B4%E8%AE%BE%E8%AE%A1_%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87.png",
+      "size": 1669515,
+      "sha256": "e3b4e003a3d57f5cc5a60c87a121cc614e785c40c806c2f44cbc37f68fa9c676"
+    },
+    {
+      "path": "知识卡片库/PNG截图/D9_文案创作_知识卡片.png",
+      "url_path": "%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87%E5%BA%93/PNG%E6%88%AA%E5%9B%BE/D9_%E6%96%87%E6%A1%88%E5%88%9B%E4%BD%9C_%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87.png",
+      "size": 1109917,
+      "sha256": "074c36af4eacd7c7eb8e503d14a2b52f2b7ffdacec5ce3b0aea9862f1a22a299"
+    },
+    {
+      "path": "知识卡片库/PNG截图/借东风.png",
+      "url_path": "%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87%E5%BA%93/PNG%E6%88%AA%E5%9B%BE/%E5%80%9F%E4%B8%9C%E9%A3%8E.png",
+      "size": 1200140,
+      "sha256": "a06dc98b6ea94b8b2ea565471667c7d63c51d78ec5dcdebfcad836fe92ca6c14"
+    },
+    {
+      "path": "知识卡片库/_素材资源/TASK_D8_D28.md",
+      "url_path": "%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87%E5%BA%93/_%E7%B4%A0%E6%9D%90%E8%B5%84%E6%BA%90/TASK_D8_D28.md",
+      "size": 6091,
+      "sha256": "72d1f77ceaca3f8f80b6f074f1f5ee677d87f3779fd35bebc5e0706f6356adfe"
+    },
+    {
+      "path": "知识卡片库/_素材资源/logo.png",
+      "url_path": "%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87%E5%BA%93/_%E7%B4%A0%E6%9D%90%E8%B5%84%E6%BA%90/logo.png",
+      "size": 182076,
+      "sha256": "94d7794f9d4492acee6d3a3c22284642e37a26a3b276a0288872258044f0f2f9"
+    },
+    {
+      "path": "要素定义库/00_自媒体认知要素.md",
+      "url_path": "%E8%A6%81%E7%B4%A0%E5%AE%9A%E4%B9%89%E5%BA%93/00_%E8%87%AA%E5%AA%92%E4%BD%93%E8%AE%A4%E7%9F%A5%E8%A6%81%E7%B4%A0.md",
+      "size": 16892,
+      "sha256": "6e72c6fd32b0a0697cce807639dba6d28a3050f6daaf3e34bab1aa7b4343423c"
+    },
+    {
+      "path": "要素定义库/01_账号定位要素.md",
+      "url_path": "%E8%A6%81%E7%B4%A0%E5%AE%9A%E4%B9%89%E5%BA%93/01_%E8%B4%A6%E5%8F%B7%E5%AE%9A%E4%BD%8D%E8%A6%81%E7%B4%A0.md",
+      "size": 5826,
+      "sha256": "e3bf9e3259d6ce30ae05820573abf787c1cdebac5a76a323670a1c6102dfa9a9"
+    },
+    {
+      "path": "要素定义库/02_选题要素.md",
+      "url_path": "%E8%A6%81%E7%B4%A0%E5%AE%9A%E4%B9%89%E5%BA%93/02_%E9%80%89%E9%A2%98%E8%A6%81%E7%B4%A0.md",
+      "size": 6201,
+      "sha256": "08716ec67bda61be3990a5f0e9432c8b37337be7262d5b3e8c8d96c77c7b6a91"
+    },
+    {
+      "path": "要素定义库/03_开头钩子要素.md",
+      "url_path": "%E8%A6%81%E7%B4%A0%E5%AE%9A%E4%B9%89%E5%BA%93/03_%E5%BC%80%E5%A4%B4%E9%92%A9%E5%AD%90%E8%A6%81%E7%B4%A0.md",
+      "size": 5382,
+      "sha256": "522287d0a6765384a7827311b6d927cc1246f5da224b5c3c214029a64e84b988"
+    },
+    {
+      "path": "要素定义库/04_文案要素.md",
+      "url_path": "%E8%A6%81%E7%B4%A0%E5%AE%9A%E4%B9%89%E5%BA%93/04_%E6%96%87%E6%A1%88%E8%A6%81%E7%B4%A0.md",
+      "size": 12036,
+      "sha256": "dbfb28bfc5150bc30c9774746b401be87397c22cf4abafd0aaa7a12bfd405f70"
+    },
+    {
+      "path": "要素定义库/05_呈现要素.md",
+      "url_path": "%E8%A6%81%E7%B4%A0%E5%AE%9A%E4%B9%89%E5%BA%93/05_%E5%91%88%E7%8E%B0%E8%A6%81%E7%B4%A0.md",
+      "size": 5140,
+      "sha256": "f873f1bf6b5500969b2723a605ae9888058f37a76c6665bfcd2cf0668a4f8bbe"
+    },
+    {
+      "path": "要素定义库/06_72变要素.md",
+      "url_path": "%E8%A6%81%E7%B4%A0%E5%AE%9A%E4%B9%89%E5%BA%93/06_72%E5%8F%98%E8%A6%81%E7%B4%A0.md",
+      "size": 11556,
+      "sha256": "e3e2ad9e161fed10996e0312a234c7e2f7840c9ce58e465b91e5de7d534ae758"
+    },
+    {
+      "path": "要素定义库/07_创意故事要素.md",
+      "url_path": "%E8%A6%81%E7%B4%A0%E5%AE%9A%E4%B9%89%E5%BA%93/07_%E5%88%9B%E6%84%8F%E6%95%85%E4%BA%8B%E8%A6%81%E7%B4%A0.md",
+      "size": 8568,
+      "sha256": "b7f0791a4d35df5e87f5197df107b901b5e6efade0afe74bc51a397d33328fda"
+    },
+    {
+      "path": "要素定义库/08_简介要素.md",
+      "url_path": "%E8%A6%81%E7%B4%A0%E5%AE%9A%E4%B9%89%E5%BA%93/08_%E7%AE%80%E4%BB%8B%E8%A6%81%E7%B4%A0.md",
+      "size": 23956,
+      "sha256": "4f770378142b665a9e861cbf6d842606676d56a320b5429b34a9e75b75ee3e61"
+    },
+    {
+      "path": "要素定义库/09_视频评价要素.md",
+      "url_path": "%E8%A6%81%E7%B4%A0%E5%AE%9A%E4%B9%89%E5%BA%93/09_%E8%A7%86%E9%A2%91%E8%AF%84%E4%BB%B7%E8%A6%81%E7%B4%A0.md",
+      "size": 13531,
+      "sha256": "9df0172da5ef7cf02e50ab2fe154d90d104fa259d228bce9051360667a6830ae"
+    },
+    {
+      "path": "要素定义库/10_教练沟通要素.md",
+      "url_path": "%E8%A6%81%E7%B4%A0%E5%AE%9A%E4%B9%89%E5%BA%93/10_%E6%95%99%E7%BB%83%E6%B2%9F%E9%80%9A%E8%A6%81%E7%B4%A0.md",
+      "size": 23354,
+      "sha256": "14f6906703c64b3851760ac3b1057f9574b1908899d827e7b341ba27c8aecb3c"
+    },
+    {
+      "path": "要素定义库/11_内容漏斗与流量分层要素.md",
+      "url_path": "%E8%A6%81%E7%B4%A0%E5%AE%9A%E4%B9%89%E5%BA%93/11_%E5%86%85%E5%AE%B9%E6%BC%8F%E6%96%97%E4%B8%8E%E6%B5%81%E9%87%8F%E5%88%86%E5%B1%82%E8%A6%81%E7%B4%A0.md",
+      "size": 13711,
+      "sha256": "77f6766d789c87f523dbe87671c47079ae2b421663235559011806e851044184"
+    },
+    {
+      "path": "要素定义库/12_消息识别与问题分类要素.md",
+      "url_path": "%E8%A6%81%E7%B4%A0%E5%AE%9A%E4%B9%89%E5%BA%93/12_%E6%B6%88%E6%81%AF%E8%AF%86%E5%88%AB%E4%B8%8E%E9%97%AE%E9%A2%98%E5%88%86%E7%B1%BB%E8%A6%81%E7%B4%A0.md",
+      "size": 16871,
+      "sha256": "18f22b0708b5b5f3fb1864cf1c410b30a7c3d373db78a8a0072c52d28d69a846"
+    },
+    {
+      "path": "要素定义库/13_行业分类与赛道策略要素.md",
+      "url_path": "%E8%A6%81%E7%B4%A0%E5%AE%9A%E4%B9%89%E5%BA%93/13_%E8%A1%8C%E4%B8%9A%E5%88%86%E7%B1%BB%E4%B8%8E%E8%B5%9B%E9%81%93%E7%AD%96%E7%95%A5%E8%A6%81%E7%B4%A0.md",
+      "size": 9055,
+      "sha256": "b44531b4e74432ee377464df8101a47cf9208adc8e65eceaa1f607930a834ea6"
+    },
+    {
+      "path": "要素定义库/14_变现路径要素.md",
+      "url_path": "%E8%A6%81%E7%B4%A0%E5%AE%9A%E4%B9%89%E5%BA%93/14_%E5%8F%98%E7%8E%B0%E8%B7%AF%E5%BE%84%E8%A6%81%E7%B4%A0.md",
+      "size": 6657,
+      "sha256": "f2c62dae0ca596ee2438cdc67caa6279df3ccb6a0d00ffd73a135d0676f535e2"
+    },
+    {
+      "path": "要素定义库/15_实体店专项策略要素.md",
+      "url_path": "%E8%A6%81%E7%B4%A0%E5%AE%9A%E4%B9%89%E5%BA%93/15_%E5%AE%9E%E4%BD%93%E5%BA%97%E4%B8%93%E9%A1%B9%E7%AD%96%E7%95%A5%E8%A6%81%E7%B4%A0.md",
+      "size": 6692,
+      "sha256": "56987aa57ba354c99681e7a864865d281fa0a627bd078e613e53e9850d84420e"
+    },
+    {
+      "path": "要素定义库/16_打量逻辑与敏感行业策略要素.md",
+      "url_path": "%E8%A6%81%E7%B4%A0%E5%AE%9A%E4%B9%89%E5%BA%93/16_%E6%89%93%E9%87%8F%E9%80%BB%E8%BE%91%E4%B8%8E%E6%95%8F%E6%84%9F%E8%A1%8C%E4%B8%9A%E7%AD%96%E7%95%A5%E8%A6%81%E7%B4%A0.md",
+      "size": 9408,
+      "sha256": "9255a44398a202734632e8a1bedcaaea3faf2d79ee399ce4e8c7fd078e6f4387"
+    },
+    {
+      "path": "要素定义库/17_产品可视化要素.md",
+      "url_path": "%E8%A6%81%E7%B4%A0%E5%AE%9A%E4%B9%89%E5%BA%93/17_%E4%BA%A7%E5%93%81%E5%8F%AF%E8%A7%86%E5%8C%96%E8%A6%81%E7%B4%A0.md",
+      "size": 12769,
+      "sha256": "dcf9410ffbb972d6b2d34efb4cb94d7458553ed94c29d1b718e63414106720ae"
+    },
+    {
+      "path": "要素定义库/18_内容创作底层逻辑要素.md",
+      "url_path": "%E8%A6%81%E7%B4%A0%E5%AE%9A%E4%B9%89%E5%BA%93/18_%E5%86%85%E5%AE%B9%E5%88%9B%E4%BD%9C%E5%BA%95%E5%B1%82%E9%80%BB%E8%BE%91%E8%A6%81%E7%B4%A0.md",
+      "size": 15396,
+      "sha256": "4d0ae9db73bb0c6a9fc58adaf93cac3dd4593bd27ae8ef3b66d617706a8a9f07"
+    },
+    {
+      "path": "要素定义库/19_每日巡检要素.md",
+      "url_path": "%E8%A6%81%E7%B4%A0%E5%AE%9A%E4%B9%89%E5%BA%93/19_%E6%AF%8F%E6%97%A5%E5%B7%A1%E6%A3%80%E8%A6%81%E7%B4%A0.md",
+      "size": 15874,
+      "sha256": "89d02d1cc1c820151a0516d15c6601a8d3acb71ef7cebcd7cf8723c1c453ff27"
+    },
+    {
+      "path": "要素定义库/20_学员文件维护要素.md",
+      "url_path": "%E8%A6%81%E7%B4%A0%E5%AE%9A%E4%B9%89%E5%BA%93/20_%E5%AD%A6%E5%91%98%E6%96%87%E4%BB%B6%E7%BB%B4%E6%8A%A4%E8%A6%81%E7%B4%A0.md",
+      "size": 6942,
+      "sha256": "757c025df7c10b89ac07f4dd2ca24b6e0fa0a7ec561890c8fb576aee321effdd"
+    },
+    {
+      "path": "要素定义库/21_方法论总览.md",
+      "url_path": "%E8%A6%81%E7%B4%A0%E5%AE%9A%E4%B9%89%E5%BA%93/21_%E6%96%B9%E6%B3%95%E8%AE%BA%E6%80%BB%E8%A7%88.md",
+      "size": 12596,
+      "sha256": "623676b469b98d11b5ba1474021db9c52460c0e20bc56c42faa9850831b47aa5"
+    },
+    {
+      "path": "要素定义库/22_主页搭建要素.md",
+      "url_path": "%E8%A6%81%E7%B4%A0%E5%AE%9A%E4%B9%89%E5%BA%93/22_%E4%B8%BB%E9%A1%B5%E6%90%AD%E5%BB%BA%E8%A6%81%E7%B4%A0.md",
+      "size": 7020,
+      "sha256": "c6766709988628a219322cf72b75bee10e3e16413a978414d3f7b60da2ba10ab"
+    },
+    {
+      "path": "要素定义库/23_借东风与投流放大要素.md",
+      "url_path": "%E8%A6%81%E7%B4%A0%E5%AE%9A%E4%B9%89%E5%BA%93/23_%E5%80%9F%E4%B8%9C%E9%A3%8E%E4%B8%8E%E6%8A%95%E6%B5%81%E6%94%BE%E5%A4%A7%E8%A6%81%E7%B4%A0.md",
+      "size": 17369,
+      "sha256": "b4693a7bf7b31e390112e604fd108a299ba4e6926a5cdd7b34875df0c7416ee3"
+    },
+    {
+      "path": "要素定义库/24_每日动态任务生成要素.md",
+      "url_path": "%E8%A6%81%E7%B4%A0%E5%AE%9A%E4%B9%89%E5%BA%93/24_%E6%AF%8F%E6%97%A5%E5%8A%A8%E6%80%81%E4%BB%BB%E5%8A%A1%E7%94%9F%E6%88%90%E8%A6%81%E7%B4%A0.md",
+      "size": 10753,
+      "sha256": "bc345e159b44ba82617b80a61781d281065051d423bcb13dfee99d63d78b8aea"
+    },
+    {
+      "path": "要素定义库/25_活人感输出规范要素.md",
+      "url_path": "%E8%A6%81%E7%B4%A0%E5%AE%9A%E4%B9%89%E5%BA%93/25_%E6%B4%BB%E4%BA%BA%E6%84%9F%E8%BE%93%E5%87%BA%E8%A7%84%E8%8C%83%E8%A6%81%E7%B4%A0.md",
+      "size": 26737,
+      "sha256": "c28df23890d94314df9cd90cba8743978bcbe189b8e7ef0b930391906ca0ce4f"
+    },
+    {
+      "path": "要素定义库/26_爆款文案密码与语料要素.md",
+      "url_path": "%E8%A6%81%E7%B4%A0%E5%AE%9A%E4%B9%89%E5%BA%93/26_%E7%88%86%E6%AC%BE%E6%96%87%E6%A1%88%E5%AF%86%E7%A0%81%E4%B8%8E%E8%AF%AD%E6%96%99%E8%A6%81%E7%B4%A0.md",
+      "size": 17085,
+      "sha256": "e1a781de128f7cffd1e5480c54850b6aa5f764d8ac8c84aecca7870375f754d2"
+    },
+    {
+      "path": "要素定义库/27_学员心理画像与留存沟通要素.md",
+      "url_path": "%E8%A6%81%E7%B4%A0%E5%AE%9A%E4%B9%89%E5%BA%93/27_%E5%AD%A6%E5%91%98%E5%BF%83%E7%90%86%E7%94%BB%E5%83%8F%E4%B8%8E%E7%95%99%E5%AD%98%E6%B2%9F%E9%80%9A%E8%A6%81%E7%B4%A0.md",
+      "size": 26176,
+      "sha256": "6b15bd955a1832eae73c30fcba3ed4edc096355493fe24ffea478800d60919eb"
+    },
+    {
+      "path": "语料库/爆款文案.jsonl",
+      "url_path": "%E8%AF%AD%E6%96%99%E5%BA%93/%E7%88%86%E6%AC%BE%E6%96%87%E6%A1%88.jsonl",
+      "size": 1693704,
+      "sha256": "cef5f1f0e1f862899ac35124d02a9035fd8b47e8cad843daa1c02ea07b0c073a"
+    },
+    {
+      "path": "销转课/第一节_直播玩法与抖音本地推投放_详细版.md",
+      "url_path": "%E9%94%80%E8%BD%AC%E8%AF%BE/%E7%AC%AC%E4%B8%80%E8%8A%82_%E7%9B%B4%E6%92%AD%E7%8E%A9%E6%B3%95%E4%B8%8E%E6%8A%96%E9%9F%B3%E6%9C%AC%E5%9C%B0%E6%8E%A8%E6%8A%95%E6%94%BE_%E8%AF%A6%E7%BB%86%E7%89%88.md",
+      "size": 19777,
+      "sha256": "c341992ccfad52f37cd327f99f6cce4f2d5539e9bbf0a4784a631f6341f01855"
+    },
+    {
+      "path": "销转课/第三节_公司实力展示与多平台起号策略_详细版.md",
+      "url_path": "%E9%94%80%E8%BD%AC%E8%AF%BE/%E7%AC%AC%E4%B8%89%E8%8A%82_%E5%85%AC%E5%8F%B8%E5%AE%9E%E5%8A%9B%E5%B1%95%E7%A4%BA%E4%B8%8E%E5%A4%9A%E5%B9%B3%E5%8F%B0%E8%B5%B7%E5%8F%B7%E7%AD%96%E7%95%A5_%E8%AF%A6%E7%BB%86%E7%89%88.md",
+      "size": 15665,
+      "sha256": "8847516cda87e121dae05e6be4310aa72ac3550cc33c5dccaba4250a0ad12a80"
+    },
+    {
+      "path": "销转课/第二节_公司参观与起号必爆方法论_详细版.md",
+      "url_path": "%E9%94%80%E8%BD%AC%E8%AF%BE/%E7%AC%AC%E4%BA%8C%E8%8A%82_%E5%85%AC%E5%8F%B8%E5%8F%82%E8%A7%82%E4%B8%8E%E8%B5%B7%E5%8F%B7%E5%BF%85%E7%88%86%E6%96%B9%E6%B3%95%E8%AE%BA_%E8%AF%A6%E7%BB%86%E7%89%88.md",
+      "size": 10359,
+      "sha256": "e778878c2302909267400380742e957f358898a380269d3f66356b905b3456c1"
+    }
+  ]
+}
