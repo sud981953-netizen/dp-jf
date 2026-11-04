@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 """retrieve_yuliao.py — 爆款文案语料检索（零依赖，Python 3.8+）
 
-写文案/开头/金句前必跑：取 3-5 条同分类爆款全文做仿写锚点。
-数据源：语料库/爆款文案.jsonl（552 条唯一实战爆款全文，五类三平台，跨表重复已合并多分类标签）
+按需检索真实语料，作为句式或结构参考；无命中时不强制仿写。
+数据源：共享资源/语料库/爆款文案.jsonl（552 条唯一实战爆款全文，五类三平台，跨表重复已合并多分类标签）
 
 用法：
   python scripts/retrieve_yuliao.py "主题词" [更多词...]          # 关键词检索（多词AND加成）
@@ -24,13 +24,13 @@ import re
 import sys
 from pathlib import Path
 
-DB = Path(__file__).resolve().parent.parent / "语料库" / "爆款文案.jsonl"
+DB = Path(__file__).resolve().parent.parent / "共享资源" / "语料库" / "爆款文案.jsonl"
 
 
 def load():
     if not DB.exists():
         print(f"[语料库缺失] {DB}", file=sys.stderr)
-        print("请确认技能包完整（语料库/爆款文案.jsonl 必须和 scripts/ 同级）", file=sys.stderr)
+        print("请确认技能包完整（共享资源/语料库/爆款文案.jsonl 与 scripts/ 位于技能包内）", file=sys.stderr)
         sys.exit(1)
     records = []
     with DB.open(encoding="utf-8") as handle:
@@ -69,7 +69,8 @@ def score_record(record, terms):
         score = min(score, 3)
     if hit_terms == len(terms) and len(terms) > 1:
         score += 5
-    if record.get("engagement_value", 0) > 0:
+    # 热度只用于给真正命中的结果排序，不能让未命中记录变成命中。
+    if hit_terms and record.get("engagement_value", 0) > 0:
         score += 3
     return score, focused_hit
 
@@ -161,7 +162,7 @@ def main():
             continue
         scored.append((score, record))
     if not scored:
-        print("[无命中] 语料里没有同时命中这些关键词的条目，减少关键词或换主题词", file=sys.stderr)
+        print("[无命中] 语料里没有命中这些关键词的条目，减少关键词或换主题词", file=sys.stderr)
         sys.exit(2)
 
     scored.sort(key=lambda pair: (-pair[0], -pair[1].get("engagement_value", 0)))

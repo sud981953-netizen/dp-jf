@@ -2,7 +2,7 @@
 """构建语料库：从 365条爆款文案 xlsx 解析出全量文案 JSONL（带互动数据与平台内分档）
 
 用法：
-  python scripts/构建语料库.py --source "F:\素材库\00_365爆款文案\source\365条爆款文案(1).xlsx" --output "语料库\爆款文案.jsonl"
+  python scripts/构建语料库.py --source "<爆款文案源文件.xlsx>" --output "共享资源\语料库\爆款文案.jsonl"
 
 依赖：openpyxl（仅构建时需要；检索脚本 retrieve_yuliao.py 零依赖）
 

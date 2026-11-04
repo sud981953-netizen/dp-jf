@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""dp-jf 输出文本检查。检查话术、视频评价、作业卡、选题建议等对外成稿的硬禁令与模型化形状，只报警不自动改文。禁词表与 要素定义库/25_活人感输出规范要素.md 第三节严格一致，改禁词时两边同步。
+"""dp-jf 输出文本检查。检查话术、视频评价、作业卡、选题建议等对外成稿的硬禁令与模型化形状，只报警不自动改文。禁词表与 共享资源/要素定义库/25_活人感输出规范要素.md 第三节严格一致，改禁词时两边同步。
 
 v1.9.6 新增 --contract 模式：输出契约校验（格式遵循的机制层强制）。
 用法：python check_prose.py --contract 作业卡|评价表|巡检清单 稿件.md
-按 templates/ 模板的必填字段逐项核对，缺字段报失败。字段清单与本文件 CONTRACTS 字典同步维护，
+按 共享资源/templates/ 模板的必填字段逐项核对，缺字段报失败。字段清单与本文件 CONTRACTS 字典同步维护，
 模板字段变更时两边一起改（tests/路由测试题库.md 维护规则第5条）。
 
 v1.9.7 新增 --track 学员 模式：双轨校验（25号〇节双轨输出总则的机器检测）。
@@ -22,7 +22,7 @@ from dataclasses import dataclass
 from pathlib import Path
 
 
-# 输出契约：每个产出物的必填字段（与 templates/ 模板和要素文件头部「输出契约」节同步）
+# 输出契约：每个产出物的必填字段（与 共享资源/templates/ 模板和要素文件头部「输出契约」节同步）
 # 值为字段名列表，每个字段在稿件的任意位置出现过即算命中（宽松匹配，只查缺不查序）。
 CONTRACTS = {
     "作业卡": [
@@ -472,7 +472,7 @@ def check_contract(name: str, text: str) -> int:
     if missing:
         print("\n需要修改")
         for field in missing:
-            print(f"- 缺字段「{field}」（对照 templates/ 对应模板补齐，冲突裁定序第1条）")
+            print(f"- 缺字段「{field}」（对照 共享资源/templates/ 对应模板补齐，冲突裁定序第1条）")
     else:
         print("字段齐全。本模式只查字段缺漏，字段顺序与内容质量人工判断")
     return 1 if missing else 0

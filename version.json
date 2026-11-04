@@ -1,0 +1,11 @@
+{
+  "name": "dpjf",
+  "version": "3.1.0",
+  "status": "released",
+  "date": "2026-11-04",
+  "remote_source": "https://github.com/sud981953-netizen/dp-jf",
+  "previous_skill": "dp-jf v3.0.0-local",
+  "package_directory": "dp-jf",
+  "previous_version": "3.0.0-local",
+  "change": "每日作业默认交付定制文案、文案讲解、逐镜头拍摄方案及方法与语料依据"
+}

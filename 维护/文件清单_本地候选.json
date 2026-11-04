@@ -1,0 +1,1098 @@
+{
+  "skill": "dpjf",
+  "version": "3.1.0-local",
+  "source_state": "local-candidate",
+  "remote_source": null,
+  "generated_at": "2026-11-04T15:53:49+08:00",
+  "file_count": 215,
+  "fingerprint": "4884b5ac2c9abb0ad66f472d4b82200cf6cb20056f017e323ca9d6d782460a06",
+  "excluded": [
+    "学员",
+    "config",
+    "_素材资源",
+    "历史资料",
+    "evals",
+    "缓存"
+  ],
+  "notes": [
+    "本地候选清单不证明远端发布。",
+    "不以清单缺失为由删除用户文件。"
+  ],
+  "files": [
+    {
+      "path": ".gitattributes",
+      "size": 585,
+      "sha256": "1c096c96697dd29148980bbdf314269ef3c2acabb52b09a8bce351f70dae4a69"
+    },
+    {
+      "path": ".gitignore",
+      "size": 284,
+      "sha256": "bd8ed22a1e64bdd58e3e450c5df08287e2d2cbb0ad0567b31ab39e3935c454d9"
+    },
+    {
+      "path": "README.md",
+      "size": 2443,
+      "sha256": "38a9e4412aba59d51d024d8caff075aeb13c7277596b4c733de13436e83a55d3"
+    },
+    {
+      "path": "SKILL.md",
+      "size": 674,
+      "sha256": "3cdfb163b589c105c0e2932d8fde5a5e01c870fb12ef11eeec9f3b01e5d22bbf"
+    },
+    {
+      "path": "scripts/check_prose.py",
+      "size": 31613,
+      "sha256": "fad562429dfda089b462453ec34842040f0f000515efe61095459060020a1103"
+    },
+    {
+      "path": "scripts/retrieve_yuliao.py",
+      "size": 7955,
+      "sha256": "f0570740bd588625be223d94cd511b2396653e3012b833e6ca946cdf29f7eff9"
+    },
+    {
+      "path": "scripts/打包分发包.ps1",
+      "size": 261,
+      "sha256": "6affee76a2daf25092a4793bdd74c4cfdebb9ae86810b7ae9c461126ef2397a8"
+    },
+    {
+      "path": "scripts/打包分发包.py",
+      "size": 4743,
+      "sha256": "f06ed2379215573e29a3dd2fa5e76992a8088f4dc314dccd0da17ddbb11fc5e5"
+    },
+    {
+      "path": "scripts/构建语料库.py",
+      "size": 10854,
+      "sha256": "2d630358b9acb3f16b40424e0dbb516ca6dfd61a527a209cab9ecdaed25271a4"
+    },
+    {
+      "path": "scripts/生成文件清单.py",
+      "size": 4007,
+      "sha256": "fb54d220a4dbdcc660493503133c6e5f9091a6be20f95986d510c79ac5b63886"
+    },
+    {
+      "path": "skills/dpjf-benchmark/SKILL.md",
+      "size": 5195,
+      "sha256": "55aba42045e617c2bed40935c91fd090373fb9cdd5cbf4d9315a9d198b918222"
+    },
+    {
+      "path": "skills/dpjf-benchmark/references/交付样式.md",
+      "size": 542,
+      "sha256": "616049b2e3fda1325d12416f6675bf55ca1df38540f73f19d04b5c7f415f582b"
+    },
+    {
+      "path": "skills/dpjf-benchmark/references/分场景操作.md",
+      "size": 1563,
+      "sha256": "cc352c85aa801a47b83b73e82bf09dd4fe9433a10958d2d74c34ffe704c1f2ba"
+    },
+    {
+      "path": "skills/dpjf-benchmark/references/判断方法.md",
+      "size": 1641,
+      "sha256": "97019fbce2e248799ed3819a55b3720dc44daca7458e85b7ab42c7b2903f5111"
+    },
+    {
+      "path": "skills/dpjf-benchmark/references/案例与边界.md",
+      "size": 445,
+      "sha256": "0b20fb5251b7601ba8c6b23527d456213bf41c7b042ea9553d359adaa59bc664"
+    },
+    {
+      "path": "skills/dpjf-benchmark/references/质量与反馈.md",
+      "size": 1099,
+      "sha256": "402c336be67da1d313610c3102021f6e7e6534b362dad6bb2ff6c164934ace74"
+    },
+    {
+      "path": "skills/dpjf-benchmark/references/资源调用.md",
+      "size": 934,
+      "sha256": "f68938df1e8d9efabc5ca6f969f661ae3e403f8094c730172bf9a8f4dab62e11"
+    },
+    {
+      "path": "skills/dpjf-communication/SKILL.md",
+      "size": 3942,
+      "sha256": "2464c9235c8cf47c364b8d90bf5de8475929ee9b9764f4cf9e6b4fd1cc30add9"
+    },
+    {
+      "path": "skills/dpjf-communication/references/交付样式.md",
+      "size": 347,
+      "sha256": "36ec43f4f94cf8cf8f5c768bff2a1b27df623caa2ebe807a86367b2f3347a5a0"
+    },
+    {
+      "path": "skills/dpjf-communication/references/分场景操作.md",
+      "size": 1485,
+      "sha256": "9effdc3c8417d48430960d9cf9a3c9dfbde11624bc0b792e0d8d78e21a1c2679"
+    },
+    {
+      "path": "skills/dpjf-communication/references/判断方法.md",
+      "size": 1687,
+      "sha256": "bcb5f90bf588a32620e31ec8cff40257691781df37be5ff387c95b27abe183cc"
+    },
+    {
+      "path": "skills/dpjf-communication/references/案例与边界.md",
+      "size": 391,
+      "sha256": "8e7ea04654295d73e103a4e285f3362c929a1a19b42cf3048f4aaad60c7eb323"
+    },
+    {
+      "path": "skills/dpjf-communication/references/质量与反馈.md",
+      "size": 892,
+      "sha256": "71ac60463b1b61afad92608be71863a6d157e6277b5a59042b1e9ed75ae58b2e"
+    },
+    {
+      "path": "skills/dpjf-communication/references/资源调用.md",
+      "size": 933,
+      "sha256": "05d712316f5c932a5abf6a02f122a92efb503031c11a5bd32a423be957a8dfe4"
+    },
+    {
+      "path": "skills/dpjf-creative/SKILL.md",
+      "size": 4766,
+      "sha256": "1dde74f3b6ffa796eb3e0629269e3f69f969701e7f1b74e80ca9b927b03fc52c"
+    },
+    {
+      "path": "skills/dpjf-creative/references/交付样式.md",
+      "size": 258,
+      "sha256": "3d8ff183ac108908eaa8772c2f39ee6dd8c95e0a96f2ee26d81d60f02b2abb44"
+    },
+    {
+      "path": "skills/dpjf-creative/references/分场景操作.md",
+      "size": 1450,
+      "sha256": "7fd2e38fbbc3f550ce0fd19d4a40c50996ecbff8b0cca270665d9e878276b849"
+    },
+    {
+      "path": "skills/dpjf-creative/references/判断方法.md",
+      "size": 1436,
+      "sha256": "26b0624aff2a9eed63851676ee3ff87e024038f2207a60da771e8f726d42e438"
+    },
+    {
+      "path": "skills/dpjf-creative/references/案例与边界.md",
+      "size": 372,
+      "sha256": "339a73248339ffb000287bff78e263be9cc000bb2f280c93b9044f40d95cf91d"
+    },
+    {
+      "path": "skills/dpjf-creative/references/质量与反馈.md",
+      "size": 912,
+      "sha256": "ef3f419b16f686618d24215e0e81d97647a86bd294f0725bacae03c9f465256e"
+    },
+    {
+      "path": "skills/dpjf-creative/references/资源调用.md",
+      "size": 900,
+      "sha256": "77b069f1c26fe5e31e8f23c37fa3abf4c03685db4c097e5116de6cef79ed062d"
+    },
+    {
+      "path": "skills/dpjf-growth/SKILL.md",
+      "size": 3988,
+      "sha256": "af6493451c009b13d40c2ac5f202ad5c19e4355c66afa0f35626ebab71e83269"
+    },
+    {
+      "path": "skills/dpjf-growth/references/资源调用.md",
+      "size": 868,
+      "sha256": "01296743958abaf68a2ec77fb991ce8672489baec6432e0b68dda6e11f891ec1"
+    },
+    {
+      "path": "skills/dpjf-homework/SKILL.md",
+      "size": 7016,
+      "sha256": "87bfec4567723c6c08927cbb6cae6c6de33b864519bf0068217b5982f61c5cd0"
+    },
+    {
+      "path": "skills/dpjf-homework/references/交付样式.md",
+      "size": 454,
+      "sha256": "fa18039432c387eaf429b264d57d6565f836c84aefeb3b709ce2f89e419a724c"
+    },
+    {
+      "path": "skills/dpjf-homework/references/分场景操作.md",
+      "size": 1458,
+      "sha256": "59cbfd9cc05a9a294a2437a7b5a1692b08ad6643b8a75560d1d12de06853bfc8"
+    },
+    {
+      "path": "skills/dpjf-homework/references/判断方法.md",
+      "size": 1899,
+      "sha256": "e1d21fe47708f472d3449ff596f064f7a9c25981584252f948c76afa9074a982"
+    },
+    {
+      "path": "skills/dpjf-homework/references/案例与边界.md",
+      "size": 429,
+      "sha256": "929b00f9bf47253dbc3be7d4ebb6952640c2a2a46a9b84ec66ae9e19953dbdf5"
+    },
+    {
+      "path": "skills/dpjf-homework/references/质量与反馈.md",
+      "size": 992,
+      "sha256": "a6ffe94c7bb2be693426387088c6409026f4fbacf0c6247038f4c933e3e36c8f"
+    },
+    {
+      "path": "skills/dpjf-homework/references/资源调用.md",
+      "size": 1412,
+      "sha256": "0ef15176d20cf0a9ef4c072bf1a92a95fc929f6e8e543e087069dca73a29a94a"
+    },
+    {
+      "path": "skills/dpjf-learning/SKILL.md",
+      "size": 6523,
+      "sha256": "4a733929ee373b7c8821f37d690f5e817584bdf87bb81cda8b7da752897e6b47"
+    },
+    {
+      "path": "skills/dpjf-learning/references/资源调用.md",
+      "size": 1216,
+      "sha256": "aa5cde01a5432a0a19c653f6a8ed8c70092931470cf6d9b473b1591a629da99a"
+    },
+    {
+      "path": "skills/dpjf-patrol/SKILL.md",
+      "size": 3227,
+      "sha256": "d5ff51329def74caf46cb2fb85c19ec038cc69905885a5cedbaec5ab3ff9c90e"
+    },
+    {
+      "path": "skills/dpjf-patrol/references/交付样式.md",
+      "size": 352,
+      "sha256": "765919fa0a3bd492702c989cf82de738ca4fa0b79fdfd156854aeb276d0859bc"
+    },
+    {
+      "path": "skills/dpjf-patrol/references/分场景操作.md",
+      "size": 1396,
+      "sha256": "ab4c8ff2c03cd067648289131f904f9f2c9a88c52b089e0c610f6668d5441a1f"
+    },
+    {
+      "path": "skills/dpjf-patrol/references/判断方法.md",
+      "size": 2014,
+      "sha256": "28ef283fad1f3f6132dce57c4c16627f4711d1aece9cd33890d331891a0dfc2a"
+    },
+    {
+      "path": "skills/dpjf-patrol/references/案例与边界.md",
+      "size": 391,
+      "sha256": "a06e9892ba079ce4950d2e3cc46a87bb5db02e1cdaa8fb55fdafa573f5cb0446"
+    },
+    {
+      "path": "skills/dpjf-patrol/references/质量与反馈.md",
+      "size": 943,
+      "sha256": "5ef5145afd0b37095034a1f5c81b3d3fb8787921e757d36c62a7f993fd5324c1"
+    },
+    {
+      "path": "skills/dpjf-patrol/references/资源调用.md",
+      "size": 732,
+      "sha256": "7e4f30f0136bc41107119b0f9be263421b295017aac6a2754191523ebdf70da3"
+    },
+    {
+      "path": "skills/dpjf-plan/SKILL.md",
+      "size": 6817,
+      "sha256": "baad03e6be99963e3752b8915eb2f857a0060b376aa1f41c8b263d6d987e8c92"
+    },
+    {
+      "path": "skills/dpjf-plan/references/交付样式.md",
+      "size": 706,
+      "sha256": "665ce18af8fbf9a172e560f1e4e7c4f93c299a99fd768fd24bd6b1e5ee0d9e31"
+    },
+    {
+      "path": "skills/dpjf-plan/references/分场景操作.md",
+      "size": 2027,
+      "sha256": "2a8e000fb12bfad07ad0434e0e3b349b8eda647a0678766ac1cd838507a58538"
+    },
+    {
+      "path": "skills/dpjf-plan/references/判断方法.md",
+      "size": 2224,
+      "sha256": "2047f4004a6dd4058b0a720cb74e61370147de481db1f33e6e736bfe0dd0fa51"
+    },
+    {
+      "path": "skills/dpjf-plan/references/案例与边界.md",
+      "size": 549,
+      "sha256": "324444dea1349da86c461f0f56f66be62e5fc94c8750d110ffbf3406497022af"
+    },
+    {
+      "path": "skills/dpjf-plan/references/质量与反馈.md",
+      "size": 1429,
+      "sha256": "d7a1c4dc13088c4a8c9fd2539b3106389f6063e5dff4c55ba518b7214745774d"
+    },
+    {
+      "path": "skills/dpjf-plan/references/资源调用.md",
+      "size": 1416,
+      "sha256": "d79afb72c7e7dd58e9cb057fdd16e7f5063f549e2ee079d322fb44a30437ecde"
+    },
+    {
+      "path": "skills/dpjf-recap/SKILL.md",
+      "size": 3869,
+      "sha256": "4bb3e9d04dc97399f9fbe47d48bff03582695a06fa18f96e3f5f222b6a63e675"
+    },
+    {
+      "path": "skills/dpjf-recap/references/交付样式.md",
+      "size": 327,
+      "sha256": "932beb135b9fe2ae6044f1eb2cad78846e790a9b3b35fa311593e3c4b1040f63"
+    },
+    {
+      "path": "skills/dpjf-recap/references/分场景操作.md",
+      "size": 1364,
+      "sha256": "9fc9febd3a536d5744f61b54edd90abc47af9c8637c2bbd5516169deb7e0b6c9"
+    },
+    {
+      "path": "skills/dpjf-recap/references/判断方法.md",
+      "size": 1569,
+      "sha256": "a159e6f39069a070c935a7da1f6a97957539d3f79bd7c5f7a7c38c336fc16a69"
+    },
+    {
+      "path": "skills/dpjf-recap/references/案例与边界.md",
+      "size": 349,
+      "sha256": "04faa1f33195a02b7738565baad62ef3e65acd0184d178f0095145266c2ed82f"
+    },
+    {
+      "path": "skills/dpjf-recap/references/质量与反馈.md",
+      "size": 973,
+      "sha256": "59280749c152c6a508c847fbcc140ae0cd80330fcd2d1aff362caf1c3ced4a39"
+    },
+    {
+      "path": "skills/dpjf-recap/references/资源调用.md",
+      "size": 885,
+      "sha256": "7e18998bf639dbddfee9b85eaab9f8ab345341ab5d4620089d1479958f5e25d2"
+    },
+    {
+      "path": "skills/dpjf-review/SKILL.md",
+      "size": 4198,
+      "sha256": "fd88c5fa28bac63c27b405d4c0a74641c267ea92acd7eae0547716643bdd6a16"
+    },
+    {
+      "path": "skills/dpjf-review/references/交付样式.md",
+      "size": 414,
+      "sha256": "d350992da4e8b040f1fddbf28b8059566f8244b2a6be4ff6b1eecb11cb4e40ca"
+    },
+    {
+      "path": "skills/dpjf-review/references/分场景操作.md",
+      "size": 1389,
+      "sha256": "f4d57b5c8a6fc726798ae644de6bd0e59da921918685f0ad0fa50d82e8c557b1"
+    },
+    {
+      "path": "skills/dpjf-review/references/判断方法.md",
+      "size": 1548,
+      "sha256": "acf71e1824b6a45db1f5cbfd1f292559adf3fc19ecc397293ec8f96f6e7cb298"
+    },
+    {
+      "path": "skills/dpjf-review/references/案例与边界.md",
+      "size": 340,
+      "sha256": "098a8d5b86df01f32392941ce1af8f5041ba09d8da6fb8ec99efb2c47c07ba46"
+    },
+    {
+      "path": "skills/dpjf-review/references/质量与反馈.md",
+      "size": 997,
+      "sha256": "7a5f551bd1b7ba8b8c6cd1a77684011e34139c0ed9bb5dc574f3fae1182435d5"
+    },
+    {
+      "path": "skills/dpjf-review/references/资源调用.md",
+      "size": 903,
+      "sha256": "c033eb80860c31d4fb77ae08fb10f8efb655e2175f6ded13d15374da95a526ea"
+    },
+    {
+      "path": "skills/dpjf-script/SKILL.md",
+      "size": 7941,
+      "sha256": "c2ca33fdbbbec98f4d994a97bfe933e022cbfaa586603ac89637057bb0861369"
+    },
+    {
+      "path": "skills/dpjf-script/references/交付样式.md",
+      "size": 360,
+      "sha256": "76254f2cf73c9dff6911857818d360e8f9243a709c54dfb5c49c3e3c8db1c27e"
+    },
+    {
+      "path": "skills/dpjf-script/references/分场景操作.md",
+      "size": 1537,
+      "sha256": "bc31a09603869b1be54771832ce6772b73de4df8a091df18ef2ca754dc4bfe3d"
+    },
+    {
+      "path": "skills/dpjf-script/references/判断方法.md",
+      "size": 1678,
+      "sha256": "2e7451a38d53d6c3244de6c64e1d591f81c9b83003570da61d51470856cca62e"
+    },
+    {
+      "path": "skills/dpjf-script/references/案例与边界.md",
+      "size": 292,
+      "sha256": "53994d66bfe3f23e21bb3964ef1c57252e9636fddfe08dfc09aad1208e53c256"
+    },
+    {
+      "path": "skills/dpjf-script/references/质量与反馈.md",
+      "size": 1039,
+      "sha256": "f9f6e89be62d814379e354d25431557ae4bc8ccea8d7086e15837a32adef9a0a"
+    },
+    {
+      "path": "skills/dpjf-script/references/资源调用.md",
+      "size": 1386,
+      "sha256": "2d8ce25a3804e9d6454cfeeb9aca16f9137fd26e345451ff3bb326fd6759f57d"
+    },
+    {
+      "path": "skills/dpjf-student/SKILL.md",
+      "size": 7945,
+      "sha256": "b6b33692152ed6c18257cb357f04810d27cb8d9fe99cc1a5befa350d5ce25e3f"
+    },
+    {
+      "path": "skills/dpjf-student/references/资源调用.md",
+      "size": 1597,
+      "sha256": "f4ad70406f857fd537d701884ebdf50d95c7b82ca687e4e0c8ff0aeff2fb8b68"
+    },
+    {
+      "path": "skills/dpjf-student/scripts/student_files.py",
+      "size": 4783,
+      "sha256": "c06ef7857cfe0c12997d8b2fa21c699b899d5b44d70fab16c1764be31b4bf517"
+    },
+    {
+      "path": "skills/dpjf-title/SKILL.md",
+      "size": 6444,
+      "sha256": "16608909fb731c123f783d7355ab91dbfa93d7f346251954355d49647010db78"
+    },
+    {
+      "path": "skills/dpjf-title/references/交付样式.md",
+      "size": 430,
+      "sha256": "3ea6c1f0e1a1cc56bdf14ae36f668a3950af42adbb1fc2e43c741833dc915587"
+    },
+    {
+      "path": "skills/dpjf-title/references/分场景操作.md",
+      "size": 1763,
+      "sha256": "20c23d10c66baeab236ab3071373791140e9be09ef35100703dc11b9e5bad4a5"
+    },
+    {
+      "path": "skills/dpjf-title/references/判断方法.md",
+      "size": 2010,
+      "sha256": "0cc2c63ffc83fce05cd33d7e31be4ea6967c4a1cff5c32e527cc936120179489"
+    },
+    {
+      "path": "skills/dpjf-title/references/案例与边界.md",
+      "size": 434,
+      "sha256": "6373e4ba822e94df9d7993bb38826da16379d8fdd6e03dac759c8a7911120a93"
+    },
+    {
+      "path": "skills/dpjf-title/references/质量与反馈.md",
+      "size": 935,
+      "sha256": "86c0769fbcf1932ba6adac9dd612f6f096044ca0c278d4dca4b33833b1cd7300"
+    },
+    {
+      "path": "skills/dpjf-title/references/资源调用.md",
+      "size": 1074,
+      "sha256": "092d75ed0cd8d3015cf077ed541992b91845c302dcdcd9c8d679175ffb88d73b"
+    },
+    {
+      "path": "skills/dpjf-topic/SKILL.md",
+      "size": 5826,
+      "sha256": "24ce2d728bfb66a7dc53979736025ec02906b287187bcd5f519370f70dba2487"
+    },
+    {
+      "path": "skills/dpjf-topic/references/交付样式.md",
+      "size": 360,
+      "sha256": "74afcb4fe33fdf200d0c4ac5b9fa885c5f598452ec3c539379164ca73c2fda1a"
+    },
+    {
+      "path": "skills/dpjf-topic/references/分场景操作.md",
+      "size": 1576,
+      "sha256": "6b60e230be248b055f236db51d918be64e156efd09231a0459e6c2f2cdf0bf46"
+    },
+    {
+      "path": "skills/dpjf-topic/references/判断方法.md",
+      "size": 1509,
+      "sha256": "cda6c30276f6fcdedc838de797d3f14825f243fa53ed3f3537a3703691b99c31"
+    },
+    {
+      "path": "skills/dpjf-topic/references/案例与边界.md",
+      "size": 379,
+      "sha256": "14fba30d2c34734e2f3da71d82325f5e427e773fc9903f131dcc98145829e452"
+    },
+    {
+      "path": "skills/dpjf-topic/references/质量与反馈.md",
+      "size": 1036,
+      "sha256": "e8d6e6796afc405962fd78514dfe1ae1a2e6a563c8d60a59a6300db204d6d69c"
+    },
+    {
+      "path": "skills/dpjf-topic/references/资源调用.md",
+      "size": 1079,
+      "sha256": "a9e4e91f61ae6a3da5935502eda49ac93aee156127f7cb66133e002060e8d257"
+    },
+    {
+      "path": "skills/dpjf-update/SKILL.md",
+      "size": 2192,
+      "sha256": "72a7ef0684dd25120666d22159cd7480d030be9541544da7fe6c378c890ce41c"
+    },
+    {
+      "path": "skills/dpjf-update/references/交付样式.md",
+      "size": 296,
+      "sha256": "7c8eae051b28c0381757e0816c69c240e031cb98c880a3fdbe4be34f51957381"
+    },
+    {
+      "path": "skills/dpjf-update/references/分场景操作.md",
+      "size": 1392,
+      "sha256": "928feea37bf54482105dcec76b0d0665a5440a3a88a3b171b1dfdda0963b86f4"
+    },
+    {
+      "path": "skills/dpjf-update/references/判断方法.md",
+      "size": 1667,
+      "sha256": "33a1fc6d7ed54dd5e1590b8fb14bdefa354b0932a1655750b401012e51d87263"
+    },
+    {
+      "path": "skills/dpjf-update/references/案例与边界.md",
+      "size": 411,
+      "sha256": "08403b897ec2898666c91353dfc8f88028a0b5d9f56b3835b90e6edf4cae1ae0"
+    },
+    {
+      "path": "skills/dpjf-update/references/质量与反馈.md",
+      "size": 919,
+      "sha256": "74d235946165f3d029a7e2cf010acdbdccde1fe51b6f3eb630ff956466444210"
+    },
+    {
+      "path": "skills/dpjf-update/references/资源调用.md",
+      "size": 563,
+      "sha256": "7082c0cadcb4db023dcb5f4cfc1b9cc0ac1ee10293bf4dccf5c2fd94e1129480"
+    },
+    {
+      "path": "skills/dpjf/SKILL.md",
+      "size": 10333,
+      "sha256": "08c375a8ee77b6b24508d4edc325713ac2273cfd09b0ed89d170e59abd30da6f"
+    },
+    {
+      "path": "skills/dpjf/references/catalog.json",
+      "size": 318,
+      "sha256": "ffc835e70f7d6a91bfe84b14b6f190bb003eb85621ea493962423e2eba42c012"
+    },
+    {
+      "path": "skills/dpjf/references/共享资源定位.md",
+      "size": 679,
+      "sha256": "33da138ddc2c50b9e6b7a8f4573ac460cb840aff34fa97db232ed2a3f121863e"
+    },
+    {
+      "path": "skills/dpjf/references/组合与交接.md",
+      "size": 2219,
+      "sha256": "3531d23e1de5dd6886ed2da333e5deb58a954b693a252b87e88abd548200828d"
+    },
+    {
+      "path": "skills/dpjf/scripts/list-skills.py",
+      "size": 2326,
+      "sha256": "47307c74255c709af3cca58bf630ee5e6f99462eeb11b8e006c1b19df4ebf9db"
+    },
+    {
+      "path": "tests/test_package.py",
+      "size": 8856,
+      "sha256": "fe18fba92fb3f9e20f02a44c558984884c6131f6fc6e6cee58b34807abc18f28"
+    },
+    {
+      "path": "tests/test_retrieval_routing.py",
+      "size": 1794,
+      "sha256": "a2ce474143258ce6f3ce1e4276f5d95a4879106981479ab1927702518c92c26f"
+    },
+    {
+      "path": "version.json",
+      "size": 355,
+      "sha256": "13e9e252a6cdd6d32244b47a9511c2980e23293f31c83c4fccd58ba75815ceb9"
+    },
+    {
+      "path": "共享资源/00_短视频内容创作72变.md",
+      "size": 90088,
+      "sha256": "518a68787643ab6f3ecfefee1737657d586799e0c456993be9bf9f4ed8579509"
+    },
+    {
+      "path": "共享资源/templates/SOP里程碑地图.md",
+      "size": 7083,
+      "sha256": "c7f7eebd4b2111d0aecf95df7354464b8ccef49fb89a8c7d516a183292c3f3c9"
+    },
+    {
+      "path": "共享资源/templates/周复盘表.md",
+      "size": 1307,
+      "sha256": "0feba5873a91d7e73f38bc8d2414abe1f04a0dffb8e8a68b23a0b700dc62aa1b"
+    },
+    {
+      "path": "共享资源/templates/周排期表.md",
+      "size": 1104,
+      "sha256": "c5a6b2225431ac7b4e45c87ab0ca734849978116655a3d741425dc5fe66cbcfb"
+    },
+    {
+      "path": "共享资源/templates/基础信息采集表.md",
+      "size": 2732,
+      "sha256": "498a4e7b41274b0dccfc1ac0d72b454acd620f8442d25a015550a87f57a4e727"
+    },
+    {
+      "path": "共享资源/templates/月规划表.md",
+      "size": 2042,
+      "sha256": "2a083c561ebfb0e68bb52e6dd53f277228b94dbc59d23386e632fe5c1421dc78"
+    },
+    {
+      "path": "共享资源/templates/每日作业模板.md",
+      "size": 1191,
+      "sha256": "168fffdebb086960d057ee7365ae0f841c8ce81335a9bc65184514160d954737"
+    },
+    {
+      "path": "共享资源/templates/结营调查问卷与发送话术.md",
+      "size": 2648,
+      "sha256": "59003866d216ca2855f24179b69254c02549898d3854304933c09859774338d9"
+    },
+    {
+      "path": "共享资源/templates/视频评价表.md",
+      "size": 1592,
+      "sha256": "851fdd399776567472e4ba15e7c9a883d6f2d5f95317b26ccb40ac8073efa6e3"
+    },
+    {
+      "path": "共享资源/templates/账号策划方案.md",
+      "size": 3965,
+      "sha256": "77ae9454346d5649563ccc8fc459c21b8dc5498566ca0e741754958de47fd450"
+    },
+    {
+      "path": "共享资源/templates/账号策划母版.md",
+      "size": 5515,
+      "sha256": "34b020b9af7cf8b8312ff9b8b16f69e0358048f512958c156395227c10a7cd22"
+    },
+    {
+      "path": "共享资源/templates/陪跑SOP.md",
+      "size": 12421,
+      "sha256": "9f60b186ff0823ec4e52de5f654ecb8408d320c092e6d64f52ca170847f2b72a"
+    },
+    {
+      "path": "共享资源/方法补充/内容目的与选题.md",
+      "size": 2624,
+      "sha256": "11aa4be644bb1318f7f09222510b210978d841c81ee13f67a8f51f17d05f15e4"
+    },
+    {
+      "path": "共享资源/方法补充/复盘与增长.md",
+      "size": 1752,
+      "sha256": "2fb43f24763111e6328b2278953c64743791749a713250aa7a07a96d7fa168a3"
+    },
+    {
+      "path": "共享资源/方法补充/对标与文风.md",
+      "size": 1999,
+      "sha256": "64a891e3635c3af26221548cd87cb966b6bce7850ddb41871f3e1416aa42ef3e"
+    },
+    {
+      "path": "共享资源/方法补充/文案故事与呈现.md",
+      "size": 2508,
+      "sha256": "07b36950dfae4260bab41adbabd3587916e58c02c7636647c91faaa81798a81d"
+    },
+    {
+      "path": "共享资源/方法补充/来源索引.json",
+      "size": 977,
+      "sha256": "2537b5e3a25203ae1c9de476f858d8d39fd706342fe8fa6941007c5e5aec7b61"
+    },
+    {
+      "path": "共享资源/方法补充/概念学习与研究.md",
+      "size": 1751,
+      "sha256": "cf08798a1c3dd9d2bed83aa939cdcdcd6084cd13de7dc6b32cb889111e2581ff"
+    },
+    {
+      "path": "共享资源/方法补充/素材标题与平台.md",
+      "size": 2383,
+      "sha256": "c03cea12011cc3471ade2cca5e72aad2e8d795378058ba0dc1b8dec7528b7332"
+    },
+    {
+      "path": "共享资源/知识卡片库/HTML知识卡片/D10_对标拆解方法论_知识卡片.html",
+      "size": 27073,
+      "sha256": "a7e807f5f5e330aeddb44f0e3edb4cd15c2151e9ba509164f74571dab0617b33"
+    },
+    {
+      "path": "共享资源/知识卡片库/HTML知识卡片/D11_口播实操_知识卡片.html",
+      "size": 24843,
+      "sha256": "2198ae5ef6009d96dab3870940138de5228214a42c41feafe3e78597375cdb6d"
+    },
+    {
+      "path": "共享资源/知识卡片库/HTML知识卡片/D12_数据诊断与调整_知识卡片.html",
+      "size": 21422,
+      "sha256": "42a89895b09ff1a651dbae8c1fe382827246bd12e944842ca2b45656fd95d59b"
+    },
+    {
+      "path": "共享资源/知识卡片库/HTML知识卡片/D13_VLOG创作_知识卡片.html",
+      "size": 23083,
+      "sha256": "c113779f6cf5ba3a781802edc4c251736af16cb853f8ea3a0b7b3a27a5af3ad9"
+    },
+    {
+      "path": "共享资源/知识卡片库/HTML知识卡片/D14_多平台矩阵_知识卡片.html",
+      "size": 16194,
+      "sha256": "25e64bde22898d160295c77612f5d8d6f79e8c0d73fcafda38f527d8c28b139d"
+    },
+    {
+      "path": "共享资源/知识卡片库/HTML知识卡片/D15_包装视频_知识卡片.html",
+      "size": 15311,
+      "sha256": "bbfe2e4f71900fd48d8c3d7ea019db7a0a8cae71449d62d2966ecc5ebbf1a2c2"
+    },
+    {
+      "path": "共享资源/知识卡片库/HTML知识卡片/D16_找热点增热点_知识卡片.html",
+      "size": 15728,
+      "sha256": "8921eb021b8a6ae5560d4c56c745b85bb514534e6cf13181b6558f3b42693872"
+    },
+    {
+      "path": "共享资源/知识卡片库/HTML知识卡片/D17_投流_知识卡片.html",
+      "size": 31976,
+      "sha256": "67cb0341dce3fd3c15f76f2a703ba0bb9738fcf5bd22bf02aa9b2824d7d7a6ed"
+    },
+    {
+      "path": "共享资源/知识卡片库/HTML知识卡片/D18_爆款复盘四步_知识卡片.html",
+      "size": 22068,
+      "sha256": "d9c637cada502c758f6eb0454aa90a0eb2424c081b672b4ce86a6ebb1349dc1e"
+    },
+    {
+      "path": "共享资源/知识卡片库/HTML知识卡片/D19_素材库深化_知识卡片.html",
+      "size": 27636,
+      "sha256": "6997052393701b1a849379a49bd9d62300f2e42d213c574c0525118c04664160"
+    },
+    {
+      "path": "共享资源/知识卡片库/HTML知识卡片/D20_变现四层路径_知识卡片.html",
+      "size": 17909,
+      "sha256": "3ccfc1c779211a22d777c623e58e9f4492949eddcf96ed75a83160abc6b68f01"
+    },
+    {
+      "path": "共享资源/知识卡片库/HTML知识卡片/D21_转化型内容_知识卡片.html",
+      "size": 19316,
+      "sha256": "d7e05940940a944bb73f6ce37de0368f9c3bb4f548c9a9209c4ce8b0332f2ebd"
+    },
+    {
+      "path": "共享资源/知识卡片库/HTML知识卡片/D22_线索转化型视频_知识卡片.html",
+      "size": 22163,
+      "sha256": "96dd81a52475f6dcb5a384d0431f5a2e574d2a6237a38e23e60ca36563026ca7"
+    },
+    {
+      "path": "共享资源/知识卡片库/HTML知识卡片/D23_开通橱窗团购_知识卡片.html",
+      "size": 26677,
+      "sha256": "de5249f84c63e90bd2b9baacf98c33c0f9f27eb221797019e739cbc204c9e878"
+    },
+    {
+      "path": "共享资源/知识卡片库/HTML知识卡片/D24_对标直播间与话术_知识卡片.html",
+      "size": 25432,
+      "sha256": "122e6866e31474dc8dc78cd61c17bdd73fd5907137d8f6afdb6ac137f6afa7cc"
+    },
+    {
+      "path": "共享资源/知识卡片库/HTML知识卡片/D25_开播流程_知识卡片.html",
+      "size": 28264,
+      "sha256": "c42026bb3d07b3f5902c23beeb3ebb805e41b738bf07329ccc9ce61a70acc6a4"
+    },
+    {
+      "path": "共享资源/知识卡片库/HTML知识卡片/D26_直播复盘_知识卡片.html",
+      "size": 34463,
+      "sha256": "4e8153cdfce428ffa1fe25611036cb9948f4758bafe6534d0d705414ed0d1730"
+    },
+    {
+      "path": "共享资源/知识卡片库/HTML知识卡片/D27_账号长期运营_知识卡片.html",
+      "size": 29108,
+      "sha256": "dd9fd7bf1d5cb468e68a765ceee72ddc65e993a9866717ca75e1231835888795"
+    },
+    {
+      "path": "共享资源/知识卡片库/HTML知识卡片/D28_自媒体认知_知识卡片.html",
+      "size": 34854,
+      "sha256": "47680ca7ac97d23f1958ad10716d490eafb47552b012a17adaca95da29c380f3"
+    },
+    {
+      "path": "共享资源/知识卡片库/HTML知识卡片/D6_选题方法论_知识卡片.html",
+      "size": 26605,
+      "sha256": "fdec841b372c68d3c1e857b5545dfc5590a74713cba5761525143b471d181602"
+    },
+    {
+      "path": "共享资源/知识卡片库/HTML知识卡片/D7_标题设计_知识卡片.html",
+      "size": 23555,
+      "sha256": "00bd72eb8ae1eb1e210d0221af51881a75463c502f4fb4d821d0fa1f3b7ce1bc"
+    },
+    {
+      "path": "共享资源/知识卡片库/HTML知识卡片/D8_开头设计_知识卡片.html",
+      "size": 34908,
+      "sha256": "86a31eae49bd8f0ed1298e5bf705781a16813a4383d8f6a7e385ebb9040950cc"
+    },
+    {
+      "path": "共享资源/知识卡片库/HTML知识卡片/D9_文案创作_知识卡片.html",
+      "size": 25570,
+      "sha256": "cc4c40bcfd70f42fa9c24a63ac3cd0fd3b2660dd6604fd6c9589e32517a8b014"
+    },
+    {
+      "path": "共享资源/知识卡片库/HTML知识卡片/logo.png",
+      "size": 182076,
+      "sha256": "94d7794f9d4492acee6d3a3c22284642e37a26a3b276a0288872258044f0f2f9"
+    },
+    {
+      "path": "共享资源/知识卡片库/HTML知识卡片/借东风_知识卡片.html",
+      "size": 15496,
+      "sha256": "5037c88f8d8d9bf4a277721ff3229f9c7f6cd903841d5982850814cd39a4bfc5"
+    },
+    {
+      "path": "共享资源/知识卡片库/PNG截图/D10_对标拆解方法论_知识卡片.png",
+      "size": 1164956,
+      "sha256": "96567665b5d5e844c01f5a7da5d43ee1b26d6c6819f5ccbf2935dde81c313bcb"
+    },
+    {
+      "path": "共享资源/知识卡片库/PNG截图/D11_口播实操_知识卡片.png",
+      "size": 1042344,
+      "sha256": "6ee4192c13bf3715315aca3f998e00c83f991c4bbdcec2d90f338b25a86bed68"
+    },
+    {
+      "path": "共享资源/知识卡片库/PNG截图/D12_数据诊断与调整_知识卡片.png",
+      "size": 772021,
+      "sha256": "78d1acddde348c46b95c3e87df362abdc0d36b3adbddefe9e237285255ac2a00"
+    },
+    {
+      "path": "共享资源/知识卡片库/PNG截图/D13_VLOG创作_知识卡片.png",
+      "size": 866907,
+      "sha256": "ed2962dbd4a600e67f330ea60ad96398bc10752c769969d7dcb9be9d52e47ee4"
+    },
+    {
+      "path": "共享资源/知识卡片库/PNG截图/D14_多平台矩阵_知识卡片.png",
+      "size": 617415,
+      "sha256": "ac64685d0b1d91447eec56855591e8346bc1ad6955b5330de0b8775459d1e400"
+    },
+    {
+      "path": "共享资源/知识卡片库/PNG截图/D15_包装视频_知识卡片.png",
+      "size": 596783,
+      "sha256": "089df7bdf1d543daea35ec832594c4fa518287b237f86a5d90ea68d21af7fa5f"
+    },
+    {
+      "path": "共享资源/知识卡片库/PNG截图/D16_找热点增热点_知识卡片.png",
+      "size": 645232,
+      "sha256": "c639852143f7ad4065ecd58cc8662f7c82eb7ef03172a3356adc4f411e68b3b1"
+    },
+    {
+      "path": "共享资源/知识卡片库/PNG截图/D17_投流_知识卡片.png",
+      "size": 1210607,
+      "sha256": "811dcf23d1b3fd7f93ea16418bb682603bd25f36cc74f86bf244b7443f09e315"
+    },
+    {
+      "path": "共享资源/知识卡片库/PNG截图/D18_爆款复盘四步_知识卡片.png",
+      "size": 765336,
+      "sha256": "2ae4eee67e690ec8b9e9ae2e18cd8ba6264644a7ba6666fc8e528f2560a146b5"
+    },
+    {
+      "path": "共享资源/知识卡片库/PNG截图/D19_素材库深化_知识卡片.png",
+      "size": 1229323,
+      "sha256": "fa2e286caae834a323d25e05c870943fc998f91912f63fa81e7ca7985220aa90"
+    },
+    {
+      "path": "共享资源/知识卡片库/PNG截图/D20_变现四层路径_知识卡片.png",
+      "size": 645049,
+      "sha256": "4d8a296241cb08699ac0fa56181417a0fa3241cf970cf558ee679475f635a0a2"
+    },
+    {
+      "path": "共享资源/知识卡片库/PNG截图/D21_转化型内容_知识卡片.png",
+      "size": 831188,
+      "sha256": "b436419c26c77c6351faafcfc83a33da154e187e80c02796139eedbc6e45b2e5"
+    },
+    {
+      "path": "共享资源/知识卡片库/PNG截图/D22_线索转化型视频_知识卡片.png",
+      "size": 995240,
+      "sha256": "c6fa85dfa87ca19a5d65a5ed009364be8a9792a85f1f0a4e314cd8104cc23200"
+    },
+    {
+      "path": "共享资源/知识卡片库/PNG截图/D23_开通橱窗团购_知识卡片.png",
+      "size": 971802,
+      "sha256": "112cf606ea0c73a0cdc7d755463d69b54c180638375bfed66198454b9aaad235"
+    },
+    {
+      "path": "共享资源/知识卡片库/PNG截图/D24_对标直播间与话术_知识卡片.png",
+      "size": 1064813,
+      "sha256": "4b90634a89688e83bcf4081897d144a8f913090dd70a38fffb33af76af4cebd8"
+    },
+    {
+      "path": "共享资源/知识卡片库/PNG截图/D25_开播流程_知识卡片.png",
+      "size": 1169677,
+      "sha256": "f977ca843db69d4de28b4491151393540310f2615f716c4f31626c976ec719a1"
+    },
+    {
+      "path": "共享资源/知识卡片库/PNG截图/D26_直播复盘_知识卡片.png",
+      "size": 1369061,
+      "sha256": "c2d61a88c984726d6c84279fc67055fddd6043b8cc6080ea9cb765e22b93bd39"
+    },
+    {
+      "path": "共享资源/知识卡片库/PNG截图/D27_账号长期运营_知识卡片.png",
+      "size": 1161159,
+      "sha256": "c2500606d26e245c564adfb785a658961eae7d65bbdea27957d92df342fac57e"
+    },
+    {
+      "path": "共享资源/知识卡片库/PNG截图/D28_自媒体认知.png",
+      "size": 2515015,
+      "sha256": "cb8ff59dd69f2b2caec7216a46684555f7f4809ed66e7cc9e97825f5432fdc8b"
+    },
+    {
+      "path": "共享资源/知识卡片库/PNG截图/D6_选题方法论_知识卡片.png",
+      "size": 917155,
+      "sha256": "282c9fd6e78b99717d9732b8bbbcc4cf107c66902422ee048783a493ebf6c3d2"
+    },
+    {
+      "path": "共享资源/知识卡片库/PNG截图/D7_标题设计_知识卡片.png",
+      "size": 717541,
+      "sha256": "60dfc956c73f83ad664d2ea36afec0bfbca3115b8996b0c4a433d74d3bc26226"
+    },
+    {
+      "path": "共享资源/知识卡片库/PNG截图/D8_开头设计_知识卡片.png",
+      "size": 1669515,
+      "sha256": "e3b4e003a3d57f5cc5a60c87a121cc614e785c40c806c2f44cbc37f68fa9c676"
+    },
+    {
+      "path": "共享资源/知识卡片库/PNG截图/D9_文案创作_知识卡片.png",
+      "size": 1109917,
+      "sha256": "074c36af4eacd7c7eb8e503d14a2b52f2b7ffdacec5ce3b0aea9862f1a22a299"
+    },
+    {
+      "path": "共享资源/知识卡片库/PNG截图/借东风.png",
+      "size": 1200140,
+      "sha256": "a06dc98b6ea94b8b2ea565471667c7d63c51d78ec5dcdebfcad836fe92ca6c14"
+    },
+    {
+      "path": "共享资源/要素定义库/00_自媒体认知要素.md",
+      "size": 16892,
+      "sha256": "6e72c6fd32b0a0697cce807639dba6d28a3050f6daaf3e34bab1aa7b4343423c"
+    },
+    {
+      "path": "共享资源/要素定义库/01_账号定位要素.md",
+      "size": 5825,
+      "sha256": "d534e1685e31af7eeadeba60f9966253e911d30d4b4d7b89a689fd96d119dca4"
+    },
+    {
+      "path": "共享资源/要素定义库/02_选题要素.md",
+      "size": 6200,
+      "sha256": "12e4418634b8c2bf06c894c1fc94a9e344b4142900ad4e69fdfcbba89a9a9e30"
+    },
+    {
+      "path": "共享资源/要素定义库/03_开头钩子要素.md",
+      "size": 5381,
+      "sha256": "938a6a23cac23de451c4f44eb2d4151a9e4f16152a85d3c80d51b08b99afffd7"
+    },
+    {
+      "path": "共享资源/要素定义库/04_文案要素.md",
+      "size": 12036,
+      "sha256": "dbfb28bfc5150bc30c9774746b401be87397c22cf4abafd0aaa7a12bfd405f70"
+    },
+    {
+      "path": "共享资源/要素定义库/05_呈现要素.md",
+      "size": 5139,
+      "sha256": "a9b73795efd5e13fa9afd3bc28f48d91d04cb72d3b79ff560c63922623bca9d1"
+    },
+    {
+      "path": "共享资源/要素定义库/06_72变要素.md",
+      "size": 11555,
+      "sha256": "7cab49eb70fc1572dbd0afa347984a1cf9182eb1890bf5e51f356c866c842307"
+    },
+    {
+      "path": "共享资源/要素定义库/07_创意故事要素.md",
+      "size": 8568,
+      "sha256": "b7f0791a4d35df5e87f5197df107b901b5e6efade0afe74bc51a397d33328fda"
+    },
+    {
+      "path": "共享资源/要素定义库/08_简介要素.md",
+      "size": 23956,
+      "sha256": "4f770378142b665a9e861cbf6d842606676d56a320b5429b34a9e75b75ee3e61"
+    },
+    {
+      "path": "共享资源/要素定义库/09_视频评价要素.md",
+      "size": 13531,
+      "sha256": "9df0172da5ef7cf02e50ab2fe154d90d104fa259d228bce9051360667a6830ae"
+    },
+    {
+      "path": "共享资源/要素定义库/10_教练沟通要素.md",
+      "size": 22923,
+      "sha256": "94f06898e91afec1457b969cf6f8497c5cfec1faf02f1a547e948f04dd4343d9"
+    },
+    {
+      "path": "共享资源/要素定义库/11_内容漏斗与流量分层要素.md",
+      "size": 13711,
+      "sha256": "77f6766d789c87f523dbe87671c47079ae2b421663235559011806e851044184"
+    },
+    {
+      "path": "共享资源/要素定义库/12_消息识别与问题分类要素.md",
+      "size": 16871,
+      "sha256": "18f22b0708b5b5f3fb1864cf1c410b30a7c3d373db78a8a0072c52d28d69a846"
+    },
+    {
+      "path": "共享资源/要素定义库/13_行业分类与赛道策略要素.md",
+      "size": 9055,
+      "sha256": "b44531b4e74432ee377464df8101a47cf9208adc8e65eceaa1f607930a834ea6"
+    },
+    {
+      "path": "共享资源/要素定义库/14_变现路径要素.md",
+      "size": 6656,
+      "sha256": "f698279a75b0aeae12606878ca5c04c4a0a52ede1168f93a9b7f6382f29640b0"
+    },
+    {
+      "path": "共享资源/要素定义库/15_实体店专项策略要素.md",
+      "size": 6691,
+      "sha256": "38569e501c1a412ef6cf5a311157dfe7ccb5bdbec10589eeb24b909503fe66b9"
+    },
+    {
+      "path": "共享资源/要素定义库/16_打量逻辑与敏感行业策略要素.md",
+      "size": 9407,
+      "sha256": "949bf682a9db60b49f12f074fcf8b78b8abe0a90559bea679001245a21bef3bb"
+    },
+    {
+      "path": "共享资源/要素定义库/17_产品可视化要素.md",
+      "size": 12768,
+      "sha256": "5f45fe345fe112b97a367b48a921886c186f08ec2041662ea8891b351a3b5eb7"
+    },
+    {
+      "path": "共享资源/要素定义库/18_内容创作底层逻辑要素.md",
+      "size": 15396,
+      "sha256": "4d0ae9db73bb0c6a9fc58adaf93cac3dd4593bd27ae8ef3b66d617706a8a9f07"
+    },
+    {
+      "path": "共享资源/要素定义库/19_每日巡检要素.md",
+      "size": 15874,
+      "sha256": "89d02d1cc1c820151a0516d15c6601a8d3acb71ef7cebcd7cf8723c1c453ff27"
+    },
+    {
+      "path": "共享资源/要素定义库/20_学员文件维护要素.md",
+      "size": 6784,
+      "sha256": "827b33a69f089c4b54885663c42850c1823aaf16b939cef9820b88f16cae1a45"
+    },
+    {
+      "path": "共享资源/要素定义库/21_方法论总览.md",
+      "size": 12596,
+      "sha256": "623676b469b98d11b5ba1474021db9c52460c0e20bc56c42faa9850831b47aa5"
+    },
+    {
+      "path": "共享资源/要素定义库/22_主页搭建要素.md",
+      "size": 7020,
+      "sha256": "c6766709988628a219322cf72b75bee10e3e16413a978414d3f7b60da2ba10ab"
+    },
+    {
+      "path": "共享资源/要素定义库/23_借东风与投流放大要素.md",
+      "size": 17369,
+      "sha256": "b4693a7bf7b31e390112e604fd108a299ba4e6926a5cdd7b34875df0c7416ee3"
+    },
+    {
+      "path": "共享资源/要素定义库/24_每日动态任务生成要素.md",
+      "size": 10577,
+      "sha256": "ad4d1ac1ed8b560e740dad123bb5b99d5acf457a816ad069ce491aa732ad8ee0"
+    },
+    {
+      "path": "共享资源/要素定义库/25_活人感输出规范要素.md",
+      "size": 26737,
+      "sha256": "c28df23890d94314df9cd90cba8743978bcbe189b8e7ef0b930391906ca0ce4f"
+    },
+    {
+      "path": "共享资源/要素定义库/26_爆款文案密码与语料要素.md",
+      "size": 16830,
+      "sha256": "523b919885720a86573514f4580bf5fedfc2f0419641822a9be7df917823b54f"
+    },
+    {
+      "path": "共享资源/要素定义库/27_学员心理画像与留存沟通要素.md",
+      "size": 26176,
+      "sha256": "6b15bd955a1832eae73c30fcba3ed4edc096355493fe24ffea478800d60919eb"
+    },
+    {
+      "path": "共享资源/规则/共同规则.md",
+      "size": 4069,
+      "sha256": "5de5e17cf28bb8eed1f7584d2d4d01864ab354c6d1a9d2d033d4a97a4530f442"
+    },
+    {
+      "path": "共享资源/规则/来源与取用.md",
+      "size": 2330,
+      "sha256": "b2a59b0ef72557a71a8017410434556faeda4c98a1d357ee9092823d7b59a6a4"
+    },
+    {
+      "path": "共享资源/规则/资源索引.json",
+      "size": 2556,
+      "sha256": "db5f64155717b4f866da66cf2124cef354165d0e8779d1ad3a406a6a4dbe7bf5"
+    },
+    {
+      "path": "共享资源/语料库/爆款文案.jsonl",
+      "size": 1693152,
+      "sha256": "490b86e37797c21d40156047e0185c7444ac7ee07651dbcd98fe416dd7b10f8e"
+    },
+    {
+      "path": "共享资源/销转课/第一节_直播玩法与抖音本地推投放_详细版.md",
+      "size": 19777,
+      "sha256": "c341992ccfad52f37cd327f99f6cce4f2d5539e9bbf0a4784a631f6341f01855"
+    },
+    {
+      "path": "共享资源/销转课/第三节_公司实力展示与多平台起号策略_详细版.md",
+      "size": 15665,
+      "sha256": "8847516cda87e121dae05e6be4310aa72ac3550cc33c5dccaba4250a0ad12a80"
+    },
+    {
+      "path": "共享资源/销转课/第二节_公司参观与起号必爆方法论_详细版.md",
+      "size": 10359,
+      "sha256": "e778878c2302909267400380742e957f358898a380269d3f66356b905b3456c1"
+    },
+    {
+      "path": "维护/README.md",
+      "size": 485,
+      "sha256": "c8b1df8a92530f1d2be267e34886599ef46aba804dc8bc17e46cfd3460df763b"
+    },
+    {
+      "path": "维护/整理记录.md",
+      "size": 2724,
+      "sha256": "069f1d6526d8390883f566f5c306cc86cefe53410d26db9d86590056ba067b15"
+    },
+    {
+      "path": "维护/更新说明.md",
+      "size": 1085,
+      "sha256": "578f01613d174d3bceb14836f026fec0ca6432337398b281e95157034b3991ff"
+    }
+  ]
+}

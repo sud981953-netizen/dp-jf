@@ -1,0 +1,14 @@
+{
+  "source_set": "dontbesilent 广州线下课与训练营资料整理",
+  "status": "curated-local-methods",
+  "files": {
+    "内容目的与选题.md": ["dpjf-plan", "dpjf-topic", "dpjf-title", "dpjf-review", "dpjf-recap"],
+    "素材标题与平台.md": ["dpjf-title", "dpjf-script", "dpjf-homework", "dpjf-review"],
+    "文案故事与呈现.md": ["dpjf-script", "dpjf-creative", "dpjf-homework", "dpjf-review"],
+    "对标与文风.md": ["dpjf-benchmark", "dpjf-script", "dpjf-update"],
+    "概念学习与研究.md": ["dpjf-learning", "dpjf-plan"],
+    "复盘与增长.md": ["dpjf-recap", "dpjf-growth"]
+  },
+  "source_notes": "由广州线下课总览、按天笔记、PPT梳理、训练营文档及校对报告提炼；不是讲师逐字稿，不含未经核实的数字和过时平台口径。",
+  "excluded_as_current_rules": ["伪造人设或案例", "身份攻击与操控", "洗稿和绕审", "固定流量阈值", "未经核实的收益和平台规则"]
+}
