@@ -129,6 +129,9 @@ class PackageTests(unittest.TestCase):
         self.assertIn("skills/dpjf/SKILL.md", names)
         self.assertFalse(any("_素材资源/" in x or "/历史资料/" in x or x.startswith("evals/") for x in names))
 
+    def test_package_has_no_builtin_student_directory(self):
+        self.assertFalse((ROOT / "学员").exists())
+
 
 class StudentPathTests(unittest.TestCase):
     def setUp(self):
@@ -159,6 +162,53 @@ class StudentPathTests(unittest.TestCase):
                 self.module.write_file(root, "张三", "03_作业与排期", "今天.md", str(source))
             self.module.write_file(root, "张三", "03_作业与排期", "今天.md", str(source), overwrite=True)
             self.assertEqual(target.read_text(encoding="utf-8"), "新")
+
+
+class OldVersionCleanupTests(unittest.TestCase):
+    def make_current(self, root):
+        current = root / "latest"
+        (current / "skills" / "dpjf" / "references").mkdir(parents=True)
+        (current / "skills" / "dpjf-plan").mkdir()
+        (current / "skills" / "dpjf" / "SKILL.md").write_text("name: dpjf", encoding="utf-8")
+        (current / "skills" / "dpjf" / "references" / "catalog.json").write_text('{"skills": ["dpjf-plan"]}', encoding="utf-8")
+        (current / "version.json").write_text('{"status": "released"}', encoding="utf-8")
+        return current
+
+    def test_preview_then_apply_only_named_old_versions(self):
+        with tempfile.TemporaryDirectory() as root:
+            root = Path(root)
+            current = self.make_current(root)
+            installs = root / "installs"
+            installs.mkdir()
+            for name in ("dp-jf", "dpjf-plan", "dojf-old", "other-skill"):
+                (installs / name).mkdir()
+            module = load_module("cleanup", ROOT / "scripts" / "cleanup_old_versions.py")
+            preview = module.remove_old_versions(current, [installs], apply=False)
+            self.assertEqual(len(preview), 3)
+            self.assertTrue((installs / "dp-jf").exists())
+            module.remove_old_versions(current, [installs], apply=True)
+            self.assertFalse((installs / "dp-jf").exists())
+            self.assertFalse((installs / "dpjf-plan").exists())
+            self.assertTrue((installs / "other-skill").exists())
+            self.assertTrue(current.exists())
+
+    def test_old_link_is_removed_without_deleting_target(self):
+        with tempfile.TemporaryDirectory() as root:
+            root = Path(root)
+            current = self.make_current(root)
+            target = root / "old-target"
+            target.mkdir()
+            installs = root / "installs"
+            installs.mkdir()
+            link = installs / "dpjf-old"
+            try:
+                link.symlink_to(target, target_is_directory=True)
+            except OSError:
+                self.skipTest("当前环境不允许创建目录链接")
+            module = load_module("cleanup", ROOT / "scripts" / "cleanup_old_versions.py")
+            module.remove_old_versions(current, [installs], apply=True)
+            self.assertFalse(link.exists())
+            self.assertTrue(target.exists())
 
 
 if __name__ == "__main__":

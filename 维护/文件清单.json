@@ -1,11 +1,11 @@
 {
   "skill": "dpjf",
-  "version": "3.1.1",
+  "version": "3.1.2",
   "source_state": "released",
   "remote_source": "https://github.com/sud981953-netizen/dp-jf",
-  "generated_at": "2026-11-04T16:11:36+08:00",
-  "file_count": 215,
-  "fingerprint": "57bb9f11766045021d63b5eb32c9183debafe6ea09be34a36d4e1cd93150d9dd",
+  "generated_at": "2026-11-05T15:27:31+08:00",
+  "file_count": 216,
+  "fingerprint": "ca9d341775b9be803174d68cc301af4c40239d155b049f3aeaf8bd9335584fb5",
   "excluded": [
     "学员",
     "config",
@@ -31,8 +31,8 @@
     },
     {
       "path": "README.md",
-      "size": 2534,
-      "sha256": "8e722c58bb7f5bca45da034ad42a038ddcb1f79182a2c0c5a3f086026e0cdc36"
+      "size": 3001,
+      "sha256": "5e92ef7dbdd87e8543dc44c0cb6547d14bc3eaf308a0b7ebb756494cc02bfb6c"
     },
     {
       "path": "SKILL.md",
@@ -43,6 +43,11 @@
       "path": "scripts/check_prose.py",
       "size": 31613,
       "sha256": "fad562429dfda089b462453ec34842040f0f000515efe61095459060020a1103"
+    },
+    {
+      "path": "scripts/cleanup_old_versions.py",
+      "size": 3322,
+      "sha256": "a161e95c248ef61974ef9de1ad6adbe57e26e10ff8bb481ae0b25d80fd395035"
     },
     {
       "path": "scripts/retrieve_yuliao.py",
@@ -491,8 +496,8 @@
     },
     {
       "path": "skills/dpjf-update/SKILL.md",
-      "size": 2192,
-      "sha256": "72a7ef0684dd25120666d22159cd7480d030be9541544da7fe6c378c890ce41c"
+      "size": 2864,
+      "sha256": "db5e49884343712bdf540e695f71e3a94e0abed6d5032d991ad183525e3cb625"
     },
     {
       "path": "skills/dpjf-update/references/交付样式.md",
@@ -501,8 +506,8 @@
     },
     {
       "path": "skills/dpjf-update/references/分场景操作.md",
-      "size": 1391,
-      "sha256": "90b88a8ee57952cfdad481d03ea5c9336a2997122e81d0f5a628e6359f78ca8c"
+      "size": 1544,
+      "sha256": "d940b14842329c465f9db521cf88b99f83ec0054e44b0275d8a879f5f01ae78e"
     },
     {
       "path": "skills/dpjf-update/references/判断方法.md",
@@ -551,8 +556,8 @@
     },
     {
       "path": "tests/test_package.py",
-      "size": 8895,
-      "sha256": "b0d2e4c885279ab4940e021e1e82acb42a2e74d2227d83c9927864c8364ac947"
+      "size": 11359,
+      "sha256": "85ea13401e062510ce2e1b9c541960ecf245f034767fb337928eaa5b74076df5"
     },
     {
       "path": "tests/test_retrieval_routing.py",
@@ -561,8 +566,8 @@
     },
     {
       "path": "version.json",
-      "size": 355,
-      "sha256": "e55ec1d5e6080b49db00ecf7b741f7dd670c764126f89f53a8195a55f679cadc"
+      "size": 388,
+      "sha256": "58d306298bb453918cfd6c744a10081c7d5c3f42e603c7816f8dd02dbaae013d"
     },
     {
       "path": "共享资源/00_短视频内容创作72变.md",
@@ -1051,8 +1056,8 @@
     },
     {
       "path": "共享资源/规则/来源与取用.md",
-      "size": 2330,
-      "sha256": "b2a59b0ef72557a71a8017410434556faeda4c98a1d357ee9092823d7b59a6a4"
+      "size": 2365,
+      "sha256": "221b05b579cd1d6e8f68eb8dfd665733a51263da3f8b8bc1d6e68e4d1d56b00b"
     },
     {
       "path": "共享资源/规则/资源索引.json",
@@ -1086,13 +1091,13 @@
     },
     {
       "path": "维护/整理记录.md",
-      "size": 2724,
-      "sha256": "069f1d6526d8390883f566f5c306cc86cefe53410d26db9d86590056ba067b15"
+      "size": 3442,
+      "sha256": "7946b2dbb13a43c6e57d747d693c582d6540f34e990d3a4e3e4affadc753073f"
     },
     {
       "path": "维护/更新说明.md",
-      "size": 1149,
-      "sha256": "0cfa503d535eefa4af2dc841e0852e9f696b066429674c1e956c83ed38cc62e6"
+      "size": 2291,
+      "sha256": "ff0e8d651be99cbc85464bbf32bab673f822b78fcbc3e23b6bbc8ea8502790a8"
     }
   ]
 }

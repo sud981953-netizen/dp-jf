@@ -1,11 +1,11 @@
 {
   "name": "dpjf",
-  "version": "3.1.1",
+  "version": "3.1.2",
   "status": "released",
-  "date": "2026-11-04",
+  "date": "2026-11-05",
   "remote_source": "https://github.com/sud981953-netizen/dp-jf",
-  "previous_skill": "dp-jf v3.1.0",
+  "previous_skill": "dp-jf v3.1.1",
   "package_directory": "dp-jf",
-  "previous_version": "3.1.0",
-  "change": "修正安装命令，使用 full-depth 确保主路由和全部子技能下载完整"
+  "previous_version": "3.1.1",
+  "change": "更新验证成功后清理 dpjf 旧版，仅保留最新版；移除内置学员目录并改为用户提供父目录"
 }
